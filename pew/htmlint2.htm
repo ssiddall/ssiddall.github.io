@@ -1,0 +1,188 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Intoduction to HTML</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="glossary.htm">
+<LINK REL="Previous" HREF="authcomp.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="authcomp.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="glossary.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I4">HTML Examples</A></LI>
+<LI>
+<A HREF="#I5">Basic Markup Tags</A></LI>
+<LI>
+<A HREF="#I6">Using Character Tags</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Introduction to Creating HTML Documents</A></H1>
+<HR ALIGN=CENTER>
+<H1><A ID="I2" NAME="I2"> on the Internet</A></H1>
+<HR ALIGN=CENTER>
+<P>HTML (HyperText Markup Language) is used to code a text document so that it may be viewed from a Web browser <I>(i.e</I>. Lynx<A ID="I3" NAME="I3"></A>, Netscape) and displayed with special attributes.  HTML uses markup tags to tell a Web browser how to display the text.  HTML tags consist of a left angle bracket (&lt;), (a ``less than'' symbol to mathematicians), followed by a name of the tag, or symbol, and closed by a right angle bracket (&gt;) (<I>i.e</I>. &lt;H1&gt;, &lt;/H1&gt;, &lt;P&gt;, &lt;TITLE&gt;).  Tags are usually paired so that one tag appears before the text or command it acts upon and a second tag appears after the text or command (<I>i.e</I>.. &lt;H1&gt; and &lt;/H1&gt;).  The ending tag looks just like the starting tag except a slash (/) precedes the text within the brackets. The slash character (/) denotes that this is the second tag, or end of the command.  HTML is not case sensitive; &lt;<I>title</I>&gt; is equivalent to &lt;TITLE&gt; or &lt;TiTlE&gt;.  </P>
+<H2><A ID="I4" NAME="I4">
+<BR>HTML Examples</A></H2>
+<HR ALIGN=CENTER>
+<P>Here is a barebones example of HTML:</P>
+<P>&lt;TITLE&gt;The simplest HTML example&lt;/TITLE&gt;</P>
+<P>&lt;H1&gt;This is a levelone heading&lt;/H1&gt;</P>
+<P>Welcome to the world of HTML.</P>
+<P>This is one paragraph.&lt;P&gt;</P>
+<P>And this is a second.&lt;P&gt;</P>
+<P>This example viewed with Netscape:</P>
+<UL>
+<LI>   <B> </B><B>The simplest HTML example</B></LI></UL>
+<P ALIGN="CENTER">
+<CENTER>
+<IMG SRC="mg49.gif" WIDTH = 392 HEIGHT = 136 ALT="Undisplayed Graphic">Figure 1</CENTER></P>
+<P>This example viewed with Lynx:</P>
+<P> The simplest HTML example  </P>
+<P>THIS IS  A LEVELONE HEADING </P>
+<P>Welcome to the world of HTML. This is one paragraph.</P>
+<P>And this is a second.</P>
+<P>Figure 2</P>
+<P>In the example, the &lt;TITLE&gt; tag and corresponding &lt;/TITLE&gt; tag surrounds the title text (&quot;The simplest HTML example&quot;) and allows the Web browser (Netscape or Lynx in this case) to display it appropriately.  The &lt;H1&gt; tag and &lt;/H1&gt; surrounds the header text and tells the Web browser to start formatting a levelone heading. The &lt;/H1&gt; tag tells the browser where to stop formatting the text. The &lt;P&gt; tag is used to indicate a new paragraph.  The primary exception to the pairing rule is the &lt;P&gt; tag. There is no such thing as &lt;/P&gt;.  There are other HTML tags which are not paired.  These are described later in this document.</P>
+<P>   </P>
+<P>HTML tags are used to format a text document and to indicate how the text should be displayed.  Therefore, any extra lines in the text document will be ignored.  HTML tags such as &lt;P&gt; and &lt;BR&gt;) should be used to denote new paragraphs or line breaks respectively.</P>
+<H2><A ID="I5" NAME="I5">
+<BR>Basic Markup Tags</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Title</I> </FONT></P>
+<P>&lt;TITLE&gt;...&lt;/TITLE&gt;</P>
+<P>Every HTML document should have a title. A title is generally displayed separately from the document and is used primarily for document identification in other contexts.  Choose about half a dozen words that describe the document's purpose.</P>
+<P>   </P>
+<P>
+<FONT SIZE=+1><I>Headings </I></FONT></P>
+<P>&lt;H1&gt;...&lt;/H1&gt;, &lt;H2&gt;...&lt;/H2&gt;, &lt;H3&gt;...&lt;/H3&gt;, &lt;H4&gt;...&lt;/H4&gt;, &lt;H5&gt;...&lt;/H5&gt;, &lt;H6&gt;...&lt;/H6&gt;</P>
+<P>HTML has six levels of headings, numbered 1 through 6, with 1 being the most prominent. Headings are displayed in larger and/or bolder fonts than normal body text. The first heading in each document should be tagged &lt;H1&gt;. The syntax of the heading tag is:</P>
+<P>  &lt;Hy&gt;text of heading&lt;/H<I>y</I> &gt;</P>
+<P>where  <I>y</I>  is a number between 1 and 6 specifying the level of the heading.</P>
+<P>   </P>
+<P>For example, the coding for the heading section in the example above is</P>
+<P> &lt;H<I>1&gt;</I>This is a level-one heading&lt;/H<I>1</I>&gt;</P>
+<P>
+<FONT SIZE=+1><I>TITLE versus first HEADING</I></FONT></P>
+<P>In many documents, the first heading is identical to the title. For multipart documents, the text of the first heading should be suitable for a reader who is already browsing related information (<I>e.g</I>., a chapter title), while the Title tag should identify the document in a wider context (<I>e.g</I>., include both the book title and the chapter title, although this can sometimes become overly long).</P>
+<P>   </P>
+<P>
+<FONT SIZE=+1><I>Paragraphs</I></FONT></P>
+<P>&lt;P&gt;</P>
+<P>Unlike documents in most word processors, carriage returns in HTML files aren't significant. Word wrapping can occur at any point in your source file, and multiple spaces are collapsed into a single space (There are a couple of exceptions; spaces following a &lt;P&gt; or &lt;Hy&gt; tag, for example, is ignored).  Notice that in the barebones example, the first paragraph is coded as</P>
+<P> Welcome to HTML.</P>
+<P> This is the first paragraph. &lt;<I>P</I>&gt;</P>
+<P>In the source file, there is a line break between the sentences. A Web browser ignores this line break and starts a new paragraph only when it reaches a &lt;<I>P</I>&gt; tag (see Figure 1 and Figure 2).</P>
+<P>   </P>
+<P><B><I>Important</I></B>: You must separate paragraphs with &lt;P&gt;. The Web browser ignores any indentations or blank lines in the source text. HTML relies almost entirely on the tags for formatting instructions, and without the &lt;P&gt; tags, the document becomes one large paragraph. (The exception is text tagged as ``preformatted,'' which is explained below.) For instance, the following would produce identical output as the first barebones HTML example:</P>
+<P>The simplest HTML example&lt;<B>/</B>TITLE&gt;&lt;H1&gt;This is a level one heading&lt;<B>/</B>H1&gt;Welcome to the world of HTML. This is one paragraph.&lt;P&gt;And this is a second.&lt;P&gt; </P>
+<P>   </P>
+<P>However, to preserve readability in an HTML file while you edit it, headings should be on separate lines, and paragraphs should be separated by blank lines (in addition to the &lt;P&gt; tags).</P>
+<P>  </P>
+<P>
+<FONT SIZE=+1><I>Linking to Other Documents</I></FONT></P>
+<P>&lt;A HREF=&quot;&quot;&gt; &lt;/A&gt;</P>
+<P>The chief power of HTML comes from its ability to link regions of text (and also images) to another document. The Web browser highlights these regions (usually with color and/or underlines) to indicate that they are hypertext links (often shortened to hyperlinks or simply links).</P>
+<P>   </P>
+<P>HTML's single hypertextrelated tag is &lt;A&gt;, which stands for anchor.  To include an anchor in your document:</P>
+<P> Start the anchor with &lt;A   (There's a space after the A  .).</P>
+<P> Specify the document that's being pointed to by entering the parameter HREF=&quot;filename&quot; followed by a closing right angle bracket: &gt;</P>
+<P> Enter the text that will serve as the hypertext link in the current document.</P>
+<P> Enter the ending anchor tag: &lt;/A&gt;</P>
+<P>Here is a sample hypertext reference:</P>
+<P> &lt;A HREF=&quot;MaineStats.html&quot;&gt;Maine&lt;/A&gt;</P>
+<P>This entry makes the word ``Maine'' the hyperlink to the document <I>MaineStats.html</I>, which is in the same directory as the first document.  When the user selects the text &quot;Maine&quot;, the first page of the document &quot;MaineStats.html&quot; will be displayed.  You can link to documents in other directories by specifying the relative path from the current document to the linked document. For example, a link to a file NJStats.html located in the subdirectory AtlanticStates would be:</P>
+<P>&lt;A HREF=&quot;AtlanticStates/NJStats.html&quot;&gt;New Jersey&lt;/A&gt;</P>
+<P>   </P>
+<P>
+<FONT SIZE=+1><I>Forced Line Breaks</I> </FONT></P>
+<P>&lt;BR&gt;</P>
+<P> The &lt;BR&gt; tag forces a line break with no extra space between lines.  (By contrast, most browsers format the &lt;P&gt; paragraph tag with an additional blank line to more clearly indicate the beginning the new paragraph.)</P>
+<P>   </P>
+<P>One use of &lt;BR&gt; is in formatting addresses:</P>
+<P> National Center for Supercomputing  Applications&lt;BR&gt;</P>
+<P> 605 East Springfield Avenue&lt;BR&gt;</P>
+<P> Champaign, Illinois 618205518&lt;BR&gt;</P>
+<P>
+<FONT SIZE=+1><I>Horizontal Rules</I></FONT></P>
+<P>&lt;HR&gt;</P>
+<P>The &lt;HR&gt; tag produces a horizontal line the width of the document page</P>
+<P>
+<FONT SIZE=+1><I>Links to Specific Sections in Other Documents</I> </FONT></P>
+<P>&lt;A NAME =&quot;&quot;&gt; &lt;/A&gt;</P>
+<P>Anchors can also be used to move to a particular section in a document. Suppose you wish to set a link from document A to a specific section in document B (Call this file documentB.html.).  First you need to set up a &quot;named&quot; anchor in document B.  For example, to set up an anchor named &quot;Jabberwocky&quot; in document B enter</P>
+<P> &lt;<I>A NAME = &quot;Jabberwocky&quot;</I>&gt;anchored&lt;/A&gt; </P>
+<P>at the point in document B where you want the link to take the user.</P>
+<P>An example of  DocumentB might look like this:</P>
+<P>This is DocumentB with the &lt;A NAME = &quot;Jabberwocky&quot;&gt;anchored&lt;/A&gt; text.</P>
+<P>The user comes directly to this paragraph (anchor) after selecting the link in</P>
+<P>DocumentA.</P>
+<P>HTML DocumentB</P>
+<P>Now when you create the link in document A, include not only the filename, but also the named anchor, separated by a hash mark (#). For example:</P>
+<P>This is my &lt;A HREF = &quot;documentB.html#Jabberwocky&quot;&gt;link&lt;<I>/A</I>&gt; to document B.</P>
+<P>An example of DocumentA might look like this:</P>
+<P>When you select this &lt;A HREF = anchor.html#Jabberwocky&quot;&gt;link&lt;/A&gt; to documentB</P>
+<P>you will be taken to the named anchor in that document. DocumentB is displayed</P>
+<P>beginning with the paragraph that contains the named anchor.</P>
+<P>HTML DocumentA</P>
+<P>Now selecting the word ``link'' in document A sends the reader directly to the words ``anchored text'' in document B.</P>
+<P>DocumentA and DocumentB viewed from Lynx:                                                        </P>
+<P>This is DocumentB with the <B>anchored</B> text. The user comes directly to this paragraph (anchor) after selecting the link in DocumentA.</P>
+<P>DocumentB</P>
+<P>When you select this <B>link</B> to documentB you will be taken to the named anchor in that document. DocumentB is displayed beginning with the paragraph that contains the named anchor.</P>
+<P>DocumentA</P>
+<P>
+<FONT SIZE=+1><I>Character Formatting</I></FONT></P>
+<P>&lt;B&gt;- bold text</P>
+<P>&lt;I&gt; - italic text</P>
+<H2><A ID="I6" NAME="I6">
+<BR>Using Character Tags</A></H2>
+<HR ALIGN=CENTER>
+<P>To apply a character style:</P>
+<P> Start with &lt;tag&gt;, where tag is the desired character formatting tag, to indicate the beginning of the tagged text.</P>
+<P> Enter the tagged text.</P>
+<P> End the passage with &lt;/tag&gt;.</P>
+<P>
+<FONT SIZE=+1><I>Special Characters</I></FONT></P>
+<P><B>Escape Sequences</B></P>
+<P>Four characters of the ASCII character set  the left angle bracket (<B>&lt;</B>), the right angle bracket (&gt;), the ampersand (&amp;) and the double quote (&quot;)  have special meaning within HTML and therefore cannot be used &quot;as is&quot; in text. (The angle brackets are used to indicate the beginning and end of HTML tags, and the ampersand is used to indicate the beginning of an escape sequence.)</P>
+<P>   </P>
+<P>To use one of these characters in an HTML document, you must enter its escape sequence instead:</P>
+<P>&amp;lt   - the escape sequence for &lt;</P>
+<P>&amp;gt   - the escape sequence for &gt;</P>
+<P>&amp;amp  - the escape sequence for &amp;</P>
+<P>&amp;quot - the escape sequence for &quot;</P>
+<P>   </P>
+<P><B><I>NOTE:</I></B> Unlike the rest of HTML, the escape sequences are case sensitive. You CANNOT, for instance, use &amp;LT; instead of &amp;lt;.</P>
+<P>Here is a second, longer example of an HTML document:</P>
+<P> &lt;TITLE&gt;A Longer Example&lt;/TITLE&gt;</P>
+<P>&lt;H1&gt;A Longer Example&lt;/H1&gt;</P>
+<P>This is a simple HTML document. This is the first paragraph. &lt;P&gt;</P>
+<P>This is the second paragraph, which shows special effects. This is a word in &lt;I&gt;italics&lt;/I&gt;.  This is a word in &lt;B&gt;bold&lt;/B&gt;. Here is an inlined GIF image: &lt;IMG SRC = &quot;myimage.gif&quot;&gt;.&lt;P&gt;</P>
+<P>This is the third paragraph, which demonstrates links.  Here is a hypertext link from the word &lt;A HREF = &quot;subdir/myfile.html&quot;&gt;foo&lt;/A&gt; to a document called &quot;subdir/myfile.html&quot;. (If you try to follow this link, you will get an error screen.) &lt;P&gt;</P>
+<P> &lt;H2&gt;A secondlevel header&lt;/H2&gt;</P>
+<P>This is the second example viewed with Netscape:</P>
+<P>A Longer Example</P>
+<P>
+<IMG SRC="mg50.gif" WIDTH = 213 HEIGHT = 153 ALT="Undisplayed Graphic">Figure 3</P>
+<P>This is the second example viewed with Lynx:</P>
+<P>                                                      A Longer Example</P>
+<P> </P>
+<P>A LONGER EXAMPLE </P>
+<P>This is a simple HTML document. This is the first paragraph.</P>
+<P>This is the second paragraph, which shows special effects. This is a word in italics. This is a word in bold. Here is an inlined GIF image: [IMAGE] .</P>
+<P>This is the third paragraph, which demonstrates links. Here is a hypertext link from the word foo to a document called &quot;subdir/myfile.html&quot;. (If you try to follow this link, you will get an error screen.)</P>
+<P>A secondlevel header</P>
+<P>Figure 4</P>
+<HR ALIGN=CENTER>
+<P><A HREF="authcomp.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="glossary.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

@@ -1,0 +1,1038 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 9">
+<link id=Main-File rel=Main-File href="../sampling.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = document.all.item("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#FFFFFF",gOtlNormalClr="#000000",gOtlActiveClr="#FFFF00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+	if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+}
+function LoadOtl()
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	OtlObj.style.display="block"
+	OtlObj.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	for(ii=0; ii<document.all.tags("DIV").length; ii++) {
+		obj=document.all.tags("DIV").item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 ) {   
+			gChildEntryTable[count++]=obj
+			obj.children.tags("TABLE").item(0).style.borderColor=gOtlNormalClr
+		}
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=document.all.item("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=document.all.item("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+
+	obj=document.all.item("PPTB"+idx)
+	if( obj )
+		obj.style.borderLeftColor=obj.style.borderBottomColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( obj ){ ChgClr(obj,gOtlActiveClr) }
+function Out( obj ){ ChgClr(obj,gOtlHiliteClr) }
+function ObjExists( ii ) { obj=document.all("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+//-->
+</script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:5px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	padding-left:10px;}
+.CBorder
+	{position:relative;
+	width:100%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	padding-bottom:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()">
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:absolute;width:70px;visibility:hidden' align=left
+ cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span style="mso-spacerun:
+ yes">  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=right cellpadding=0 cellspacing=0>
+ <td>
+ <div id="nb_sldshwBorder" style='position:absolute;left:-20px;width:20px;
+ height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_sldshw" title="Full Screen Slide Show"
+ style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'>Outline</div>
+ <div title="Show/Hide Outline" id="nb_otl" style='position:absolute;
+ top:0%;left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden'>
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr>
+  <td>
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" onmouseover="Over(this)"
+  id=PPTL1 onmouseout="Out(this)">Why Analyze Environmental Samples?</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB1 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun: yes"> </span>What is
+    the purpose of environmental &#9;&#9;sampling and analysis?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>To
+    obtain a small but informative portion of the population being investigated</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>You
+    can’t sample the whole environment.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>There
+    are an<span style="mso-spacerun: yes">  </span>infinite number of potential
+    samples.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun:
+    yes"> </span>Therefore, representative (or unrepresentative) &#9;<span
+    style="mso-spacerun: yes">      </span>samples are taken and conclusions
+    about the site are made based on these selected samples.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" onmouseover="Over(this)"
+  id=PPTL2 onmouseout="Out(this)">Samples That Don’t Meet Your Objectives Are
+  Not Worth Analyzing</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB2 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>If they
+    can’t provide required information, then why collect and analyze them?</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Planning
+    for informative sampling is an<span style="mso-spacerun: yes">  
+    </span>&#9;<span style="mso-spacerun:
+    yes">                                     </span>integral part of any
+    environmental study.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Data Quality Objectives (DOOs) define what</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Measurement Quality Objectives (MQOs) define how</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.htm');" onmouseover="Over(this)"
+  id=PPTL3 onmouseout="Out(this)">What Causes DQOs to Fail?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB3 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2><span style="mso-spacerun:
+    yes"> </span>Incomplete planning results in failed or</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>&#9; unrealistic DQO goals.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Sampling
+    sites are more inaccessible than &#9; &#9;expected, don’t provide expected
+    type or &#9;&#9;quality of samples, or cost more to sample.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun:
+    yes"> </span>Analytical methods have matrix effects (poor &#9;analyte
+    recoveries, unexpected interferences).</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Costs of
+    sampling &amp; analysis are too high.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Data
+    doesn’t meet DQO requirements.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" onmouseover="Over(this)"
+  id=PPTL4 onmouseout="Out(this)">Seven Stages of DQO Planning</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB4 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;State<span style="mso-spacerun: yes"> 
+    </span>the<span style="mso-spacerun: yes">  </span>Problem<span
+    style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes"> 
+    </span>be<span style="mso-spacerun: yes">  </span>Resolved</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;Identify<span style="mso-spacerun: yes"> 
+    </span>the<span style="mso-spacerun: yes">  </span>Decision<span
+    style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes"> 
+    </span>be<span style="mso-spacerun: yes">  </span>Made</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;Identify<span style="mso-spacerun: yes"> 
+    </span>All<span style="mso-spacerun: yes">  </span>the<span
+    style="mso-spacerun: yes">  </span>Inputs<span style="mso-spacerun: yes"> 
+    </span>to<span style="mso-spacerun: yes">  </span>the<span
+    style="mso-spacerun: yes">  </span>Decision</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;Narrow<span style="mso-spacerun: yes"> 
+    </span>the<span style="mso-spacerun: yes">  </span>Boundaries<span
+    style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes"> 
+    </span>the<span style="mso-spacerun: yes">  </span>Study</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;Develop<span style="mso-spacerun: yes"> 
+    </span>a<span style="mso-spacerun: yes">  </span>Decision<span
+    style="mso-spacerun: yes">  </span>Rule</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;Develop<span style="mso-spacerun: yes"> 
+    </span>Uncertainty<span style="mso-spacerun: yes">  </span>Constraints</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&#9;Optimize<span style="mso-spacerun: yes"> 
+    </span>the<span style="mso-spacerun: yes">  </span>Design<span
+    style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes"> 
+    </span>Obtaining<span style="mso-spacerun: yes">  </span>Data</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" onmouseover="Over(this)"
+  id=PPTL5 onmouseout="Out(this)">Step 1 - State the Problem <br>
+  to be Resolved</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB5 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Examples:</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>To
+    determine if specific pollutants are present at a site above stated
+    regulatory concentration limits.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>To track changes in concentration of specific
+    pollutants at a site over time.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>To
+    determine if a factory needs additional wastewater process changes to meet
+    regulations.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.htm');" onmouseover="Over(this)"
+  id=PPTL6 onmouseout="Out(this)">Step 2 - Identify<span style="mso-spacerun:
+  yes">  </span>the<span style="mso-spacerun: yes">  </span>Decision<span
+  style="mso-spacerun: yes">  </span><br>
+  to<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun:
+  yes">  </span>Made / Actions to be Taken</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB6 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>What exactly
+    will be done if specific pollutants are present at a site above the stated
+    action levels (i.e.,<span style="mso-spacerun: yes">  </span>concentration
+    limits for a chemical)?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Do
+    additional cleanup at the landfill?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Prohibit
+    fishing / swimming in the lake?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Notify
+    residents of the drinking water supply?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Take
+    more frequent samples at the monitoring wells?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Fine the
+    factory emitting pollutants from the stack?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" onmouseover="Over(this)"
+  id=PPTL7 onmouseout="Out(this)">Step 3 - Identify All the Inputs <br>
+  to the Decision</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB7 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun: yes"> </span>This is
+    often a difficult step; details needed.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>What
+    data is needed to make decisions?</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Physical
+    characteristics (pH, color, turbidity, temp.)? weather measurements?
+    Specific chemical identifications? Chemical concentrations also? What
+    detection levels? What sample matrices (ground water, industrial wastewater,
+    soil, sediment, air, food)?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>How will
+    the needed data be obtained?</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>What
+    methods will be used? Are the detection levels needed achievable? Is the
+    method verified for the matrices?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" onmouseover="Over(this)"
+  id=PPTL8 onmouseout="Out(this)">Step 4 - Narrow the Boundaries <br>
+  of the Study</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB8 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun: yes"> </span>Narrow
+    spatial boundaries</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Where will the samples be collected?</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>All or
+    portions of a land site? Upstream 1 Km and downstream every 0.5 Km for 10
+    Km? Along the shoreline 5 Km from an industrial outfall? Every 1 Km for 25
+    Km downwind from a stack plum? Samples of food from one area of a city, the
+    whole city, multiple cities?<span style="mso-spacerun: yes">  </span>What
+    logistical issues could prevent sampling?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.htm');" onmouseover="Over(this)"
+  id=PPTL9 onmouseout="Out(this)">Step 4 (continued) Narrow the Boundaries of
+  the Study</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB9 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=5><font size=2><span style="mso-spacerun: yes"> </span>Narrow
+    the temporal boundaries</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=4><font size=2>When and how long will samples be collected?</font></td>
+   </tr>
+   <tr>
+    <td colspan=5></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=3><font size=2><span style="mso-spacerun: yes"> </span>Before
+    and after a land site has been cleaned up? Before and after a new treatment
+    at a factory has been installed? Once a year for 5 years?, Once a month for
+    a year?, Once a day for a week?, Every time it rains during this season?
+    Every time the smog level reaches a certain concentration this year? Every
+    time the field has been sprayed with pesticides this summer?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" onmouseover="Over(this)"
+  id=PPTL10 onmouseout="Out(this)">Step 5 - Develop Decision Rules</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB10 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=4><font size=2><span style="mso-spacerun: yes"> </span>Decision
+    Rules are “IF THEN” actions.</font></td>
+   </tr>
+   <tr>
+    <td colspan=4></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=3><font size=2>IF “A” happens THEN take Action B, Otherwise
+    take Action C.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=3><font size=2>IF “A” does not happen, THEN take action B</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=3><font size=2>…and more</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.htm');" onmouseover="Over(this)"
+  id=PPTL11 onmouseout="Out(this)">Step 6 - Develop Uncertainty Constraints</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB11 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun:
+    yes"> </span>Uncertainty constraints are limits on the amount of error in
+    the data that you will tolerate.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>They are
+    used to establish performance goals for design of the data collection
+    activity.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>These
+    limits should be based on the consequences of making a wrong decision.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>e.g.,
+    human health risk</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.htm');" onmouseover="Over(this)"
+  id=PPTL12 onmouseout="Out(this)">Step 6 - (Continued)<span
+  style="mso-spacerun: yes">  </span>Develop Uncertainty Constraints</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB12 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun:
+    yes"> </span>Environmental data always have some degree of error associated
+    with them</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>Public
+    and decision makers often do not realize this fact.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun:
+    yes"> </span>Environmental data only provides estimates of the “true”
+    situation. For example:</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>You
+    never analyze all the water in a lake or pond, all the air, all the food,
+    etc..</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.htm');" onmouseover="Over(this)"
+  id=PPTL13 onmouseout="Out(this)">There are Multiple Sources of Variability
+  Which Affect DQOs</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB13 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Pollutant</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Distribution</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Field Sampling</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Sample Handling</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Sample Prep.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Analysis</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Data</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Handling</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.htm');" onmouseover="Over(this)"
+  id=PPTL14 onmouseout="Out(this)">Someone Must Determine What MQOs are
+  Acceptable</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB14 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>Someone
+    must decide what MQOs are acceptable (US EPA, a State Regulator, you).</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>How many false positives or negatives are OK?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>How precise does the data need to be?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>How
+    accurate does the data need to be?</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>How else will you know if you succeeded in your
+    study?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" onmouseover="Over(this)"
+  id=PPTL15 onmouseout="Out(this)">Higher Confidence Levels Require More
+  Samples and Higher Costs</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB15 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>In general, more stringent measures of data
+    quality result in higher costs.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>The degree of certainty for data quality should
+    take into account the consequences if decisions are wrong.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.htm');" onmouseover="Over(this)"
+  id=PPTL16 onmouseout="Out(this)">Confidence Levels Should Be Logical Rather
+  Than Arbitrary</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB16 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun: yes"> </span>The
+    question of relative degree of confidence is often arbitrary.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>Everyone
+    likes to start out with a high degree of confidence (for example, 99% or
+    95%)</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun: yes"> </span>The
+    higher the confidence the more the cost.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>More
+    samples are needed to obtain higher statistical confidence levels.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Often
+    you may not be able to afford the confidence in the data that you would
+    like because of<span style="mso-spacerun: yes">  </span>budgets.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.htm');" onmouseover="Over(this)"
+  id=PPTL17 onmouseout="Out(this)">Step 7 - Optimize the Design for Obtaining
+  Data</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB17 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2><span style="mso-spacerun: yes"> </span>A
+    satisfactory design for obtaining data to meet your specific objectives is
+    rarely achieved the first time.</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2><span style="mso-spacerun:
+    yes"> </span>Iteration is usually needed.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>If not
+    with Steps 1 - 5, usually at least Step 6.</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2><span style="mso-spacerun: yes"> </span>Almost
+    always iteration is needed with the numbers of samples to be analyzed
+    because that affects the statistical confidence levels of the data and
+    confidence may have to be decreased to meet budget limitations.</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</body>
+
+</html>

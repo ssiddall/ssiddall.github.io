@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Every project begins with someone saying “Could you do this?"</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b>CourseWork Pilot
+at Denison: the technical details</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Charles Reitsma,
+Systems Engineer</b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Every project begins with someone saying “Could you do
+this?” and making it sound so easy that you say “yes.” I was given 5 months
+warning. The project seemed simple enough: set up an open source courseware
+project from Stanford. So I accepted. I immediately recruited the assistance of
+our Oracle DBA, Doug Davenport. Then I promptly forgot about it.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>In October I was again warned the project was coming up.
+This time I was given the choice of going to Stanford for training on the
+project before installing it. I accepted. At Stanford, the project was laid out
+in detail in two tracks: a technical track and a user/administrator track. I
+sat in on the technical track. Later I would feel that it would have been good
+to get both tracks. What I did see was perfectly clear. The developers took us
+through the installation steps and did not appear to be glossing over anything.
+The developers did not actually have the code ready for us to take yet but I
+felt ready to run with it. A week later I had the tarball.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>I quickly realized as I worked through the steps alone that
+I did not know all I needed to install and run a Tomcat/Apache instance. The Tomcat
+web site is full of information but very little clear instruction. The product
+is distributed in binary code form and source code form. I settled for the
+binary code as I wanted to get the project running quickly. In my search for
+clear instructions I found <i>More Servlets and Java Server Pages</i> by Marty
+Hall. It contains step-by-step guides for getting Tomcat installed and running.
+It had good explanations of what the common errors are. Within three weeks of
+leaving Stanford I had Stanford’s CourseWork project running. The Oracle
+database was built and connecting properly thanks to the efforts of the DBA.
+Scott was already asking if a single site could host more than one school’s
+courses on it. Stanford had set up a mailing list for the project so this and
+any other question that came up went there.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Scott indicated that he thought three weeks was excessive
+for getting the project running. Considering that I had no hands on experience
+with Tomcat prior and no Java programming I felt that we had gotten through it
+rather easily. During the time I had gotten the project running, John Norman in
+the U.K. had modified it to work with Java 1.4, Tomcat version 4, using
+Postgres as its database and provided the developers with a patch for their
+code.  Clearly the people with additional experience and skills were further
+ahead.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>So, Denison now had <i>Stanford’s</i> CourseWork product
+running on our campus. We needed to make it <i>Denison</i><i>’s</i> CourseWork
+product. Changes had to be made to the Oracle tables to populate them with the
+name of departments at Denison. Stanford uses quarters and Denison uses
+semesters so more changes were required. These changes were done by editing the
+original scripts that built the Oracle tables and rebuilding. Scott had me give
+the Stanford graphics to his staff to change them into Denison graphics. I then
+needed to go through all the template files and make the links to documentation
+and email addresses point to Denison University sites. About this time Stanford
+provided us with a new tarball with the latest code changes.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>With vacations and holidays the Denison version of CourseWork
+was not online until January 22. Scott created the first course and thought it
+was slick. A week later when he started creating user accounts we realized
+something was wrong. Users were supposed to get an email message indicating
+their new account and password. Users were not getting these emails. Daisy
+Flemming, CourseWork developer at Stanford, realized they had used Stanford’s
+email server in the code. She told us what to change. We did this, removed all
+the accounts and recreated them. The users received their emails with their
+passwords.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Two weeks later and we started seeing error messages when
+assignment were created. This was tracked down to expectations of being able to
+write into certain directories that did not yet exist.  March 9<sup>th</sup>,
+2003 I am still being told about pages which need to have their headers and
+footers corrected to eliminate Stanford links in favor of Denison ones. A few
+weeks later the first of three students forgets his CourseWork password. I
+found the passwords in cleartext in one of the Oracle tables and was able to
+tell the student.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>So, we were successful in getting CourseWork fixed and
+running. Questions were answered by the developers and changes provided via
+their mailing list. It is wonderful to be able to discuss and make changes as
+needed. Getting some training in Java or having someone else with Java training
+available would be helpful. If we choose to continue using CourseWork we will
+need to consider multiple front-end systems to provide adequate performance.
+Stanford uses 4 Sun Netra T1 systems. Denison would likely find three Sun
+LX50’s sufficient for the whole campus. The pilot was carried out on a Sun
+Netra X1 for the frontend and a Sun E450 for the Oracle database.</p>
+
+</div>
+<p>
+<strong><a href="http://siddall.info/talks/cw2/">Back to presentation</a></strong>
+
+</body>
+
+</html>

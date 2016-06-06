@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Admission Application</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>SCT WWW Information System<br>
+Admission Application</h2>
+
+<hr>
+
+<h2><img src="teach.gif" width="40" height="40"> High School</h2>
+
+<p><img src="info.gif" alt="INFO" width="50" height="30"> <i>Select
+the high school you attended from the list provided. If you can
+not find your high school, enter the high school information in
+the fields provided. When this section is complete press the
+Update button to return to the application.</i></p>
+
+<form action="apindex9.htm" method="post">
+    <table border="0">
+        <tr>
+            <th align="left"><font size="2">School Name:</font></th>
+            <td><font size="2"><select name="hs_code" size="1">
+                <option value>Not Reported </option>
+                <option value>Not Found </option>
+                <option value="000008">Central High School </option>
+                <option value="123123">Downingtown High School </option>
+                <option value="000002">East High School </option>
+                <option value="000005">Haverford High School </option>
+                <option value="000001">Malvern Prep School </option>
+                <option value>Not Found </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr>
+            </td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">If School not found:</font></th>
+            <td><table border="0">
+                <tr>
+                    <th align="left"><font size="2">School Name:</font></th>
+                    <td colspan="2"><font size="2"><input
+                    type="text" size="30" maxlength="30"
+                    name="hs_name"></font></td>
+                </tr>
+                <tr>
+                    <th align="left"><font size="2">City:</font></th>
+                    <td><font size="2"><input type="text"
+                    size="20" maxlength="20" name="city"></font></td>
+                    <th align="left"><font size="2">State/Province:</font></th>
+                    <td><font size="2"><select name="stat"
+                    size="1">
+                        <option value>Not Reported </option>
+                        <option value>Not Applicable </option>
+                        <option value="AK">Alaska </option>
+                        <option value="AZ">Arizona </option>
+                        <option value="CO">Colorado </option>
+                        <option value="CT">Connecticut </option>
+                        <option value="DE">Delaware </option>
+                        <option value="GA">Georgia </option>
+                        <option value="IL">Illinois </option>
+                        <option value="LA">Louisiana </option>
+                        <option value="PA">Pennsylvania </option>
+                        <option value="WI">Wisconsin </option>
+                    </select> </font></td>
+                </tr>
+                <tr>
+                    <th align="left"><font size="2">Zip/Postal
+                    Code:</font></th>
+                    <td><font size="2"><input type="text"
+                    size="10" maxlength="10" name="zip"></font></td>
+                    <th align="left"><font size="2">Country:</font></th>
+                    <td><font size="2"><select name="natn"
+                    size="1">
+                        <option value>Not Reported </option>
+                        <option value="CA">Canada </option>
+                        <option value="CN">China </option>
+                        <option value="CY">Cyprus </option>
+                        <option value="EG">Egypt </option>
+                        <option value="FR">France </option>
+                        <option value="GR">Greece </option>
+                        <option value="MX">Mexico </option>
+                        <option value="NZ">New Zealand </option>
+                        <option value="US">United States of America </option>
+                    </select> </font></td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr>
+            </td>
+        </tr>
+    </table>
+    <table border="0">
+        <tr>
+            <th align="left"><font size="2">Graduation Date:</font></th>
+            <td><font size="2"><input type="text" size="8"
+            maxlength="8" name="gdate"> <i>(MM/DD/YY format)</i> </font></td>
+            <th align="left"><font size="2">College Prep?</font></th>
+            <td><font size="2"><input type="radio" name="prep"
+            value="Y">Yes <input type="radio" name="prep"
+            value="N">No <input type="radio" checked name="prep">Not
+            Reported </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">GPA:</font></th>
+            <td><font size="2"><input type="text" size="5"
+            maxlength="5" name="gpa"> <i>(must be numeric)</i> </font></td>
+            <th align="left"><font size="2">Class Rank/Size:</font></th>
+            <td><font size="2"><input type="text" size="4"
+            maxlength="4" name="rank">/ <input type="text"
+            size="4" maxlength="4" name="cl_size"> <i>(must be
+            numeric)</i> </font></td>
+        </tr>
+    </table>
+    <p><input type="submit" value="Update"> <input type="reset"
+    value="Reset"> </p>
+</form>
+
+<hr>
+
+<p><a href="apindex9.htm">Return to Application Index</a> <a
+href="help.htm"><img src="help.gif" width="85" height="24"></a> </p>
+</body>
+</html>

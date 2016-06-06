@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Mail, News, Notes Command Summary</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="pubprin.htm">
+<LINK REL="Previous" HREF="biblio.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="biblio.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="pubprin.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I2">VMS MailUSENET NewsVAXNotes</A></LI>
+<LI>
+<A HREF="#I3">VMS MailUSENET NewsVAXNotes</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Appendix I - Command Summary for Mail, News and Notes</A></H1>
+<HR ALIGN=CENTER>
+<H2><A ID="I2" NAME="I2">
+<BR>VMS MailUSENET NewsVAXNotes</A></H2>
+<HR ALIGN=CENTER>
+<P><B>To Enter:</B>$ mail$ netnews$ notes</P>
+<P><B>Prompt:</B>MAIL&gt;NEWS&gt;NOTES&gt;</P>
+<P><B>To See a Directory: </B>MAIL&gt; dirNEWS&gt; dir/all (shows all groups)</P>
+<P>NEWS&gt; dir/reg (shows those you've registered for)NOTES&gt; dir</P>
+<P><B>To Read Messages You See in </B><B>the Directory:</B>MAIL&gt; 10</P>
+<P>(or highlight and press  R  ; R   to read next message)NEWS&gt; 640</P>
+<P>(or highlight and press  R  ; R   to read next message)NOTES&gt; 1.10</P>
+<P>(press  R   to read next message)</P>
+<P><B>To Extract Current Message:</B>MAIL&gt; extract &lt;filename&gt;NEWS&gt; extract &lt;filename&gt;NOTES&gt; extract &lt;filename&gt; OR</P>
+<P>NOTES&gt; extract &lt;filename&gt; 1.* (places topic and replies into filename)</P>
+<P><B>To Start a New Subject:</B>MAIL&gt; sendNEWS&gt; post (while in newsgroup)NOTES&gt; write (while in conference)</P>
+<P><B>To Delete a Message (or </B><B>Messages):</B>MAIL&gt; delete (current message)</P>
+<P>MAIL&gt; delete 1-20 (deletes 1-20)NEWS&gt; n/aNOTES&gt; delete note 1.2 (you can only delete notes you've written)</P>
+<P><B>To Reply to the Sender of the </B><B>Current Message on the Screen:</B>MAIL&gt; reply (replies to writer of current message)NEWS&gt; reply (replies to writer of current message)NOTES&gt; reply (to a topic or reply; places your reply in the conference)</P>
+<H2><A ID="I3" NAME="I3">
+<BR><B>VMS Mail</B><B>USENET News</B><B>VAXNotes</B></A></H2>
+<HR ALIGN=CENTER>
+<P><B>To Send a Copy of the Current </B><B>Message to One Person:</B>MAIL&gt; forward </P>
+<P>TO:&gt; &lt;user-id&gt;NEWS&gt; forward</P>
+<P>TO:&gt; &lt;user-id&gt;NOTES&gt; forward</P>
+<P>TO:&gt; &lt;user-id&gt;</P>
+<P><B>To Send a Copy of the Current </B><B>Message to Multiple People:</B>MAIL&gt; forward</P>
+<P>TO:&gt; &lt;user-ids&gt; or &lt;.dis list&gt;</P>
+<P>NEWS&gt; forward</P>
+<P>TO: &lt;user-ids&gt;NOTES&gt; forward</P>
+<P>TO: &lt;user-ids&gt; or &lt;.dis list&gt;</P>
+<P><B>To Send a Text File You're </B><B>Already Created:</B>MAIL&gt; send [.subdir]&lt;filename&gt;</P>
+<P>TO: &lt;user-id(s)&gt;NEWS&gt; post [.subdir]&lt;filename&gt;</P>
+<P>(while in newsgroup)NOTES&gt; &lt;PF1&gt; I [.subdir]&lt;filename&gt;</P>
+<P>(while in conference) OR</P>
+<P>NOTES&gt; write [.subdir]&lt;filename&gt;</P>
+<P>OR</P>
+<P>NOTES&gt; reply [.subdir]&lt;filename&gt;</P>
+<P><B>To Print a Message:</B>MAIL&gt; set queue &lt;queuename&gt;</P>
+<P>(do once to set default, then)</P>
+<P>MAIL&gt; print (prints current message on exit)NEWS&gt; print/que=&lt;queuename&gt;</P>
+<P>(prints current message on exit)</P>
+<P>NOTES&gt; print/que=&lt;queuename&gt;</P>
+<P>(prints current message on exit)</P>
+<P><B>To Print Multiple Messages:</B>MAIL&gt; print 1-10NEWS&gt; print/que=&lt;queuename&gt; 1-10 NOTES&gt; print 1.5-1.10  OR</P>
+<P>NOTES&gt; print 1.* (prints topic and all replies)</P>
+<P><B>To Register for a Group:</B>n/a NEWS&gt; dir/all</P>
+<P>(now highlight group you want)</P>
+<P>NEWS&gt; registerNOTES&gt; ADD ENTRY KENYON:: conferencename</P>
+<P><B>To Delete a Group from Your </B><B>Register:</B>n/a NEWS&gt; dir/reg</P>
+<P>(now highlight group you want)</P>
+<P>NEWS&gt; deregisterNOTES&gt; DELETE ENTRY conferencename</P>
+<P><B>To Exit:</B>MAIL&gt; exitNEWS&gt; exitNOTES&gt; close</P>
+<P>NOTES&gt; exit</P>
+<HR ALIGN=CENTER>
+<P><A HREF="biblio.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="pubprin.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

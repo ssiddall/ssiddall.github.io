@@ -1,0 +1,257 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/13/01 13:02:01">
+<title>Jumpers and Connectors : Dell PowerEdge 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1041040"> Jumpers and 
+Connectors
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1027457">Jumpers&#151;A&nbsp;General Explanation</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1045790">System Board Jumpers</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1062481">System Board Connectors</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1046001">Expansion-Card Riser-Board Components and PCI Buses</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1069023">SCSI Backplane Board Connectors</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1033402">Disabling a Forgotten Password</A></P>
+
+
+<br>
+<p>This section provides specific information about the system jumpers. It also provides some basic information on jumpers and switches and describes the connectors on the various boards in the system.</p><hr noshade size="1">
+<h2><a name="1027457">Jumpers&#151;A&nbsp;General Explanation</a></h2>
+
+
+<p>Jumpers provide a convenient and reversible way of reconfiguring the circuitry on a printed circuit board. When reconfiguring the system, you may need to change jumper settings on circuit boards or drives.</p><h3><a name="1027593"> Jumpers
+</a></h3>
+<p>Jumpers are small blocks on a circuit board with two or more pins emerging from them. Plastic plugs containing a wire fit down over the pins. The wire connects the pins and creates a circuit. To change a jumper setting, pull the plug off its pin(s) and carefully fit it down onto the pin(s) indicated. <a href="5g375aa0.htm#1040250">Figure&nbsp;A-1</a> shows an example of a jumper.</p><p class="FigureTableTitle"><a name="1040250"> </a>
+Figure A-1.&#32; Example Jumpers
+
+</p>
+
+<a name="1027725"></a><p><img src="5g375aa3.jpg" height="137" width="172" align="bottom">
+</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>Ensure that the system is turned off before you change a jumper 
+setting. Otherwise, damage to the system or unpredictable results may occur.
+</b></td>
+  </tr>
+</table>
+
+
+
+
+<p>A jumper is referred to as open or unjumpered when the plug is pushed down over only one pin or if there is no plug at all. When the plug is pushed down over two pins, the jumper is referred to as jumpered. The jumper setting is often shown in text as two numbers, such as 1-2. The number 1 is printed on the circuit board so that you can identify each pin number based on the location of pin 1.</p><p><a href="5g375aa0.htm#1045802">Figure&nbsp;A-2</a> shows the location and default settings of the system jumper blocks. See <a href="5g375aa0.htm#1062228">Table&nbsp;A-1</a> for the designations, default settings, and functions of the system's jumpers.</p><hr noshade size="1">
+<h2><a name="1045790">System Board Jumpers</a></h2>
+
+
+<p><a href="5g375aa0.htm#1045802">Figure&nbsp;A-2</a> shows the location of the configuration jumpers on the system board. <a href="5g375aa0.htm#1062228">Table&nbsp;A-1</a> lists the jumpers settings.</p><p class="FigureTableTitle"><a name="1045802"> </a>
+Figure A-2.&#32; System Board Jumpers
+
+</p>
+
+<a name="1045807"></a><p><img src="5g375aa2.jpg" height="568" width="450" align="bottom">
+</p><a name="1045914"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1062228">Table A-1.&#32; System Board Jumper Settings</a></p></p>
+<tr><th valign="top" align="left"><a name="1062234"> </a>
+<p><b>Jumper</b></p>
+
+
+</th><th valign="top" align="left"><a name="1062236"> </a>
+<p><b>Setting</b></p>
+
+
+</th><th valign="top" align="left"><a name="1062238"> </a>
+<p><b>Description</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left" colspan=1 rowspan=2><p>PASSWD</p></td><td valign="top" align="left"><p><img src="5g375aa5.jpg" height="17" width="29" align="bottom">
+&nbsp;&nbsp;&nbsp;(default)</p></td><td valign="top" align="left"><p>The password feature is enabled.</p></td></tr>
+<tr><td valign="top" align="left"><p><img src="5g375aa6.jpg" height="16" width="29" align="bottom">
+</p></td><td valign="top" align="left"><p>The password feature is disabled.</p></td></tr>
+<tr><td valign="top" align="left" colspan=1 rowspan=2><p>NVRAM_CLR</p></td><td valign="top" align="left"><p><img src="5g375aa7.jpg" height="16" width="29" align="bottom">
+&nbsp;&nbsp;&nbsp;(default)</p></td><td valign="top" align="left"><p>The configuration settings are retained at system boot.</p></td></tr>
+<tr><td valign="top" align="left"><p><img src="5g375aa8.jpg" height="17" width="29" align="bottom">
+</p></td><td valign="top" align="left"><p>The configuration settings are cleared at next system boot. (If the configuration settings become corrupted to the point where the system will not boot, install the jumper and boot the system. Remove the jumper before restoring the configuration information.)</p></td></tr>
+<tr><td valign="top" align="left"><p>SPARE</p></td><td valign="top" align="left"><p>&#151;</p></td><td valign="top" align="left"><p>To store a spare, unused jumper.</p></td></tr>
+<tr><td valign="top" align="left" colspan=3 rowspan=1><p><span class="notes">NOTE: </span>For the full name of an abbreviation or acronym used in this table, see "<a href="5g375az.htm#997702">Abbreviations and 
+Acronyms</a>."
+</p>
+</td></tr>
+
+</table>
+
+
+
+
+</p><hr noshade size="1">
+<h2><a name="1062481">System Board Connectors</a></h2>
+
+
+<p>See <a href="5g375aa0.htm#1062490">Figure&nbsp;A-3</a> and <a href="5g375aa0.htm#1062607">Table&nbsp;A-2</a> for the location and description of system board connectors.</p><p class="FigureTableTitle"><a name="1062490"> </a>
+Figure A-3.&#32; System Board Connectors
+
+</p>
+
+<a name="1062603"></a><p><img src="5g375a13.jpg" height="600" width="656" align="bottom">
+</p><a name="1064704"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1062607">Table A-2.&#32; System Board Connectors</a></p></p>
+<tr><th valign="top" align="left"><a name="1062611"> </a>
+<p><b>Connector</b></p>
+
+
+</th><th valign="top" align="left"><a name="1062613"> </a>
+<p><b>Description</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>BATTERY</p></td><td valign="top" align="left"><p>System battery</p></td></tr>
+<tr><td valign="top" align="left"><p>DIMM <i>Xn</i></p></td><td valign="top" align="left"><p>Memory modules (6), where <i>X</i> is the bank and <i>n</i> is the slot in the bank</p></td></tr>
+<tr><td valign="top" align="left"><p>FAN<i>n</i></p></td><td valign="top" align="left"><p>Cooling fans:</p><ul><li>1, 2 &#151; system fans</li>
+<li>3, 4 &#151; microprocessors (2)</li>
+<li>5, 6 &#151; optional</li>
+<li>7 &#151; expansion cards</li>
+</ul></td></tr>
+<tr><td valign="top" align="left"><p>PROC <i>n</i></p></td><td valign="top" align="left"><p>Microprocessors (2)</p></td></tr>
+<tr><td valign="top" align="left"><p>RAID_BAT</p></td><td valign="top" align="left"><p>Battery cable for optional integrated RAID controller</p></td></tr>
+<tr><td valign="top" align="left"><p>RAID_DIMM</p></td><td valign="top" align="left"><p>Memory module for optional integrated RAID controller</p></td></tr>
+<tr><td valign="top" align="left"><p>RAID_KEY</p></td><td valign="top" align="left"><p>Hardware key for optional integrated RAID controller</p></td></tr>
+<tr><td valign="top" align="left"><p>VRM <i>n</i></p></td><td valign="top" align="left"><p>Microprocessor VRMs (2)</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><span class="notes">NOTE: </span>For the full name of an abbreviation or acronym used in this table, see "<a href="5g375az.htm#997702">Abbreviations and 
+Acronyms</a>."
+</p>
+</td></tr>
+
+</table>
+
+
+
+
+</p><hr noshade size="1">
+<h2><a name="1046001">Expansion-Card Riser-Board Components and PCI Buses</a></h2>
+
+
+<p><a href="5g375aa0.htm#1073242">Figure&nbsp;A-4</a> shows the components on the expansion-card riser board, including the expansion-card slots and buses. <a href="5g375c60.htm#1163728">Table&nbsp;6-1</a> lists the PCI bus and operating speed for each expansion-card slot.</p><p class="FigureTableTitle"><a name="1073242"> </a>
+Figure A-4.&#32; Expansion-Card Riser-Board Components
+
+</p>
+
+<a name="1046014"></a><p><img src="5g375aa9.jpg" height="169" width="582" align="bottom">
+</p><hr noshade size="1">
+<h2><a name="1069023">SCSI Backplane Board Connectors</a></h2>
+
+
+<p><a href="5g375aa0.htm#1062031">Figure&nbsp;A-5</a> shows the location of the connectors on the SCSI backplane board.</p><p class="FigureTableTitle"><a name="1062031"> </a>
+Figure A-5.&#32; SCSI Backplane Board Components
+
+</p>
+
+<a name="1062091"></a><p><img src="5g375aa4.jpg" height="407" width="582" align="bottom">
+</p><hr noshade size="1">
+<h2><a name="1033402">Disabling a Forgotten Password</a></h2>
+
+
+<p>The system's software security features include a system password and a setup password, which are discussed in detail in "Using the System Setup Program" in the<i> User's Guide</i>. The password jumper enables these password features or disables them and clears any password(s) currently in use.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information </i>document. 
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1076434"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="2"><a name="1076438"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="3"><a name="1077752"></a>Remove the jumper plug from the password jumper.
+<br><br>
+</ol>
+<p class="indent">See <a href="5g375aa0.htm#1045802">Figure&nbsp;A-2</a> to locate of the password jumper (labeled "PASSWD") on the system board.</p>
+<ol type="1">
+
+<li value="4"><a name="1076445"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="5"><a name="1076446"></a>Reconnect your system and peripherals to their electrical outlets, and turn on the 
+system.
+<br><br>
+</ol>
+<p class="indent">The existing passwords are not disabled (erased) until the system boots with the password jumper plug removed. However, before you assign a new system and/or setup password, you must install the jumper plug.</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> If you assign a new system and/or setup password with the jumper plug still 
+removed, the system disables the new password(s) the next time it boots.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="6"><a name="1076450"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="7"><a name="1076454"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="8"><a name="1076417"></a>Install the jumper plug on the password jumper.
+<br><br>
+
+<li value="9"><a name="1076461"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="10"><a name="1076462"></a>Reconnect your system and peripherals to their electrical outlets, and turn on the 
+system.
+<br><br>
+
+<li value="11"><a name="1076419"></a>Assign a new system and/or setup password.
+<br><br>
+</ol>
+<p class="indent">To assign a new passwords using the System Setup program, see "Assigning a System Password" in the <i>User's Guide</i>.</p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

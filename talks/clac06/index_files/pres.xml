@@ -1,0 +1,63 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152">
+  <p:master id="4" slidesn="1C00D62,9BB06A40" type="main" href="master04.html"
+   xmlhref="master04.xml" template="Slit" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#720000,#ffffff,#8c0000,#ffffcc,#ff3300,#be7960,#ffcc66,#ff9900"/>
+    <p:colorscheme
+     colors="#533f27,#ffffff,#674e2f,#d8b274,#cc9900,#8f5f2f,#ffcc00,#ffffcc"/>
+    <p:colorscheme
+     colors="#545454,#ffffff,#646464,#d4d4ce,#49747d,#8f9699,#8dc4d7,#7fb97f"/>
+    <p:colorscheme
+     colors="#2e5c00,#ffffff,#3a7400,#ffffff,#79ca02,#008080,#a8de0e,#00cc66"/>
+    <p:colorscheme
+     colors="#007572,#ffffff,#008885,#ffff99,#33cccc,#6d6fc7,#ffffcc,#00ff00"/>
+    <p:colorscheme
+     colors="#000086,#ffffff,#0000ac,#ccffff,#0099ff,#00b000,#ffe701,#ff9900"/>
+    <p:colorscheme
+     colors="#5e5e8e,#ffffff,#7474a2,#d1d1df,#cc66ff,#6666ff,#ffcc99,#ccccff"/>
+    <p:colorscheme
+     colors="#d0dae2,#000000,#e7edf1,#000000,#33cccc,#0099cc,#3333cc,#008080"/>
+    <p:colorscheme
+     colors="#ffffff,#000000,#e6e6e6,#000000,#66ccff,#9999ff,#3333cc,#008080"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="5" slidesn="1C00D62,9BB06A40" type="title" href="master05.html"
+   xmlhref="master05.xml" layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:slide id="1" slidesn="1C68FEF,2EA35690" href="slide0001.html"
+   masterhref="master05.html" layout="title_subtitle"
+   slots="centerTitle,subTitle"/>
+  <p:slide id="8" slidesn="1C68FF1,69D40230" href="slide0008.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="5" slidesn="1C68FF0,355A9650" href="slide0005.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="3" slidesn="1C68FEF,97204CF0" href="slide0003.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="11" slidesn="1C69032,1318BA30" href="slide0011.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="2" slidesn="1C68FEF,6E2DAA40" href="slide0002.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="9" slidesn="1C68FF3,5AF442A0" href="slide0009.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="12" slidesn="1C6906D,D5679C10" href="slide0012.html"
+   layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView" restoredleft="155" restoredtop="945"
+   manualadjustleft="t" manualadjusttop="t" hideoutlineicons="t"/>
+  <p:font name="Arial" charset="0" type="4"/>
+  <p:font name="Tahoma" charset="0" type="4" family="34"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+  <p:htmlpublishsettings browsersupport="dual"
+   href="C:\Documents and Settings\Siddall\Desktop\index.html"
+   hidespeakernote="t" noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="24581"/>
+</xml>

@@ -1,0 +1,168 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/13/01 12:39:20">
+<title>Running System Diagnostics : Dell PowerEdge 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1033246"> Running System 
+Diagnostics
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1032447">Features of the System Diagnostics</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1027981">When to Use the System Diagnostics</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1028192">Starting System Diagnostics</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1029172">Using the System Diagnostics</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1032456">Using the Device Groups Menu</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1029775">Device Groups Menu Options</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1031436">Error Messages</A></P>
+
+
+<br>
+<p>Unlike many diagnostic programs, the system diagnostics helps you check the system's hardware without any additional equipment and without destroying any data. By using the system diagnostics, you can have confidence in the system's operation. If you find a problem that you cannot solve by yourself, the diagnostic tests can provide you with important information you will need when talking to a technical assistance representative.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  Use the system diagnostics to test only Dell systems. If you use this program with 
+other systems, incorrect system responses or error messages may result.
+</td>
+  </tr>
+</table>
+<hr noshade size="1">
+<h2><a name="1032447">Features of the System Diagnostics</a></h2>
+
+
+<p>The system diagnostics provides a series of menus and options from which you choose particular device groups or devices. You can also control the sequence in which the tests are run. The diagnostic menus also have these helpful features:</p><ul><li>Options that let you run tests individually or collectively<br><br></li>
+<li>An option that allows you to choose the number of times a test is repeated<br><br></li>
+<li>The ability to display or print test results or to save them in a file<br><br></li>
+<li>Options to temporarily suspend testing if an error is detected or to terminate testing when an adjustable error limit is reached<br><br></li>
+<li>Help messages that briefly describe each test and its parameters<br><br></li>
+<li>Status messages that inform you whether device group or device tests are completed successfully<br><br></li>
+<li>Error messages that appear if any problems are detected<br><br></li>
+</ul><hr noshade size="1">
+<h2><a name="1027981">When to Use the System Diagnostics</a></h2>
+
+
+<p>Whenever a major component or device in the system does not function properly, you may have a component failure. As long as the microprocessor and the input and output components of the system (the monitor, keyboard, and diskette drive) are working, you can use system diagnostics. If you know what component(s) you need to test, select the appropriate diagnostic device group(s) or subtest(s). If you are unsure about the scope of the problem, read the remainder of the information in this section.</p><hr noshade size="1">
+<h2><a name="1028192">Starting System Diagnostics</a></h2>
+
+
+<p>You can run system diagnostics from either the utility partition on your hard drive&nbsp;or from a set of diskettes that you create from the <i>Dell OpenManage Server Assistant</i>&nbsp;CD.</p><p>To run the diagnostics from the utility partition, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1028313"></a>Start the utility partition by pressing &lt;F10&gt; during POST.
+<br><br>
+
+<li value="2"><a name="1028350"></a>From the utility partition's main menu, select the <b>Run System Diagnostics</b> option 
+from <b>Run System Utilities</b>. See "Utility Partition" in "Using the Dell OpenManage 
+Server Assistant CD" in the <i>User's Guide</i> for additional information about the utility 
+partition.
+<br><br>
+</ol>
+<p>To run the system diagnostics from the diskettes, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1028468"></a>Create a set of diagnostics diskettes using the <i>Dell OpenManage Server Assistant</i> CD. 
+See "Using the Dell OpenManage Server Assistant CD" in the <i>User's Guide</i> for 
+information on creating diskettes.
+<br><br>
+
+<li value="2"><a name="1032592"></a>Boot the system from the first diagnostics diskette.
+<br><br>
+</ol>
+<p>If the system fails to boot, see "<a href="5g375c80.htm#1032182">Getting Help</a>."</p><p>When you start the system diagnostics, a message is displayed telling you that the diagnostics is loading. The <b>Diagnostics</b> menu appears. The menu allows you to run all or specific diagnostic tests or to exit system diagnostics.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>Before you read the rest of this section, start the system diagnostics so that 
+you can see it on your monitor screen.
+</td>
+  </tr>
+</table><p>For a quick check of the system, select <b>Test All Devices</b> and then select <b>Quick Tests</b>. This option runs only the device tests that do not require user interaction and that do not take a long time to run. Dell recommends that you choose this option first to increase the chance of tracing the source of the problem quickly. To test a particular device, select <b>Test One Device</b>. For a complete check of the system, select <b>Test All Devices</b> and then select <b>Extended Tests</b>. </p><p>To check a particular area of the system, choose <b>Advanced Testing</b>. When you select <b>Advanced Testing</b>, the main screen of the diagnostics appears. This screen includes a listing of the various device groups in the system and the system's service tag.</p><p>To view data on test results, select <b>Information and Results</b>. Select <b>Program Options </b>to view the program options screen, which lets you set various test parameters.</p><p>By selecting the <b>Device Configuration</b> option, you can see an overview of the devices in the system.</p><p>Selecting <b>Exit to MS-DOS</b> exits the diagnostics and returns you to the MS-DOS&#174; operating system environment.</p><p>To select an option from the <b>Diagnostics</b> menu, highlight the option and press &lt;Enter&gt;, or press the key that corresponds to the highlighted letter in the option you choose.</p><hr noshade size="1">
+<h2><a name="1029172">Using the System Diagnostics</a></h2>
+
+
+<p>When you select <b>Advanced Testing </b>from the <b>Diagnostics</b> menu, the main screen of the diagnostics appears.</p><p>Information on the main screen of the diagnostics is presented in the following areas:</p><ul><li>Two lines at the top of the main screen identify the diagnostics, the version number, and the system service tag.<br><br></li>
+<li>On the left side of the screen, <b>Device Groups</b> lists the diagnostic device groups in the order they will run if you select <b>All</b> under the <b>Run Tests</b> submenu. Press the up- or down-arrow key to highlight a device group.<br><br></li>
+<li>On the right side of the screen, <b>Devices for Highlighted Group</b> lists the specific devices within a particular test group.<br><br></li>
+<li>Two lines at the bottom of the screen make up the menu area. The first line lists the menu options you can select; press the left- or right-arrow key to highlight an option. The second line gives information about the highlighted option.<br><br></li>
+</ul><hr noshade size="1">
+<h2><a name="1032456">Using the Device Groups Menu</a></h2>
+
+
+<p>The <b>Device Groups</b> menu at the bottom of the screen provides options that enable you to select and run specific diagnostic tests from the diagnostics main screen. Press the left- and right-arrow keys to select the options on the menu. As you move from one menu option to another, a brief explanation of the highlighted option appears on the bottom line of the screen.</p><p>If you want more information about a device group or device, highlight the <b>Help </b>option and press &lt;Enter&gt;. After you read the information, press &lt;Esc&gt; to return to the previous screen.</p><hr noshade size="1">
+<h2><a name="1029775">Device Groups Menu Options</a></h2>
+
+
+<p>Five options are listed at the bottom of the diagnostics main screen: <b>Run Tests</b>, <b>Devices</b>, <b>Select</b>, <b>Config</b>, and <b>Help</b>.</p><p>There are two ways to select a menu option:</p><ul><li>Look on the screen to see which letter in the option is capitalized, and type that letter (for example, type r to select the <b>Run</b> option).<br><br></li>
+<li>Move the highlight to the option you want to select by pressing the left- or right-arrow key, and then press &lt;Enter&gt;.<br><br></li>
+</ul><p>Whenever one of the options is selected, additional choices become available.</p><p>The following subsections explain the menu options as listed from left to right in the <b>Device Groups</b> menu.</p><h3><a name="1030054"> Run Tests
+</a></h3>
+<p>Run Tests displays seven options:</p><ul><li><b>One</b> &#151; Runs all the devices within the highlighted device group.<br><br></li>
+<li><b>All</b> &#151; Runs all of the tests in all of the device group tests (device group tests are run in the same order that they are listed).<br><br></li>
+<li><b>Select</b> &#151; Runs only the selected device groups or the devices that you selected within the device groups.<br><br></li>
+<li><b>Options</b> &#151; Provides a set of global parameters that allow you control over how the device group tests or device tests are run and how results are reported.<br><br></li>
+<li><b>Results</b> &#151; Displays the results of the tests.<br><br></li>
+<li><b>Errors</b> &#151; Displays errors detected during the tests.<br><br></li>
+<li><b>Help</b> &#151; Displays a series of help options, including <b>Menu</b>, <b>Keys</b>, <b>Device Group</b>, <b>Device</b>, <b>Test</b>, and <b>Versions</b>.<br><br></li>
+</ul><h3><a name="1030346"> Devices
+</a></h3>
+<p>Most of the device groups consist of several devices. Use the <b>Devices</b> option to select individual devices within the device group(s). </p><p>When you select <b>Devices</b>, the following options are displayed: <b>Run Tests</b>, <b>Tests</b>, <b>Select</b>, <b>Parameters</b>, and <b>Help</b>. <a href="5g375c40.htm#1030858">Table&nbsp;4-1</a> lists all of the possible values for each option.</p><a name="1031823"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1030858">Table 4-1.&#32; Devices Options</a></p></p>
+<tr><th valign="top" align="left"><a name="1030862"> </a>
+<p><b>Option</b></p>
+
+
+</th><th valign="top" align="left"><a name="1030864"> </a>
+<p><b>Functions</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>Run Tests</p></td><td valign="top" align="left"><p>Displays seven options: <b>One</b>, <b>All</b>, <b>Select</b>, <b>Options</b>, <b>Results</b>, <b>Errors</b>, and <b>Help</b>.</p></td></tr>
+<tr><td valign="top" align="left"><p>Tests</p></td><td valign="top" align="left"><p>Allows you to select individual devices to tailor the testing process to your particular needs. You can choose one or more devices from the list. When you choose <b>Tests</b>, four options are displayed: <b>Run Tests</b>, <b>Select</b>, <b>Parameters</b>, and <b>Help</b>.</p></td></tr>
+<tr><td valign="top" align="left"><p>Select</p></td><td valign="top" align="left"><p>Allows you to choose one or more devices from a particular device group. Three options are displayed: <b>One</b>, <b>All</b>, and <b>Help</b>.</p></td></tr>
+<tr><td valign="top" align="left"><p>Parameters</p></td><td valign="top" align="left"><p>Determines how a particular test will be run.</p></td></tr>
+<tr><td valign="top" align="left"><p>Help</p></td><td valign="top" align="left"><p>Displays a list of help topics.</p></td></tr>
+
+</table>
+
+
+
+
+</p><h3><a name="1031306"> Select
+</a></h3>
+<p>The <b>Select</b> option in the <b>Device Groups</b> menu allows you to choose one or more devices from a particular device group. Three options are displayed: <b>One</b>, <b>All</b>, and <b>Help</b>.</p><h3><a name="1031383"> Config
+</a></h3>
+<p>Choosing <b>Config</b> from the <b>Device Groups</b> menu displays information about the particular device that is highlighted.</p><hr noshade size="1">
+<h2><a name="1031436">Error Messages</a></h2>
+
+
+<p>When you run a test in the diagnostics, error messages may result. Record the messages on a copy of the Diagnostics Checklist; see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance and informing the technical assistance representative of the messages.</p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

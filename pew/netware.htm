@@ -1,0 +1,446 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies The Kenyon College LAN</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="internet.htm">
+<LINK REL="Previous" HREF="kedt.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="kedt.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="internet.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I4">To Log On and Off the LAN</A></LI>
+<LI>
+<A HREF="#I9">Network Drives</A></LI>
+<LI>
+<A HREF="#I14">How to Print to a Networked Printer</A></LI>
+<LI>
+<A HREF="#I16">List of Kenyon Printer Queues Available From the LAN</A></LI>
+<LI>
+<A HREF="#I19">WNQVTNet Key Mappings</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">The Kenyon College Local Area Network (LAN)</A></H1>
+<HR ALIGN=CENTER>
+<P>The purpose of this document is to describe the basic design and function of Kenyon's &quot;<A ID="I2" NAME="I2"></A>local area network,&quot; or <A ID="I3" NAME="I3"></A>LAN.  This LAN is based on the Novell Corporation's NetWare software.</P>
+<P>The NetWare LAN provides very high speed connections between microcomputers.  The older style of connections for microcomputers is able to transfer up to 19,200 bits of data per second; the NetWare LAN can move millions of bits per second.  This much higher speed makes it possible to do entirely new types of work with microcomputers - it doesn't just allow for faster connections.</P>
+<P>For example, in the past, all computer programs were installed on the hard drives of each microcomputer. Through the LAN, you can access programs that are installed on a &quot;server&quot; (another computer on the LAN that is dedicated to serving you programs and files).  Instead of buying one copy for each person, we can buy fewer copies and allow people to share them, saving a great deal in licensing costs but also making many new programs available for the first time.  Far less staff time is needed to maintain and upgrade software when it is shared by all from a single location.  Thus, the LAN costs less to operate and provides many more services.</P>
+<P>The LAN makes it possible to access printers anywhere on the LAN directly from your microcomputer.  The LAN makes it possible to share files with co-workers, and even collaborate interactively.  The LAN makes it possible to access the Internet directly, without having to log onto a VAX.  The LAN makes it possible to run the latest, &quot;user friendly&quot; programs for accessing the myriad resources of the Internet (programs such as Mosaic and Netscape).</P>
+<H2><A ID="I4" NAME="I4">
+<BR>To Log On and Off the <A ID="I5" NAME="I5"></A><A ID="I6" NAME="I6"></A>LAN</A></H2>
+<HR ALIGN=CENTER>
+<P>When a LAN account is created for you, you are assigned a username and password.  Your username will be the same as your VAX account username, although your LAN password will be different.</P>
+<P>The only way to access the LAN drives and services is to let the system know who you are and verify that information with a password. To do this, you must &quot;log in&quot;.  Your computer is configured to take you directly to the F:\LOGIN subdirectory whenever you start it (reboot).  At the F:\LOGIN&gt; prompt, type</P>
+<P> LOGIN username R</P>
+<P>where  username  is <B>your</B> username. The system will ask you for your password.  Type your password then press  R .  If you typed it correctly, you will be greeted with a short message and the system will (usually) switch to the C:\BATCH&gt; subdirectory for you to select further options.</P>
+<P>To end your LAN session, at the DOS prompt type</P>
+<P> LOGOUT R</P>
+<P>and you will be disconnected from your LAN account.  You will still be able to use programs and files that are located on your microcomputer, although you will no longer be able to access any files and programs on the LAN drives.</P>
+<P>To <A ID="I7" NAME="I7"></A>change your password for your LAN account, it will be necessary for you to log in.  The LAN system notifies you every thirty days that your LAN password is expiring and that you will need to change it.  You may <B>log in only once more </B>with your present password so you should change your password <B>right away </B>when you receive this notice.  Once you log in, at the DOS prompt type SETPASS R . Type your old/current password R , then type a new password R. You'll be asked to type this new password twice, the second time for verification.</P>
+<P>Be sure to logout from the Netware LAN when you leave your microcomputer unattended.</P>
+<P><A ID="I8" NAME="I8"></A></P>
+<H2><A ID="I9" NAME="I9">
+<BR>Network Drives</A></H2>
+<HR ALIGN=CENTER>
+<P>One of the primary functions of Kenyon's local area network (LAN) is to store information.  On a DOS microcomputer, information is stored on the hard disk or a floppy disk in the form of files.  You may be familiar with your computer's hard drive (the C: drive) and floppy disk drives (the A: or B: drives).</P>
+<P>A DOS computer which is attached to Kenyon's LAN uses files on the NetWare server just like files on a hard or floppy disk -- with two noteworthy exceptions. (1) The files are actually not stored inside your desktop computer.  Instead they are &quot;served&quot; to your computer on demand from another computer called a &quot;fileservee'.  Since all computers on the LAN are connected to the fileserver, it is possible to share files among connected computers. (2) A second critical difference is that each user only has certain types of access, or &quot;rights&quot;, to certain files.  That is to say that you may not be able to read (&quot;look at&quot; or &quot;use&quot;) certain information or to write (&quot;save&quot;) to certain places on the fileserver.</P>
+<P>A DOS computer connected to the LAN treats files on the fileserver as files on a &quot;network drive.&quot; Usually there is more than one such drive, and network drives are typically labeled with letters in the alphabet which come after F. For example, a computer on the LAN can have F:, H:, and P-. network drives.  The next section explains the purpose of each of the network drives.</P>
+<P>
+<FONT SIZE=+1><I>Using Network Drives</I></FONT></P>
+<P>A short description of each of the network drives follows.  In the table, terms like &quot;read/write&quot; and &quot;read only&quot; are used.  The files on a &quot;read only&quot; drive are ones which cannot be changed or deleted by any user. Drives termed &quot;read/write&quot; are ones where information is intended to be stored or shared by users or groups.  Where the word &quot;varies&quot; appears,the access rights or content of a drive or directory will depend on the user account from which they are accessed.</P>
+<P>A drive mapping is included for advanced users' reference.  NetWare actually stores data as files in &quot;volumes&quot; which in turn have subdirectories.  A LAN volume may be larger than one disk drive.  The term mapping reflects the fact that a LAN volume or subdirectory and an MS-DOS drive are not the same thing.  Instead, the LAN software presents a volume, or one of its subdirectories as an MS-DOS drive. This &quot;virtual&quot; DOS drive is &quot;mapped&quot; to some part of a LAN volume.</P>
+<TABLE BORDER>
+<TR>
+<TD>
+<TD>
+<P><B>Description</B></P>
+<TD>
+<P><B>Access</B></P>
+<TD>
+<P><B>Mapping</B></P>
+<TR>
+<TD>
+<P><B>F:</B></P>
+<TD>
+<P>contains files necessary for your computer to run the LAN software.</P>
+<TD>
+<P>universal read only</P>
+<TD>
+<P>ATHENS/SYS:</P>
+<TR>
+<TD>
+<P><B>G:</B></P>
+<TD>
+<P>contains programs like WordPerfect for Windows for general use.  When you install a networked program, a few small files are created on your hard drive and the &#147;master copy&#148; of the program stays on the fileserver, saving storage space and making it easier to upgrade programs.  The server allows only the licensed number of people to use each program at the same time.  To install software into your computer from G:, please contact the ICS HelpLine.</P>
+<TD>
+<P>universal read only</P>
+<TD>
+<P>ATHENS/</P>
+<P>SOFTWARE</P>
+<TR>
+<TD>
+<P><B>H:</B></P>
+<TD>
+<P>a &#147;home&#148; for each user account.  Files here can only be used from one account.  This space is secure, but is NOT regularly backed up by ICS yet.</P>
+<TD>
+<P>one user</P>
+<P>read/write</P>
+<TD>
+<P>varies</P>
+<TR>
+<TD>
+<P><B>M:</B></P>
+<TD>
+<P>contains files for use by mail, login scripts, and print jobs.</P>
+<TD>
+<P>system</P>
+<P>read/write</P>
+<TD>
+<P>varies</P>
+<TR>
+<TD>
+<P><B>P:</B></P>
+<TD>
+<P>a &#147;public&#148; space for files to be stored and shared.  Users in a college department share a directory on the P: drive in which they can share files.  Also, two universally accessible directories exist (see cells below).</P>
+<TD>
+<P>varies (see below)</P>
+<TD>
+<P>ATHENS/PUBLIC:</P>
+<TR>
+<TD>
+<TD>
+<P>P:\department (<I>e.g.,</I> P:\PHYSICS or P:\MATH) is space reserved for use within one department.  Users who are members of a group can read and write to this directory in order to share files with other group members.  MEMBERS OF ONE GROUP, including public machine accounts, CANNOT USE OR EVEN &#147;SEE&#148; ANOTHER DEPARTMENT&#146;S DIRECTORY.</P>
+<TD>
+<P>group read/write</P>
+<TD>
+<P>varies</P>
+<TR>
+<TD>
+<TD>
+<P>P:\DATA can be seen from every connected computer and is a place for faculty members to store class materials.  Only certain users may WRITE to this directory but everyone can READ from it.</P>
+<TD>
+<P>universal read</P>
+<TD>
+<P>ATHENS/PUBLIC: KENYON</P>
+<TR>
+<TD>
+<TD>
+<P>P:\KENYON can be seen from every connected computer.  It can be used to share information with users outside (or inside) your group.  However, since this is public-access storage space, it is NOT SECURE STORAGE.  You should keep a backup copy of anything stored in P:\KENYON since it can be read, changed, and deleted by any user.  BE CAREFUL WHEN USING P:\KENYON.</P>
+<TD>
+<P>universal read/write</P>
+<TD>
+<P>ATHENS/PUBLIC: KENYON</P>
+<TR>
+<TD>
+<P><B>U:</B></P>
+<TD>
+<P>varies</P>
+<TD>
+<P>varies</P>
+<TD>
+<P>ATHENS/USER1:</P>
+<TR>
+<TD>
+<P><B>W:</B></P>
+<TD>
+<P>world accessible space for storage of files which may be read by persons off campus via FTP and other services.</P>
+<TD>
+<P>varies</P>
+<TD>
+<P>ATHENS/PUB:FTP</P></TABLE>
+<P> </P>
+<P>In truth, all access varies from one user account to another.  No two users will have the same H: drive.  A similar situation applies to the P: drive.  The appearance of the directories on this drive depends on whatuser has logged in from the computer in question.  If a biologist has logged in, the directory P:\BIOLOGY will appear.  However, this directory does not appear from the LAN account of a member of the Physics Department.  Instead the member of the Physics Department sees a directory P:\PHYSICS.</P>
+<P>The LAN file system makes these different &quot;views&quot; of the fileserver possible.  To provide both security and simplicity, NetWare only reveals the files which the user is allowed to use.</P>
+<P>To see what access rights you have in a certain directory, or to a certain file, you may use the RIGHTS command at the DOS prompt. To use the RIGHTS command, change to a network drive by typing at any DOS prompt the name of the drive.  For example to change to the H: drive on the network, at the DOS prompt type:</P>
+<P> H: R</P>
+<P>Once you have switched to the H: drive, type:</P>
+<P><A ID="I10" NAME="I10"></A></P>
+<P> RIGHTS R</P>
+<P>You will see a list of your rights to the current directory followed by explanations of what each right means.</P>
+<P><A ID="I11" NAME="I11"></A></P>
+<P>
+<FONT SIZE=+1><I>Sharing files via the LAN</I></FONT></P>
+<P>This section discusses ways to share files over the LAN.  It does not deal with sharing one file, one time, with one person.  This should be achieved through electronic mail.  Here we deal with sharing files on a regular basis with one or more other users.  Also keep in mind that if you wish to have access to a few personal files from multiple LAN-connected computers, use the H: drive and log in at these other computers (don't forget to log out!).</P>
+<P>To share a file via the LAN, copy a file to a common space on the fileserver for others to use.  But just which common space to use may not be so straightforward, since each user's &quot;view&quot; of the fileserver is slightly different.  Selecting the best place to put a file you want to share is sometimes difficult.  The preceding table and a few simple questions will reduce the number of choices and probably make the &quot;best&quot; solution obvious.  Read down the list of questions in order. When you answer &quot;yes&quot;, you have found a solution.</P>
+<P>Is the file a program file? If you would like to share a program, contact the ICS HelpLine for more information.  The program should be loaded onto the G: drive and set up for licensed, networked use.</P>
+<P>Make a list of all the people with whom you would like to share the file(s).  Are all of these people in your group? All members of your department who have LAN accounts are in the same group.  To see a list of users in a group, type the following at the DOS prompt:</P>
+<P><A ID="I12" NAME="I12"></A></P>
+<P> NLIST USER WHERE GROUPS EQ groupname R</P>
+<P>for example,</P>
+<P>NLIST USER WHERE GROUPS EQ CHEMISTRY R</P>
+<P>If all of the people with whom you wish to share the file appear in this list, it is best to use your group directory space in P:\department.</P>
+<P>&#215;Are you a faculty member trying to share files with students which they will not need to change? In this case, you will want to use the directory in P:\DATA named after your department.</P>
+<P>&#215;Do you need to share files with people off-campus? In this case, contact the ICS HelpLine for more information on using the W: drive for anonymous<A ID="I13" NAME="I13"></A> FTP.</P>
+<P>&#215;Do you need to share files with students and faculty for work on an interdepartmental or unusual class project? If so, you may be able to use a &quot;workgroup&quot; directory.  This allows workgroup members to have access to project files in a common area, but not one which is available to all users.  Contact the ICS HelpLine for more information.</P>
+<P>&#215;Your last option is to use the P:\KENYON directory.  It can be used by any connected computer.  Remember that the information stored there is not secure and can be copied or deleted by anyone.</P>
+<H2><A ID="I14" NAME="I14">
+<BR>How to <A ID="I15" NAME="I15"></A>Print to a Networked Printer</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Setting Up Your Printer</I></FONT></P>
+<P>There are three components to printing successfully to a networked printer:</P>
+<P>1. You must have the appropriate printer software (printer driver) installed in Windows.</P>
+<P> &#149;A printer driver allows your application (<I>i.e</I>.,  WordPerfect) to send the correct printer commands to a printer so that your document is printed correctly.</P>
+<P>2. The printer must be assigned to a port.</P>
+<P> &#149;The port tells the printer driver exactly where to send the document and it's commands, and expects a printer to be attached to that port.</P>
+<P>3.The port must be assigned to the correct network print queue which matches the type of printer driver you have installed in Windows.</P>
+<P> &#149;A network print queue is a program running on the network fileserver which works in conjunction with the printer driver to intercept a print job sent to the designated port and route it over the network to the designated printer.</P>
+<P>It is important to remember that component 1 and 3 must represent the same type of printer.  An HP LaserJet III printer driver must NOT beassigned to any type of print queue other than one which is attached to a LaserJet III printer.</P>
+<TABLE BORDER>
+<TR>
+<TD>
+<P><B>PRINTER DRIVER</B></P>
+<TD>
+<P><B>PORT</B></P>
+<TD>
+<P><B>PRINT QUEUE</B></P>
+<TR>
+<TD>
+<P>HP Laserjet III</P>
+<TD>
+<P>LPT2:</P>
+<TD>
+<P>OLN1HP</P>
+<TR>
+<TD COLSPAN=3></TABLE>
+<P>If the printer to which you wish to print does NOT have its corresponding printer driver installed in Windows, then contact the ICS HelpLine for assistance with installing the printer driver.  If the printer driver you need IS already installed in Windows, then you need to assign it to the correct port and print queue.  Using the PRINT MANAGER follow the steps below.</P>
+<P>Select  Options | Printer Setup</P>
+<P>Single click on the intended printer to select it.</P>
+<P>Single click on  Connect....</P>
+<P>Single click on the correct Port you wish to use.</P>
+<P><B><I>NOTE:</I></B><B><I> </I></B>If you have a local printer physically attached to your microcomputer, DO <B>NOT</B> choose Port LPT1:.  This port should be left reserved for a locally attached printer.</P>
+<P>Single click on Network</P>
+<P>Make sure the same port you chose earlier is still selected.  If not select it again.</P>
+<P>Find the printer queue in the list of Queues which is assigned to the printer to which you want to print and single click on it.  Make sure the printer driver you select is the correct driver for the printer on this queue.  For example, an HP III print driver must be connected to an HP III printer, NOT an HP4L printer.</P>
+<P>Single click on the box, Permanent so that this connection will remain the next time you run Windows.</P>
+<P>Click on CLOSE</P>
+<P>Click on &lt;OK&gt;</P>
+<P>Click on  close</P>
+<P>Click on  view I Exit to close Print Manager.</P>
+<H2><A ID="I16" NAME="I16">
+<BR>List of Kenyon <A ID="I17" NAME="I17"></A>Printer Queues Available From the LAN</A></H2>
+<HR ALIGN=CENTER>
+<TABLE BORDER>
+<TR>
+<TD>
+<P><B>Location</B></P>
+<TD>
+<P><B>Queue Name</B></P>
+<TD>
+<P><B>Type</B></P>
+<TD>
+<P><B>Public</B></P>
+<TR>
+<TD>
+<P>Ascension Hall Room 1</P>
+<TD>
+<P>ASC2HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<P>yes</P>
+<TR>
+<TD>
+<P>Biology Building</P>
+<TD>
+<P>BIO1HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>Chalmers Information Center</P>
+<TD>
+<P>CHA3HP</P>
+<TD>
+<P>Generic queue for CHA4HP and CHA5HP (HP4 Plus laser printers)</P>
+<TD>
+<P>yes</P>
+<TR>
+<TD>
+<P>College Relations</P>
+<TD>
+<P>CRC1HP</P>
+<TD>
+<P>HP 3 SI</P>
+<TD>
+<TR>
+<TD>
+<P>Olin ICS office</P>
+<TD>
+<P>OLN1FAX</P>
+<TD>
+<P>ICS FAX printer</P>
+<TD>
+<TR>
+<TD>
+<P>Olin  ITRC</P>
+<TD>
+<P>OLN1PS</P>
+<TD>
+<P>Apple Laser Writer Postscript Printer</P>
+<TD>
+<P>yes</P>
+<TR>
+<TD>
+<P>Olin ITRC</P>
+<TD>
+<P>OLN1TX</P>
+<TD>
+<P>Tektronix color printer (must have approval from Academic Computing)</P>
+<TD>
+<P>with permission</P>
+<TR>
+<TD>
+<P>Olin ICS office</P>
+<TD>
+<P>OLN2HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>Peirce Hall, room 2</P>
+<TD>
+<P>PEI1HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<P>yes</P>
+<TR>
+<TD>
+<P>P. Mather, Crawford CACC</P>
+<TD>
+<P>PMA1HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<P>yes</P>
+<TR>
+<TD>
+<P>Ransom Hall</P>
+<P>Provost Office</P>
+<TD>
+<P>RAN1HP</P>
+<TD>
+<P>HP 3P laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>Ransom Hall </P>
+<P>Financial Aid</P>
+<TD>
+<P>RAN4HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>Ransom Hall Admissions</P>
+<TD>
+<P>RAN7HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>S. Mather</P>
+<P>room 223</P>
+<TD>
+<P>SMA1HP</P>
+<TD>
+<P>HP4 laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>S. Mather </P>
+<P>room 20</P>
+<TD>
+<P>SMA2HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>S. Mather</P>
+<P>room 106</P>
+<TD>
+<P>SMA3HP</P>
+<TD>
+<P>HP IIIP</P>
+<TD>
+<TR>
+<TD>
+<P>S. Mather</P>
+<P>room 03</P>
+<TD>
+<P>SMA4HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>S. Mather</P>
+<P>room 202</P>
+<TD>
+<P>SMA5HP</P>
+<TD>
+<P>HP 4 Plus laser printer</P>
+<TD>
+<P>yes</P>
+<TR>
+<TD>
+<P>Wing ICS office</P>
+<TD>
+<P>WNG1HP</P>
+<TD>
+<P>HP4 Plus laser printer</P>
+<TD>
+<TR>
+<TD>
+<P>Wing ICS office</P>
+<TD>
+<P>WNG 1LN03</P>
+<TD>
+<P>Digital LN03 Laser Printer</P>
+<TD></TABLE>
+<P> </P>
+<P><A ID="I18" NAME="I18"></A></P>
+<H2><A ID="I19" NAME="I19">
+<BR>WNQVTNet <A ID="I20" NAME="I20"></A>Key Mappings</A></H2>
+<HR ALIGN=CENTER>
+<P>VVinQVTNet is a <I>true </I>VT terminal emulator.  That means that it always behaves as if it were a VT terminal.  When using WinQVTNet to access VAXIVMS applications you should always reference the VAX/VMS key-mapping and use the following chart for use on your microcomputer.</P>
+<P>For instance, if you were using WordPerfect on the VAX, the print key combination is defined as S  , &lt;F13&gt; .  The above chart shows that on your microcomputer you would use n  3 .  The top four keys on the keypad are &lt;PF1&gt; through &lt;PF4&gt;, so &lt;PF1&gt; would be equivalent to n .  Since a microcomputer has no &lt;F13&gt; key, extended function keys are simulated using the S  key.  Pressing the S  in combination with a function key adds 10.  So S 3 3 is equivalent to &lt;F13&gt; .</P>
+<P>Note that microcomputers and VTs have different keyboard layouts.  When using a microcomputer as a terminal emulator it is necessary to pay special attention to the keymappings.</P>
+<P><B> </B><B>VAX</B> <B>Micro</B></P>
+<P> &lt;PF1&gt; Keypad Numlock</P>
+<P> &lt;PF2&gt; Keypad/</P>
+<P> &lt;PF3&gt; Keypad*</P>
+<P> &lt;PF4&gt; Keypad-</P>
+<P> , (comma) Keypad +</P>
+<P> - (minus) Ctrl-Keypad +</P>
+<P> R Keypad  R</P>
+<P> Holdscreen Pause</P>
+<P> 6 - 0 6 - 0</P>
+<P> &lt;Fll&gt; - &lt;F20&gt; S 1  -  S 0</P>
+<P> HELP &lt;Fll&gt;</P>
+<P> Do &lt;F12&gt;</P>
+<P> Find Insert</P>
+<P> InsertHere Home</P>
+<P> Remove PageUp</P>
+<P> Select Delete</P>
+<P> PrevScreen End</P>
+<P> NextScreen Pagedown</P>
+<P>Please refer to the ICS document, <I>VAX WordPerfect Pull-down Menus, </I>which follows, for an easier way to access VAX WordPerfect features.</P>
+<HR ALIGN=CENTER>
+<P><A HREF="kedt.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="internet.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

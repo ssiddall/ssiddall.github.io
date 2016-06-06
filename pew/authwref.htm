@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Authorware Quick Reference</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="guide.htm">
+<LINK REL="Previous" HREF="powerpt.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="powerpt.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="guide.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I3">To Start Authorware</A></LI>
+<LI>
+<A HREF="#I4">Graphics and Text </A></LI>
+<LI>
+<A HREF="#I5">User Interactions</A></LI>
+<LI>
+<A HREF="#I6">To Clear the Screen</A></LI>
+<LI>
+<A HREF="#I7">Animation</A></LI>
+<LI>
+<A HREF="#I8">Movies</A></LI>
+<LI>
+<A HREF="#I9">Sound</A></LI>
+<LI>
+<A HREF="#I10">Video</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Authorware Quick Reference</A></H1>
+<HR ALIGN=CENTER>
+<P>This document is a brief introduction and reference for getting started with Authorware.  Authorware is an object-oriented development tool used to create interactive multimedia<A ID="I2" NAME="I2"></A> applications.  Authorware does not require scripting or a programming language.  Applications developed with Authorware can be used for tutorial instruction, training, and presentations. You should already be familiar with using Windows before attempting to use Authorware.</P>
+<H2><A ID="I3" NAME="I3">
+<BR>To Start Authorware</A></H2>
+<HR ALIGN=CENTER>
+<P>Start Authorware by double clicking on the Authorware icon in Program Manager.  Authorware will prompt you for an Authorware file to open.  </P>
+<P ALIGN="CENTER">
+<CENTER>
+<IMG SRC="mg33.gif" WIDTH = 251 HEIGHT = 174 ALT="Undisplayed Graphic"></CENTER></P>
+<P>If you've already started a project and simply need to continue working on it, locate your file in the list and click on it to select it. Then click  &lt;OK&gt;  to open it.  </P>
+<P>If you wish to start a new Authorware file, click on the NEW button. Authorware will display a window with a flowline in which you may begin working.</P>
+<P>
+<IMG SRC="mg34.gif" WIDTH = 299 HEIGHT = 183 ALT="Undisplayed Graphic"></P>
+<P> </P>
+<P>Objects, represented as icons, are positioned along a flowline. These icons then contain, or represent, one or more screen objects with which the user will interact.   The placement of the icons represents the sequence of interactions in the applications.  The icons are assigned various attributes which control the behavior of their objects.  </P>
+<P>Some icons are responsible for displaying content on the screen, while others affect how objects are displayed or behave, and still others control timing and of what is displayed or branching to other displays.  To use an Icon, you must drag it onto the flowline first. Double-click on the icon from the flowline to set the parameters for the icon.</P>
+<P>
+<IMG SRC="mg35.gif" WIDTH = 65 HEIGHT = 261 ALT="Undisplayed Graphic"></P>
+<UL>
+<LI>    1.Display Icon - Displays graphics, text and data objects.</LI></UL>
+<UL>
+<LI>    2.Animation Icon - Moves displays to fixed locations, along a path, or within an area.</LI></UL>
+<P> </P>
+<UL>
+<LI>    3.Erase Icon - Erases displayed objects with various effects.</LI></UL>
+<UL>
+<LI>    4.Wait Icon - Stops the application until the user presses a key, clicks the mouse, or a specified time period elapses.</LI></UL>
+<UL>
+<LI>    5.Decision Icon - Provides three types of program redirection.</LI></UL>
+<UL>
+<LI>    6.Interaction Icon - Determines and evaluates user response.</LI></UL>
+<UL>
+<LI>    7.Calculation Icon - Manipulates data, create and evaluate variables.</LI></UL>
+<UL>
+<LI>    8.Map Icon - Groups icons into modules for better structure.</LI></UL>
+<UL>
+<LI>    9.Start and Stop Flags - Place on an icon to specify where the program should start and stop during development or debugging stage.  Choose Try It/Run From Flag.</LI></UL>
+<UL>
+<LI>        10.   Movie Icon - Plays and controls video and animation files.</LI></UL>
+<UL>
+<LI>        11.   Sound Icon - Plays and controls digitized audio files.</LI></UL>
+<UL>
+<LI>        12.   Video Icon - Plays and controls data from videodisc players.</LI></UL>
+<P> </P>
+<H2><A ID="I4" NAME="I4">
+<BR>Graphics and Text </A></H2>
+<HR ALIGN=CENTER>
+<P>You can create your own text and graphic objects using the toolbox. You can reference external text files by linking a text variable to the filename of a text file, or you can import external graphic files (BMP, PCX, TIF).  </P>
+<P>
+<IMG SRC="mg36.gif" WIDTH = 308 HEIGHT = 198 ALT="Undisplayed Graphic"></P>
+<P>Start by placing a Display Icon onto the Flowline, double-click on it to open a Presentation Window.  Use the Circle, Box, Polygon, Line, or Text tool to create your content.  Select File/Import Graphics to load an external graphic image.</P>
+<P>
+<IMG SRC="mg37.gif" WIDTH = 337 HEIGHT = 210 ALT="Undisplayed Graphic"></P>
+<P>Create a link to an external text file by placing a text string variablename with the Text tool.  Where <I>variablename</I> is the name of a variable you designate.  Set up a Calculation icon to link the variable to the external file with the command <I>variablename:=ReadExtFile(&quot;filename&quot;)</I>.  Place the calculation icon anywhere BEFORE the display icon which displays the contents of the external file.  </P>
+<H2><A ID="I5" NAME="I5">
+<BR>User Interactions</A></H2>
+<HR ALIGN=CENTER>
+<P>There are a couple of icons you can use to control how the user should interact with your program.  Use the Wait Icon when you want to pause your program and wait for the user to press any key or click the mouse button to continue.</P>
+<P>
+<IMG SRC="mg38.gif" WIDTH = 320 HEIGHT = 169 ALT="Undisplayed Graphic"></P>
+<P>Use an Interaction Icon when you want the interaction to be more elaborate.  The Interaction Icon can prompt the user to type in general or specific text, press any or a specific key, click on an area of the screen, click on an object, move an object to a specific area of the screen, or make a selection from a pull-down menu.  The interaction can be controlled based on a specific condition, number of tries, or a time limit.</P>
+<P>
+<IMG SRC="mg39.gif" WIDTH = 328 HEIGHT = 186 ALT="Undisplayed Graphic"></P>
+<H2><A ID="I6" NAME="I6">
+<BR>To Clear the Screen</A></H2>
+<HR ALIGN=CENTER>
+<P>Throughout your program you will need to remove an object from the screen after a user interaction.  This can be done by placing an Erase Icon on the flowline right after the interaction by which the object is erased.  Double-click on the Erase Icon.  The Presentation Window will be displayed with the most currently displayed screen.  Click onthe object(s) you want to have erased.  The icons which represent those objects will be placed in a list. </P>
+<P>
+<IMG SRC="mg40.gif" WIDTH = 321 HEIGHT = 188 ALT="Undisplayed Graphic"></P>
+<P>If you change your mind or make a mistake you can click on any object icon in the list and then click on REMOVE to put the object back onto the screen.  </P>
+<H2><A ID="I7" NAME="I7">
+<BR>Animation</A></H2>
+<HR ALIGN=CENTER>
+<P>You can animate any screen using the Animate Icon.  The animation icon allows you to draw a path along which the object will move. All objects on the screen will move along this path.  If you have one or more objects you do not want to animate then you must create/import those object in a separate Presentation Window using another Display Icon.</P>
+<P>
+<IMG SRC="mg41.gif" WIDTH = 314 HEIGHT = 205 ALT="Undisplayed Graphic"></P>
+<P>Place the Animation Icon just after the Display Icon which contains the objects you want to animate.  Double-click on the Animation Icon.  Choose the type of animation path you want by clicking on Change Type.  Using the mouse click on the object you want to animate and drag it to the location in the Presentation Window whereyou want it to move.  Continue dragging the object to the next location until you are finished.  Click &lt;OK&gt;  when complete.</P>
+<H2><A ID="I8" NAME="I8">
+<BR>Movies</A></H2>
+<HR ALIGN=CENTER>
+<P>Authorware supports Windows AVI (Audio/Video Interleave) files, Animator Pro FLI and FLC files, and Apple Macintosh Quicktime files. Place the Movie Icon on the flowline at the position where you want the movie to begin playing.  Double-click on the movie icon and select the movie file you want to have played.  You can also determine how the movie will be played back.</P>
+<P>
+<IMG SRC="mg42.gif" WIDTH = 323 HEIGHT = 187 ALT="Undisplayed Graphic"></P>
+<H2><A ID="I9" NAME="I9">
+<BR>Sound</A></H2>
+<HR ALIGN=CENTER>
+<P>Digitized audio files can be played back anywhere within your program.  Place a Sound Icon on the flowline then double-click on it. Authorware supports PCM and WAV files.  Select a sound file to load and click on  &lt;OK&gt;  .  You can also determine how the audio will be played back.</P>
+<P>
+<IMG SRC="mg43.gif" WIDTH = 319 HEIGHT = 207 ALT="Undisplayed Graphic"></P>
+<H2><A ID="I10" NAME="I10">
+<BR>Video</A></H2>
+<HR ALIGN=CENTER>
+<P>If your system is connected to a video laserdisc, you can access the video on the laserdisc using the Video Icon.  Drag the Video Icon onto the flow line then double-click on it.  You will be presented with a laserdisc control box which will allow you to move through the video on the laserdisc and select a segment of video to be played. You can also determine how the video will be played back.</P>
+<P>
+<IMG SRC="mg44.gif" WIDTH = 326 HEIGHT = 221 ALT="Undisplayed Graphic"></P>
+<HR ALIGN=CENTER>
+<P><A HREF="powerpt.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="guide.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

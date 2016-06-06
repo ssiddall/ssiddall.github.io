@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>View Budget Status</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>SCT WWW Information System<br>
+View Budget Status</h2>
+
+<hr>
+
+<form action="bdst_vw.htm" method"post">
+    <p><img src="info.gif" width="50" height="30"><i>To view
+    budget availability, select the desired combination of fund,
+    organization, account, and program; and then press VIEW
+    BUDGET.</i></p>
+    <hr>
+    <blockquote>
+        <p><b>In this demo version, results associated with
+        accounts 1500, 1600, and 1700 will be returned.</b> </p>
+    </blockquote>
+    <table border="0">
+        <tr>
+            <th align="left">Fiscal Year:</th>
+            <td><select name="year" size="1">
+                <option value="1994">1994 </option>
+                <option selected value="1995">1995 </option>
+                <option value="1996">1996 </option>
+            </select></td>
+        </tr>
+        <tr>
+            <th align="left">Chart of Accounts:</th>
+            <td><select name="coas" size="1">
+                <option selected value="A">A - SCT University </option>
+                <option value="B">B - SCT Institute </option>
+            </select></td>
+        </tr>
+        <tr>
+            <th align="left">Organization:</th>
+            <td><select name="orgn" size="1">
+                <option value="11001">11001 - Department of Mathematics </option>
+                <option selected value="11002">11002 - Department of Physics </option>
+                <option value="11003">11003 - Department of Entymology </option>
+                <option value="11004">11004 - Department of Fine Arts </option>
+                <option value="11005">11005 - Department of English </option>
+                <option value="11006">11006 - Department of Economics </option>
+            </select></td>
+        </tr>
+        <tr>
+            <th align="left">Fund:</th>
+            <td><select name="fund" size="1">
+                <option value="2000">2000 - Unrestricted </option>
+                <option value="3000">3000 - Restricted </option>
+            </select></td>
+        </tr>
+        <tr>
+            <th align="left">Program:</th>
+            <td><select name="prog" size="1">
+                <option value="50">Any Program </option>
+                <option selected value="50">50 - Instruction </option>
+                <option value="60">60 - Research </option>
+                <option value="60">70 - Public Service </option>
+                <option value="60">80 - Academic Support </option>
+                <option value="60">90 - Student Services </option>
+            </select></td>
+        </tr>
+        <tr>
+            <th align="left">Account:</th>
+            <td><select name="acct" size="1">
+                <option selected value="1500">Any Account </option>
+                <option value="1500">1500 - Supplies and Services </option>
+                <option value="1600">1600 - Consultant Services </option>
+                <option value="1600">1700 - Computer Services </option>
+                <option value="1600">1800 - Health Insurance Premiums </option>
+                <option value="1600">1900 - Fringe Benefits </option>
+            </select></td>
+        </tr>
+    </table>
+    <pre><input type="submit" value="View Budget">  <input
+type="reset" value="Reset">     </pre>
+    <hr>
+    <p><a href="bud_menu.htm"><img src="return.gif"
+    alt="Return to Menu" width="85" height="24"></a> <a
+    href="help.htm"><img src="help.gif" alt="Help" width="85"
+    height="24"></a> </p>
+    <hr>
+    <p><a href="orgn_enc.htm">[View Organizational Encumbrances]</a>
+    <br>
+    <a href="exit01.htm">[Exit the WWW Information System]</a></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,961 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 10">
+<link id=Main-File rel=Main-File href="../index.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='position:absolute;display:none;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span
+style='mso-spacerun:yes'>  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full
+Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl"
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Time to Collaborate!</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scott E. Siddall</li>
+   <li>Assistant Provost, Director of Instructional Technology</li>
+   <li>Denison University</li>
+   <li>Granville, Ohio</li>
+   <br>
+   <br>
+   <li>siddall@denison.edu</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>Two meanings….</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Now is the time to collaborate!</li>
+   <ul>
+    <li>Why?</li>
+    <br>
+    <br>
+   </ul>
+   <li>Do you have time to collaborate?</li>
+   <ul>
+    <li>The challenges</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.html');" id=PPTL3>“Collaboration with
+  Technology”</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Mellon-funded program, 1998-2002</li>
+   <li>Five Colleges of Ohio (Denison, Kenyon, Oberlin, Ohio Wesleyan, Wooster)</li>
+   <li>Lessons learned</li>
+   <ul>
+    <li>Disciplinary gatherings</li>
+    <li>Flexible funding</li>
+    <li>Broad definition of “technology”</li>
+    <li>Local, technical support</li>
+    <li>Senior administrators must talk</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.html');" id=PPTL4>“Collaboration with
+  Technology”</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Program’s web site:</li>
+   <ul>
+    <li>http://enhanced-learning.org</li>
+    <br>
+    <br>
+   </ul>
+   <li>Third year report on the program</li>
+   <ul>
+    <li>http://siddall.info/talks/educause2001/</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.html');" id=PPTL5>Collaborative Projects</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Classes shared between campuses</li>
+   <li>		Clash of Cultures: Middle Eastern Studies</li>
+   <li>		Gender and Family in South Asia</li>
+   <li>		Aristophanes Now</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.html');" id=PPTL6>Collaborative Projects</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Shared development of curricular material</li>
+   <li>		Access to examples in abstract algebra</li>
+   <li>		Symbolic computing to enhance learning in probability and statistics</li>
+   <li>		Shakespeare on Film</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.html');" id=PPTL7>Collaborative Projects</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Shared faculty expertise</li>
+   <li>		Enhancing spatial analyses in the classroom (GIS)</li>
+   <li>		Print making in a digital world</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0041.html');" id=PPTL8>Collaborative Projects</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Less commonly taught languages</li>
+   <li>		Chinese Language and Literature</li>
+   <li>		Beginning and Intermediate Japanese</li>
+   <li>		Three semesters of Arabic</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL9>In what ways do you
+  collaborate?<span style='mso-spacerun:yes'>  </span>(and the audience
+  response)</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Is your discipline collaborative by nature?</li>
+   <ul>
+    <li>Less so for political science, neuroscience</li>
+    <li>More so for music, education, library and technology</li>
+   </ul>
+   <li>Team teaching?</li>
+   <ul>
+    <li>60% responded “yes”</li>
+   </ul>
+   <li>Collaborative scholarship, creative work?</li>
+   <ul>
+    <li>45% said yes, but “it can be a struggle”</li>
+   </ul>
+   <li>Collaboration between campuses?</li>
+   <ul>
+    <li>Only 5%</li>
+   </ul>
+   <li>Model collaborative learning in class?</li>
+   <ul>
+    <li>45% do</li>
+   </ul>
+   <li>Collaborate to get tenure?</li>
+   <ul>
+    <li>As mentors</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.html');" id=PPTL10>Now is the time to
+  collaborate</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Fewer reinvented wheels</li>
+   <li>Shared efforts in faculty and staff development, curriculum development</li>
+   <li>Do with someone else what you cannot do alone</li>
+   <li>Model collaboration for your students</li>
+   <li>To keep up with both your discipline and technology</li>
+   <li>Technological interdependencies require collaboration</li>
+   <li>Extend access to new courses</li>
+   <li>Contain costs</li>
+   <li>New ideas for faculty and students alike</li>
+   <li>Collegial support, more enjoyable work</li>
+   <li>Collaborate to share uniquely held materials</li>
+   <li>Increased accountability</li>
+   <li>Build a community of scholars</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.html');" id=PPTL11>How does collaboration
+  relate to technology?</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Help each other climb the learning curves of technology</li>
+   <ul>
+    <li>Applies to faculty, staff and students</li>
+   </ul>
+   <li>Technology that makes collaboration effective</li>
+   <ul>
+    <li>E-mail</li>
+    <li>Web-based curricular resources</li>
+    <li>Asynchronous tools</li>
+    <li>Shared network resources</li>
+    <li>Video conferencing</li>
+   </ul>
+   <li>Technology can sustain communities</li>
+   <ul>
+    <li>Rarely defines or creates communities by itself</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL12>Why use technology?</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Enhance information access</li>
+   <li>Increase student motivation, engagement</li>
+   <li>Accommodate different ways of learning, knowing</li>
+   <li>Create partnerships, opportunities to collaborate</li>
+   <li>Change content through visualization, simulation</li>
+   <li>Promote a new “balance of power” in classroom</li>
+   <li>Encourage new methods of assessment</li>
+   <li>Improve communication skills</li>
+   <li>Greater opportunities for complex, interdisciplinary study</li>
+   <li>Prepare students for postgraduate life</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.html');" id=PPTL13>Faculty Perspective</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Not enough time!</li>
+   <li>90% teaching, 40% scholarship, 20% service….</li>
+   <li>Face-to-face contact is valued, more costly</li>
+   <li>Pressure of promotion and tenure - what is valued?</li>
+   <li>“Personal chemistry” for teaching</li>
+   <li>Structured classroom - “my domain”</li>
+   <li>Disciplinary methods are changing</li>
+   <li>Shifting departmental and disciplinary focus</li>
+   <li>Curricular materials often in specific formats</li>
+   <li>Confidence in traditional methods of publishing</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.html');" id=PPTL14>From where do our<span
+  style='mso-spacerun:yes'>               </span>teaching habits come?</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Formal training in educational theory, practice</li>
+   <ul>
+    <li>40% of the audience</li>
+   </ul>
+   <li>Graduate teaching assistantships</li>
+   <li>Disciplinary methods</li>
+   <li>Evolved personal practices</li>
+   <li>Practices of our institutions, mentors, best teachers</li>
+   <li>From raising children or training dogs</li>
+   <li>Observation of good and bad teachers</li>
+   <li>Teaching as I wish I were taught</li>
+   <li>Experience in personnel management</li>
+   <li>Experience in customer service</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL15>Why not use
+  technology?</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If it doesn’t match the instructor’s goals or style of teaching</li>
+   <li>Lack of time</li>
+   <ul>
+    <li>If it means doing more instead of doing different</li>
+    <li>“Time deepening” – life in a multitasking world</li>
+   </ul>
+   <li>Unmet and uninformed expectations</li>
+   <ul>
+    <li>“Technology saves time” – sometimes yes, sometimes no</li>
+   </ul>
+   <li>Unreliable technology</li>
+   <li>Lack of support</li>
+   <li>Unintended effects</li>
+   <li>Hard to use technology, hard to learn</li>
+   <li>Pace of technology changes</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.html');" id=PPTL16>Change is not new -
+  rate of change is</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>New patterns of information use, distribution</li>
+   <li>Positive feedback loop in technological development</li>
+   <li>Steady change has given way to accelerating change</li>
+   <li>“Digital incunabula” – like early printed texts</li>
+   <ul>
+    <li>An incomplete, unfinished technology</li>
+    <li>Brittle</li>
+    <li>Public beta testing</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL17>Inventors and
+  innovators</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Inventors create new technologies</li>
+   <li>Innovators find meaningful ways to use technologies</li>
+   <br>
+   <br>
+   <li>In higher education, the small, residential college is often viewed as
+       the innovator</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL18>Why innovate?</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Because we always have</li>
+   <li>Our academic tradition is richly innovative</li>
+   <ul>
+    <li>Tradition and constancy of process</li>
+    <li>Discovery, creation and distribution of<span style='mso-spacerun:yes'> 
+        </span>information</li>
+    <li>Scholarship, creativity, intellectual and social growth</li>
+    <li>Learning from differences</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.html');" id=PPTL19>Benefits of
+  Collaboration</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Availability of specialized courses</li>
+   <li>More and improved curricular materials</li>
+   <li>Greater awareness leading to new opportunities</li>
+   <ul>
+    <li>Sabbatical replacements</li>
+    <li>Guest lectures</li>
+    <li>Pooled enrollment for very small courses</li>
+   </ul>
+   <li>Enhanced learning (self-assessed outcomes)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.html');" id=PPTL20>Costs of collaboration</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Time</li>
+   <ul>
+    <li>Collaboration takes more time than independent efforts</li>
+    <li>Takes time to change a culture steeped in individual scholarship</li>
+   </ul>
+   <li>Stipends, release time</li>
+   <ul>
+    <li>Designing and redesigning courses is expected; fund the added overhead</li>
+   </ul>
+   <li>Support</li>
+   <ul>
+    <li>Local training and consulting – staff and student</li>
+    <li>Mission-critical production support</li>
+   </ul>
+   <li>Infrastructure</li>
+   <ul>
+    <li>Inter-campus network capacity</li>
+    <li>Compatible systems</li>
+   </ul>
+   <li>Facilitator</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL21>What to look for in a
+  collaborative effort</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Curricular compatibility</li>
+   <li>Common interests – within or among disciplines</li>
+   <li>Personal compatibility</li>
+   <li>Institutional support</li>
+   <ul>
+    <li>Technology</li>
+    <li>Tenure policies</li>
+    <li>Financial</li>
+   </ul>
+   <li>Substitution, not addition</li>
+   <li>Pedagogical goals come first</li>
+   <li>Why before how</li>
+   <li>Easy-to-use applications</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL22>Do we have the time to
+  collaborate?</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As institutions, as individuals?</li>
+   <li>Is there a choice, and how broadly?</li>
+   <ul>
+    <li>Collaborate on campus</li>
+    <li>Collaborate among campuses</li>
+   </ul>
+   <li>And to what degree?</li>
+   <ul>
+    <li>Cooperation, collaboration, partnerships</li>
+   </ul>
+   <li>And with whom?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.html');" id=PPTL23>With whom do we
+  collaborate?</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Faculty with faculty on campus and off</li>
+   <li>Faculty with librarians and instructional technologists</li>
+   <li>Students with students on and off campus</li>
+   <li>Faculty with students</li>
+   <ul>
+    <li>Helps us move from teaching about social science to teaching how to be
+        a social scientist</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL24>Traditional
+  relationships</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL25>New partnerships<span
+  style='mso-spacerun:yes'>                      </span>(a strong form of
+  collaboration)</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL26>Students need an
+  extended information literacy</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Traditionally: location and format of information</li>
+   <li>Discernment among infinitely diverse resources</li>
+   <li>Assessment of new technology tools</li>
+   <li>Meaning and methods of publishing on the web</li>
+   <li>Intellectual property rights</li>
+   <li>Understanding social dimensions of electronic communication,
+       collaboration</li>
+   <li>Skills to keep up with changes in disciplinary methods</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL27>Faculty
+  responsibility:<span style='mso-spacerun:yes'>                </span>quality
+  of learning</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Distributive learning</li>
+   <li>Authentic tasks, complex inquiry</li>
+   <li>Dialogic learning</li>
+   <li>Constructive learning</li>
+   <li>Public accountability</li>
+   <li>Reflexive and critical thinking</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL28>Time…too little time</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Collaboration/Technology = more of my time</li>
+   <li>Collaboration/Technology = risky</li>
+   <li>Where is the gain?</li>
+   <br>
+   <br>
+   <li>Change is at least accelerating, and we will manage change by creating
+       more change</li>
+   <ul>
+    <ul>
+     <li>Paraphrased after Peter Drucker</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0044.html');" id=PPTL29>Return</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Return to home</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+</body>
+
+</html>

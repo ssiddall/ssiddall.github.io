@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Admission Application</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>SCT WWW Information System<br>
+Admission Application</h2>
+
+<hr>
+
+<h2><img src="personal.gif" width="40" height="40"> Personal
+Information</h2>
+
+<p><img src="info.gif" alt="INFO" width="50" height="30"> <i>Much
+of the information in this section is optional. However, your
+Residency Status is required to complete your application.
+Providing your Social Security Number is appreciated. Multiple
+medical conditions may be specified. </i></p>
+
+<form action="apindex1.htm" method="post">
+    <table border="0">
+        <tr>
+            <th align="left"><font size="2">Confidentiality
+            Required:</font></th>
+            <td><font size="2"><input type="radio" name="conf"
+            value="Y">Yes <input type="radio" name="conf"
+            value="N">No <input type="radio" checked name="conf">Not
+            Reported </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Citizenship Status:</font></th>
+            <td><font size="2"><select name="citz" size="1">
+                <option value>Not Reported </option>
+                <option value="Y">Citizen </option>
+                <option value="N">Non-Citizen </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Residency Status:</font></th>
+            <td><font size="2"><select name="resd" size="1">
+                <option value>Not Reported </option>
+                <option value="F">Foreign </option>
+                <option value="R">In state Resident </option>
+                <option value="O">Out of state Resident </option>
+                <option value="0">Undeclared </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Gender:</font></th>
+            <td><font size="2"><input type="radio" name="gender"
+            value="M">Male <input type="radio" name="gender"
+            value="F">Female <input type="radio" checked
+            name="gender">Not Reported </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Birth Date:</font></th>
+            <td><font size="2"><input type="text" size="8"
+            maxlength="8" name="bday"> <i>(MM/DD/YY format)</i> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Social Security/Tax
+            ID Number:</font></th>
+            <td><font size="2"><input type="text" size="9"
+            maxlength="9" name="ssn"></font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Marital Status:</font></th>
+            <td><font size="2"><select name="mrtl" size="1">
+                <option value>Not Reported </option>
+                <option value="D">Divorced </option>
+                <option value="M">Married </option>
+                <option value="S">Separated </option>
+                <option value="I">Single </option>
+                <option value="W">Widowed </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Religion:</font></th>
+            <td><font size="2"><select name="rlgn" size="1">
+                <option value>Not Reported </option>
+                <option value="08">Baptist </option>
+                <option value="12">Buddhist </option>
+                <option value="17">Catholic </option>
+                <option value="35">Hindu </option>
+                <option value="40">Jewish </option>
+                <option value="51">Methodist </option>
+                <option value="45">Moslem </option>
+                <option value="56">Other </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Ethnic Group:</font></th>
+            <td><font size="2"><select name="ethn" size="1">
+                <option value>Not Reported </option>
+                <option value="A">Asian Pacific Islander </option>
+                <option value="B">Black </option>
+                <option value="I">Blackfoot </option>
+                <option value="C">Caucasian </option>
+                <option value="I">Cherokee </option>
+                <option value="H">Hispanic </option>
+                <option value="I">Sioux </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">E-Mail Address:</font></th>
+            <td><font size="2"><input type="text" size="40"
+            maxlength="60" name="email"></font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Has any family member
+            attended this institution?</font></th>
+            <td><font size="2"><select name="lgcy" size="1">
+                <option value>Not Reported </option>
+                <option value>None </option>
+                <option value="A">Aunt </option>
+                <option value="B">Brother </option>
+                <option value="C">Cousin </option>
+                <option value="F">Father </option>
+                <option value="G">Grandparent </option>
+                <option value="M">Mother </option>
+                <option value="P">Parents </option>
+                <option value="S">Sister </option>
+                <option value="U">Uncle </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Select any special
+            medical conditions you may have:</font></th>
+            <td><font size="2"><select name="medi" multiple
+            size="3">
+                <option selected value>Not Reported </option>
+                <option value="DI">Diabetic Insulin User </option>
+                <option value="EP">Epileptic </option>
+                <option value="DE">Hearing Impaired </option>
+                <option value="HC">Heart Condition </option>
+                <option value="MU">Mute </option>
+                <option value="PP">Paraplegic </option>
+                <option value="PL">Prosthetic limb </option>
+                <option value="QP">Quadriplegic </option>
+                <option value="BL">Visually Impaired </option>
+            </select> </font></td>
+        </tr>
+    </table>
+    <p><input type="submit" value="Update"> <input type="reset"
+    value="Reset"> </p>
+</form>
+
+<hr>
+
+<p><a href="apindex1.htm">Return to Application Index</a> <a
+href="help.htm"><img src="help.gif" width="85" height="24"></a> </p>
+</body>
+</html>

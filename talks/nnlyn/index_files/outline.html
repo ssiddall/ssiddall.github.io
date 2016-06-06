@@ -1,0 +1,1320 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 11">
+<link id=Main-File rel=Main-File href="../index.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 )  
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Digital Asset
+  Management and the Challenge of Collaboration</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scott E. Siddall</li>
+   <li>Denison University</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>Presentation</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Context of DAM</li>
+   <li>Planning the work – issues to address</li>
+   <li>Collaborations and consortia</li>
+   <li>Outlook</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL3>The Context</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The human need to organize</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL4>The Context</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>How much has been digitized?</li>
+   <ul>
+    <li>Lots, but not enough.</li>
+    <li>We all have important analog resources</li>
+   </ul>
+   <li>Just imagine how much hard drive capacity we’ve used up in the last 20
+       years</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.html');" id=PPTL5>The Context – evolving
+  concepts</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Document management</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL6>The Context – what are
+  digital assets?</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Images</li>
+   <ul>
+    <li>Some common and some unique</li>
+    <li>Quality varies enormously</li>
+   </ul>
+   <li>Audio and video</li>
+   <ul>
+    <li>multiple formats including streaming</li>
+   </ul>
+   <li>Texts and images of texts</li>
+   <ul>
+    <li>PDFs, Word, OCR, searchable or not</li>
+   </ul>
+   <li>Learning objects</li>
+   <ul>
+    <li>simple and compound (entire course content)</li>
+   </ul>
+   <li>URLs</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.html');" id=PPTL7>The Context – what are
+  digital assets?</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>OK….anything digital…</li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'> </span>Binary Large Objects (BLOBs)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL8>The Context - databases
+  to the rescue</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.html');" id=PPTL9>The Context - databases
+  to the rescue</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Objects can be digital assets themselves</li>
+   <ul>
+    <li>digital video clips, digital images of events, PDFs</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL10>The Context<span
+  style='mso-spacerun:yes'>  </span>- DAM databases</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>Binary content cannot itself be easily searched, indexed</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL11>The Context – metadata
+  is crucial</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Librarians have crafted metadata for decades</li>
+   <li>Data about data</li>
+   <li>Metadata:</li>
+   <ul>
+    <li>Describes item</li>
+    <li>Facilitates management, description and preservation</li>
+    <li>Enables discovery of item</li>
+   </ul>
+   <li>Several schema (read open standards)</li>
+   <ul>
+    <li>MARC record in the OPAC</li>
+    <ul>
+     <li>Database of bibliographic and item records</li>
+     <li>Searchable, indexed</li>
+     <li>Cataloged objects are textual, physical, digital</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.html');" id=PPTL12>The Context – metadata
+  is crucial</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'> </span>DC – Dublin Core</li>
+   <ul>
+    <li>http://dublincore.org</li>
+   </ul>
+   <li>METS – Metadata Encoding and Transmission Standard</li>
+   <ul>
+    <li>http://www.log.gov/standards/mets/<span style='mso-spacerun:yes'>  
+        </span>(works with OAI)</li>
+   </ul>
+   <li>TEI – Text Encoding Initiative</li>
+   <ul>
+    <li>http://www.tei-c.org/</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'> </span>VRA – Visual Resources
+       Association</li>
+   <ul>
+    <li>http://vraweb.org/</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'> </span>EAD – Encoded Archival
+       Description</li>
+   <ul>
+    <li>http://www.loc.gov/ead/</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'> </span>CDWA – Categories for the
+       Description of Art</li>
+   <ul>
+    <li>http://www.getty.edu/research/institute/standards/cdwa/</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'> </span>RDF – Resource Description
+       Framework</li>
+   <ul>
+    <li>An XML standard</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0071.html');" id=PPTL13>The Context – metadata
+  is expensive</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Time required for content specialists to create and proof key fields of
+       metadata</li>
+   <li>Balancing metadata quality with results</li>
+   <ul>
+    <li>Risks of not finding materials</li>
+    <li>Risks of “dirty” results</li>
+    <li>Perfect can be the enemy of good</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0074.html');" id=PPTL14>The Context – metadata
+  is expensive</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL15>The Context – the
+  market</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scope and size of DAM market</li>
+   <ul>
+    <li>$1.5-3.0 billion annually; $320 million in profits</li>
+    <li>600+ vendors with 1,200+ applications</li>
+    <li>Ripe for consolidation</li>
+   </ul>
+   <li>The commercial players</li>
+   <ul>
+    <li>Artesia (publishing)</li>
+    <li>Canto (desktop to small workgroup)</li>
+    <li>eMotion (broadcast)</li>
+    <li>MediaBin by Interwoven (corporate)</li>
+    <li>North Plains ‘Telescope’ (publishing)</li>
+    <li>Webware (corporate)</li>
+    <li>IBM and Stellent (corporate)</li>
+    <li>Extensis (desktop to small workgroup)</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.html');" id=PPTL16>The Context – the
+  education, library museum niche</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The non-profit market players</li>
+   <ul>
+    <ul>
+     <li>Auto-Graphics Digital Asset Management</li>
+     <li>CONTENTdm (see examples)</li>
+     <li>Documentum DAM</li>
+     <li>Dynix Horizon Digital Library</li>
+     <li>Endeavor ENCompass</li>
+     <li>Ex Libris Digitool</li>
+     <li>Innovative Interfaces Millennium Metasource</li>
+     <li>Luna Imaging Insight</li>
+     <li>SIRSI Hyperion</li>
+     <li>VTLS VITAL</li>
+     <li>PastPerfect</li>
+    </ul>
+   </ul>
+   <li>(Why or why not integrate into your OPAC?)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.html');" id=PPTL17>The Context – open
+  source</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Open source DAM systems</li>
+   <ul>
+    <li>FEDORA<span style='mso-spacerun:yes'>  </span>Flexible Extensible
+        Digital Object and Repository Architecture</li>
+    <ul>
+     <li>Release 1.2.1 released April 20, 2004</li>
+    </ul>
+    <li>Digital Library Extension Service</li>
+    <ul>
+     <li>from the University of Michigan</li>
+    </ul>
+    <li>Greenstone</li>
+    <ul>
+     <li>e.g., Chopin collection at the University of Chicago</li>
+    </ul>
+    <li>Madison Digital Image Database</li>
+    <ul>
+     <li>MDID; v2.0 came out on August 3</li>
+    </ul>
+   </ul>
+   <li>And homegrown systems</li>
+   <ul>
+    <li>e.g., Whitman Image Project</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.html');" id=PPTL18>The Context - ARTstor</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>The art history and image equivalent of JSTOR</li>
+    <li>Funded by the Mellon Foundation</li>
+    <li>Began operations on July 1, 2004</li>
+    <li>http://artstor.org</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.html');" id=PPTL19><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.html');" id=PPTL20><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.html');" id=PPTL21>The Context - ARTstor</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>Subscription basis</li>
+    <li>300k images, largely art and art history</li>
+    <li>Pilot of hosting for campuses, individuals</li>
+    <li>Addresses intellectual property issues</li>
+    <li>Federated searching to discover ARTstor and local content through one
+        interface</li>
+    <li>High resolution images</li>
+    <ul>
+     <li>Scene7’s Infinite Imaging Platform</li>
+    </ul>
+    <li>Individual accounts</li>
+    <ul>
+     <li>Provide workspaces, instructor tools</li>
+     <li>Allows annotations</li>
+    </ul>
+    <li>Images and groups of images (searches, gatherings) have a URL for
+        insertion into CMS</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.html');" id=PPTL22>The Context – ARTstor</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Offline Viewer</li>
+   <ul>
+    <li>Analog to walking around with slide trays</li>
+    <li>Local application</li>
+    <ul>
+     <li>Downloads encrypted JPEGs</li>
+     <li>Protects IP of image owners</li>
+     <li>Allows ARTstor collections to be used in non-networked environments</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL23>Planning the Work</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What’s it take to implement a successful DAM project?</li>
+   <br>
+   <br>
+   <li>Planning, planning and planning</li>
+   <br>
+   <br>
+   <li>With all stakeholders =</li>
+   <li>Collaboration</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0077.html');" id=PPTL24>Collaboration</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Takes time, effort, compromise, communication, standards and more</li>
+   <br>
+   <br>
+   <li>It isn’t easy!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0066.html');" id=PPTL25>Planning the Work</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Set goals, scope and get political support</li>
+   <li>What is the nature of the content?</li>
+   <li>Who is the audience?</li>
+   <li>How will the collection be accessed and used?</li>
+   <li>Select and customize metadata scheme</li>
+   <li>Who is going to catalog objects?</li>
+   <li>Is the infrastructure ready?</li>
+   <li>How will cataloging quality be assessed and enforced?</li>
+   <li>Set digitization standards</li>
+   <li>Evaluate and select software and hardware</li>
+   <li>How are projects and even objects selected?</li>
+   <li>How will copyrights be managed?</li>
+   <li>What are the relevant intellectual property policies?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.html');" id=PPTL26>Planning the Work -
+  goals</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What’s a collection?</li>
+   <ul>
+    <li>Institutional holdings</li>
+    <ul>
+     <li>Galleries</li>
+     <li>Museum exhibits</li>
+     <li>Historical societies</li>
+     <li>Special collections</li>
+     <li>Archives</li>
+    </ul>
+    <li>Academic collections</li>
+    <ul>
+     <li>Learning objects</li>
+     <li>eReserves</li>
+     <li>Emeriti collections</li>
+     <li>Research and teaching collections</li>
+    </ul>
+    <li>Student collections</li>
+    <ul>
+     <li>ePortfolios</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0068.html');" id=PPTL27>Planning the Work -
+  goals</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Collections can be:</li>
+   <ul>
+    <li>Discipline-based</li>
+    <ul>
+     <li>one or more departments</li>
+    </ul>
+    <li>From consortia of similar institutions</li>
+    <li>Thematic collections from dissimilar institutions</li>
+    <ul>
+     <li>public and academic libraries, museums, historical societies</li>
+    </ul>
+    <li>Centralized or distributed for federated searching</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.html');" id=PPTL28>Planning the Work -
+  goals</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Other types of “collections”</li>
+   <ul>
+    <li>Public affairs photos</li>
+    <li>Reports and gray literature</li>
+    <li>Products of faculty scholarship</li>
+    <li>Managed documents</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.html');" id=PPTL29>Planning the Work -
+  standards</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Selecting metadata schemes</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0069.html');" id=PPTL30>Planning the Work -
+  standards</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Setting</li>
+   <li>digitization</li>
+   <li>standards…</li>
+   <br>
+   <br>
+   <ul>
+    <li>1600 x 1200 at<span style='mso-spacerun:yes'>     </span>24 bit color
+        depth</li>
+    <li>JPEG2000</li>
+    <li>For printing</li>
+    <li>Color management</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.html');" id=PPTL31>Planning the Work</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Technologies</li>
+   <ul>
+    <li>Server selections</li>
+    <ul>
+     <li>Storage and backup requirements</li>
+     <li>Bandwidth</li>
+     <li>Media types, streaming</li>
+    </ul>
+    <li>Client selections</li>
+    <ul>
+     <li>Plug-ins, thick and thin clients</li>
+    </ul>
+    <li>Piloting and assessing the software</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.html');" id=PPTL32>Planning the Work</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0048.html');" id=PPTL33>Planning the Work -
+  software specifications</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Allows collaborative and distributed collection development/management</li>
+   <li>Platform (hardware, operating system) agnostic – server and client</li>
+   <li>Web-based client with easy-to-use interface</li>
+   <li>Basic and advanced searching across collections, across sites (federated
+       searches, virtual collections, stored result sets)</li>
+   <li>Common client-side players/viewers</li>
+   <li>Client tools for manipulation, comparison, per-user annotation</li>
+   <li>Flexible support for metadata standards</li>
+   <li>Support for many object formats, and developing formats (e.g., jpeg 2000)</li>
+   <li>Support for high-resolution, zoom-in features</li>
+   <li>Supports Unicode text for display and searching</li>
+   <li>URL access to objects</li>
+   <li>Customizable display interface</li>
+   <li>Based on open standards (database, metadata, etc.)</li>
+   <li>Flexible access control list features</li>
+   <li>Standards-based export functions to avoid “lock-in” and promote remote
+       indexing</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0049.html');" id=PPTL34>Planning the Work -
+  workflow</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.html');" id=PPTL35>Planning the Work</a></font></div>
+  <div id=PPTC35 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Who’s going to catalog the objects?</li>
+   <li>Automated metadata creation</li>
+   <ul>
+    <li>Video analysis can produce metadata</li>
+    <li>Image capture with data</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0072.html');" id=PPTL36>Planning the Work –
+  collaborate!</a></font></div>
+  <div id=PPTC36 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Multiple goals</li>
+   <li>Range of standards</li>
+   <li>Cross political boundaries</li>
+   <li>Shared control, responsibility</li>
+   <li>Expensive metadata</li>
+   <br>
+   <br>
+   <li>Collaboration is not optional</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0075.html');" id=PPTL37>Planning the Work –
+  collaborate!</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Collaboration among librarians, curators,<span
+       style='mso-spacerun:yes'>  </span>technologists, students, donors…</li>
+   <li>Institutional representatives collaborating to plan cataloging and
+       access to campus collections</li>
+   <li>Consortial representatives planning metadata structures for regional
+       projects</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0076.html');" id=PPTL38>Some successful
+  consortia</a></font></div>
+  <div id=PPTC38 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Mountain West Digital Library</li>
+   <li>Digital Shoebox Collections</li>
+   <li>Digital Library of Appalachia</li>
+   <li>Indiana Historical Society</li>
+   <ul>
+    <li>Lew Wallace in New Mexico</li>
+    <li>O. James Fox Collection</li>
+    <li>Postcards of Indiana</li>
+    <li>Indiana Rail Transportation</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0056.html');" id=PPTL39>Outlook – the market</a></font></div>
+  <div id=PPTC39 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Market effects on the non-profit DAM niche</li>
+   <ul>
+    <li>Consolidation of vendors</li>
+    <li>Push to portals and enterprise wide solutions</li>
+    <li>Open source developments will pressure commercial offerings, and may
+        eventually replace some</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.html');" id=PPTL40>Outlook – the tools</a></font></div>
+  <div id=PPTC40 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Proprietary systems may “lock in” content with tools</li>
+   <li>Open standards and interoperability will be a “must have”</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>41</font></div>
+  </td>
+  <td>
+  <div id=PPTP41 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0057.html');" id=PPTL41>Outlook – the tools</a></font></div>
+  <div id=PPTC41 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Large institutions and consortia:</li>
+   <ul>
+    <li>Different tools for asset management, content management, document
+        management, etc.</li>
+    <br>
+    <br>
+   </ul>
+   <li>Small institutions:</li>
+   <ul>
+    <li>one tool serving many needs</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>42</font></div>
+  </td>
+  <td>
+  <div id=PPTP42 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.html');" id=PPTL42>Outlook - our needs</a></font></div>
+  <div id=PPTC42 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>We need to experiment with DAM tools as part of planning process</li>
+    <li>We must collaborate to avoid reinventing wheels, to sustain DAM
+        projects</li>
+    <li>We need better searching tools, metadata automation, digital rights
+        management</li>
+    <li>DAM will become increasingly important – an expectation of our
+        constituents</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>43</font></div>
+  </td>
+  <td>
+  <div id=PPTP43 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.html');" id=PPTL43>Resources</a></font></div>
+  <div id=PPTC43 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Vendors focused on the non-profit market</li>
+   <ul>
+    <li>ARTstor</li>
+    <li>Auto-Graphics Digital Asset Management</li>
+    <li>CONTENTdm</li>
+    <li>Documentum DAM</li>
+    <li>Dynix Horizon Digital Library</li>
+    <li>Endeavor ENCompass</li>
+    <li>Ex Libris Digitool</li>
+    <li>Innovative Interfaces Millennium Metasource</li>
+    <li>Luna Imaging Insight</li>
+    <li>SIRSI Hyperion</li>
+    <li>VTLS Vital</li>
+    <li>PastPerfect</li>
+   </ul>
+   <br>
+   <li>Bitter Harvest (discussion of OAI harvesting issues)</li>
+   <li>Global Society for Asset Management</li>
+   <li>EContent’s Research Center on DAM (news)</li>
+   <li>Digital Asset Management Symposium (annual event)</li>
+   <li>Journal of Digital Asset Management</li>
+   <li>Digital Asset Management in the Liberal Arts (proceedings of a
+       symposium)</li>
+   <li>Digital Asset Management Initiative at the University of Michigan</li>
+   <li>OhioLINK Digital Media Center</li>
+   <li>Preserving Cornell's Digital Image Collections</li>
+   <li>Digital Imaging Tutorial from Cornell</li>
+   <li>Research Library Group’s Guides to Quality in Visual Resource Imaging</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>44</font></div>
+  </td>
+  <td>
+  <div id=PPTP44 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0078.html');" id=PPTL44>Return to home</a></font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+</body>
+
+</html>

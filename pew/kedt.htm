@@ -1,0 +1,189 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies KEDT</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="netware.htm">
+<LINK REL="Previous" HREF="mail.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="mail.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="netware.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I8">KEDT KeyPad Commands</A></LI>
+<LI>
+<A HREF="#I9">How to Set Default Margins in KEDT</A></LI>
+<LI>
+<A HREF="#I11">Spell for KEDT</A></LI>
+<LI>
+<A HREF="#I12">How to Start the Kedt SPELL</A></LI>
+<LI>
+<A HREF="#I13">The Options on the Kedt SPELL</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">KEDT  The Kenyon Text Editor</A></H1>
+<HR ALIGN=CENTER>
+<P>Following is a listing of the keystrokes that are used for KEDT.  The keypad keys use the EDIT/EDT definitions. You can terminate commands with either the  R  key.<A ID="I2" NAME="I2"></A>    C Z   will exit<A ID="I3" NAME="I3"></A> and save a file. The cursor in KEDT will behave like the cursor in EDT. </P>
+<P><B><I>Note:  The following instructions are for a Digital keyboard.  If you are using a microcomputer, please </I></B><B><I>substitute  </I></B><B><I>1</I></B><B><I>  for PF1. </I></B></P>
+<P><B>KEY</B>      <B>DEFINITION</B></P>
+<P>&lt;PF1&gt; F  Fill selected range (previously used for exit)          </P>
+<UL>
+<LI>   </LI>
+<LI>    <B><I>Note: Text must be selected to do a Fill. Also margins may be set after the text as been </I></B><B><I>selected and before the Fill is executed.</I></B></LI></UL>
+<P>&lt;PF1&gt; C F Fills a paragraph at a time (paragraph is not selected to do this type of fill)</P>
+<P>&lt;PF1&gt; N    Move to other window</P>
+<P>&lt;PF1&gt; O   Set screen to one window</P>
+<P>&lt;PF1&gt; T   Set screen to two windows, prompts for buffer name for new window</P>
+<P>&lt;PF1&gt; ,   Search and replace commands</P>
+<P>&lt;PF1&gt; E   Exit, saving changes made</P>
+<P>C Z   Exit, saving changes made</P>
+<P>&lt;PF1&gt; Q    Quit the editor with no changes saved</P>
+<P>&lt;PF1&gt; '   Insert a &lt;&lt;%MARK%&gt;&gt; character at the cursor</P>
+<P>&lt;PF1&gt; &quot;  Find a mark and remove it</P>
+<P>C R  Refresh the screen</P>
+<P>C W  Refresh the screen</P>
+<P> </P>
+<P>&lt;PF1&gt; Z  Give a status report</P>
+<P>&lt;PF1&gt;  C M Write the current buffer out to a disk file  (Previously W$WRITE_BUFFER command)</P>
+<P>&lt;PF1&gt; P   Print<A ID="I4" NAME="I4"></A> a file to an attached printer (Previously W$PRINT_FILE command)</P>
+<P>&lt;PF1&gt; C PSend a file to a print queue using the DCL Print command (Previously W$PRINT_BUFFER command)</P>
+<P>&lt;PF1&gt; C D  Trim trailing white spaces from the buffer (Previously W$TRIM_BUFFER command)</P>
+<P>&lt;PF1&gt; R Reset margins</P>
+<P>&lt;PF1&gt; C W  Toggle screen width from 80 to 132 and from 132 to 80 (Previously &lt;PF1&gt; W keystroke)</P>
+<P>&lt;PF1&gt; B  Prompt for new buffer name and move to that buffer</P>
+<P>&lt;PF1&gt; I   Insert a file at the cursor</P>
+<P>&lt;PF1&gt; U   Current word to uppercase</P>
+<P>&lt;PF1&gt; ~   Toggle between insert and overstrike mode</P>
+<P>&lt;PF1&gt; W   Write selected text to an output file, file is specified by user (This is new keystroke)</P>
+<P>&lt;PF1&gt; C  Move a selected range to another buffer, buffer is specified by user (Previously W$CUT command)</P>
+<P>&lt;PF1&gt; G  Print<A ID="I5" NAME="I5"></A> the selected range of text to an attached printer (Previously W$PRINT_RANGE command)</P>
+<P>&lt;PF1&gt; SShow buffers (This is a new keystroke)</P>
+<P>&lt;PF1&gt; TAB Move the cursor to the position where the previous line began</P>
+<P>KEDT<A ID="I6" NAME="I6"></A> is the default editor in Mail<A ID="I7" NAME="I7"></A>. If you want  EDT  to be your default editor in Mail, insert the following command in your  LOGIN.COM  file (include the dollar sign):</P>
+<P> $ ASSIGN KCUT:MAILEDT.COM MAIL$EDIT</P>
+<P>If you do this, the above keystrokes will not work.</P>
+<H2><A ID="I8" NAME="I8">
+<BR>KEDT KeyPad Commands</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Moving the Cursor</I></FONT></P>
+<P>Keypad 4 for forward</P>
+<P>Keypad 5 for backward</P>
+<P><B>Arrow Keys</B></P>
+<P>1  one word</P>
+<P>2  to right end of line</P>
+<P>0  beginning of next line</P>
+<P>8  a section</P>
+<P>7  to next &lt;FF&gt;</P>
+<P><B>Deleting</B></P>
+<P>,   one character</P>
+<P>-   one word</P>
+<P>PF4   one whole line and &lt;CR&gt;</P>
+<P>DELETE  the char left of cursor</P>
+<P>&lt;PF1&gt;  2   del to end of line</P>
+<P> </P>
+<P><B>Format: CUT and PASTE</B></P>
+<P>&lt;PF1&gt;  0  opens a line</P>
+<P>C L   inserts &lt;FF&gt;</P>
+<P>.   cursor motion selects text</P>
+<P>6   cuts text to buffer</P>
+<P>&lt;PF1&gt;  6  pastes text from buffer</P>
+<P><B>Repetition</B></P>
+<P>Hold a key down</P>
+<P>&lt;PF1&gt; + nn + command  will repeat command nn times</P>
+<H2><A ID="I9" NAME="I9">
+<BR>How to Set Default Margins in KEDT</A></H2>
+<HR ALIGN=CENTER>
+<P>The following instructions help you to set KEDT so that you will always have the same margins when you use KEDT or when you are editing a mail message.  These instructions will work ONLY with KEDT; they will not work if you type EDIT filename at the $ prompt.  </P>
+<P>
+<FONT SIZE=+1><I>Edit EVE Initialization file</I></FONT></P>
+<P>At the $ prompt type  KEDT EVE$INIT.EVE</P>
+<P>On a blank line type the following</P>
+<P> set wrap</P>
+<P> set right margin 70</P>
+<P> set left margin 5</P>
+<P>Press   C Z to exit KEDT and save the file.</P>
+<P>
+<FONT SIZE=+1><I>Edit LOGIN.COM file</I></FONT></P>
+<P>At the $ prompt, type    KEDT LOGIN.COM</P>
+<P>Make a new line and add the following line:</P>
+<P> DEFINE EVE$INIT = &quot;SYS$LOGIN:EVE$INIT.EVE&quot;</P>
+<P>Logout and then log back onto the computer.  When you use KEDT, you will have nice margins.</P>
+<P>
+<FONT SIZE=+1><I>KEDT Additions</I></FONT></P>
+<P>Two new features have been added to KEDT.  The ability to preface text with &quot;&gt;&quot; and the ability to append a signature file to the bottom of a message.  These two features are quite useful in MAIL.</P>
+<P><B>Text Preface of &quot;&gt;&quot;</B></P>
+<P>It is common in e-mail correspondence to identify the text of a message to which you are responding.  The accepted symbol for this is &quot;&gt;&quot;.  In Mail, you can include the text of a mail message in the reply<A ID="I10" NAME="I10"></A> by using the REPLY/EXTRACT command.  With the new feature, you will then be able to automatically preface the previously written text with &quot;&gt;&quot; symbols by pressing</P>
+<P> 7   or   &lt;PF1&gt;  A</P>
+<P>On a microcomuter, you will type 1   in place of the &lt;PF1&gt;  .</P>
+<P><B>Signature at the end of a Message</B></P>
+<P>To make use of this feature, simply create a text file in your home directory called <B>SIGNATURE.TXT</B> .  Create the text exactly as youwish it to appear at the bottom of your e-mail.  Keep in mind that standard Internet practice is to limit the signature to 5 lines.</P>
+<P>Once the file is created, it can be included in any message by pressing</P>
+<P> 8 or &lt;PF1&gt; H</P>
+<P>On a microcomuter, you will type 1   in place of the &lt;PF1&gt;  .</P>
+<H2><A ID="I11" NAME="I11">
+<BR>Spell for KEDT</A></H2>
+<HR ALIGN=CENTER>
+<P>&quot;This has gone through my Spilling Checker, where I tryst it will sale through with flying colons.  In this modern ear, it is inexplicable to expose readers to misspelled swords when they have bitter things to do.  </P>
+<P> --<I> </I><I> David K. Smith </I>--</P>
+<P> </P>
+<P>Following are instructions for the Kedt Spell Corrector (hereafter referred to as SPELL).  Please note that this spell checker is not as sophisticated as the WordPerfect spell checker.  It <B>will </B>detect spelling errors; hence learning to use SPELL is well worth the effort.</P>
+<H2><A ID="I12" NAME="I12">
+<BR>How to Start the Kedt SPELL</A></H2>
+<HR ALIGN=CENTER>
+<P>After you have written a mail message or text using Kedt, to start the Kedt spell checker, first press &lt;PF1&gt; KP 7  (that's the 7 on the keypad not the numbers over the letters of the alphabet).  If you are using a microcomputer, press the  1  key and then the 7 on the keypad.  When you see <B>Command:</B> in the lower left corner of your screen, type SPELL and wait for the Spell checker to start.</P>
+<H2><A ID="I13" NAME="I13">
+<BR>The Options on the Kedt SPELL</A></H2>
+<HR ALIGN=CENTER>
+<P>SPELL will stop at the first word which doesn't appear to be spelled correctly.  At the bottom of the screen SPELL will ask you if you want to accept the word as correct.  If you type N for No, a menu of options will appear at the bottom of the screen.  To select<A ID="I14" NAME="I14"></A> an option, type the capitalized letter in the option word. </P>
+<P>
+<FONT SIZE=+1><I>Help</I></FONT></P>
+<P>Help briefly describes the functions of the following options.</P>
+<P>
+<FONT SIZE=+1><I>Right</I></FONT></P>
+<P>Sometimes a word <B>is</B> spelled correctly (for instance, a proper name) but isn't in Spell's dictionary.  In this case, select the Right option; just type the letter R. SPELL will add this word to the main dictionary.</P>
+<P>
+<FONT SIZE=+1><I>Wrong</I></FONT></P>
+<P>If a word is <B>not</B> spelled correctly, select the Wrong option; type the letter W and then type the correct spelling of the word and press R</P>
+<P>
+<FONT SIZE=+1><I>Personal</I></FONT></P>
+<P>If you select Personal, the word goes into your personal dictionary (PERSDICT.DAT in your main directory) and SPELL continues.</P>
+<P>
+<FONT SIZE=+1><I>Ignore</I></FONT></P>
+<P>If you select Ignore, SPELL continues and ignores this word for the rest of this file.  The word is entered into a guidance file.</P>
+<P>
+<FONT SIZE=+1><I>Junk</I></FONT></P>
+<P>Junk ignores this word for the rest of this SPELL session.</P>
+<P>
+<FONT SIZE=+1><I>Check</I></FONT></P>
+<P>Check, allows you to check a word other than the word on which SPELL has stopped.  Type in the word and SPELL will tell you if it is spelled correctly.  When you are finished checking words, press R</P>
+<P>
+<FONT SIZE=+1><I>Guess</I></FONT></P>
+<P>Selecting Guess will offer suggestions of the correct spelling.  Next to each choice is a letter.  Type the letter of the word you wish to use as a replacement or  C  Z  if no choice is correct.</P>
+<P><A ID="I15" NAME="I15"></A></P>
+<P>
+<FONT SIZE=+1><I>Quit</I></FONT></P>
+<P>Quit allows you to exit<A ID="I16" NAME="I16"></A> the spell checker at any time.  There are four options from which to choose at this point.</P>
+<P>&#149;Abandon - abandons all the spell checking you have done up to this point - <I>i.e.</I>, it leaves the file unchanged.</P>
+<P>&#149;Save - Keeps all the changes you may have up to this point.</P>
+<P>&#149;Continue - Resumes checking.  This ensures that you do not have to quit the program if you press QUIT by mistake.</P>
+<P>&#149;Help - Explains the above three commands.</P>
+<P> <I>Edit</I></P>
+<P>Edit allows you to type the correct word using a &quot;mini-editor.&quot;</P>
+<P>
+<FONT SIZE=+1><I>Skip</I></FONT></P>
+<P>Skip skips the word for this instance only and does not enter the word in the guidance file.</P>
+<P>
+<FONT SIZE=+1><I>Down Arrow</I></FONT></P>
+<P>Pressing the down arrow allows you to skip the rest of the current line, including the current word.</P>
+<HR ALIGN=CENTER>
+<P><A HREF="mail.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="netware.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

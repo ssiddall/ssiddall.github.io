@@ -1,0 +1,1038 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 9">
+<link id=Main-File rel=Main-File href="../percept.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = document.all.item("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#FFFFFF",gOtlNormalClr="#000000",gOtlActiveClr="#FFFF00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+	if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+}
+function LoadOtl()
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	OtlObj.style.display="block"
+	OtlObj.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	for(ii=0; ii<document.all.tags("DIV").length; ii++) {
+		obj=document.all.tags("DIV").item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 ) {   
+			gChildEntryTable[count++]=obj
+			obj.children.tags("TABLE").item(0).style.borderColor=gOtlNormalClr
+		}
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=document.all.item("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=document.all.item("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+
+	obj=document.all.item("PPTB"+idx)
+	if( obj )
+		obj.style.borderLeftColor=obj.style.borderBottomColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( obj ){ ChgClr(obj,gOtlActiveClr) }
+function Out( obj ){ ChgClr(obj,gOtlHiliteClr) }
+function ObjExists( ii ) { obj=document.all("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+//-->
+</script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:5px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	padding-left:10px;}
+.CBorder
+	{position:relative;
+	width:100%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	padding-bottom:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()">
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:absolute;width:70px;visibility:hidden' align=left
+ cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span style="mso-spacerun:
+ yes">  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=right cellpadding=0 cellspacing=0>
+ <td>
+ <div id="nb_sldshwBorder" style='position:absolute;left:-20px;width:20px;
+ height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_sldshw" title="Full Screen Slide Show"
+ style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'>Outline</div>
+ <div title="Show/Hide Outline" id="nb_otl" style='position:absolute;
+ top:0%;left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden'>
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr>
+  <td>
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" onmouseover="Over(this)"
+  id=PPTL1 onmouseout="Out(this)">Students’ Perceptions of Technology in
+  Learning</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB1 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Scott E. Siddall</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Denison University</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" onmouseover="Over(this)"
+  id=PPTL2 onmouseout="Out(this)">Objectives</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB2 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>To determine our students’ authentic feelings
+    toward technology in undergraduate learning</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>To test the survey instrument</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" onmouseover="Over(this)"
+  id=PPTL3 onmouseout="Out(this)">The Survey</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB3 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Equivalent web and print formats</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Web version is much less costly</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Three elements, blended in the survey</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>K-12 and college selection experiences</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Estimate their desires for technology</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Characterize the respondent</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>54 Likert scale questions:</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Five levels (SA, A, NO,D,SD)</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Neutral mean = 3.0</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>One textual response</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>US mail invitations with incentives</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.htm');" onmouseover="Over(this)"
+  id=PPTL4 onmouseout="Out(this)">The Students</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB4 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>800 students</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>400 from each Denison University and Kenyon
+    College</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>100 from each graduating class</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Stratified random sample</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>30% response rate (n=242)</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.htm');" onmouseover="Over(this)"
+  id=PPTL5 onmouseout="Out(this)">Analytical methods</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB5 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>SPSS release 9</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Crosstabs</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>One sample t-tests</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>One-way ANOV where variances were homogeneous</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>SNK multiple range post-hoc tests</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Likert scale data treated as interval data<span
+    style="mso-spacerun: yes">           </span>&#9;(Jaccard and Wan, 1996)</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Statistical inferences all at 95% confidence
+    level</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.htm');" onmouseover="Over(this)"
+  id=PPTL6 onmouseout="Out(this)">Descriptive results</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB6 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Summary data available on the web:</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>http://siddall.info/talks/percept/data.html</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" onmouseover="Over(this)"
+  id=PPTL7 onmouseout="Out(this)">Overall student perceptions</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB7 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Institutional IT commitments are not a factor in
+    selecting colleges for most students</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Those who considered IT had significantly
+    greater access to high-tech classrooms in K-12</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Positive experiences with IT in college classes
+    are strongly correlated with professor’s effective use of technology</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.htm');" onmouseover="Over(this)"
+  id=PPTL8 onmouseout="Out(this)">Overall student perceptions</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB8 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Students used computers more this year than last</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Students put a higher premium on support than on
+    outstanding facilities</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Students very strongly value face-to-face
+    contact with faculty, and they value outside speakers in class</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Students prefer short lectures and feel that
+    printed, web-based or taped lectures can be as effective</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" onmouseover="Over(this)"
+  id=PPTL9 onmouseout="Out(this)">Students who say they know more…</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB9 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Own a computer</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Are more willing to engage in remote
+    collaboration (video conferencing)</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Find group work less productive</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Are not comfortable with intuitive approaches;
+    they want manuals</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Are more often math majors and less often
+    majoring in art and religion</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.htm');" onmouseover="Over(this)"
+  id=PPTL10 onmouseout="Out(this)">On collaborative work….</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB10 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Do you like large group work?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>64% no, 18% yes, 16% no opinion</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Is group work more or less productive?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>32% more, 46% less, 21% no opinion</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Is collaborative work shared equitably?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>59% no, 28% yes, 12% no opinion</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Where does most learning take place?</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>43% outside of class, 36% inside, 18% no opinion</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" onmouseover="Over(this)"
+  id=PPTL11 onmouseout="Out(this)">On anonymity…</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB11 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>55% report holding back comments in class</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>31% would contribute anonymously if they
+    &#9;felt they could</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>These remarks are strongly associated
+    &#9;(p&lt;.001)</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" onmouseover="Over(this)"
+  id=PPTL12 onmouseout="Out(this)">Gender differences</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB12 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>More men claim to have searched library catalogs
+    than women</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Fewer women claim to be highly knowledgeable
+    about computers</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>More women report a lower level of positive
+    experiences with technology than men</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>More women than men are negative about outside
+    speakers via video conferencing</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>More women are more inclined to seek anonymity
+    than men and they find group work more productive than men do</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Men approach computers more intuitively than
+    women and show a preference for shorter lectures than women</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" onmouseover="Over(this)"
+  id=PPTL13 onmouseout="Out(this)">Differences between survey formats</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB13 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Web respondents profess to have more knowledge
+    about computing than print respondents (possible bias for web format)</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Web respondents want a computer in each
+    classroom; print respondents are neutral</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Web respondents favor computing requirements in
+    class more than print respondents</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Print respondents do not want anonymous tools;
+    web respondents are neutral</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Web respondents are more intuitive about using
+    computers than print respondents</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Web respondents tend to write much longer
+    textual responses</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.htm');" onmouseover="Over(this)"
+  id=PPTL14 onmouseout="Out(this)">Differences between campuses</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB14 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Institutional commitments to IT influenced
+    Denison students more than Kenyon prospectives</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Kenyon students reported greater access to
+    high-tech K-12 resources and home computers than Denison students</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Denison students are interested in taking
+    classes at other schools; Kenyon students are not</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Denison students think that computing will be
+    more influential in the future than Kenyon students</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" onmouseover="Over(this)"
+  id=PPTL15 onmouseout="Out(this)">Where do you learn?</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB15 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;Real learning occurs back in the dorm,
+    where I learned how to live&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;One doesn't learn by passively absorbing
+    information.<span style="mso-spacerun: yes">  </span>Most learning takes
+    place outside of class when one has the opportunity to sift through ideas
+    and distill the important concepts.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;...learning takes place outside of class
+    when people are truly engaged and interested instead of discussion for a
+    grade.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;I think that the learning that goes on
+    outside class, just spending time with others and talking to them, is just
+    as important as in-class not talking.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;I learn more reading the material or
+    studying it on my own.<span style="mso-spacerun: yes">  </span>Too many
+    professors just regurgitate the chapter you read for the homework the night
+    before.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;I personally tend to tune out and just
+    take notes and not<span style="mso-spacerun: yes">  </span>really think
+    about what my professor is saying.<span style="mso-spacerun: yes">  
+    </span>Afterwards I will look at my notes and decipher what the professor
+    has said<span style="mso-spacerun: yes">   </span>This takes place out of
+    class and<span style="mso-spacerun: yes">  </span>it is where most of my
+    learning occurs.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.htm');" onmouseover="Over(this)"
+  id=PPTL16 onmouseout="Out(this)">Where do you learn?</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB16 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;...getting away from the formality of the
+    classroom<span style="mso-spacerun: yes">  </span>being able to think about
+    the idea in any direction you want to take usually involves thinking and
+    questioning and finding answers through different ways of seeing an
+    idea&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;Email discussions with fellow students or
+    professors<span style="mso-spacerun: yes">  </span>Web searches of other
+    libraries or academic websites.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;I am a shy person in large classroom
+    situations . I do well when I can talk to my professor one on one.<span
+    style="mso-spacerun: yes">     </span>I also agree in having outside
+    lecturers come and speak by way of two way conferencing. &quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>&quot;I went to a small liberal arts college so
+    my teachers could know me by name.&quot;</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.htm');" onmouseover="Over(this)"
+  id=PPTL17 onmouseout="Out(this)">Broad Interpretation of Results</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB17 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Our students are conservatively optimistic about
+    technology in their learning and in post-graduate life</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Technology will not replace instructors but our
+    students want instructors who use technology well</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.htm');" onmouseover="Over(this)"
+  id=PPTL18 onmouseout="Out(this)">Specific Interpretation of Results</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB18 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Our students have strong K-12 experiences that
+    effect their expectations but not decisions about selecting a college</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>They want support for their increasing uses of
+    technology and do better when their instructors use technology well</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Most are accepting of alternate classroom
+    methods:<span style="mso-spacerun: yes">  </span>online lectures, video
+    conference speakers, etc.</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Most are uncomfortable with large group
+    collaborations; some seek tools for anonymous expression</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.htm');" onmouseover="Over(this)"
+  id=PPTL19 onmouseout="Out(this)">Conclusions about the Survey Tool</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB19 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Useful information gathered; potential of
+    student survey confirmed</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Several areas for improvement identified</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Web surveys are appropriate for some questions</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Focus will change over time as results suggest</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Possibility to include more institutions</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Contact Scott E. Siddall<span
+    style="mso-spacerun: yes">   </span>siddall.info</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>This presentation at:<span style="mso-spacerun:
+    yes">  </span>http://siddall.info/talks/</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.htm');" onmouseover="Over(this)"
+  id=PPTL20 onmouseout="Out(this)">Home</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB20 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Return to Homepage</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</body>
+
+</html>

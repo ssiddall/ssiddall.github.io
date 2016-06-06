@@ -1,0 +1,321 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/19/01 10:21:59">
+<title>Using Console Redirection : Dell PowerEdge 2650 Systems
+ User's Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1040841"> Using Console 
+Redirection
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ User's Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040370">Minimum Hardware and Connection Requirements</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040377">Software Requirements</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040383">Configuring Console Redirection on the System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040409">Configuring Console Redirection on the Client System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040438">Rebooting the System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040452">Configuring Special Keys</A></P>
+
+
+<br>
+<p>Console redirection allows you to maintain a system from a remote location by re-directing keyboard input and text output through the serial port. Graphic output is not redirected. Console redirection can be used under MS-DOS&#174; for tasks such as setting up a common BIOS configuration or setting up a RAID configuration. In a typical installation, the system is connected to a port concen-trator that allows you to connect several systems using a shared modem. After you use a modem or other remote connection to log into the port concentrator, you can select which system you want to manage with console redirection. This section describes the simplest connection possible: connecting to a system with a null modem cable.</p><hr noshade size="1">
+<h2><a name="1040370">Minimum Hardware and Connection Requirements</a></h2>
+
+
+<p>To use console redirection, you must have the following:</p><ul><li>An available serial port (COM port) on a client system <br><br></li>
+</ul><p class="indent">This port must not conflict with any other ports on the system.</p>
+<ul><li>Available serial port (COM) on the server <br><br></li>
+</ul><p class="indent">For systems with two available serial ports, you can use either the COM 1 or COM 2 port.</p>
+<ul><li>A null modem cable to connect the server to the client system<br><br></li>
+</ul><hr noshade size="1">
+<h2><a name="1040377">Software Requirements</a></h2>
+
+
+<p>Your remote terminal emulation software should meet the following specifications:</p><ul><li>ANSI or VT100/220 terminal emulation with a window size of 80 x 25 characters<br><br></li>
+<li>9600, 19.2 K, 57.6 K, or 115.2 Kbps using serial (COM) ports<br><br></li>
+<li>Recommended: the ability to create keyboard command macros<br><br></li>
+</ul><p>All versions of the Microsoft&#174; Windows&#174; operating systems come with Hyper-Terminal terminal emulation software. However, the version of HyperTerminal included with most Windows operating systems does not provide the correct screen size, the arrow and function keys do not work, and there is no method of creating macros. Dell recommends that you either upgrade your version of HyperTerminal to HyperTerminal Private Edition 6.1 or later or select new terminal emulation software.</p><hr noshade size="1">
+<h2><a name="1040383">Configuring Console Redirection on the System</a></h2>
+
+
+<p>Console redirection is configured through the System Setup program (see "<a href="5g387c30.htm#1039152">Using the System Setup Program</a>" for instructions). The <b>Console Redirection</b> option displays a<b> </b>screen that allows you to configure console redirection. The submenu allows you to turn the feature on or off, select the remote terminal type, and enable or disable redirection after booting. The options available are listed in <a href="5g387ad0.htm#1040387">Table&nbsp;D-1</a>.</p><a name="1040407"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040387">Table D-1.&#32; Terminal Emulation Types</a></p></p>
+<tr><td valign="top" align="left"><a name="1040391"> </a>
+<p><b>Selection</b></p>
+
+
+</td><td valign="top" align="left"><a name="1040393"> </a>
+<p><b>Options</b></p>
+
+
+</td></tr>
+<tr><td valign="top" align="left"><p>Console Redirection</p></td><td valign="top" align="left"><p>Systems with one serial port: <br>On<br>Off</p><p>Systems with two serial ports:<br>Serial Port 1<br>Serial Port 2<br>Off</p></td></tr>
+<tr><td valign="top" align="left"><p>Remote Terminal Type</p></td><td valign="top" align="left"><p>VT100/220<br>ANSI</p></td></tr>
+<tr><td valign="top" align="left"><p>Redirection after boot</p></td><td valign="top" align="left"><p>Enabled<br>Disabled</p></td></tr>
+
+</table>
+
+
+
+
+</p><p>If you select <b>VT100/220</b> but not all the characters are visible on the screen, go back to the System Setup program and select <b>ANSI</b> as your terminal type. ANSI can display the full set of ASCII characters.</p><hr noshade size="1">
+<h2><a name="1040409">Configuring Console Redirection on the Client System</a></h2>
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>The examples in this document assume that you have upgraded to Hilgraeve's 
+HyperTerminal Private Edition 6.1 or later. If you are using other terminal emulation 
+software, see the help file for that software.
+</td>
+  </tr>
+</table><h3><a name="1040415"> Configuring the Ports
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1040416"></a>Click the <b>Start </b>button, point to <b>Programs&#151;&gt; Accessories&#151;&gt; Communications</b>, and 
+click <b>HyperTerminal</b>.
+<br><br>
+
+<li value="2"><a name="1040417"></a>Enter any name for the new connection and select any icon.
+<br><br>
+
+<li value="3"><a name="1040418"></a>Click <b>OK</b>. 
+<br><br>
+
+<li value="4"><a name="1040419"></a>From the<b> Connect to</b> pull-down menu, select a COM port available on your client 
+system and click <b>OK</b>. 
+<br><br>
+</ol>
+<p class="indent">If no COM port is available and you do not have a Dell system, you will need to contact technical support for your client system. </p>
+<p class="indent">After you have selected an available COM port, the COM port properties window is displayed.</p>
+<ol type="1">
+
+<li value="5"><a name="1040422"></a>Select <b>Bits per second</b>.
+<br><br>
+</ol>
+<p class="indent">Console redirection supports 9600, 19.2 K, 57.6 K, or 115.2 K bps.</p>
+<ol type="1">
+
+<li value="6"><a name="1040424"></a>Set <b>Data bits</b> to <b>8</b>.
+<br><br>
+
+<li value="7"><a name="1040425"></a>Set <b>Parity</b> to <b>None</b>. 
+<br><br>
+
+<li value="8"><a name="1040426"></a>Set <b>Stop bits</b> to <b>1</b>. 
+<br><br>
+
+<li value="9"><a name="1040427"></a>Set <b>Flow control</b> to <b>Hardware</b>.
+<br><br>
+
+<li value="10"><a name="1040428"></a>Click <b>OK</b>. 
+<br><br>
+</ol>
+<h3><a name="1040429"> Configuring the Terminal Settings
+</a></h3>
+<p>After you configure the ports, configure the terminal settings by performing the following steps:</p><ol type="1">
+
+<li value="1"><a name="1040431"></a>In HyperTerminal, click <b>File</b>, click <b>Properties</b>, and select the <b>Settings </b>tab.
+<br><br>
+
+<li value="2"><a name="1040432"></a>Ensure that the <b>Function, arrow, and ctrl keys act as</b> field is set to <b>Terminal Keys</b>. 
+<br><br>
+
+<li value="3"><a name="1040433"></a>Ensure that the <b>Backspace key sends</b> field is set to <b>Ctrl+H</b>.    
+<br><br>
+
+<li value="4"><a name="1040434"></a>Change the <b>Emulation</b> setting from <b>Auto detect</b> to <b>ANSI</b> or <b>VT100/220.
+</b><br><br>
+</ol>
+<p class="indent">This setting should be the same as the setting you selected for the <b>Console Redirection</b> option on the server.</p>
+<p class="indent">When you click <b>Terminal Setup</b>, you should see a setting for the number of rows and columns. </p>
+<ol type="1">
+
+<li value="5"><a name="1040437"></a>Change the number of rows from 24 to 25 and leave the number of columns at 80. If 
+you do not have these settings, this is an indication that you must upgrade your 
+terminal emulation software.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1040438">Rebooting the System</a></h2>
+
+
+<p>Console redirection is designed to yield control of the serial ports to the operating system. This configuration allows serial debugging and redirection of the operating system to function correctly without interference from the system BIOS. </p><p>To use console redirection to shut down a system and troubleshoot it or to change SCSI BIOS configurations, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1040441"></a>Reboot the system. See <a href="5g387ad0.htm#1040696">Table&nbsp;D-4</a>, for a recommendation on how to do this.
+<br><br>
+
+<li value="2"><a name="1040442"></a>When the system begins to reboot, use console redirection to watch and interact with 
+the system during the POST. While the system is booting, you can do the following:
+<br><br>
+<ul>
+<li type="disc">Enter the System Setup program.
+<br><br></li>
+<li type="disc">Enter the SCSI setup menus.
+<br><br></li>
+<li type="disc">Run utilities on the utility partition.
+<br><br></li>
+<li type="disc">Update firmware and BIOS (flash the system).
+<br><br></li>
+</ul>
+</ol>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> To use console redirection to run utilities on the utility partition, the 
+utility partition must have been created using Dell OpenManage&#153; Server 
+Assistant version 6.3.1 or later.
+</td>
+  </tr>
+</table>
+<hr noshade size="1">
+<h2><a name="1040452">Configuring Special Keys</a></h2>
+
+
+<p>Console redirection uses ANSI or VT100/220 terminal emulation, which are limited to basic ASCII characters. There are no function keys, arrow keys, or control keys in this character set. However, most BIOS software requires the use of function keys and control keys for ordinary functions. You can emulate a function key or control key by using a special key sequence, called an escape sequence, to represent a specific key.</p><p>For console redirection, an escape sequence starts with an escape character. This character can be entered in a number of different ways, depending on the requirements of your terminal emulation software. For example, <span class="screen">0x1b</span>, <span class="screen">^[</span>, and &lt;Esc&gt; all refer to the same escape character. Some terminal software uses predefined macros to send the proper escape sequences. In HyperTerminal, you can define macros by selecting <b>Key Macros</b> from the <b>View</b> menu. Macros can be assigned to almost any possible key for almost any key combination. Create a macro for each of your function keys. <a href="5g387ad0.htm#1040465">Table&nbsp;D-2</a> and <a href="5g387ad0.htm#1040620">Table&nbsp;D-3</a> list the VT100/220 escape sequences that must be sent to represent a special key or command.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>When defining macros in HyperTerminal, you must press &lt;Ins&gt; before &lt;Esc&gt; 
+to signify that you are sending an escape sequence rather than escaping out of the 
+dialog box. If you do not have these settings, this is an indication that you must 
+upgrade your terminal emulation software.
+</td>
+  </tr>
+</table><a name="1040614"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040465">Table D-2.&#32; VT100/220 Supported Escape Sequences&nbsp;</a></p></p>
+<tr><th valign="top" align="left"><a name="1040471"> </a>
+<p><b>Key</b></p>
+
+
+</th><th valign="top" align="left"><a name="1040473"> </a>
+<p><b>Supported Sequences</b></p>
+
+
+</th><th valign="top" align="left"><a name="1040475"> </a>
+<p><b>Terminal Emulation</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>Up arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;a</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>Down arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;b</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>Right arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;c</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>Left arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;d</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F1</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;op</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F2</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oq</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F3</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;or</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F4</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;os</p></td><td valign="top" align="left"><p>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F5</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ot</p></td><td valign="top" align="left"><p>VT100</p></td></tr>
+<tr><td valign="top" align="left"><p>F6</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ou<br>&lt;Esc&gt; [ 1 7 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F7</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ov<br>&lt;Esc&gt; [ 1 8 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F8</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ow<br>&lt;Esc&gt; [ 1 9 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F9</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ox<br>&lt;Esc&gt; [ 2 0 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F10</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oy<br>&lt;Esc&gt; [ 2 1 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F11</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oz<br>&lt;Esc&gt; [ 2 3 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>F12</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oa<br>&lt;Esc&gt; [ 2 4 ~</p></td><td valign="top" align="left"><p>VT100<br>VT100/220</p></td></tr>
+<tr><td valign="top" align="left"><p>Home</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ 1 ~</p></td><td valign="top" align="left"><p>VT220</p></td></tr>
+<tr><td valign="top" align="left"><p>End</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ 4 ~</p></td><td valign="top" align="left"><p>VT220</p></td></tr>
+<tr><td valign="top" align="left"><p>Insert</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ 2 ~</p></td><td valign="top" align="left"><p>VT220</p></td></tr>
+<tr><td valign="top" align="left"><p>Delete</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ 3 ~</p></td><td valign="top" align="left"><p>VT220</p></td></tr>
+<tr><td valign="top" align="left"><p>Page Up</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ 5 ~</p></td><td valign="top" align="left"><p>VT220</p></td></tr>
+<tr><td valign="top" align="left"><p>Page Down</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ 6 ~</p></td><td valign="top" align="left"><p>VT220</p></td></tr>
+<tr><td valign="top" align="left"><p>Shift-Tab</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;z<br>&lt;Esc&gt; [ 0 &lt;Shift&gt;z</p></td><td valign="top" align="left"><p>VT100<br>VT220</p></td></tr>
+
+</table>
+
+
+
+
+</p><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040620">Table D-3.&#32; ANSI Supported Escape Sequences&nbsp;</a></p></p>
+<tr><th valign="top" align="left"><a name="1040624"> </a>
+<p><b>Key</b></p>
+
+
+</th><th valign="top" align="left"><a name="1040626"> </a>
+<p><b>Supported Sequences</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>Up arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;a</p></td></tr>
+<tr><td valign="top" align="left"><p>Down arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;b</p></td></tr>
+<tr><td valign="top" align="left"><p>Right arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;c</p></td></tr>
+<tr><td valign="top" align="left"><p>Left arrow</p></td><td valign="top" align="left"><p>&lt;Esc&gt; [ &lt;Shift&gt;d</p></td></tr>
+<tr><td valign="top" align="left"><p>F1</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;op</p></td></tr>
+<tr><td valign="top" align="left"><p>F2</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oq</p></td></tr>
+<tr><td valign="top" align="left"><p>F3</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;or</p></td></tr>
+<tr><td valign="top" align="left"><p>F4</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;os</p></td></tr>
+<tr><td valign="top" align="left"><p>F5</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ot</p></td></tr>
+<tr><td valign="top" align="left"><p>F6</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ou</p></td></tr>
+<tr><td valign="top" align="left"><p>F7</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ov</p></td></tr>
+<tr><td valign="top" align="left"><p>F8</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ow</p></td></tr>
+<tr><td valign="top" align="left"><p>F9</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;ox</p></td></tr>
+<tr><td valign="top" align="left"><p>F10</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oy</p></td></tr>
+<tr><td valign="top" align="left"><p>F11</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oz</p></td></tr>
+<tr><td valign="top" align="left"><p>F12</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;oa</p></td></tr>
+
+</table>
+
+
+
+
+</p><p>After you create these macros, pressing &lt;F1&gt; on the keyboard while running the terminal emulation software sends &lt;Esc&gt;&lt;Shift&gt;op to the server. When these three characters are transmitted, the server interprets them as &lt;F1&gt;. You need this functionality to change the settings in the System Setup program or to continue if there is an error on your system and you are prompted to press &lt;F1&gt;.</p><p>In addition to macros for the function keys, Dell recommends that you set up macros for the additional escape sequences listed in <a href="5g387ad0.htm#1040696">Table&nbsp;D-4</a>. </p><a name="1040732"></a><p>.
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040696">Table D-4.&#32; Additional Escape Sequences</a></p></p>
+<tr><th valign="top" align="left"><a name="1040700"> </a>
+<p><b>Key Combination</b></p>
+
+
+</th><th valign="top" align="left"><a name="1040702"> </a>
+<p><b>Supported Sequence</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>&lt;Alt&gt;&lt;<i>x</i>&gt;</p></td><td valign="top" align="left"><p>&lt;Alt&gt;&lt;<i>x</i>&gt; is mapped to &lt;Esc&gt; &lt;Shift&gt; <i>x</i> &lt;Shift&gt; <i>x</i> key sequences on the terminal, where <i>x</i> is a letter and <i>X</i> is the uppercase letter.</p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Ctrl&gt;&lt;Alt&gt;&lt;Del&gt;</p><p>(This key combination reboots the system.)</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Shift&gt;r &lt;Esc&gt; r &lt;Esc&gt; &lt;Shift&gt;r<br></p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Ctrl&gt;&lt;Shift&gt;i</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Ctrl&gt;&lt;Shift&gt;i</p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Ctrl&gt;&lt;Shift&gt;j</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Ctrl&gt;&lt;Shift&gt;j</p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Ctrl&gt;&lt;Shift&gt;h</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Ctrl&gt;&lt;Shift&gt;h</p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Ctrl&gt;&lt;Shift&gt;m</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Ctrl&gt;&lt;Shift&gt;m</p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Ctrl&gt;2</p></td><td valign="top" align="left"><p>&lt;Esc&gt; &lt;Ctrl&gt;2</p></td></tr>
+
+</table>
+
+
+
+
+</p><a name="1040733"></a><p></p><p></p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

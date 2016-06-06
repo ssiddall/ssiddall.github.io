@@ -1,0 +1,691 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/13/01 12:56:42">
+<title>Installing Drives : Dell PowerEdge 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1037554"> Installing Drives
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1054458">SCSI Interface Cables</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1056638">SCSI Configuration Information</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1054520">External SCSI Tape Drive</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1054542">SCSI Hard Drives</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1054629">CD and Diskettes Drives</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1057694">Activating the Integrated RAID Controller</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1058188">Installing a RAID Controller Card</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1058228">Installing a SCSI Backplane Daughter Card</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1058185">Configuring the Boot Device</A></P>
+
+
+<br>
+<p>Your system contains up to five 1-inch SCSI hard drives. A CD drive and a diskette drive are mounted together on a tray that slides in the front panel and SCSI backplane board. This design allows the diskette and CD drives to be serviced without removing the cover or connecting and disconnecting cables. This section contains instructions for replacing these devices.</p><hr noshade size="1">
+<h2><a name="1054458">SCSI Interface Cables</a></h2>
+
+
+<p>SCSI interface connectors are keyed for correct insertion. Keying ensures that the pin-1 wire in the cable connects to pin 1 in the connectors on both ends. When you disconnect an interface cable, take care to grasp the cable connector, rather than the cable itself, to avoid stress on the cable.</p><hr noshade size="1">
+<h2><a name="1056638">SCSI Configuration Information</a></h2>
+
+
+<p>Although SCSI devices are installed in essentially the same way as other devices, their configuration requirements are different. To configure an external SCSI device, follow the guidelines in the following subsections.</p><h3><a name="1054467"> SCSI ID Numbers
+</a></h3>
+<p>Each device attached to a SCSI host adapter must have a unique SCSI ID number from 0&nbsp;to 15.</p><p>A SCSI tape drive is configured by default as SCSI ID 6.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>There is no requirement that SCSI ID numbers be assigned sequentially or that 
+devices be attached to the cable in order by ID number.
+</td>
+  </tr>
+</table><h3><a name="1054476"> Device Termination
+</a></h3>
+<p>SCSI logic requires that termination be enabled for the two devices at opposite ends of the SCSI chain and disabled for all devices in between. For internal SCSI devices, termination is configured automatically. For external SCSI devices, you should disable termination on all devices and use terminated cables. See the documentation provided with any optional SCSI device you purchase for information on disabling termination.</p><hr noshade size="1">
+<h2><a name="1054520">External SCSI Tape Drive</a></h2>
+
+
+<p>This subsection describes how to configure and install an external SCSI tape drive.</p><h3><a name="1054523"> Installing an External SCSI Tape Drive
+</a></h3>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document. 
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1054529"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="2"><a name="1054530"></a>Prepare the tape drive for installation.
+<br><br>
+</ol>
+<p class="indent">Ground yourself by touching an unpainted metal surface on the back of the system, unpack the drive (and controller card, if applicable), and compare the jumper and switch settings with those in the drive documentation.</p>
+<p class="indent">See "<a href="5g375c70.htm#1056638">SCSI Configuration Information</a>," for information on setting the drive's SCSI ID number and enabling termination (if required). Change any settings necessary for your system's configuration.</p>
+<ol type="1">
+
+<li value="3"><a name="1059242"></a>Connect the tape drive's interface cable to the external SCSI connector on the 
+controller card.
+<br><br>
+
+<li value="4"><a name="1059261"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="5"><a name="1054539"></a>Perform a tape backup and verification test with the drive as instructed in the software 
+documentation that came with the drive.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1054542">SCSI Hard Drives</a></h2>
+
+
+<p>This subsection describes how to install and configure SCSI hard drives in the system's internal hard-drive bays.</p><h3><a name="1054545"> Before You Begin
+</a></h3>
+<p>Before attempting to remove or install a drive while the system is running, see the documentation for the RAID controller card ensure that the system is configured correctly to support hot-pluggable drive removal and insertion.</p><p>SCSI hard drives are supplied in special drive carriers that fit in the hard-drive bays.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>You should only use drives that have been tested and approved for use with the 
+SCSI backplane board.
+</td>
+  </tr>
+</table><p>You may need to use different programs than those provided with the operating system to partition and format SCSI hard drives. See "Installing and Configuring SCSI Drivers" in the <i>User's Guide</i> for information and instructions.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  Do not turn off or reboot your system while the drive is being formatted. Doing so can 
+cause a drive failure.
+</td>
+  </tr>
+</table>
+<p>When you format a high-capacity SCSI hard drive, allow enough time for the formatting to be completed. Long format times for these drives are normal. For example, an exceptionally large drive can take over an hour to format.</p><h3><a name="1058150"> SCSI Backplane Board Configuration
+</a></h3>
+<p>The hard-drive bays provide space for up to five 1-inch SCSI hard drives. The hard drives connect to a controller on the system board or a RAID controller card through the SCSI backplane board.</p><p>The system provides several options for hard drive configurations:</p><ul><li>SCSI backplane daughter card (see "<a href="5g375c70.htm#1058228">Installing a SCSI Backplane Daughter Card</a>"):<br><br></li>
+<ul>
+<li type="circle">1x5 configuration, without the SCSI backplane daughter card installed<br><br></li>
+<li type="circle">2/3 split configuration, with the SCSI backplane daughter card installed<br><br></li>
+</ul>
+<li>SCSI controller:<br><br></li>
+<ul>
+<li type="circle">Onboard SCSI controller<br><br></li>
+<li type="circle">Optional integrated RAID controller (see "<a href="5g375c70.htm#1057694">Activating the Integrated RAID Controller</a>")<br><br></li>
+<li type="circle">RAID controller card (see "<a href="5g375c70.htm#1058188">Installing a RAID Controller Card</a>")<br><br></li>
+</ul>
+<li>Cabling:<br><br></li>
+<ul>
+<li type="circle">If a RAID controller card is not installed, no cables are required to use either the onboard SCSI controller or optional integrated RAID controller in either a 1x5 or 2/3 split configuration.<br><br></li>
+<li type="circle">If a RAID controller card is installed, cables can be connected from the controller card to SCSIA and/or SCSIB backplane board connector(s). A backplane board connector that is not attached to the RAID controller card will use the onboard SCSI controller or optional integrated RAID controller.<br><br></li>
+<li type="circle">If a cable is connected to the SCSIB backplane board connector, the SCSI backplane daughter card must be installed to activate the 2/3 split configuration. Otherwise, the system will display an error message.<br><br></li>
+</ul>
+</ul><p class="indent">See <a href="5g375aa0.htm#1062031">Figure&nbsp;A-5</a> to locate the connectors on the SCSI backplane board.</p>
+<h3><a name="1063895"> Installing a SCSI Hard Drive
+</a></h3>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  When installing a hard drive, ensure that the adjacent drives are fully installed. 
+Inserting a hard-drive carrier and attempting to lock its handle next to a partially installed 
+carrier can damage the partially installed carrier's shield spring and make it unusable.
+</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  Not all operating systems support hot-plug drive installation. See the documentation 
+supplied with your operating system.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1054575"></a>Remove the bezel (see "<a href="5g375c50.htm#1051233">Removing the Bezel</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="2"><a name="1054579"></a>Open the hard-drive carrier handle (see <a href="5g375c70.htm#1054581">Figure&nbsp;7-1</a>).
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1054581"> </a>
+Figure 7-1.&#32; Installing a SCSI Hard-Drive
+
+</p>
+
+<a name="1056142"></a><p><img src="5g375c72.jpg" height="391" width="456" align="bottom">
+</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  Do not insert a hard-drive carrier and attempt to lock its handle next to a partially 
+installed carrier. Doing so can damage the partially installed carrier's shield spring and make it 
+unusable. Ensure that the adjacent drive carrier is fully installed.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="3"><a name="1056151"></a>Insert the hard-drive carrier into the drive bay (see <a href="5g375c70.htm#1054581">Figure&nbsp;7-1</a>).
+<br><br>
+
+<li value="4"><a name="1056152"></a>Close the hard-drive carrier handle to lock it in place.
+<br><br>
+
+<li value="5"><a name="1054600"></a>Replace the bezel (see "<a href="5g375c50.htm#1109423">Replacing the Bezel</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="6"><a name="1054601"></a>Install any required SCSI device drivers (see "Installing and Configuring SCSI Drivers" 
+in the <i>User's Guide</i> for information).
+<br><br>
+
+<li value="7"><a name="1054602"></a>If the hard drive is new, run the SCSI controllers test in system diagnostics.
+<br><br>
+</ol>
+<h3><a name="1054604"> Removing a SCSI Hard Drive
+</a></h3>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  Not all operating systems support hot-plug drive installation. See the documentation 
+supplied with your operating system.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1054613"></a>Remove the bezel (see "<a href="5g375c50.htm#1051233">Removing the Bezel</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="2"><a name="1063056"></a>Take the hard drive offline and wait until the SCSI hard-drive indicator codes on the 
+drive carrier signal that the drive may be removed safely (see <a href="5g375c20.htm#1050642">Table&nbsp;2-6</a>).
+<br><br>
+</ol>
+<p class="indent">If the drive has been online, the drive status indicator will blink green two times a second as the drive is powered down. When all indicators are off, the drive is ready for removal.</p>
+<p class="indent">See your operating system documentation for more information on taking the hard drive offline.</p>
+<ol type="1">
+
+<li value="3"><a name="1054619"></a>Open the hard-drive carrier handle to release the drive (see <a href="5g375c70.htm#1054581">Figure&nbsp;7-1</a>).
+<br><br>
+
+<li value="4"><a name="1054623"></a>Slide the hard drive out until it is free of the drive bay (see <a href="5g375c70.htm#1054581">Figure&nbsp;7-1</a>).
+<br><br>
+</ol>
+<p class="indent">If you are permanently removing the hard drive, install a blank insert.</p>
+<ol type="1">
+
+<li value="5"><a name="1055173"></a>Replace the bezel (see "<a href="5g375c50.htm#1109423">Replacing the Bezel</a>" in "Troubleshooting Your System").
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1054629">CD and Diskettes Drives</a></h2>
+
+
+<p>A CD drive and a diskette drive mount together on a tray that slides in the front panel and connects to the controllers on the system board through the SCSI backplane board.</p><h3><a name="1054631"> Removing the CD/Diskette Drive Tray
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1063066"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="2"><a name="1063071"></a>Remove the bezel (see "<a href="5g375c50.htm#1051233">Removing the Bezel</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="3"><a name="1058708"></a>Grasp the CD/diskette drive tray release handle and pull the tray from the system (see 
+<a href="5g375c70.htm#1055196">Figure&nbsp;7-2</a>).
+<br><br>
+
+<li value="4"><a name="1054637"></a>Slide the CD/diskette drive tray out of the system.
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1055196"> </a>
+Figure 7-2.&#32; Removing and Installing the CD/Diskette Drive Tray
+
+</p>
+
+<a name="1055212"></a><p><img src="5g375c79.jpg" height="377" width="453" align="bottom">
+</p><h3><a name="1055181"> Installing the CD/Diskette Drive Tray
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1064190"></a>Align the CD/diskette drive tray with the opening in the front panel.
+<br><br>
+
+<li value="2"><a name="1064191"></a>Press the CD/diskette drive tray release handle until the tray snaps into place (see 
+<a href="5g375c70.htm#1055196">Figure&nbsp;7-2</a>).
+<br><br>
+
+<li value="3"><a name="1058733"></a>Replace the bezel (see "<a href="5g375c50.htm#1109423">Replacing the Bezel</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="4"><a name="1063078"></a>Reconnect your system and peripherals to their electrical outlets, and turn on the 
+system.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1057694">Activating the Integrated RAID Controller</a></h2>
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>Replace the battery only with the same or equivalent type 
+recommended by the manufacturer. Discard used batteries according to the 
+manufacturer's instructions. See the <i>System Information</i> document for 
+additional information.
+</b></td>
+  </tr>
+</table>
+
+
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>Before you perform this procedure, you must turn off the system and 
+disconnect it from its power source. For more information, see "<a href="5g375c50.htm#1057956">Safety First&#151;For 
+You and Your System</a>" in "Troubleshooting Your System."
+</b></td>
+  </tr>
+</table>
+
+
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document. 
+</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  To avoid possible data loss, back up all data on the hard drives before changing the 
+mode of operation of the integrated SCSI controller from SCSI to RAID.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1057713"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="2"><a name="1057717"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="3"><a name="1057726"></a>Push the ejectors on the RAID memory module connector down and outward to allow 
+the memory module to be inserted into the connector (see <a href="5g375c70.htm#1057735">Figure&nbsp;7-3</a>).
+<br><br>
+</ol>
+<p class="indent">See <a href="5g375aa0.htm#1062490">Figure&nbsp;A-3</a> to locate the RAID memory module connector on the system board.</p>
+<ol type="1">
+
+<li value="4"><a name="1058788"></a>Align the memory module's edge connector with the alignment keys, and insert the 
+memory module in the connector (see <a href="5g375c70.htm#1057735">Figure&nbsp;7-3</a>).
+<br><br>
+</ol>
+<p class="indent">The memory module connector has two alignment keys that allow the memory module to be installed in the connector in only one way.</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> The RAID controller memory module must be an unbuffered memory module, rated 
+to run at 100 MHz or faster. Do not substitute registered memory modules such as those 
+used for system memory.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="5"><a name="1058804"></a>Press on the memory module with your thumbs while pulling up on the ejectors with 
+your index fingers to lock the memory module into the connector.
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1057735"> </a>
+Figure 7-3.&#32; Installing the RAID Controller Memory Module
+
+</p>
+
+<a name="1064262"></a><p><img src="5g375c73.jpg" height="286" width="367" align="bottom">
+</p><ol type="1">
+
+<li value="6"><a name="1064263"></a>Push the ejectors on the RAID hardware key connector down and outward to allow the 
+key to be inserted into the connector (see <a href="5g375c70.htm#1057771">Figure&nbsp;7-4</a>).
+<br><br>
+
+<li value="7"><a name="1057766"></a>Insert the RAID hardware key into its connector on the system board and secure the 
+key with the latches on each end of the connector (see <a href="5g375c70.htm#1057771">Figure&nbsp;7-4</a>).
+<br><br>
+</ol>
+<p class="indent">See <a href="5g375aa0.htm#1062490">Figure&nbsp;A-3</a> to locate the RAID hardware key on the system board.</p>
+<ol type="1">
+
+<li value="8"><a name="1058818"></a>Press on the hardware key with your thumbs while pulling up on the ejectors with your 
+index fingers to lock the hardware key into the connector.
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1057771"> </a>
+Figure 7-4.&#32; Installing the RAID Hardware Key
+
+</p>
+
+<a name="1057787"></a><p><img src="5g37517b.jpg" height="296" width="310" align="bottom">
+</p><ol type="1">
+
+<li value="9"><a name="1063103"></a>Connect the battery cable to the RAID battery cable connector on the system board.
+<br><br>
+</ol>
+<p class="indent">See <a href="5g375aa0.htm#1062490">Figure&nbsp;A-3</a> to locate the RAID battery cable connector on the system board.</p>
+<ol type="1">
+
+<li value="10"><a name="1058059"></a>Hook the retention tab on the bottom of the battery into the slot in the chassis side 
+wall, and then snap the battery release clip into place (see <a href="5g375c70.htm#1058064">Figure&nbsp;7-5</a>).
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1058064"> </a>
+Figure 7-5.&#32; Removing and Installing the RAID Battery
+
+</p>
+
+<a name="1058079"></a><p><img src="5g37518b.jpg" height="345" width="551" align="bottom">
+</p><ol type="1">
+
+<li value="11"><a name="1058899"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="12"><a name="1059319"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="13"><a name="1057802"></a>Enter the System Setup program and verify that the setting for the SCSI controller has 
+changed to reflect the presence of the RAID hardware (see "Using the System Setup 
+Program" in your <i>User's Guide</i>).
+<br><br>
+
+<li value="14"><a name="1057803"></a>Install the RAID software.
+<br><br>
+</ol>
+<p class="indent">See the RAID controller documentation for more information.</p>
+<hr noshade size="1">
+<h2><a name="1058188">Installing a RAID Controller Card</a></h2>
+
+
+<p>Follow these general guidelines when installing a RAID controller card. For specific instructions, see the documentation supplied with the RAID controller card.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>Before you perform this procedure, you must turn off the system and 
+disconnect it from its power source. For more information, see "<a href="5g375c50.htm#1057956">Safety First&#151;For 
+You and Your System</a>" in "Troubleshooting Your System."
+</b></td>
+  </tr>
+</table>
+
+
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1058203"></a>Unpack the RAID controller card, and prepare it for installation.
+<br><br>
+</ol>
+<p class="indent">For instructions, see the documentation accompanying the card.</p>
+<ol type="1">
+
+<li value="2"><a name="1058927"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="3"><a name="1058931"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="4"><a name="1058213"></a>Install the RAID controller card (see "<a href="5g375c60.htm#1079568">Installing an Expansion Card</a>" in "Installing 
+System Options").
+<br><br>
+
+<li value="5"><a name="1058214"></a>Connect SCSI interface cables supplied with the card to the SCSIA and/or SCSIB 
+connectors on the SCSI backplane board.
+<br><br>
+</ol>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> Cables can be connected from the RAID controller card to SCSIA and/or SCSIB 
+backplane board connector(s). A backplane board connector that is not attached to the 
+RAID controller card will use the onboard SCSI controller or optional integrated RAID 
+controller.
+</td>
+  </tr>
+</table>
+<p class="indent">To identify the connector on the RAID controller card, see documentation for the card. See <a href="5g375aa0.htm#1062031">Figure&nbsp;A-5</a> to locate the SCSI controller connectors on the SCSI backplane board.</p>
+<p class="indent">Route the SCSI cables over the SCSI backplane board to the expansion-card cage.</p>
+<ol type="1">
+
+<li value="6"><a name="1058216"></a>Connect the external SCSI devices to the card's external connector on the system's 
+back panel.
+<br><br>
+</ol>
+<p class="indent">If you are attaching multiple external SCSI devices, daisy-chain the devices to each other using the cables shipped with each device.</p>
+<ol type="1">
+
+<li value="7"><a name="1058984"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="8"><a name="1059323"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="9"><a name="1058224"></a>Install any required SCSI device drivers (see "Installing and Configuring SCSI Drivers" 
+in the <i>User's Guide</i>).
+<br><br>
+
+<li value="10"><a name="1058225"></a>Test the SCSI devices.
+<br><br>
+</ol>
+<p class="indent">Test a SCSI hard drive by running the <b>SCSI Controllers</b> test in the system diagnostics. </p>
+<hr noshade size="1">
+<h2><a name="1058228">Installing a SCSI Backplane Daughter Card</a></h2>
+
+
+<p>To operate the SCSI backplane in a 2/3 split backplane configuration, you must install a daughter card.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>Before you perform this procedure, you must turn off the system and 
+disconnect it from its power source. For more information, see "<a href="5g375c50.htm#1057956">Safety First&#151;For 
+You and Your System</a>" in "Troubleshooting Your System."
+</b></td>
+  </tr>
+</table>
+
+
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document.<b> 
+</b></td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1058244"></a>Unpack the SCSI backplane board daughter card kit.
+<br><br>
+
+<li value="2"><a name="1059011"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="3"><a name="1059015"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="4"><a name="1058249"></a>The daughter card fits between the sides of the card guide above the drive bay. To 
+install the daughter card in the card guide, performing the following steps:
+<br><br>
+  <ol type="a">
+
+<li value="1"><a name="1058250"></a>Hold the daughter card by its edges with the component side facing up and the 
+card connector facing the SCSI backplane board (see <a href="5g375c70.htm#1058256">Figure&nbsp;7-6</a>).
+<br><br>
+  </ol>
+  <ol type="a">
+
+<li value="2"><a name="1059031"></a>Ensure that the retention lever is in the open position.
+<br><br>
+
+<li value="3"><a name="1059032"></a>Position the card in the drive bay so that the notches on the left and right edges of 
+the card are aligned with the tabs on the card guide above the drive bay.
+<br><br>
+
+<li value="4"><a name="1059033"></a>Lower the card into the card guide.
+<br><br>
+
+<li value="5"><a name="1059050"></a>Close the retention lever to slide the daughter card into the SCSI backplane 
+connector and lock the card into place (see <a href="5g375c70.htm#1058256">Figure&nbsp;7-6</a>).
+<br><br>
+  </ol>
+</ol>
+<p class="FigureTableTitle"><a name="1058256"> </a>
+Figure 7-6.  Installing a SCSI Backplane Daughter Card
+
+</p>
+
+<a name="1058280"></a><p><img src="5g37524c.jpg" height="454" width="512" align="bottom">
+</p><ol type="1">
+
+<li value="5"><a name="1059349"></a>Reconfigure the SCSI cable connections to the SCSI backplane as necessary to 
+operate the backplane as a 2/3 split backplane:
+<br><br>
+<ul>
+<li type="disc">If a RAID controller card is not installed, no cables are required to use either the 
+onboard SCSI controller or optional integrated RAID controller in either a 1x5 or 
+2/3 split configuration.
+<br><br></li>
+<li type="disc">If a RAID controller card is installed, cables can be connected from the controller 
+card to SCSIA and/or SCSIB backplane board connector(s). A backplane board 
+connector that is not attached to the RAID controller card will use the onboard 
+SCSI controller or optional integrated RAID controller.
+<br><br></li>
+<li type="disc">If a cable is connected to the SCSIB backplane board connector, the SCSI 
+backplane daughter card must be installed to activate the 2/3 split configuration. 
+Otherwise, the system will display an error message.
+<br><br></li>
+</ul>
+</ol>
+<p class="indent">See <a href="5g375aa0.htm#1062031">Figure&nbsp;A-5</a> to locate the connectors on the SCSI backplane board.</p>
+<ol type="1">
+
+<li value="6"><a name="1063933"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>" in "Troubleshooting Your System").
+<br><br>
+
+<li value="7"><a name="1059194"></a>Reconnect your system and peripherals to their electrical outlets, and turn on the 
+system.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1058185">Configuring the Boot Device</a></h2>
+
+
+<p>If you plan to boot the system from a hard drive, the drive must be attached to the primary (or boot) controller. The device that the system boots from is determined by the boot order specified in the System Setup program.</p><p>The System Setup program provides options that the system uses to scan for installed boot devices. See your system's <i>User's Guide</i> for information about the System Setup program.</p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

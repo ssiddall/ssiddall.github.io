@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies VAXNotes</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="winsid.htm">
+<LINK REL="Previous" HREF="kermmod.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="kermmod.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="winsid.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I2">To Start VAXNotes</A></LI>
+<LI>
+<A HREF="#I4">To Read Notes</A></LI>
+<LI>
+<A HREF="#I6"></A></LI>
+<LI>
+<A HREF="#I7">To Write Notes</A></LI>
+<LI>
+<A HREF="#I8">To Delete a Note </A></LI>
+<LI>
+<A HREF="#I10">To Print And Save Notes</A></LI>
+<LI>
+<A HREF="#I15">To Stop VAXNotes</A></LI>
+<LI>
+<A HREF="#I17">To Create a VAXNotes Conference</A></LI>
+<LI>
+<A HREF="#I18">To Create a Restricted Conference</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">VAXNotes</A></H1>
+<HR ALIGN=CENTER>
+<P>VAXNotes is a program available to all users that manages electronic discussions called &quot;conferences.&quot; Conferences, are subdivided into &quot;topics.&quot; In each topic there are &quot;messages&quot; and &quot;replies&quot; to the messages.  When you use VAXNotes, you access a public forum in which discussions on particular subjects can be held.</P>
+<H2><A ID="I2" NAME="I2">
+<BR>To Start VAXNotes</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Create Notebook File</I></FONT></P>
+<P>To start VAXNotes, at the $ prompt type</P>
+<P> NOTES  R</P>
+<P>This creates in your directory a &quot;notebook&quot; file called <B>NOTES$NOTEBOOK.NOTE</B> which contains a list of all the conferences you wish to access.  The VAXNotes prompt is Notes&gt;.</P>
+<P>
+<FONT SIZE=+1><I>Set Editor</I></FONT></P>
+<P>The first time you use VAXNotes, set your editor type to KEDT (you only have to do this once).  At the Notes&gt; prompt type:</P>
+<P>SET PROFILE/EDITOR=(@KCUT:NOTESKEDT.COM,SPAWN) R</P>
+<P>
+<FONT SIZE=+1><I>List of Conferences</I></FONT></P>
+<P>The command   DIRECTORY/CONFERENCES KENYON:: R    will show what public conferences are on the system. You must be invited to participate in a private conference by the conference moderator.</P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>Add a Conference Entry </I></FONT></P>
+<P>To read the notes in a conference, its name must be added to your notebook.  The command  </P>
+<P>Notes&gt; ADD ENTRY KENYON::<I>conferencename</I>  R</P>
+<P>will add a selected conference to your notebook.  Add a specific conference name only once.  </P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>Delete</I><A ID="I3" NAME="I3"></A><I> Conference Entry</I></FONT></P>
+<P>To delete a conference from your notebook, type   </P>
+<P>Notes&gt;  DELETE ENTRY <I>conferencename</I>  R</P>
+<P><B><I>Note:</I></B>  If you are unable to open a conference, possibly it needs to be added again.  You <B>must</B> delete the conference <B>before</B> you can add it again.</P>
+<P>
+<FONT SIZE=+1><I>Open Conference</I></FONT></P>
+<P>Once the conference has been added to your notebook, access the conference by typing </P>
+<P>Notes&gt; OPEN<I> conferencename</I> R</P>
+<P>
+<FONT SIZE=+1><I>Help</I></FONT></P>
+<P>Remember that help menus are available from anywhere within the program.  When you press the &lt;HELP&gt; key or &lt;PF2&gt; (on a microcomputer, press 2 ) the KEDT Help menu will appear; to access the VAXNotes Help menu directly, type   HELP</P>
+<H2><A ID="I4" NAME="I4">
+<BR>To Read Notes</A></H2>
+<HR ALIGN=CENTER>
+<P>Reading conference notes is much like reading mail; you can use commands such as First, Last, Next when you are reading topics in VAXNotes. </P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>List of Topics</I></FONT></P>
+<P>To read a note, first display a list of the topics after you have opened the conference. At the Notes&gt; prompt, type  DIRECTORY R  .  Topics are listed numerically.  To see a list of the topics AND the replies, type DIR *.* R  .   So topic 2, for example, might have replies 2.1 and 2.2   .  </P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>To Read a Note</I></FONT></P>
+<P>Typing the number of a particular topic will display it so that you can read it.  Replies are listed under their topics, and can be displayed in the same way.  For example, to read the third reply<A ID="I5" NAME="I5"></A> to the fourth topic, type   4.3  R .</P>
+<H2><A ID="I6" NAME="I6">
+<BR></A></H2>
+<HR ALIGN=CENTER>
+<H2><A ID="I7" NAME="I7">
+<BR>To Write Notes</A></H2>
+<HR ALIGN=CENTER>
+<P>Remember that anything added to a VAXNotes conference is readable by any other user.  Every one who uses VAXNotes is responsible for ensuring that the notes stored remain relevant to their subjects and keep proper system etiquette.  If there are any questions, consult the help menus or the ICS staff.</P>
+<P>
+<FONT SIZE=+1><I> </I></FONT></P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>Add New Topic</I></FONT></P>
+<P>In VAXNotes it is possible to add new topics to existing conferences, OR write replies to existing topics.  To add a new topic to a conference, use the command</P>
+<P>Notes&gt;  WRITE  R</P>
+<P>You are now using KEDT and the key definitions are those of KEDT. After you have written your note, VAXNotes will ask for a title for the topic.  The title should be short and descriptive.  The body of the note itself can be as long as you wish. The same is true for replies.  </P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>Reply to a Topic</I></FONT></P>
+<P>To write a reply to a topic or a reply that already exists, that particular note must be on the screen.  To reply, use the command</P>
+<P>Notes&gt;  REPLY  R</P>
+<P>You can reply to the main topic note or you can reply to replies. They are treated the same.</P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>To Include a Text File in a Note or Reply</I></FONT></P>
+<P>To include a text file (for instance, a mail file which has been extracted) in a note or reply, press &lt;PF1&gt; I  (or 1  I  on the microcomputer) and type in the name of the file.</P>
+<H2><A ID="I8" NAME="I8">
+<BR>To Delete<A ID="I9" NAME="I9"></A> a Note </A></H2>
+<HR ALIGN=CENTER>
+<P>You can only delete notes which <B>you</B> have written. To delete a note, type DIR *.* and determine its exact number. To delete note 4.2, for example, at the Notes&gt; prompt type</P>
+<P> DELETE NOTE 4.2  R</P>
+<H2><A ID="I10" NAME="I10">
+<BR>To Print<A ID="I11" NAME="I11"></A> And Save Notes</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>To Print Note(s)</I></FONT></P>
+<P>VAXNotes allows notes to be sent to printers.  To print the note that is on the screen, type</P>
+<P>Notes&gt;  PRINT/QUEUE<I>=queuename</I> R</P>
+<P>For example, the queuename of the HP printer in Chalmers is <B>CHA3HP</B>.  The printing will not start until you exit VAXNotes, at which point all the notes selected will be queued for printing.</P>
+<P>
+<FONT SIZE=+1><I>Print</I><A ID="I12" NAME="I12"></A><I> Multiple Messages</I></FONT></P>
+<P>To print several messages, type the number of the messages after the print command. For instance, to print notes 1 to 5, type </P>
+<P>Notes&gt;  PRINT/QUEUE=<I>queuename</I> 1-5 R</P>
+<P>
+<FONT SIZE=+1><I>Save a note to a file</I></FONT></P>
+<P>Notes in public conferences are stored outside of your account, not in the notebook file in your account.  To copy a note into your current default directory as a text file called &quot;filename&quot;, use the command</P>
+<P>Notes&gt;  SAVE <I>filename</I>  R</P>
+<P>Both the save and print commands can be amended so that many notes can be specified at once.  The EXTRACT<A ID="I13" NAME="I13"></A> command works the same as the SAVE command. Substitute the word EXTRACT for the word SAVE. It is possible, for example, to print all the notes from a certain time period, or save all the notes from a certain person.  For more information on how to do this, type</P>
+<P>Notes&gt;  HELP SPECIFYING_NOTES  R</P>
+<P>Here are some examples of specifying messages:</P>
+<P>Notes&gt;  EXTRACT<A ID="I14" NAME="I14"></A> BUDGET 10.* R  (Saves topic number 10 and all the replies to it in a file called BUDGET.TXT)</P>
+<P>Notes&gt;  SAVE /KEYWORD=Dartmouth Colleges.info *.* R</P>
+<P> (Saves all notes in the conference that have the keyword DARTMOUTH and stores the notes in a file called COLLEGES.INFO)</P>
+<P>Notes&gt;  EXTRACT/AUTHOR=Jones/KEYWORD=Meetings Jones.sch 3-25  R</P>
+<P> (Extracts topics from topic 3 through 25 that were written by user Jones and refer to meetings. The notes are stored in a file called JONES.SCH)</P>
+<P>Remember, the EXTRACT and SAVE commands do the same thing. </P>
+<H2><A ID="I15" NAME="I15">
+<BR>To Stop VAXNotes</A></H2>
+<HR ALIGN=CENTER>
+<P>To exit<A ID="I16" NAME="I16"></A> VAXNotes, first close the conference you are reading and then exit VAXNotes.</P>
+<P>
+<FONT SIZE=+1><I>Close Conference</I></FONT></P>
+<P>To close a conference you are reading:</P>
+<P>Notes&gt;  CLOSE <I>conferencename</I>  R</P>
+<P>
+<FONT SIZE=+1><I>Exit VAXNotes</I></FONT></P>
+<P>To exit VAXNotes.</P>
+<P>Notes&gt;  Exit R</P>
+<H2><A ID="I17" NAME="I17">
+<BR>To Create a VAXNotes Conference</A></H2>
+<HR ALIGN=CENTER>
+<P>Following are instructions about how you may create a conference yourself.</P>
+<P>
+<FONT SIZE=+1><I>Moderator</I></FONT></P>
+<P>Every conference has a moderator. The moderator creates a conference, manages the notes in a conference, and manages who can read from and/or write to a conference. The moderator will be in charge of encouraging people to participate in the conference and guiding the flow of the discussion.</P>
+<P>
+<FONT SIZE=+1><I>Moderator Commands</I></FONT></P>
+<P>For more information about moderating a conference, at the Notes&gt; prompt, type HELP MODERATOR and then HELP <I>command </I><I>phrase</I>, for example,   HELP <I>add member</I>    .</P>
+<P>
+<FONT SIZE=+1><I>When a Conference is Created...</I></FONT></P>
+<P>Notes are stored on the system as they are created by participants in the conference.  When you first create a conference, the conference notes will be stored in the main directory of your VAX account.  To get your conference to show on the KENYON:: list, create your conference, then contact ICS at PBX 5700 and request that notes for your conference be relocated to public disk space.  Please allow two or three days for the relocation of the conference file.</P>
+<P>If you wish to leave the conference file in your root directory, you must have extensive knowledge about file protection and allowing others to access files in your root directory.</P>
+<P>ICS reserves the right to refuse public disk space to conferences whose nature violates College policies (<I>e.g.</I>, harassment).</P>
+<P> </P>
+<P>
+<FONT SIZE=+1><I>The Create Command</I></FONT></P>
+<P>All conferences are first created in the moderator's private account by typing at the Notes&gt; prompt</P>
+<P> CREATE CONFERENCE SYS$LOGIN:<I>conferencename</I> R</P>
+<P>SYS$LOGIN is an alias for your default directory and <I>conferencename</I> is the <B>name of the conference</B> you wish to create.  </P>
+<P>When a conference is first created, it is accessible to all users, <I>i.e.</I>, it is a &quot;public&quot; conference.  At any time in the process, you can make the conference &quot;private&quot; by restricting it to a specific set of users.  It is the responsibility of the conference owner to manage the list of users to whom access is granted.</P>
+<P>The program will ask for a title for the conference which should be a short description of its intended scope and a longer description which will be shown to anybody opening the conference later.  </P>
+<H2><A ID="I18" NAME="I18">
+<BR>To Create a Restricted Conference</A></H2>
+<HR ALIGN=CENTER>
+<P>Create a conference and ask to have it placed in public space as instructed above. Open your conference and then do the following:</P>
+<P> Put yourself in &quot;moderator mode&quot;.</P>
+<P>Notes&gt;  SET MODERATOR R</P>
+<P> Set the conference to &quot;restricted&quot;.</P>
+<P>Notes&gt;  SET CONFERENCE/RESTRICT=MEMBER R</P>
+<P> Add each member into the conference.</P>
+<P>Notes&gt;  ADD MEMBER <I>username</I>  R</P>
+<P>username is the username of a future member of the conference.  Do this for <B>each</B> member.</P>
+<P> To see a list of the members in your conference, </P>
+<P>Notes&gt;  SHOW MEMBERS  R</P>
+<P> To delete<A ID="I19" NAME="I19"></A> a member username.</P>
+<P>Notes&gt;  DELETE MEMBER <I>username</I><I> </I> R</P>
+<P><B>Contact the ICS HelpLine (PBX 5700) to move your conference to </B><B>public disk space so that other users may access it easily.</B></P>
+<HR ALIGN=CENTER>
+<P><A HREF="kermmod.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="winsid.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

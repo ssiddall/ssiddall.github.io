@@ -1,0 +1,992 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 10">
+<link id=Main-File rel=Main-File href="../index.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='position:absolute;display:none;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span
+style='mso-spacerun:yes'>  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full
+Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl"
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Teaching Enhanced with
+  Course Management Systems</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scott E. Siddall</li>
+   <li>Denison University</li>
+   <li>siddall@denison.edu</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL2>Teaching<span
+  style='mso-spacerun:yes'>  </span>Enhanced with Course Management Systems</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scott E. Siddall</li>
+   <li>Denison University</li>
+   <li>siddall@denison.edu</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL3>Outline</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What is a CMS?</li>
+   <li>What can a CMS do?</li>
+   <li>Today’s CMS market</li>
+   <li>To build or buy or….</li>
+   <li>Open Knowledge Initiative</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL4>What is a CMS?</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Generalized framework versus discipline-specific courseware</li>
+   <li>Personalized portal for courses</li>
+   <li>One of many tools for teaching</li>
+   <li>Many names: CMS = LMS = VLE</li>
+   <li>More than a system to manage content</li>
+   <ul>
+    <ul>
+     <li>Digital asset management</li>
+     <li>LCMS</li>
+     <li>Electronic reserves</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL5>What is a CMS?</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>CMS in the residential college</li>
+   <li>Distance learning versus proximity learning</li>
+   <li>Since 1998, increased popularity, complexity</li>
+   <li>CMS = enterprise-wide academic systems</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL6>What is a CMS?</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Content management and presentation</li>
+   <ul>
+    <li>Within and outside the classroom, on and off campus</li>
+   </ul>
+   <li>Classroom management</li>
+   <ul>
+    <li>Authentication, course portal, workflow tools, announcements, official
+        and ad hoc student groupings</li>
+   </ul>
+   <li>Communication and collaboration</li>
+   <ul>
+    <li>E-mail lists, groups, discussion forums, digital drop boxes, student
+        portfolios</li>
+   </ul>
+   <li>Assessment</li>
+   <ul>
+    <li>Quizzing, surveys, timed activities, gradebooks</li>
+   </ul>
+   <li>…and more</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL7>Faculty perspective</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Relatively easy to customize course content and design</li>
+   <li>Lower administrative overhead</li>
+   <li>Recycle and revise course materials</li>
+   <li>Fair use compliance</li>
+   <li>Use textbook contents, assessment pools</li>
+   <li>Use as presentation tool in class</li>
+   <li>Don’t add work: substitute CMS methods for traditional methods (e.g.,
+       word processed and printed syllabi)</li>
+   <li>Concerns about licensing costs, dependency on one vendor</li>
+   <li>Something new to learn</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL8>Student perspective</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Consistent and easy access through course portal</li>
+   <li>Unified contact point</li>
+   <li>Use as presentation tool, portfolio</li>
+   <li>Has potential to save costs of printing, coursepacks</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL9>What can a CMS do?</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Extend learning beyond class time</li>
+   <li>Encourage students to prepare for class discussion</li>
+   <li>New channels of communication</li>
+   <li>Accommodate multiple styles of learning</li>
+   <li>…and more…but</li>
+   <li>CMS designs are inherently constraining</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL10>What is a CMS?</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Easy to use software</li>
+   <li>Used to customize selected learning components</li>
+   <li>Linked to campus databases</li>
+   <br>
+   <br>
+   <li>Key: based on technical standards (whose?)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL11>Today’s CMS Market</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>$6-8 billion market</li>
+   <li>Mostly corporate<span style='mso-spacerun:yes'>         
+       </span>“e-learning”</li>
+   <li>E-learning software</li>
+   <ul>
+    <li>Top Class, IBM’s Learning Space, Ucompass Educator, Embanet’s
+        integration services….</li>
+   </ul>
+   <li>E-learning services</li>
+   <ul>
+    <li>Element K, Smartforce, Saba Software….</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.html');" id=PPTL12>Higher Ed CMS Market</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>WebCT</li>
+   <ul>
+    <li>Standard Edition</li>
+    <li>Campus Edition</li>
+    <li>Vistas</li>
+   </ul>
+   <br>
+   <li>More features, harder to use</li>
+   <li>Blackboard</li>
+   <ul>
+    <li>Learning Systems</li>
+    <li>Community Portal</li>
+    <li>Building Blocks</li>
+    <br>
+    <br>
+   </ul>
+   <li>Less powerful, easier to use</li>
+   <li>Better funded</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL13>Blackboard</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Multiple language support</li>
+   <li>Version 6 this summer</li>
+   <li>New assessment and gradebook tools</li>
+   <li>Building blocks from third parties</li>
+   <li>Equation editor</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL14>Foreign language
+  characters</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Unicode</li>
+   <li>Much better support in Mac OSX and Windows XP</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL15>Blackboard and WebCT</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>“Neck and neck” in the market</li>
+   <li>Tiered products – pressure to move up</li>
+   <li>Both are losing money</li>
+   <li>Shifting to leased software, services</li>
+   <li>Microsoft investments in Blackboard and the .Net strategy</li>
+   <li>Recent fee increases – justifiable?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.html');" id=PPTL16>New pricing models</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Entry-level “Basic Learning System” is $7,500 per year</li>
+   <li>Other levels based on student FTE</li>
+   <ul>
+    <li>Learning System</li>
+    <ul>
+     <li>&lt;2,000 students:<span style='mso-spacerun:yes'>        
+         </span>$25,000 per year</li>
+     <li>2,000-3,999 students:<span style='mso-spacerun:yes'>   </span>$32.500
+         per year</li>
+     <li>4,000-7,999 students:<span style='mso-spacerun:yes'>   </span>$40,000
+         per year</li>
+    </ul>
+    <li>Community Portal</li>
+    <ul>
+     <li>&lt;2,000 students:<span style='mso-spacerun:yes'>         
+         </span>$15,000 per year</li>
+     <li>2,000-3,999 students:<span style='mso-spacerun:yes'>   </span>$17,500
+         per year</li>
+     <li>4,000-7,999 students:<span style='mso-spacerun:yes'>   </span>$20,000
+         per year</li>
+     <br>
+     <br>
+    </ul>
+   </ul>
+   <li>WebCT following similar pricing scheme, except support for entry-level
+       “standard edition” ends on Dec. 2002</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.html');" id=PPTL17>Alternatives?</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>CMS have become mission critical</li>
+   <li>Can small colleges afford them?</li>
+   <li>What are the alternatives?</li>
+   <li>Can we build our own?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL18>To buy or build?</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Good commercial software meets 80% of your needs</li>
+   <ul>
+    <li>You have less control</li>
+    <li>Expensive…worth it?</li>
+   </ul>
+   <li>Homegrown software can meet 90% of your needs</li>
+   <ul>
+    <li>You have full control</li>
+    <li>Support costs can be large and unpredictable</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL19>To buy or build?</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>About managing costs</li>
+   <li>Buy?</li>
+   <ul>
+    <li>Share in development and support costs with other customers</li>
+    <li>Pay corporate profit</li>
+   </ul>
+   <li>Build?</li>
+   <ul>
+    <li>Pay for all development and support costs</li>
+    <li>Sell/share later?</li>
+    <li>Core competency of the small college?</li>
+    <li>“If you think a CMS is expensive now, wait until you see how much it
+        costs when it’s free!”</li>
+    <ul>
+     <br>
+     <br>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL20>What’s involved in
+  building?</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Development</li>
+   <ul>
+    <li>Design</li>
+    <li>Programming</li>
+    <li>Testing</li>
+    <li>Documentation</li>
+    <li>Distribution</li>
+   </ul>
+   <li>Support</li>
+   <ul>
+    <li>Software maintenance – bugs, new features, new technologies</li>
+    <li>Ongoing user support</li>
+    <li>Training</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.html');" id=PPTL21>Standards are Key</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Proprietary corporate programming standards</li>
+   <ul>
+    <li>Leveraged to make a profit</li>
+   </ul>
+   <li>Open source software</li>
+   <ul>
+    <li>Collaboratively developed programs</li>
+    <li>Freely available source code can be extended</li>
+    <li>Enduring if enough developers commit to it</li>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL22>Open Knowledge
+  Initiative</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Project supported by Mellon Foundation</li>
+   <li>http://web.mit.edu/oki/</li>
+   <li>An open source framework</li>
+   <ul>
+    <li>Based on open technical standards for</li>
+    <ul>
+     <li>Common services – such as secure access, or document management, etc.</li>
+     <li>APIs – application programming interfaces to connect the services</li>
+    </ul>
+    <li>Platform independent</li>
+    <ul>
+     <li>Java based but accommodates tools written in other languages</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.html');" id=PPTL23>Open Knowledge
+  Initiative</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Initial educational services contributed by collaborating institutions</li>
+   <ul>
+    <li>MITs Stellar</li>
+    <li>U Michigans Chefs</li>
+    <li>Stanford’s CourseWork</li>
+    <ul>
+     <li>Unicode, support for sound recording, playback</li>
+    </ul>
+    <li>No earlier than Fall, 2002</li>
+   </ul>
+   <li>WebCT and Blackboard are contributing</li>
+   <ul>
+    <li>Will Bb’s Building blocks become OKI compliant?</li>
+    <li>U of Wisconsin system required OKI compliance of WebCT</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL24>What’s next?</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Depends on goals, campus culture</li>
+   <li>Look at other institution’s implementations</li>
+   <ul>
+    <li>50% of CLAC schools use Bb</li>
+   </ul>
+   <li>Involve faculty in evaluation and selection</li>
+   <li>Many online comparisons</li>
+   <ul>
+    <li>Be careful – many are biased, outdated</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.html');" id=PPTL25>What’s next?</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Gain experience now with a basic CMS</li>
+   <ul>
+    <li>Available to all faculty, or limited pilot program</li>
+    <li>Example: $14,000 hardware and software costs for Blackboard basic
+        Learning System</li>
+   </ul>
+   <li>Renewing your CMS or licensing courseware?</li>
+   <ul>
+    <li>Ask about (even require) OKI compliance</li>
+   </ul>
+   <li>Watch OKI announcements at http://web.mit.edu/oki/</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.html');" id=PPTL26>What’s next?</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Contribute your campus’ successful courseware applications to the OKI
+       toolset</li>
+   <li>Partner with a larger institution to design and develop an OKI compliant
+       tool</li>
+   <li>Subscribe to EDUCAUSE’s Center for Applied Research (new research
+       bulletin on CMS)</li>
+   <br>
+   <br>
+   <ul>
+    <li>“There is much ground between being a passive buyer and a
+        do-it-yourselfer”</li>
+    <li>			– Richard Katz, VP of EDUCAUSE</li>
+   </ul>
+   <br>
+   <br>
+   <br>
+   <ul>
+    <br>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL27>Related Resources</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>CMS planning to be compliant with OKI:</li>
+   <ul>
+    <li>MIT’s Stellar project</li>
+    <li>University of Michigan’s CHEF</li>
+    <li>Stanford’s CourseWork</li>
+    <li>.LRN Project from MIT’s Sloan School of Management</li>
+   </ul>
+   <li>Comparisons:</li>
+   <ul>
+    <li>EDUCAUSE library</li>
+    <li>Reviews from SUNY</li>
+    <li>20 CMS from the Consortium for IT in Education</li>
+    <li>http://www.c2t2.ca/landonline/</li>
+   </ul>
+   <li>Open standards groups:</li>
+   <ul>
+    <li>The IMS Project: define standards for interoperability of CMS and
+        related programs</li>
+    <li>SCORM Initiative: Shareable Content Object Reference Model (another
+        standards group for media)</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.html');" id=PPTL28>Related Resources</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Britain and Liber, “A framework for pedagogical evaluation of virtual
+       learning environments”</li>
+   <br>
+   <br>
+   <li>DeBorough, “Simple Elegance: Course Management Systems As Pedagogical
+       Infrastructure to Enhance Science Learning”</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.html');" id=PPTL29>Return to home</a></font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+</body>
+
+</html>

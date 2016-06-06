@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /java
+Disallow: /kenyon
+Disallow: /buttons

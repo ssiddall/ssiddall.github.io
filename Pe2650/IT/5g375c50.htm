@@ -1,0 +1,1647 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/13/01 12:39:25">
+<title>Troubleshooting Your&nbsp;System : Dell PowerEdge 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1055524"> Troubleshooting 
+Your&nbsp;System
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ Installation and 
+Troubleshooting Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1057956">Safety First&#151;For You and Your System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051127">Before You Begin</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1096263">External Connections</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051132">Checking Specific System Problems</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051143">Start-Up Routine</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1059546">System Orientation</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051230">Bezel</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051253">System Cover</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1058205">Checking the Equipment</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1079387">Inside the System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1064670">Responding to a Systems Management Alert Message</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051336">Troubleshooting a Wet System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051354">Troubleshooting a Damaged System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051366">Troubleshooting the System Battery</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051384">Troubleshooting Power Supplies</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1091142">Troubleshooting System Cooling</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1088737">Troubleshooting a Microprocessor</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1096394">Troubleshooting Expansion Cards</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051486">Troubleshooting System Memory</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051574">Troubleshooting the Diskette Drive</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051604">Troubleshooting a CD Drive</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1060453">Troubleshooting an External SCSI Tape Drive</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1051640">Troubleshooting Hard Drives</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1103694">Troubleshooting the Integrated RAID Controller</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1103770">Troubleshooting a RAID Controller Card</A></P>
+
+
+<br>
+<p>If your system is not working as expected, begin troubleshooting using the procedures in this section. This section guides you through some initial checks and procedures that can solve basic system problems and provides troubleshooting procedures for components inside the system. Before you start any of the procedures in this section, take the following steps:</p><ul><li>Read the "Safety Instructions" in your <i>System Information</i> document.<br><br></li>
+<li>Read "<a href="5g375c40.htm#1033246">Running System Diagnostics</a>" for information about running diagnostics.<br><br></li>
+<li>Get the key to the system keylock and the system back cover.<br><br></li>
+</ul><hr noshade size="1">
+<h2><a name="1057956">Safety First&#151;For You and Your System</a></h2>
+
+
+<p>The procedures in this guide require that you remove the cover and work inside the system. While working inside the system, do not attempt to service the system except as explained in this guide and elsewhere in your system documentation. Always follow the instructions closely. Ensure that you review all of the procedures in "Safety Instructions" in your <i>System Information</i> document.</p><p>Working inside the system is safe&#151;if you observe the following precautions.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>The power supplies in this system produce high voltages and energy 
+hazards, which can cause bodily harm. Only trained service technicians are 
+authorized to remove the system cover and access any of the components inside 
+the system.
+</b></td>
+  </tr>
+</table>
+
+
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document before performing any procedure which requires you to open the 
+cover.
+</td>
+  </tr>
+</table>
+<hr noshade size="1">
+<h2><a name="1051127">Before You Begin</a></h2>
+
+
+<p>Before you perform any of the procedures, ensure that the following components are securely and properly installed:</p><ul><li>Power cables<br><br></li>
+<li>Cables to external devices, such as monitor, mouse, keyboard, and so on<br><br></li>
+<li>System board tray<br><br></li>
+<li>Expansion-card cage<br><br></li>
+</ul><hr noshade size="1">
+<h2><a name="1096263">External Connections</a></h2>
+
+
+<p>Improperly set switches, controls, and loose or improperly connected cables are the most likely source of problems for the system, monitor, or other peripherals (such as a printer, keyboard, mouse, or other external equipment). A quick check of all the switches, controls, and cable connections can easily solve these problems. See <a href="5g375c20.htm#1050559">Figure&nbsp;2-3</a> for the back-panel features and connectors.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>To enable the front-panel PS/2 connector, a monitor must be connected to the 
+front-panel video connector. When a monitor is connected to the front panel, the back-
+panel PS/2 and video connectors are disabled. When no monitor is connected to the 
+system or a monitor is connected to the back panel, the front-panel PS/2 and video 
+connectors are disabled.
+</td>
+  </tr>
+</table><hr noshade size="1">
+<h2><a name="1051132">Checking Specific System Problems</a></h2>
+
+
+<ol type="1">
+
+<li value="1"><a name="1051133"></a>Turn off the system, including any attached peripherals. Disconnect all the power 
+cables from their electrical outlets.
+<br><br>
+
+<li value="2"><a name="1051134"></a>If the system is connected to a PDU, turn the PDU off and then on again.
+<br><br>
+</ol>
+<p class="indent">If it is not receiving power, plug it into another electrical outlet. If it still is not receiving power, try another PDU.</p>
+<ol type="1">
+
+<li value="3"><a name="1051136"></a>Reconnect the system to the electrical outlet or PDU. 
+<br><br>
+
+<li value="4"><a name="1051137"></a>Is the monitor working properly?
+<br><br>
+</ol>
+<p class="indent">See "<a href="5g375c50.htm#1058293">Troubleshooting the Video Subsystem</a>."</p>
+<ol type="1">
+
+<li value="5"><a name="1051139"></a>Is the keyboard working properly?
+<br><br>
+</ol>
+<p class="indent">See "<a href="5g375c50.htm#1058332">Troubleshooting the Keyboard</a>."</p>
+<ol type="1">
+
+<li value="6"><a name="1051141"></a>Are the mouse and printer working properly?
+<br><br>
+</ol>
+<p class="indent">See "<a href="5g375c50.htm#1058363">Troubleshooting the Basic I/O Functions</a>."</p>
+<hr noshade size="1">
+<h2><a name="1051143">Start-Up Routine</a></h2>
+
+
+<p>Looking at and listening to the system is important in determining the source of a problem. Look and listen during the system's start-up routine for the indication described in Table&nbsp;5-1.</p><a name="1059545"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1059506">Table 5-1.&#32; Start-Up Routine Indications</a></p></p>
+<tr><th valign="top" align="left"><a name="1059510"> </a>
+<p><b>Look/listen for:</b></p>
+
+
+</th><th valign="top" align="left"><a name="1059512"> </a>
+<p><b>Action</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>A status or error message displayed on the front-panel LCD</p></td><td valign="top" align="left"><p>See "<a href="5g375c20.htm#1113352">LCD Status Messages</a>" in "Indicators, Messages, and Codes."</p></td></tr>
+<tr><td valign="top" align="left"><p>An error message displayed on the monitor</p></td><td valign="top" align="left"><p>See "<a href="5g375c20.htm#1127407">System Messages</a>" in "Indicators, Messages, and Codes."</p></td></tr>
+<tr><td valign="top" align="left"><p>A series of beeps emitted by the system</p></td><td valign="top" align="left"><p>See "<a href="5g375c20.htm#1096121">System Beep Codes</a>" in "Indicators, Messages, and Codes."</p></td></tr>
+<tr><td valign="top" align="left"><p>Alert messages from the Dell OpenManage&#153; Server Administrator software</p></td><td valign="top" align="left"><p>See "<a href="5g375c20.htm#1045501">Alert Messages</a>" in "Indicators, Messages, and Codes."</p></td></tr>
+<tr><td valign="top" align="left"><p>The monitor's power indicator</p></td><td valign="top" align="left"><p>See "<a href="5g375c50.htm#1058293">Troubleshooting the Video Subsystem</a>."</p></td></tr>
+<tr><td valign="top" align="left"><p>The keyboard indicators</p></td><td valign="top" align="left"><p>See "<a href="5g375c50.htm#1058332">Troubleshooting the Keyboard</a>."</p></td></tr>
+<tr><td valign="top" align="left"><p>The diskette-drive activity indicator</p></td><td valign="top" align="left"><p>See "<a href="5g375c50.htm#1051574">Troubleshooting the Diskette Drive</a>."</p></td></tr>
+<tr><td valign="top" align="left"><p>The CD drive activity indicator</p></td><td valign="top" align="left"><p>See "<a href="5g375c50.htm#1051604">Troubleshooting a CD Drive</a>."</p></td></tr>
+<tr><td valign="top" align="left"><p>The hard-drive activity indicators</p></td><td valign="top" align="left"><p>See "<a href="5g375c50.htm#1051640">Troubleshooting Hard Drives</a>."</p></td></tr>
+<tr><td valign="top" align="left"><p>An unfamiliar constant scraping or grinding sound when you access a drive</p></td><td valign="top" align="left"><p>See "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><span class="notes">NOTE: </span>For the full name of an abbreviation or acronym used in this table, see "<a href="5g375az.htm#997702">Abbreviations and 
+Acronyms</a>."
+</p>
+</td></tr>
+
+</table>
+
+
+
+
+</p><hr noshade size="1">
+<h2><a name="1059546">System Orientation</a></h2>
+
+
+<p>The illustrations in this document are based on the positioning of the system as shown in <a href="5g375c50.htm#1059566">Figure&nbsp;5-1</a>.</p><p class="FigureTableTitle"><a name="1059566"> </a>
+Figure 5-1.&#32; System Orientation
+
+</p>
+
+<a name="1059567"></a><p><img src="5g375c56.jpg" height="314" width="436" align="bottom">
+</p><hr noshade size="1">
+<h2><a name="1051230">Bezel</a></h2>
+
+
+<p>The bezel has a system status indicator. A lock on the bezel restricts access to the power button, diskette drive, CD drive, hard drive(s), and the interior of the system.</p><h3><a name="1051233"> Removing the Bezel
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1097402"></a>Using the system key, unlock the bezel.
+<br><br>
+
+<li value="2"><a name="1104250"></a>Press the tab at the left end of the bezel.
+<br><br>
+
+<li value="3"><a name="1109447"></a>Rotate the left end of the bezel away from the system to release the right end of the 
+bezel.
+<br><br>
+
+<li value="4"><a name="1097419"></a>Pull the bezel away from the system (see <a href="5g375c50.htm#1058746">Figure&nbsp;5-2</a>).
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1058746"> </a>
+Figure 5-2.&#32; Removing the Bezel
+
+</p>
+
+<a name="1109420"></a><p><img src="5g375c17.jpg" height="382" width="452" align="bottom">
+</p><h3><a name="1109423"> Replacing the Bezel
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1051249"></a>Fit the tabs on the right end of the bezel into the corresponding slots in the front 
+panel.
+<br><br>
+
+<li value="2"><a name="1109450"></a>Rotate the left end of the bezel toward the system to secure the left end of the bezel.
+<br><br>
+
+<li value="3"><a name="1097426"></a>Using the system key, lock the bezel.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1051253">System Cover</a></h2>
+
+
+<p>To upgrade or troubleshoot the system, remove the system cover to gain access to internal components.</p><h3><a name="1097434"> Removing the Cover
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1097443"></a>Remove the bezel (see "<a href="5g375c50.htm#1051233">Removing the Bezel</a>").
+<br><br>
+
+<li value="2"><a name="1097439"></a>Observe the precautions in "<a href="5g375c50.htm#1057956">Safety First&#151;For You and Your System</a>."
+<br><br>
+
+<li value="3"><a name="1082105"></a>Loosen the three thumbscrews that secure the cover to the chassis (see <a href="5g375c50.htm#1105264">Figure&nbsp;5-3</a>).
+<br><br>
+
+<li value="4"><a name="1109461"></a>Slide the back cover backward and grasp the cover at both ends.
+<br><br>
+
+<li value="5"><a name="1097474"></a>Carefully lift the cover away from the system.
+<br><br>
+</ol>
+<p class="FigureTableTitle"><a name="1105264"> </a>
+Figure 5-3.&#32; Removing the Cover
+
+</p>
+
+<a name="1105284"></a><p><img src="5g37513a.jpg" height="364" width="544" align="bottom">
+</p><h3><a name="1105286"> Replacing the Cover
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1082122"></a>Ensure that no tools or parts are left inside the system and that any cables are routed 
+so that they will not be damaged by the cover.
+<br><br>
+
+<li value="2"><a name="1082123"></a>Align the cover with the cover alignment hooks on the sides of the chassis, and slide 
+the cover forward (see <a href="5g375c50.htm#1105264">Figure&nbsp;5-3</a>).
+<br><br>
+
+<li value="3"><a name="1082130"></a>Tighten the three thumbscrews that secure the cover to the chassis.
+<br><br>
+
+<li value="4"><a name="1082131"></a>Replace the bezel (see "<a href="5g375c50.htm#1109423">Replacing the Bezel</a>").
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1058205">Checking the Equipment</a></h2>
+
+
+<p>This section provides troubleshooting procedures for external devices that connect to the system, such as the monitor, keyboard, or mouse. Before you perform any of the procedures, see "<a href="5g375c50.htm#1096263">External Connections</a>."</p><h3><a name="1058293"> Troubleshooting the Video Subsystem
+</a></h3>
+<h5><a name="1061285"> Problem</a></h5>
+<ul><li>Monitor<br><br></li>
+<li>Monitor interface cable<br><br></li>
+<li>Video memory<br><br></li>
+<li>Video logic<br><br></li>
+</ul><h5><a name="1094851"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1094853"></a>Determine whether the system has monitors attached to both the front and rear video 
+connectors.
+<br><br>
+</ol>
+<p class="indent">The system supports only one monitor attached to either the front or rear video connector. When a monitor is connected to the front panel, the back-panel video, and PS/2 keyboard and mouse connectors are disabled.</p>
+<p class="indent">If two monitors are attached to the system, disconnect one monitor. If the problem is not resolved, continue to step 2.</p>
+<ol type="1">
+
+<li value="2"><a name="1105314"></a>Check the system and power connections to the monitor.
+<br><br>
+
+<li value="3"><a name="1061315"></a>Run the video tests in system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the tests run successfully, the problem is not related to video hardware. Go to "<a href="5g375c30.htm#1030448">Finding Software Solutions</a>."</p>
+<p class="indent">If the tests did not run successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<h3><a name="1058332"> Troubleshooting the Keyboard
+</a></h3>
+<h5><a name="1063923"> Problem</a></h5>
+<ul><li>System error message indicates a keyboard problem<br><br></li>
+</ul><h5><a name="1059610"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1105329"></a>Determine whether the system has monitors attached to both the front and rear video 
+connectors.
+<br><br>
+</ol>
+<p class="indent">The system supports only one monitor attached to either the front or rear video connector. When a monitor is connected to the front panel, the back-panel video, and PS/2 keyboard and mouse connectors are disabled.</p>
+<p class="indent">If two monitors are attached to the system, disconnect one monitor. If the problem is not resolved, continue to step 2.</p>
+<ol type="1">
+
+<li value="2"><a name="1058334"></a>Look at the keyboard and the keyboard cable for any signs of damage.
+<br><br>
+</ol>
+<p class="indent">If the keyboard and its cable appear to be free of physical damage, and the keys work, go to step 4.</p>
+<p class="indent">If the keyboard or its cable are damaged, continue to step 3.</p>
+<ol type="1">
+
+<li value="3"><a name="1058339"></a>Swap the faulty keyboard with a working keyboard.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the keyboard must be replaced (see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance).</p>
+<ol type="1">
+
+<li value="4"><a name="1058346"></a>Run the keyboard test in system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If you cannot use the keyboard to select the keyboard test, continue to step 5.</p>
+<p class="indent">If the test did not run successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<ol type="1">
+
+<li value="5"><a name="1058350"></a>Swap the faulty keyboard with a working keyboard.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the faulty keyboard must be replaced. If the problem is not resolved, the controller is faulty (see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance).</p>
+<h3><a name="1091203"> Troubleshooting the Mouse
+</a></h3>
+<h5><a name="1091204"> Problem</a></h5>
+<ul><li>System error message indicates a mouse problem<br><br></li>
+</ul><h5><a name="1091206"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1105347"></a>Determine whether the system has monitors attached to both the front and rear video 
+connectors.
+<br><br>
+</ol>
+<p class="indent">The system supports only one monitor attached to either the front or rear video connector. When a monitor is connected to the front panel, the back-panel video, and PS/2 keyboard and mouse connectors are disabled.</p>
+<p class="indent">If two monitors are attached to the system, disconnect one monitor. If the problem is not resolved, continue to step 2.</p>
+<ol type="1">
+
+<li value="2"><a name="1105369"></a>Determine the type of mouse used and to which panel the mouse is connected.
+<br><br>
+</ol>
+<p class="indent">If a USB mouse is connected to a USB connector on either the front or back panel, go to step 4.</p>
+<p class="indent">If a PS/2 mouse is not connected to the front-panel PS/2 connector, go to step 4.</p>
+<p class="indent">If a PS/2 mouse is connected to the front-panel PS/2 connector, continue to step 3.</p>
+<ol type="1">
+
+<li value="3"><a name="1105363"></a>Ensure that the PS/2 mouse is connected to the front panel using a keyboard/mouse 
+cable adapter.
+<br><br>
+</ol>
+<p class="indent">The front-panel PS/2 connector supports a mouse only with a keyboard/mouse cable adapter.</p>
+<p class="indent">If a PS/2 mouse is connected to the front-panel PS/2 connector, use a keyboard/mouse cable adapter or replace the PS/2 mouse with a USB mouse. If you do not have a keyboard/mouse cable adapter, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<ol type="1">
+
+<li value="4"><a name="1105427"></a>Look at the mouse and the mouse cable for any signs of damage.
+<br><br>
+
+<li value="5"><a name="1091208"></a>Click each button on the mouse.
+<br><br>
+</ol>
+<p class="indent">If the mouse and its cable appear to be free of physical damage, and the buttons work, go to step 7.</p>
+<p class="indent">If the mouse or its cable are damaged, continue to step 6.</p>
+<ol type="1">
+
+<li value="6"><a name="1091211"></a>Swap the faulty mouse with a working mouse.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the mouse must be replaced (see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance).</p>
+<ol type="1">
+
+<li value="7"><a name="1091216"></a>Run the pointing devices test in system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the faulty mouse must be replaced. If the problem is not resolved, the controller is faulty (see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance).</p>
+<h3><a name="1058363"> Troubleshooting the Basic I/O Functions
+</a></h3>
+<h5><a name="1058364"> Problem</a></h5>
+<ul><li>System error message indicates an I/O port problem<br><br></li>
+<li>Device connected to the port is not working<br><br></li>
+</ul><h5><a name="1059621"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1059024"></a>Enter the System Setup program (see "Using the System Setup Program" in the <i>User's 
+Guide</i> for instructions) and check the <b>Serial Port</b> settings.
+<br><br>
+</ol>
+<p class="indent">If the ports are set to <b>Off</b>, go to step 3.</p>
+<p class="indent">If the ports are not set to <b>Off</b>, continue to step 2.</p>
+<ol type="1">
+
+<li value="2"><a name="1097574"></a>Change the <b>Serial Port</b> settings to <b>Auto</b>; then reboot the system.
+<br><br>
+
+<li value="3"><a name="1059032"></a>Check the settings in the System Setup program.
+<br><br>
+</ol>
+<p class="indent">See "Using the System Setup Program" in the <i>User's Guide</i> for instructions. If the settings are correct, go to step 5.</p>
+<ol type="1">
+
+<li value="4"><a name="1059039"></a>Change the necessary settings in the System Setup program. If the port problem is 
+confined to a particular application program, see the application program's 
+documentation for specific port configuration requirements.
+<br><br>
+
+<li value="5"><a name="1059043"></a>Reboot the system from the diagnostics diskette, and run the serial port test in the 
+system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the test did not run successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<p class="indent">If the test runs successfully but the problem persists, see "<a href="5g375c50.htm#1059179">Troubleshooting a Serial I/O Device</a>."</p>
+<h3><a name="1059179"> Troubleshooting a Serial I/O Device
+</a></h3>
+<h5><a name="1063994"> Problem</a></h5>
+<ul><li>Device connected to the port is not working<br><br></li>
+</ul><h5><a name="1063996"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1059632"></a>Turn off the system and any peripheral devices connected to the serial ports.
+<br><br>
+
+<li value="2"><a name="1059196"></a>Swap the interface cable with a known working cable.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the interface cable must be replaced (see "<a href="5g375c80.htm#1032182">Getting Help</a>," for instructions on obtaining technical assistance).</p>
+<ol type="1">
+
+<li value="3"><a name="1059203"></a>Turn off power to the system and the serial device, and swap the device with a 
+comparable device.
+<br><br>
+
+<li value="4"><a name="1059205"></a>Turn on the system and the serial device.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the serial device must be replaced. If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<h3><a name="1058424"> Troubleshooting a USB Device
+</a></h3>
+<h5><a name="1058425"> Problem</a></h5>
+<ul><li>System error message indicates problem<br><br></li>
+<li>Device connected to the port is not working<br><br></li>
+</ul><h5><a name="1059730"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1065667"></a>Enter the System Setup program and ensure that the USB ports are enabled (see 
+"Using the System Setup Program" in the <i>User's Guide</i> for instructions).
+<br><br>
+
+<li value="2"><a name="1065681"></a>Turn off the system and any USB devices.
+<br><br>
+</ol>
+<p class="indent">If there is only one USB device connected to the system, go to step 5.</p>
+<ol type="1">
+
+<li value="3"><a name="1058431"></a>Disconnect all USB devices, and connect the malfunctioning device to the other port.
+<br><br>
+
+<li value="4"><a name="1058432"></a>Turn on the system and the reconnected device.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the USB port may be defective (see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance).</p>
+<ol type="1">
+
+<li value="5"><a name="1058439"></a>If possible, swap the interface cable with a known working cable.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the interface cable must be replaced (see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance).</p>
+<ol type="1">
+
+<li value="6"><a name="1058446"></a>Turn off the system and the USB device, and swap the device with a comparable 
+device.
+<br><br>
+
+<li value="7"><a name="1058447"></a>Turn on the system and the USB device.
+<br><br>
+</ol>
+<p class="indent">If the problem is resolved, the USB device must be replaced. If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<h3><a name="1058458"> Troubleshooting the NICs
+</a></h3>
+<h5><a name="1058459"> Problem</a></h5>
+<ul><li>A NIC cannot communicate with the network<br><br></li>
+</ul><h5><a name="1059766"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1058462"></a>Check the appropriate indicator on the NIC connector (see <a href="5g375c20.htm#1148968">Figure&nbsp;2-6</a>).
+<br><br>
+</ol>
+<p class="indent">A green indicator shows that the adapter is connected to a valid link partner. A blinking amber<i> </i>indicator shows that network data is being sent or received.</p>
+<ul><ul>
+<li type="disc">If the link indicator is not on, check all cable connections.
+<br><br></li>
+<li type="disc">Try changing the auto-negotiation setting, if possible.
+<br><br></li>
+<li type="disc">Try another port on the switch or hub.
+<br><br></li>
+</ul>
+</ul><p class="indent">If you are using a NIC expansion card instead of the integrated NICs, see the documentation for the NIC card.</p>
+<ol type="1">
+
+<li value="2"><a name="1109221"></a>If the indicator does not light, the network driver files might be damaged or deleted. 
+Check the drivers, and remove and reinstall the drivers if applicable.
+<br><br>
+</ol>
+<p class="indent">You must reboot your system for the reinstalled drivers to become active.</p>
+<ol type="1">
+
+<li value="3"><a name="1109223"></a>Ensure that the appropriate drivers are installed and the protocols are bound.
+<br><br>
+
+<li value="4"><a name="1109224"></a>Enter the System Setup program and confirm that the NICs are enabled (see "Using 
+the System Setup Program" in the <i>User's Guide</i>).
+<br><br>
+
+<li value="5"><a name="1109225"></a>Ensure that the NICs, hubs, and switches on the network are all set to the same data 
+transmission speed.
+<br><br>
+
+<li value="6"><a name="1109226"></a>Ensure that all network cables are of the proper type and do not exceed the specified 
+length. For more information, see "Network Cable Requirements" in the <i>User's Guide</i>.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1079387">Inside the System</a></h2>
+
+
+<p>In <a href="5g375c50.htm#1051325">Figure&nbsp;5-4</a>, the covers and bezel are removed to provide an interior view of the system.</p><p class="FigureTableTitle"><a name="1051325"> </a>
+Figure 5-4.&#32; Inside the System
+
+</p>
+
+<a name="1058095"></a><p><img src="5g375c18.jpg" height="339" width="604" align="bottom">
+</p><p>The system board holds the system's control circuitry and other electronic components. Several hardware options, such as the microprocessors and memory, are installed directly on the system board. The expansion-card cage accommodates up to three full-length PCI or PCI-X expansion cards.</p><p>The system provides space for a 3.5-inch diskette drive and a CD drive. The CD/diskette drive tray connects to the controllers on the system board through the SCSI backplane board. For more information, see "<a href="5g375c70.htm#1037554">Installing Drives</a>."</p><p>The hard-drive bays provide space for up to five 1-inch SCSI hard drives. The hard drives connect to a controller on the system board or a RAID controller card through the SCSI backplane board. For more information, see "<a href="5g375c70.htm#1037554">Installing Drives</a>."</p><p>During an installation or troubleshooting procedure, you may be required to change a jumper setting. For more information, see "<a href="5g375aa0.htm#1041040">Jumpers and Connectors</a>."</p><hr noshade size="1">
+<h2><a name="1064670">Responding to a Systems Management Alert Message</a></h2>
+
+
+<p>The optional systems management software monitors critical system voltages and temperatures, the system cooling fans, and the status of the SCSI hard drives in the system. Alert messages appear in the alert log window. For information about the alert log window and options, see the systems management software documentation.</p><hr noshade size="1">
+<h2><a name="1051336">Troubleshooting a Wet System</a></h2>
+
+
+<h5><a name="1051337"> Problem</a></h5>
+<ul><li>Liquid spills<br><br></li>
+<li>Splashes<br><br></li>
+<li>Excessive humidity<br><br></li>
+</ul><h5><a name="1051341"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1057498"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from the electrical outlet.
+<br><br>
+
+<li value="2"><a name="1057534"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="3"><a name="1057500"></a>Remove all expansion cards installed in the system (see "<a href="5g375c60.htm#1042729">Removing an Expansion 
+Card</a>" in "Installing System Options").
+<br><br>
+
+<li value="4"><a name="1057501"></a>Let the system dry thoroughly for at least 24 hours.
+<br><br>
+
+<li value="5"><a name="1095409"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="6"><a name="1095402"></a>Reconnect your system and peripherals to their electrical outlets, and turn on the 
+system.
+<br><br>
+</ol>
+<p class="indent">If the system does not start up properly, see "<a href="5g375c80.htm#1032182">Getting Help</a>," for instructions on obtaining technical assistance.</p>
+<ol type="1">
+
+<li value="7"><a name="1057505"></a>If the system starts up normally, shut down the system and reinstall all expansion cards 
+you removed in step 3 (see "<a href="5g375c60.htm#1079568">Installing an Expansion Card</a>" in "Installing System 
+Options").
+<br><br>
+
+<li value="8"><a name="1057506"></a>Run the system board tests in system diagnostics to confirm that the system is working 
+properly.
+<br><br>
+</ol>
+<p class="indent">If the tests did not complete successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1051354">Troubleshooting a Damaged System</a></h2>
+
+
+<h5><a name="1051355"> Problem</a></h5>
+<ul><li>System dropped or damaged<br><br></li>
+</ul><h5><a name="1103224"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1103225"></a>Ensure that the following components are properly installed:
+<br><br>
+<ul>
+<li type="disc">Expansion-card cage
+<br><br></li>
+<li type="disc">Expansion cards
+<br><br></li>
+<li type="disc">Power supplies
+<br><br></li>
+<li type="disc">Cooling fans
+<br><br></li>
+<li type="disc">System board tray
+<br><br></li>
+<li type="disc">Drive carrier connections to the SCSI backplane board
+<br><br></li>
+</ul>
+
+<li value="2"><a name="1109232"></a>Ensure that all cables are properly connected.
+<br><br>
+
+<li value="3"><a name="1109233"></a>Ensure that all components are properly installed and are free from damage.
+<br><br>
+
+<li value="4"><a name="1051362"></a>Run the system board tests in system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the tests did not complete successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1051366">Troubleshooting the System Battery</a></h2>
+
+
+<h5><a name="1051367"> Problem</a></h5>
+<ul><li>Error message shows a problem with the battery<br><br></li>
+<li>System Setup program loses system configuration information<br><br></li>
+<li>System date and time do not stay current<br><br></li>
+</ul><p>The system battery maintains system configuration, date, and time information in a special section of memory when you turn off the system. The operating life of the battery ranges from 2 to 5 years, depending on how you use the system (for example, if you keep the system on most of the time, the battery gets little use and thus lasts longer). You may need to replace the battery if an incorrect time or date is displayed during the boot routine.</p><p>You can operate the system without a battery; however, the system configuration information maintained by the battery in NVRAM is erased each time you remove power from the system. Therefore, you must re-enter the system configuration information and reset the options each time the system boots until you replace the battery.</p><h5><a name="1051370"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1066179"></a>Re-enter the time and date through the System Setup program (see "Using the System 
+Setup Program" in the <i>User's Guide</i> for instructions).
+<br><br>
+
+<li value="2"><a name="1066180"></a>Turn off and disconnect the system from the electrical outlet for at least one hour.
+<br><br>
+
+<li value="3"><a name="1066181"></a>Reconnect the system to the electrical outlet and turn the system on again.
+<br><br>
+
+<li value="4"><a name="1066182"></a>Enter the System Setup program.
+<br><br>
+</ol>
+<p class="indent">If the date and time are not correct in the System Setup program, replace the battery (see "<a href="5g375c60.htm#1145739">Replacing the System Battery</a>" in "Installing System Options").</p>
+<p class="indent">If the problem is not resolved by replacing the battery, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>Some software may cause the system time to speed up or slow down. If the 
+system seems to operate normally except for the time kept in the System Setup 
+program, the problem may be caused by software rather than by a defective battery.
+</td>
+  </tr>
+</table><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>If the system is turned off for long periods of time (for weeks or months), the 
+NVRAM may lose its system configuration information. This situation is caused by a 
+defective battery.
+</td>
+  </tr>
+</table><hr noshade size="1">
+<h2><a name="1051384">Troubleshooting Power Supplies</a></h2>
+
+
+<h5><a name="1103039"> Problem</a></h5>
+<ul><li>System-status indicators are amber<br><br></li>
+<li>Front-panel status LCD indicating a problem with power supply<br><br></li>
+<li>Power-supply fault indicator signifies a problem<br><br></li>
+</ul><h5><a name="1062654"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1087785"></a>Locate the faulty power supply.
+<br><br>
+</ol>
+<p class="indent">The power supply's fault indicator is lit (see <a href="5g375c20.htm#1149762">Figure&nbsp;2-4</a>).</p>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  The power supplies are hot-pluggable. The system requires one power supply to be 
+installed for the system to operate normally. The system is in the redundant mode when two 
+power supplies are installed. Remove and replace only one power supply at a time in a system 
+that is powered on.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="2"><a name="1051415"></a>Remove the faulty power supply (see "<a href="5g375c60.htm#1126084">Removing a Power Supply</a>" in "Installing System 
+Options").
+<br><br>
+
+<li value="3"><a name="1051417"></a>Install the new power supply (see "<a href="5g375c60.htm#1163997">Replacing a Power Supply</a>" in "Installing System 
+Options").
+<br><br>
+</ol>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> After installing a new power supply, allow several seconds for the system to 
+recognize the power supply and determine whether it is working properly. The power-on 
+indicator will turn green to signify that the power supply is functioning properly (see 
+<a href="5g375c20.htm#1149762">Figure&nbsp;2-4</a>).
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="4"><a name="1109261"></a>If the problem is not resolved, install a new power supply (see "<a href="5g375c60.htm#1163997">Replacing a Power 
+Supply</a>" in "Installing System Options").
+<br><br>
+
+<li value="5"><a name="1109266"></a>If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>," for information on obtaining 
+technical assistance.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1091142">Troubleshooting System Cooling</a></h2>
+
+
+<h5><a name="1110835"> Problem</a></h5>
+<ul><li>Systems management software issues a fan-related error message<br><br></li>
+<li>Front-panel status LCD indicating a problem with cooling<br><br></li>
+</ul><h5><a name="1110846"> Action</a></h5>
+<p>Cooling of the entire system or individual components inside the system can be affected by the following conditions:</p><ul><li>Ambient temperature surrounding the system is too high<br><br></li>
+<li>Airflow intake and output for the system is obstructed<br><br></li>
+<li>Cables inside the system obstruct cooling fan intake or output<br><br></li>
+<li>Expansion-card filler brackets are not installed over empty expansion slots<br><br></li>
+<li>An individual cooling fan has failed (see "<a href="5g375c50.htm#1110872">Troubleshooting a Cooling Fan</a>")<br><br></li>
+</ul><p>To maintain proper cooling while the system is on, ensure that none of the conditions listed above exists. If an individual cooling fan has failed, see "<a href="5g375c50.htm#1110872">Troubleshooting a Cooling Fan</a>" to resolve the problem.</p><h3><a name="1110872"> Troubleshooting a Cooling Fan
+</a></h3>
+<h5><a name="1110873"> Problem</a></h5>
+<ul><li>System-status indicators are amber<br><br></li>
+<li>Front-panel status LCD indicating a problem with cooling<br><br></li>
+<li>Fan status indicator signifies a problem with the fan<br><br></li>
+<li>Systems management software issues a fan-related error message<br><br></li>
+</ul><h5><a name="1051434"> Action</a></h5>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  The cooling fans are hot-pluggable. To maintain proper cooling while the system is 
+on, replace only one fan at a time.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1110502"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="2"><a name="1110784"></a>Locate the faulty fan.
+<br><br>
+</ol>
+<p class="indent">The fan's indicator is amber blinking (see <a href="5g375c20.htm#1153533">Figure&nbsp;2-7</a>).</p>
+<ol type="1">
+
+<li value="3"><a name="1089309"></a>Remove the faulty fan (see "<a href="5g375c60.htm#1077290">Removing a Cooling Fan</a>" in "Installing System Options").
+<br><br>
+
+<li value="4"><a name="1089327"></a>Reseat the fan and ensure that the fan connector is firmly seated.
+<br><br>
+</ol>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> After installing a new fan, allow up to 30 seconds for the system to recognize the 
+fan and determine whether it is working properly. The fan status indicator on the system 
+board will turn green to signify that the fan is functioning properly (see <a href="5g375c20.htm#1153533">Figure&nbsp;2-7</a>).
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="5"><a name="1089313"></a>If the problem is not resolved, install a new fan (see "<a href="5g375c60.htm#1077311">Replacing a Cooling Fan</a>" in 
+"Installing System Options").
+<br><br>
+
+<li value="6"><a name="1059393"></a>If the replacement fan does not operate, the fan connector is faulty (see "<a href="5g375c80.htm#1032182">Getting 
+Help</a>," for information on obtaining technical assistance).
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1088737">Troubleshooting a Microprocessor</a></h2>
+
+
+<h5><a name="1088738"> Problem</a></h5>
+<ul><li>Error message indicating a microprocessor problem<br><br></li>
+<li>Front-panel status LCD indicating a problem with microprocessors, VRMs, or the system board<br><br></li>
+<li>A heat sink is not installed for each microprocessor<br><br></li>
+</ul><h5><a name="1088740"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1088744"></a>Observe the precautions in "<a href="5g375c50.htm#1057956">Safety First&#151;For You and Your System</a>."
+<br><br>
+
+<li value="2"><a name="1088745"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+</ol>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document. 
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="3"><a name="1103278"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="4"><a name="1088755"></a>Ensure that VRMs are properly installed for each microprocessor (see <a href="5g375c60.htm#1150834">Figure&nbsp;6-9</a>).
+<br><br>
+
+<li value="5"><a name="1103290"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="6"><a name="1088760"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="7"><a name="1088761"></a>Run <b>Quick Tests</b> in the system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the problem persists, continue to step 8.</p>
+<ol type="1">
+
+<li value="8"><a name="1088763"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="9"><a name="1103299"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="10"><a name="1088770"></a>Remove microprocessor 2 and VRM 2, leaving microprocessor 1 and VRM 1 installed 
+(see "<a href="5g375c60.htm#1150641">Adding or Replacing a Microprocessor</a>" in "Installing System Options"). To locate 
+microprocessor 1 and VRM 1, see <a href="5g375aa0.htm#1062490">Figure&nbsp;A-3</a>.
+<br><br>
+</ol>
+<p class="indent">If there is only one microprocessor installed, see "<a href="5g375c80.htm#1032182">Getting Help</a>."</p>
+<ol type="1">
+
+<li value="11"><a name="1103312"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="12"><a name="1088780"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="13"><a name="1088781"></a>Run <b>Quick Tests</b> in the system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the tests complete successfully, continue to step 14.</p>
+<ol type="1">
+
+<li value="14"><a name="1088783"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="15"><a name="1103328"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="16"><a name="1088790"></a>Reinstall microprocessor 2 and VRM 2 you removed in step 10 (see "<a href="5g375c60.htm#1150641">Adding or 
+Replacing a Microprocessor</a>" in "Installing System Options").
+<br><br>
+
+<li value="17"><a name="1103345"></a>Run <b>Quick Tests</b> in the system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the problem persists, see "<a href="5g375c80.htm#1032182">Getting Help</a>."</p>
+<hr noshade size="1">
+<h2><a name="1096394">Troubleshooting Expansion Cards</a></h2>
+
+
+<h5><a name="1096395"> Problem</a></h5>
+<ul><li>Error message indicates an expansion-card problem<br><br></li>
+<li>Expansion card seems to perform incorrectly or not at all<br><br></li>
+<li>Front-panel status LCD indicating a problem with expansion cards or the system board<br><br></li>
+<li>Expansion-card filler brackets are not installed over empty expansion slots<br><br></li>
+</ul><h5><a name="1051468"> Action</a></h5>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  When troubleshooting an expansion card, see the documentation for your operating 
+system and the expansion card.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1091585"></a>Observe the precautions in "<a href="5g375c50.htm#1057956">Safety First&#151;For You and Your System</a>."
+<br><br>
+
+<li value="2"><a name="1103396"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+</ol>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document. 
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="3"><a name="1091594"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="4"><a name="1065863"></a>Ensure that the expansion-card cage is properly installed (see "<a href="5g375c60.htm#1149751">Replacing the 
+Expansion-Card Cage</a>" in "Installing System Options").
+<br><br>
+
+<li value="5"><a name="1051476"></a>Ensure that each expansion card is firmly seated in its connector (see "<a href="5g375c60.htm#1079568">Installing an 
+Expansion Card</a>" in "Installing System Options").
+<br><br>
+
+<li value="6"><a name="1051477"></a>Ensure that any appropriate cables are firmly connected to their corresponding 
+connectors on the expansion cards.
+<br><br>
+
+<li value="7"><a name="1064877"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="8"><a name="1103384"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="9"><a name="1064878"></a>Run <b>Quick Tests</b> in the system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the problem persists, go to step 10.</p>
+<ol type="1">
+
+<li value="10"><a name="1103415"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="11"><a name="1064880"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="12"><a name="1051479"></a>Remove all expansion cards installed in the system (see "<a href="5g375c60.htm#1042729">Removing an Expansion 
+Card</a>" in "Installing System Options").
+<br><br>
+
+<li value="13"><a name="1103378"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="14"><a name="1103419"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="15"><a name="1051480"></a>Run <b>Quick Tests</b> in the system diagnostics.
+<br><br>
+</ol>
+<p class="indent">If the tests do not complete successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for information on obtaining technical assistance.</p>
+<ol type="1">
+
+<li value="16"><a name="1110258"></a>For each of the remaining expansion cards, perform the following steps:
+<br><br>
+  <ol type="a">
+
+<li value="1"><a name="1110259"></a>Turn off the system, including any attached peripherals, and disconnect the 
+system from its electrical outlet.
+<br><br>
+  </ol>
+  <ol type="a">
+
+<li value="2"><a name="1110263"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="3"><a name="1110306"></a>Reinstall one of the expansion cards you removed in step 12.
+<br><br>
+
+<li value="4"><a name="1110313"></a>Run <b>Quick Tests</b> in the system diagnostics.
+<br><br>
+  </ol>
+</ol>
+<p class="Indentsub">If the tests do not complete successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for information on obtaining technical assistance. If you have reinstalled all of the expansion cards and the <b>Quick Tests</b> are still failing, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for information on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1051486">Troubleshooting System Memory</a></h2>
+
+
+<h5><a name="1051487"> Problem</a></h5>
+<ul><li>Faulty memory module<br><br></li>
+<li>Faulty system board<br><br></li>
+<li>Front-panel status LCD indicating a problem with system memory<br><br></li>
+</ul><h5><a name="1051490"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1089525"></a>Turn on the system, including any attached peripherals. 
+<br><br>
+</ol>
+<p class="indent">If no error messages appear, go to step 15.</p>
+<ol type="1">
+
+<li value="2"><a name="1089527"></a>Enter the System Setup program to check the system memory setting (see "Using the 
+System Setup Program," in the <i>User's Guide</i> for instructions).
+<br><br>
+
+<li value="3"><a name="1089528"></a>If the amount of memory matches the system memory setting, go to step 15. 
+Otherwise, continue to step 4.
+<br><br>
+
+<li value="4"><a name="1089529"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="5"><a name="1089533"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+</ol>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document. 
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="6"><a name="1089547"></a>Reseat the memory modules in their connectors (see "<a href="5g375c60.htm#1148803">Installing Memory Modules</a>" in 
+"Installing System Options").
+<br><br>
+
+<li value="7"><a name="1103458"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="8"><a name="1103459"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="9"><a name="1089560"></a>Enter the System Setup program and check the system memory again.
+<br><br>
+</ol>
+<p class="indent">If the amount of memory installed does not match the system memory setting, perform the following steps:</p>
+<ol type="a">  <ol type="a">
+
+<li value="1"><a name="1089562"></a>Turn off the system, including any attached peripherals, and disconnect the 
+system from its electrical outlet.
+<br><br>
+  </ol>
+  <ol type="a">
+
+<li value="2"><a name="1089563"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+  </ol>
+</ol>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> There are multiple configurations for the memory modules; see "<a href="5g375c60.htm#1127723">Memory Module 
+Installation Guidelines</a>" in "Installing System Options." The following steps are an example 
+of one configuration.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="10"><a name="1089582"></a>Swap the memory module pair in bank 1 with another pair of the same capacity.
+<br><br>
+
+<li value="11"><a name="1103483"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="12"><a name="1109328"></a>Reconnect your system and peripherals to their electrical outlets, and turn on the 
+system.
+<br><br>
+
+<li value="13"><a name="1109329"></a>As the system boots, observe the monitor screen and the indicators on the keyboard.
+<br><br>
+
+<li value="14"><a name="1089590"></a>Perform the following steps:
+<br><br>
+  <ol type="a">
+
+<li value="1"><a name="1089591"></a>Turn off the system, including any attached peripherals, and disconnect the 
+system from its electrical outlet.
+<br><br>
+  </ol>
+  <ol type="a">
+
+<li value="2"><a name="1095536"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="3"><a name="1089595"></a>Repeat steps 10 through 13 for each memory module pair installed.
+<br><br>
+  </ol>
+</ol>
+<p class="indent">If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>."</p>
+<ol type="1">
+
+<li value="15"><a name="1089600"></a>Run the system memory test in system diagnostics. 
+<br><br>
+</ol>
+<p class="indent">If the test does not complete successfully, see "<a href="5g375c80.htm#1032182">Getting Help</a>."</p>
+<hr noshade size="1">
+<h2><a name="1051574">Troubleshooting the Diskette Drive</a></h2>
+
+
+<h5><a name="1051575"> Problem</a></h5>
+<ul><li>Error message indicates a diskette drive problem<br><br></li>
+</ul><h5><a name="1051577"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1089649"></a>Enter the System Setup program and verify that the system is configured correctly (see 
+"Using the System Setup Program" in the <i>User's Guide</i>).
+<br><br>
+
+<li value="2"><a name="1089650"></a>Remove the bezel (see "<a href="5g375c50.htm#1051233">Removing the Bezel</a>").
+<br><br>
+
+<li value="3"><a name="1109332"></a>Run the diskette drive tests from the diagnostics diskette to see whether the diskette 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the tests failed, continue to step 4.</p>
+<ol type="1">
+
+<li value="4"><a name="1057606"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="5"><a name="1095100"></a>Ensure that the CD/diskette drive tray is properly installed (see "<a href="5g375c70.htm#1055181">Installing the 
+CD/Diskette Drive Tray</a>" in "Installing Drives").
+<br><br>
+
+<li value="6"><a name="1095118"></a>Connect the system to its electrical outlet and turn on the system, including any 
+attached peripherals.
+<br><br>
+
+<li value="7"><a name="1095125"></a>Replace the bezel (see "<a href="5g375c50.htm#1109423">Replacing the Bezel</a>").
+<br><br>
+
+<li value="8"><a name="1095159"></a>Run the diskette drive tests from the diagnostics diskette to see whether the diskette 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the tests failed, continue to step 9.</p>
+<ol type="1">
+
+<li value="9"><a name="1103539"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="10"><a name="1094915"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="11"><a name="1091641"></a>Ensure that the system board tray is properly installed (see "<a href="5g375c60.htm#1126313">Replacing the System 
+Board Tray</a>" in "Installing System Options").
+<br><br>
+
+<li value="12"><a name="1094930"></a>Replace the back cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="13"><a name="1103543"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="14"><a name="1095163"></a>Run the diskette drive tests from the diagnostics diskette to see whether the diskette 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the problem persists, continue to step 15.</p>
+<ol type="1">
+
+<li value="15"><a name="1103557"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="16"><a name="1103561"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="17"><a name="1103564"></a>Remove all expansion cards installed in the system (see "<a href="5g375c60.htm#1042729">Removing an Expansion 
+Card</a>" in "Installing System Options").
+<br><br>
+
+<li value="18"><a name="1103569"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="19"><a name="1103570"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="20"><a name="1095214"></a>Run the diskette drive tests from the diagnostics diskette to see whether the diskette 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the test ran successfully, an expansion card may be conflicting with the diskette drive logic, or you may have a faulty expansion card. Continue to step 21.</p>
+<p class="indent">If the test failed, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<ol type="1">
+
+<li value="21"><a name="1103589"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="22"><a name="1103593"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="23"><a name="1065148"></a>Reinstall one of the expansion cards you removed in step 17 (see "<a href="5g375c60.htm#1079568">Installing an 
+Expansion Card</a>" in "Installing System Options").
+<br><br>
+
+<li value="24"><a name="1103582"></a>Replace the cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="25"><a name="1103583"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="26"><a name="1095219"></a>Run the diskette drive tests from the diagnostics diskette to see whether the diskette 
+drive works correctly.
+<br><br>
+
+<li value="27"><a name="1057622"></a>Repeat steps 21 through 26 until all expansion cards have been reinstalled or until one 
+of the expansion cards prevents the system from booting from the diagnostics diskette.
+<br><br>
+</ol>
+<p class="indent">If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1051604">Troubleshooting a CD Drive</a></h2>
+
+
+<h5><a name="1051605"> Problem</a></h5>
+<ul><li>System cannot read data from a CD<br><br></li>
+<li>CD drive indicator fails to blink during boot<br><br></li>
+</ul><h5><a name="1057639"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1095272"></a>Enter the System Setup program to ensure that the IDE device is enabled (see "Using 
+the System Setup Program," in the <i>User's Guide</i>).
+<br><br>
+
+<li value="2"><a name="1095292"></a>Run the IDE devices tests in the system diagnostics to determine whether the CD 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the tests failed, continue to step 3.</p>
+<ol type="1">
+
+<li value="3"><a name="1095280"></a>Remove the bezel (see "<a href="5g375c50.htm#1051233">Removing the Bezel</a>").
+<br><br>
+
+<li value="4"><a name="1095237"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="5"><a name="1095240"></a>Ensure that the CD/diskette drive tray is properly installed (see "<a href="5g375c70.htm#1055181">Installing the 
+CD/Diskette Drive Tray</a>" in "Installing Drives").
+<br><br>
+
+<li value="6"><a name="1095242"></a>Reconnect the system to an electrical outlet and turn on the system, including any 
+attached peripherals.
+<br><br>
+
+<li value="7"><a name="1103609"></a>Replace the bezel (see "<a href="5g375c50.htm#1109423">Replacing the Bezel</a>").
+<br><br>
+</ol>
+<p class="indent">If the problem persists, continue to step 8.</p>
+<ol type="1">
+
+<li value="8"><a name="1103611"></a>Run the IDE devices tests in the system diagnostics to determine whether the CD 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the tests failed, continue to step 9.</p>
+<ol type="1">
+
+<li value="9"><a name="1103622"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="10"><a name="1103626"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="11"><a name="1103629"></a>Ensure that the system board tray is properly installed (see "<a href="5g375c60.htm#1126313">Replacing the System 
+Board Tray</a>" in "Installing System Options").
+<br><br>
+
+<li value="12"><a name="1103634"></a>Replace the back cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="13"><a name="1103635"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+
+<li value="14"><a name="1095334"></a>Run the IDE devices tests in the system diagnostics to determine whether the CD 
+drive works correctly.
+<br><br>
+</ol>
+<p class="indent">If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1060453">Troubleshooting an External SCSI Tape Drive</a></h2>
+
+
+<h5><a name="1051619"> Problem</a></h5>
+<ul><li>Defective tape drive<br><br></li>
+<li>Defective tape cartridge<br><br></li>
+<li>Software or device driver<br><br></li>
+<li>Defective SCSI host adapter <br><br></li>
+</ul><h5><a name="1051624"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1061989"></a>Remove the tape that was in use when the problem occurred and replace it with a tape 
+that you know is not defective.
+<br><br>
+
+<li value="2"><a name="1061990"></a>Verify that any required SCSI device drivers are installed on the hard drive and are 
+configured correctly.
+<br><br>
+</ol>
+<p class="indent">For information on device drivers for the system's integrated SCSI controller, see "Installing and Configuring SCSI Drivers" in the <i>User's Guide</i>. </p>
+<ol type="1">
+
+<li value="3"><a name="1061993"></a>Reinstall the tape-backup software as instructed in the tape-backup software 
+documentation.
+<br><br>
+
+<li value="4"><a name="1061994"></a>Check the cable connections to the drive.
+<br><br>
+  <ol type="a">
+
+<li value="1"><a name="1096307"></a>Turn off the system, including any attached peripherals, and disconnect the 
+system from its electrical outlet.
+<br><br>
+  </ol>
+  <ol type="a">
+
+<li value="2"><a name="1096318"></a>Check the SCSI cable connection from the tape drive to the SCSI controller card 
+installed in the system.
+<br><br>
+
+<li value="3"><a name="1089754"></a>Check the AC power cable connection to the tape drive.
+<br><br>
+  </ol>
+
+<li value="5"><a name="1089739"></a>Verify that the tape drive is configured for a unique SCSI ID number and that the tape 
+drive is terminated or not terminated as appropriate.
+<br><br>
+
+<li value="6"><a name="1089740"></a>See the documentation for the tape drive for instructions on selecting the SCSI ID 
+and enabling or disabling termination.
+<br><br>
+
+<li value="7"><a name="1089741"></a>Reconnect the system to the electrical outlet and turn on the system.
+<br><br>
+
+<li value="8"><a name="1089745"></a>If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining 
+technical assistance.
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1051640">Troubleshooting Hard Drives</a></h2>
+
+
+<h5><a name="1051641"> Problem</a></h5>
+<ul><li>Faulty hard drive<br><br></li>
+<li>Faulty SCSI backplane board<br><br></li>
+<li>Faulty or loose SCSI cable connections<br><br></li>
+<li>Hard-drive status indicator signifies a problem with the drive<br><br></li>
+<li>Front-panel status LCD indicating a problem with hard drives<br><br></li>
+</ul><h5><a name="1062021"> Action</a></h5>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  This troubleshooting procedure can destroy data stored on the hard drive. Before you 
+continue, back up all the files on the hard drive.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="1"><a name="1089763"></a>Reboot your system and enter the SCSI configuration utility by pressing 
+&lt;Ctrl&gt;&lt;h&gt;, &lt;Ctrl&gt;&lt;a&gt;, or &lt;Ctrl&gt;&lt;m&gt;, depending on your SCSI or RAID 
+controller.
+<br><br>
+
+<li value="2"><a name="1062033"></a>Ensure that the primary SCSI channel is enabled, and reboot the system.
+<br><br>
+</ol>
+<p class="indent">See the documentation supplied with the controller for information on the configuration utility.</p>
+<ol type="1">
+
+<li value="3"><a name="1062034"></a>Verify that the device drivers are installed and configured correctly (see the operating 
+system's documentation).
+<br><br>
+</ol>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> If a drive shows signs of imminent failure, the status indicator blinks green, then 
+amber, and then off, repeating this sequence every two seconds. If a drive has failed, the 
+status indicator blinks amber four times per second.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="4"><a name="1062036"></a>Remove the hard drive and install it in the another drive bay.
+<br><br>
+
+<li value="5"><a name="1062037"></a>If the problem is resolved, reinstall the hard drive in the original bay.
+<br><br>
+</ol>
+<p class="indent">If the hard drive functions properly in the original bay, the drive carrier could have intermittent problems. Ensure that the drive is properly mounted on the drive carrier (see "<a href="5g375c70.htm#1063895">Installing a SCSI Hard Drive</a>" in "Installing Drives").</p>
+<p class="indent">If the drive carrier still does not function properly in the original bay, the SCSI backplane board has a defective connector. See "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<ol type="1">
+
+<li value="6"><a name="1062041"></a>If a RAID controller card is installed, check the SCSI cable connections inside the 
+system:
+<br><br>
+  <ol type="a">
+
+<li value="1"><a name="1062042"></a>Turn off the system, including any attached peripherals, and disconnect the 
+system from its electrical outlet. 
+<br><br>
+  </ol>
+  <ol type="a">
+
+<li value="2"><a name="1094974"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="3"><a name="1062043"></a>Check the SCSI cable connection to the RAID controller card (see the RAID 
+controller's documentation for detailed information).
+<br><br>
+  </ol>
+</ol>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> To operate the SCSI backplane in a 1 x 5 configuration, ensure that the SCSI 
+backplane daughter card is not installed. To operate the SCSI backplane in a 2/3 split 
+configuration, ensure that the SCSI backplane daughter card is installed (see "<a href="5g375c70.htm#1058228">Installing a 
+SCSI Backplane Daughter Card</a>" in "Installing Drives").
+</td>
+  </tr>
+</table>
+<ol type="a">  <ol type="a">
+
+<li value="4"><a name="1103678"></a>Replace the back cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="5"><a name="1103679"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+  </ol>
+</ol><ol type="1">
+
+<li value="7"><a name="1062060"></a>Partition and logically format the hard drive. If possible, restore the files to the drive.
+<br><br>
+</ol>
+<p class="indent">To partition and logically format the drive, see the operating system documentation.</p>
+<p class="indent">If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1103694">Troubleshooting the Integrated RAID Controller</a></h2>
+
+
+<h5><a name="1103808"> Problem</a></h5>
+<ul><li>Error message indicates integrated RAID controller problem<br><br></li>
+</ul><h5><a name="1103810"> Action</a></h5>
+<ol type="1">
+
+<li value="1"><a name="1103811"></a>Enter the System Setup program and check the setting for the integrated RAID 
+controller (see "Using the System Setup Program" in the <i>User's Guide</i>)<i>. 
+</i><br><br>
+</ol>
+<p class="indent">If the controller is enabled, go to step 4.</p>
+<ol type="1">
+
+<li value="2"><a name="1103813"></a>Change the RAID controller setting to <b>Enabled</b>, and then reboot the system.
+<br><br>
+
+<li value="3"><a name="1103814"></a>See the documentation provided with the RAID controller software and check the 
+software settings.
+<br><br>
+
+<li value="4"><a name="1103823"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+</ol>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  See "Protecting Against Electrostatic Discharge" in the safety instructions in your 
+<i>System Information</i> document.<b> 
+</b></td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="5"><a name="1103832"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+
+<li value="6"><a name="1103833"></a>Reseat the RAID memory module in its connector (see <a href="5g375c70.htm#1057735">Figure&nbsp;7-3</a> in "Installing 
+Drives").
+<br><br>
+
+<li value="7"><a name="1103838"></a>Reseat the RAID hardware key in its connector (see <a href="5g375c70.htm#1057771">Figure&nbsp;7-4</a> in "Installing Drives").
+<br><br>
+
+<li value="8"><a name="1110642"></a>Reseat the RAID battery cable connector (see <a href="5g375c70.htm#1058064">Figure&nbsp;7-5</a> in "Installing Drives").
+<br><br>
+
+<li value="9"><a name="1103893"></a>Replace the back cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="10"><a name="1103894"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+</ol>
+<p class="indent">If the problem is not resolved, continue to step 11.</p>
+<ol type="1">
+
+<li value="11"><a name="1110661"></a>Turn off the system, including any attached peripherals, and disconnect the system 
+from its electrical outlet.
+<br><br>
+
+<li value="12"><a name="1110668"></a>Remove the cover (see "<a href="5g375c50.htm#1097434">Removing the Cover</a>").
+<br><br>
+</ol>
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="caution.gif" align="top">
+    </td>
+    <td valign="top" align="left">
+    <span class="notes">
+    CAUTION: </span> <b>Replace the battery only with the same or equivalent type 
+recommended by the manufacturer. Discard used batteries according to the 
+manufacturer's instructions. See the <i>System Information</i> document for 
+additional information.
+</b></td>
+  </tr>
+</table>
+
+
+
+
+<ol type="1">
+
+<li value="13"><a name="1110657"></a>Replace the RAID battery (see <a href="5g375c70.htm#1058064">Figure&nbsp;7-5</a> in "Installing Drives").
+<br><br>
+
+<li value="14"><a name="1110675"></a>Replace the back cover (see "<a href="5g375c50.htm#1105286">Replacing the Cover</a>").
+<br><br>
+
+<li value="15"><a name="1110676"></a>Reconnect the system to its electrical outlet and turn the system on, including any 
+attached peripherals.
+<br><br>
+</ol>
+<p class="indent">If the problem is not resolved, see "<a href="5g375c80.htm#1032182">Getting Help</a>" for instructions on obtaining technical assistance.</p>
+<hr noshade size="1">
+<h2><a name="1103770">Troubleshooting a RAID Controller Card</a></h2>
+
+
+<p>Your system may contain an optional RAID controller card. If you encounter problems with the controller, see the RAID controller's documentation for detailed information on troubleshooting.</p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

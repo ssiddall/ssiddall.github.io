@@ -1,0 +1,218 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies FTP</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="www_find.htm">
+<LINK REL="Previous" HREF="telnet.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="telnet.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="www_find.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I5">What is FTP?</A></LI>
+<LI>
+<A HREF="#I7">How to Use FTP</A></LI>
+<LI>
+<A HREF="#I21">FTP Commands</A></LI>
+<LI>
+<A HREF="#I23">File Transfer Protocol Exercises</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER><A ID="I1" NAME="I1"></A>
+<H1><A ID="I2" NAME="I2">FTP (<A ID="I3" NAME="I3"></A>File Transfer Protocol)</A></H1>
+<HR ALIGN=CENTER>
+<P>The FTP program enables people to move files easily across the Internet.  This document outlines how to do this on the Kenyon VAX computers.  Other Internet tools, such as Netscape, described elsewhere in this workbook, provide an easy-to-use interface for FTP as well.</P>
+<P><A ID="I4" NAME="I4"></A></P>
+<H2><A ID="I5" NAME="I5">
+<BR>What is FTP?</A></H2>
+<HR ALIGN=CENTER>
+<P>FTP is a program designed to move files (especially large ones) from one place to another via the Internet.  One can down- or up- load a file using various FTP commands.</P>
+<P>This utility is perhaps the most difficult use of the Internet to understand.  In addition to an address to or from which you wish to transfer files, a detailed understanding of the network, the operating system at the foreign site, and a number of FTP commands, you will almost always need the proper username and passwords.</P>
+<P><A ID="I6" NAME="I6"></A></P>
+<H2><A ID="I7" NAME="I7">
+<BR>How to Use FTP</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I8" NAME="I8"></A><I>Start FTP</I></FONT></P>
+<P>The simplest way to connect to a foreign host to transfer files is to type FTP at the $ prompt and specify a host:</P>
+<P>$  FTP <I>host.domain</I>  R</P>
+<P>A connection will be made and you will be asked for your username. After you provide it, you may be asked for a password.</P>
+<P>FTP can also be started without a hostname; at the $ prompt type:</P>
+<P>$  FTP  R</P>
+<P>Once inside the utility, you can connect to a foreign host by providing the appropriate IP address or host name after the OPEN command, like this at the FTP&gt; prompt:</P>
+<P>FTP&gt;  OPEN nnn.nn.nn.n  R</P>
+<P>     or</P>
+<P>FTP&gt;  OPEN <I>host.domain</I>  R</P>
+<P>For instance, if you want to FTP to Kenyon's academic VAX (usually a pointless but possible proposition) you could type at the FTP prompt:</P>
+<P>FTP&gt;  OPEN 138.28.1.2  R</P>
+<P> or</P>
+<P>FTP&gt;  OPEN KCVAX1.KENYON.EDU  R</P>
+<P>Should you fail to properly provide your username or password, you may try again by using the USER and PASS commands.  For instance, after supplying an incorrect password you might see:</P>
+<P>&lt;Login incorrect.</P>
+<P>The connection is still open, as reflected by the new prompt,</P>
+<P>KCVAX1.KENYON.EDU&gt;</P>
+<P>At this prompt, to supply a different username, type:</P>
+<P>KCVAX1.KENYON.EDU&gt; USER  R</P>
+<P>If you have only typed your password incorrectly, you may use the PASS command.</P>
+<P>
+<FONT SIZE=+1><I>Other Systems</I></FONT></P>
+<P>When dealing with different computers, you may run into another <I>operating system</I> (a way of organizing information and commands). Knowing the <I>directory structure</I> of a new (or familiar) operating system is important for finding what you need.</P>
+<P>
+<FONT SIZE=+1><I>&quot;</I><A ID="I9" NAME="I9"></A><A ID="I10" NAME="I10"></A><I>Anonymous&quot;</I></FONT></P>
+<P>Some Internet hosts will not require you to have an account but will instead ask you to specify the name of the service you wish to access, so that you might log in as &quot;anonymous&quot;.  When you log in with a username of anonymous, it is customary to type your internet address when asked for a password.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I11" NAME="I11"></A><I>Change Subdirectories</I></FONT></P>
+<P>To change what directory you are accessing, use the change directory command, as below for a VMS system like Kenyon's, at the KCVAX1.KENYON.EDU&gt; prompt:</P>
+<P>KCVAX1.KENYON.EDU&gt;  CD <I>[directory.subdir]</I>  R</P>
+<P>      or as follows for a UNIX system:</P>
+<P> CD <I>/directory/subdir</I>  R</P>
+<P>
+<FONT SIZE=+1><I>Beware of Playing Around</I></FONT></P>
+<P>Experimenting with these functions is a rather tedious process, and should not be done.  Other systems may decide that you are a threat to security there and disconnect you.</P>
+<P> <I>To </I><A ID="I12" NAME="I12"></A><I>Download A File</I></P>
+<P>Once you have located the file you wish to download, use the GET command:</P>
+<P> GET <I>filename.txt</I>  R</P>
+<P>Various messages appear during the transfer process, and these can be understood (if you are interested) with a little effort.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I13" NAME="I13"></A><I>Upload A File</I></FONT></P>
+<P>If, on the other hand, you wish to upload a file to the foreign host, make sure that you are in the proper directory, and type:</P>
+<P> PUT <I>filename.txt</I>  R</P>
+<P>
+<FONT SIZE=+1><I>File Types:</I><A ID="I14" NAME="I14"></A><I> </I><A ID="I15" NAME="I15"></A><I>ASCII or </I><A ID="I16" NAME="I16"></A><A ID="I17" NAME="I17"></A><I>Binary</I></FONT></P>
+<P>The FTP program can transfer files in either binary or ASCII mode.  If you are about to transfer a file labeled .TXT or one you know is in an ASCII format, type at the host.domain&gt; prompt:</P>
+<P> ASCII  R</P>
+<P>Other files will be of a binary type.  For these, type:</P>
+<P> BINARY  R</P>
+<P>Please be sure that you know what you are transferring and that it is of a reasonable size.  Transferring large files is often time-consuming and you should be careful not to use more space than you have been allotted on the Kenyon computers.</P>
+<P><A ID="I18" NAME="I18"></A></P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I19" NAME="I19"></A><I>Close a FTP Connection</I></FONT></P>
+<P>When you are ready to close a connection to a foreign host, at the FTP prompt, type:</P>
+<P> CLOSE  R</P>
+<P> or</P>
+<P> BYE  R</P>
+<P>You can now OPEN another connection.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I20" NAME="I20"></A><I>Stop Using FTP</I></FONT></P>
+<P>When you are done with your FTP session, to leave the program type:</P>
+<P>   EXIT  R</P>
+<P>The EXIT command will CLOSE any open connections before exiting FTP.</P>
+<P> </P>
+<H2><A ID="I21" NAME="I21">
+<BR>FTP <A ID="I22" NAME="I22"></A>Commands</A></H2>
+<HR ALIGN=CENTER>
+<P>The following commands are recognized by most, if not all, ftp clients and servers.</P>
+<P>
+<FONT SIZE=+1><I>ASCII</I></FONT></P>
+<P>Sets file transfer to ASCII mode for transferring only ASCII text files.</P>
+<P>
+<FONT SIZE=+1><I>BINARY</I></FONT></P>
+<P>Sets file transfer to BINARY mode for transferring binary files. Examples of binary files would be programs, graphics, WordPerfect documents, <I>etc.</I></P>
+<P>
+<FONT SIZE=+1><I>CD directory</I></FONT></P>
+<P>Change working directory on the remote system to the named directory.</P>
+<P>CD /PUB/MSDOS  RChanges working directory to /PUB/MSDOS</P>
+<P>
+<FONT SIZE=+1><I>CLOSE</I></FONT></P>
+<P>Ends FTP session and returns to FTP command mode.  You can OPEN another connection or QUIT.</P>
+<P>
+<FONT SIZE=+1><I>DELETE filename</I></FONT></P>
+<P>Deletes the named file on the remote system.</P>
+<P>DELETE OLDFILE.TXT  R  R</P>
+<P>
+<FONT SIZE=+1><I>DIR</I></FONT></P>
+<P>Displays directory listing of files in current working directory on remote system.</P>
+<P>
+<FONT SIZE=+1><I>HELP command (or ?)</I></FONT></P>
+<P>Displays brief information about the named command.</P>
+<P>HELP DIR  R</P>
+<P>Type ? alone will display a list of all available FTP commands but without any instructions on use.</P>
+<P>
+<FONT SIZE=+1><I>LCD directory</I></FONT></P>
+<P>Changes the default working directory on the LOCAL system.</P>
+<P>LCD C:\FILES  RChanges working directory to C:\FILES on local computer system.</P>
+<P>
+<FONT SIZE=+1><I>LS</I></FONT></P>
+<P>Equivalent to the DIR command but displays a short listing.</P>
+<P>LS /PUB/MSDOS  R</P>
+<P>
+<FONT SIZE=+1><I>MGET file-list</I></FONT></P>
+<P>Gets multiple files from remote system to local system.  The list of files can be filenames each separated by a space or specified by using wildcard characters.  The wildcard character, an asterisk (*), means any file and a question mark (?) means any character at this position.</P>
+<P>MGET *.*  RGets all files.</P>
+<P>MGET *.TXT  R Gets all files with extension TXT</P>
+<UL>
+<LI>  MGET *.BK?  RGets all files with first two. characters of extension containing BK and third character being anything.</LI></UL>
+<P>
+<FONT SIZE=+1><I>MPUT file-list</I></FONT></P>
+<P>Puts multiple files onto remote system from local system.  The list of files can be filenames each separated by a space or specified using wildcard characters (see MGET).</P>
+<P>
+<FONT SIZE=+1><I>OPEN hostname.domain </I></FONT></P>
+<P>or </P>
+<P>
+<FONT SIZE=+1><I>OPEN  IP-address</I></FONT></P>
+<P>Connects to named remote system.  </P>
+<P>A system's hostname.domain format is similar to </P>
+<P>kcvax3.kenyon.edu </P>
+<P>or </P>
+<P>magnus.Acs.ohio-state.edu.</P>
+<P>A system's IP address is similar to </P>
+<UL>
+<LI>  138.28.2.6</LI></UL>
+<P>OPEN KCVAX3.KENYON.EDU  R</P>
+<P> OPEN 138.28.2.6  R</P>
+<P>
+<FONT SIZE=+1><I>PWD</I></FONT></P>
+<P>Prints the current working directory on the remote system.</P>
+<P>
+<FONT SIZE=+1><I>QUIT</I></FONT></P>
+<P>Closes any remaining FTP connections and exits FTP.</P>
+<P>
+<FONT SIZE=+1><I>SEND</I></FONT></P>
+<P> See PUT.</P>
+<P>
+<FONT SIZE=+1><I>RECEIVE</I></FONT></P>
+<P> See GET.</P>
+<P>
+<FONT SIZE=+1><I>USER</I></FONT></P>
+<P>Causes remote system to prompt for username and password. This is helpful if you enter an incorrect username or password and need the FTP server to prompt you again for your username and password. </P>
+<H2><A ID="I23" NAME="I23">
+<BR>File Transfer Protocol <A ID="I24" NAME="I24"></A>Exercises</A></H2>
+<HR ALIGN=CENTER>
+<P>Begin by making sure you are logged into your Kenyon VAX account. </P>
+<P>At the $ prompt type FTP   R   .  This will start the FTP client program.  Your account on the VAX is considered the LOCAL system.  </P>
+<P><B>Exercise: </B><B> </B></P>
+<TABLE BORDER>
+<TR>
+<TD>
+<P><B>GOAL:</B><B>FTP to WIRETAP.SPIES.COM and GET JAPAN.CON (Japanese Constitution)</B></P>
+<P><B>STEP 1)</B></P>
+<P><B>Type</B>: FTP WIRETAP.SPIES.COM  R</P>
+<P><B>STEP 2)</B></P>
+<P><B>Type</B>: anonymous  R</P>
+<P><B>STEP 3)</B></P>
+<P><B>Type</B>:<I> </I><I>your-email-address</I>  R</P>
+<P><B>STEP 4)</B></P>
+<P><B>Type</B>: CD Gov/World  R</P>
+<P><B>STEP 5)</B></P>
+<P><B>Type</B>: ASCII  R</P>
+<P><B>STEP 6)</B></P>
+<P><B>Type</B>: GET JAPAN.CON  R</P>
+<P><B>STEP 7)</B></P>
+<P><B>Type</B>:   R  </P>
+<P><B>STEP 8)</B></P>
+<P><B>Type</B>: CLOSE  R</P>
+<P><B>STEP 9)</B></P>
+<P><B>Type</B>: QUIT  R</P>
+<P><B>STEP 10)</B></P>
+<P><B>Type</B>: MORE JAPAN.CON  R</P></TABLE>
+<HR ALIGN=CENTER>
+<P><A HREF="telnet.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="www_find.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

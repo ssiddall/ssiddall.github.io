@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Internet Mail</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="disclist.htm">
+<LINK REL="Previous" HREF="netware.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="netware.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="disclist.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I2">What is the Internet?</A></LI>
+<LI>
+<A HREF="#I5">Internet Mail</A></LI>
+<LI>
+<A HREF="#I9">Shortcuts</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Internet Mail</A></H1>
+<HR ALIGN=CENTER>
+<P>The global computer network, Internet, can be used by anyone with a computer account at Kenyon.  This document explains some Internet basics and the use of electronic Internet mail.</P>
+<H2><A ID="I2" NAME="I2">
+<BR>What is the Internet?</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Internet</I></FONT></P>
+<P>The Internet is a global computer communications network which serves to interconnect many other networks, essentially as one.  The students, faculty, and staff of Kenyon College have access to a wealth of resources through Kenyon's Internet connection.  It is easy to communicate with any other Internet site from Kenyon.  Access to hundreds of libraries, large repositories of free software, and ongoing e-mail discussions are just a few of the available resources.</P>
+<P>
+<FONT SIZE=+1><I>BITNET</I></FONT></P>
+<P>Another network, BITNET, and the Internet are not directly connected.  It is important to note that Kenyon is NOT a BITNET site, but that it is possible to send<A ID="I3" NAME="I3"></A> e-mail to BITNET sites.  This is done through a computer that is connected to both networks, an InterBit site.  In correspondence with a BITNET site, you should indicate that your return<A ID="I4" NAME="I4"></A> address follows the <I>Internet</I> format.</P>
+<H2><A ID="I5" NAME="I5">
+<BR>Internet Mail<A ID="I6" NAME="I6"></A></A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Internet Address</I></FONT></P>
+<P>Usually, Internet addresses are composed of a host name (for instance, KCVAX1, KCVAX2, OR KCVAX3) and a domain name (here, KENYON.EDU).  At Kenyon, your Internet address is simplified; your username and the Kenyon domain make up your Internet mail address in the following format:</P>
+<P> username@KENYON.EDU</P>
+<P>If your username is Johnsona, your Internet mail address will be</P>
+<P> Johnsona@KENYON.EDU</P>
+<P>
+<FONT SIZE=+1><I>Sending Mail</I></FONT></P>
+<P>As with any mail, electronic or otherwise, you will need to know the address of the person you wish to contact.  If you don't know a colleague's address, it is best to call or write that person and ask her/him.  Once you know an address, you need to use the Internet mailer as a prefix to the Internet mail<A ID="I7" NAME="I7"></A> address.  At the MAIL&gt;prompt, type the SEND command (as you normally would) and respond to the TO: prompt with:</P>
+<P>  MX%&quot;username@host.domain&quot;</P>
+<P>where USERNAME is the username of the individual to whom you are sending mail, HOST is the name of the computer system which receives mail for that person, and DOMAIN is the specification for the Internet &quot;location&quot; of that system.  For example, to send Internet mail to a user named SMITH on the Ohio State IBM machine, type the following at the TO: prompt:</P>
+<P> MX%&quot;SMITH@OHIO-STATE.EDU&quot;</P>
+<P>
+<FONT SIZE=+1><I>Privacy</I></FONT></P>
+<P>Internet mail is not private; it passes over the network much like a postcard travels through the mail.  At times human intervention is required to move the mail along.  In this and other cases the contents of your mail may be seen by someone other than the addressee.</P>
+<P>
+<FONT SIZE=+1><I>BITNET Mail</I></FONT></P>
+<P>Although Kenyon is NOT a BITNET site, our mailer is able to distinguish<A ID="I8" NAME="I8"></A> BITNET addresses as such and route them appropriately:</P>
+<P> MX%&quot;username@node.BITNET&quot;</P>
+<P>where USERNAME is the username of the individual to whom you are sending mail and NODE is the name of the BITNET node on which that person reads mail.</P>
+<H2><A ID="I9" NAME="I9">
+<BR>Shortcuts</A></H2>
+<HR ALIGN=CENTER>
+<P>You may simplify the task of typing in frequently used Internet addresses by setting up &quot;logicals&quot; in your LOGIN.COM file.  If you are not familiar with the LOGIN.COM file or how to edit it, please refer to the ICS documentation on LOGIN.COM files (available in the Olin and Crawford computing centers).  To assign the logical name BOB to an Internet address and JAN to a BITNET address, add the following lines to your LOGIN.COM file:</P>
+<P> $ DEFINE BOB &quot;MX%&quot;&quot;SMITH@CCMAIL.CUNYSB.EDU&quot;&quot;&quot;</P>
+<P> $ DEFINE JAN &quot;MX%&quot;&quot;SMITHJ@CYP.BITNET&quot;&quot;&quot;</P>
+<P>
+<FONT SIZE=+1><I>An Easier Way To Remember Internet Addresses</I><A ID="I10" NAME="I10"></A></FONT></P>
+<P>MXALIAS is a simple database manager for userdefined MX aliases. MXALIAS at the $ prompt.  Following is an example of adding users to your database, as well as how to use your newly created alias:</P>
+<P>                              </P>
+<P> Mxalias</P>
+<P> Mxalias&gt;  add joe &quot;smith@somewhere.edu&quot; &quot;Joe Smith, Somewhere,            Inc.&quot; </P>
+<P>      %MXALIASEERROPN, error</P>
+<P>  alias database :[USERNAME]MX_ ALIAS_DATABASE.DA RMSEFNF, file not found</P>
+<P> Do you want to create a new database &lt;Y&gt;?     (Type Y for yes)</P>
+<P>When you send mail to Joe, all you have to do is . . . </P>
+<P> MAIL&gt;  send</P>
+<P> TO:    MX%joe</P>
+<P> Subj:  .....</P>
+<HR ALIGN=CENTER>
+<P><A HREF="netware.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="disclist.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

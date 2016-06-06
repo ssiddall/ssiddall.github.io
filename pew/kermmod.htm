@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Log onto the VAX with Kermit</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="vaxnotes.htm">
+<LINK REL="Previous" HREF="kermit1p.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="kermit1p.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="vaxnotes.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I2">To Start Kermit</A></LI>
+<LI>
+<A HREF="#I3">Connect to the VAX</A></LI>
+<LI>
+<A HREF="#I4">Transfer Files</A></LI>
+<LI>
+<A HREF="#I5">Help</A></LI>
+<LI>
+<A HREF="#I6">Parameters which May Need to be Changed</A></LI>
+<LI>
+<A HREF="#I7">The KERMIT.BAT File</A></LI>
+<LI>
+<A HREF="#I8">To Display Graphics on the Microcomputer Using Kermit</A></LI>
+<LI>
+<A HREF="#I9">How Kermit Works with the VAX</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">How to LOGON to the VAX from a Microcomputer Using Kermit and a Modem</A></H1>
+<HR ALIGN=CENTER>
+<P>This document contains instructions for using the Kenyon College VAX and transferring files to and from a microcomputer using a modem and the Kenyon special copy of the program, Kermit.  If you don't have a copy of this program, please call the ICS HelpLine and ask for it. </P>
+<H2><A ID="I2" NAME="I2">
+<BR>To Start Kermit</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Start Kermit on the Microcomputer</I></FONT></P>
+<P>At the DOS prompt, type </P>
+<P>C:\&gt;  KERMIT  R</P>
+<P>
+<FONT SIZE=+1><I>Dial the Kenyon VAX Phone Number</I></FONT></P>
+<P>Type ATDP and one of the VAX phone numbers. At the end of this section, the Kenyon VAX phone numbers are listed.</P>
+<P> ATDT 4275954  R</P>
+<P>assuming that you are dialing the number, 427-5954.  <B><I>Note: Don't </I></B><B><I>include the DASH in the number.</I></B></P>
+<P>&quot;AT&quot; stands for &quot;Attention&quot;; &quot;D&quot; stands for &quot;Data&quot; and &quot;T&quot; stands for &quot;Tone&quot;.  If you have a pulse type phone, type ATDP instead of ATDT. &quot;P&quot; stands for &quot;Pulse&quot;.</P>
+<P>If you are dialing long distance, insert commas between the long distance numbers. Commas tell the computer to pause. For instance, if you are dialing from outside the 614 area, type</P>
+<P> ATDT 1,6144275954</P>
+<P>The phone numbers of the Kenyon VAX are listed here.  They will adjust to any speed over 300 baud and under 9600 baud rate; that is, they are &quot;autobaud modems&quot;.</P>
+<P> Students and Guests  427-5954</P>
+<P> Faculty and Staff   427-5960</P>
+<P>Each number really has a group of telephone lines attached to it. Faculty and staff should dial into the 427-5960 number first and if the lines are all busy, then try 427-5954.</P>
+<P>
+<FONT SIZE=+1><I>Students Dialing From Dorms</I></FONT></P>
+<P>Students dialing from dormitory rooms at Kenyon only have to use the last four digits, <I>i.e</I>., 5954, to connect.  The modems are on the same Centrex switch as the student residence phones.  </P>
+<H2><A ID="I3" NAME="I3">
+<BR>Connect to the VAX</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Connect to the System of your Choice</I></FONT></P>
+<P>At the LOCAL&gt; prompt, connect to the system of your choice. Type CONNECT (or C) and the name of the system to which you want to connect.</P>
+<P>Local&gt;  C ACAD  R      or</P>
+<P>Local&gt;  C LIBRARY  R    or</P>
+<P>Local&gt;  C ADMIN   R</P>
+<P>
+<FONT SIZE=+1><I>Log onto the System</I></FONT></P>
+<P>The VAX is now connected to your microcomputer.  There will be a blank screen. Press   R  once or twice.  The VAX login message will appear.</P>
+<P>At this point you may use the VAX as you would ordinarily.  For WordPerfect use the regular microcomputer keystrokes.  The VAX version of WordPerfect works the same as the microcomputer version.  For KEDT use the usual VTnn keypad commands as shown on the KEDT Help Card and the key bindings handout.  In KEDT, use the  1 key in place of the PF1 key.</P>
+<P><B><I>Note: </I></B><B><I>The NumLock key should be ON when you use KEDT.</I></B></P>
+<H2><A ID="I4" NAME="I4">
+<BR>Transfer Files</A></H2>
+<HR ALIGN=CENTER>
+<P><I>Start Kermit on the VAX</I></P>
+<P>At the $ prompt, type KERMIT  R.  The prompt for KERMIT on the VAX is   C-KERMIT&gt;  .</P>
+<P>
+<FONT SIZE=+1><I>Change to Server Mode</I></FONT></P>
+<P>Server mode causes one computer to wait for instructions from the other computer.  In this case the VAX is waiting for instructions from the microcomputer. At the VAX Kermit prompt, type</P>
+<P>C-KERMIT&gt;  SERVER  R</P>
+<P>Switch control back to the microcomputer. Press</P>
+<P> A C  Hold the  A  key down and tap C</P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>Set the Default Disk</I></FONT></P>
+<P>The default disk is the disk on your microcomputer which will receive the file or to which you are sending a file. Type</P>
+<P>MS-KERMIT&gt;  SET DEF A:  R  (or B: or C:)</P>
+<P>
+<FONT SIZE=+1><I>Send Files to Microcomputer</I></FONT></P>
+<P>To send files from the VAX to the microcomputer, type the command to <B>get</B> the file from the VAX</P>
+<P>MS-KERMIT&gt;  GET <I>vaxfilename.type</I>  R</P>
+<P>and wait for the transfer.  </P>
+<P>
+<FONT SIZE=+1><I>Send Files to VAX</I></FONT></P>
+<P>To send files from the microcomputer to the VAX, type the command to <B>send </B>the file from the microcomputer to the VAX.</P>
+<P>MS-KERMIT&gt;  SEND B:<I>filename.ext</I>  R</P>
+<P>and wait for the transfer.  </P>
+<P><B><I>Note: </I></B><B><I>In sending or getting files, you may use *.* or other wild </I></B><B><I>cards.  For instance, </I></B><B><I>GET *.*</I></B><B><I> or </I></B><B><I>SEND *.*</I></B><B><I> or </I></B><B><I>GET </I></B><B><I>*.WPDOC</I></B><B><I> or </I></B><B><I>GET LETTERS.*</I></B><B><I> .  For further information </I></B><B><I>on wild cards, please see the Introduction to VAX/VMS </I></B><B><I>Manual</I></B><B> or the DCL Help Card.</B></P>
+<P>
+<FONT SIZE=+1><I>When You Are Finished</I></FONT></P>
+<P>When you are finished transferring files and want to use the VAX to perform more tasks (MAIL, KEDT, <I>etc</I>.), type the following:</P>
+<P>MS-KERMIT&gt;  FINISH  R  exit server mode</P>
+<P>MS-KERMIT&gt;  C  R    connect back to the VAX</P>
+<P>C-KERMIT&gt;  EXIT  R  exit Kermit on the VAX</P>
+<P>The $ prompt appears and you may continue your VAX work.</P>
+<P>
+<FONT SIZE=+1><I>Finish VAX Session</I></FONT></P>
+<P>Log off the VAX as you normally do.  Type </P>
+<P>$  LO  R  at the $ prompt and at the Local&gt; prompt type</P>
+<P>LOCAL&gt;  LO  R   log off the Server </P>
+<P>(no prompt)  A C   return to the MS-KERMIT&gt; prompt</P>
+<P>MS-KERMIT&gt;  EXIT  R  return to the DOS prompt</P>
+<H2><A ID="I5" NAME="I5">
+<BR>Help</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Help Screen</I></FONT></P>
+<P>To see the following information, while you are using the VAX, press A  H</P>
+<P>? This message     F  Dump screen to file </P>
+<P>C Close the connection      P  Push to DOS</P>
+<P>S Status of the connection </P>
+<P>B Send a break     O  Send a null </P>
+<P>L Send a long 1.8 s Break  H  Hangup phone</P>
+<P>Typing the escape character will send it to the host</P>
+<P>
+<FONT SIZE=+1><I>Switch From Micro To VAX </I></FONT></P>
+<P>To connect to the VAX, at the MS-KERMIT&gt; prompt type C or CONNECT     R  .</P>
+<P>To switch back to the microcomputer, at the $ prompt or the C-KERMIT&gt; prompt, press  A C   .</P>
+<H2><A ID="I6" NAME="I6">
+<BR>Parameters which May Need to be Changed</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Default Drive</I></FONT></P>
+<P>If you have a dual disk drive, the default drive should be B:.  If you have a hard disk, the default drive should be C:.  This is changed on the MS version of the KERMIT program by typing at the MS-KERMIT&gt; prompt, </P>
+<P>MS-KERMIT&gt;  SET DEF B:  R</P>
+<P>You may change this in the MSKERMIT.INI file by typing this command at the end of the file.  (Use a text editor to edit MSKERMIT.INI. If you don't have a text editor, call the ICS HelpLine and ask for a copy of TED, a text editor.)</P>
+<P>
+<FONT SIZE=+1><I>Baud Rate or Speed</I></FONT></P>
+<P>The baud rate is the rate of speed (bits per second) which the data is transferred.  If you use your copy of KERMIT at home as well, you may have to change the baud rate in the MSKERMIT.INI file.</P>
+<P>   </P>
+<P>For network hookup, the speed should be set at 19200 or less.  If you have a 1200 baud modem, the speed should be set at 1200, and 2400 for a 2400 baud modem.  To change the speed, type at the MS-KERMIT&gt; prompt, </P>
+<P>MS-KERMIT&gt;  SET SPEED 1200   R</P>
+<P> </P>
+<P>
+<FONT SIZE=+1><I>Port Setting</I></FONT></P>
+<P>Another change that may need to be made is the PORT setting.  The PORT should be COM1 or COM2.  To change the port used </P>
+<P>MS-KERMIT&gt;  SET PORT 1   R or </P>
+<P>MS-KERMIT&gt;  SET PORT 2   R</P>
+<H2><A ID="I7" NAME="I7">
+<BR>The KERMIT.BAT File</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>The File</I></FONT></P>
+<P>Following is a copy of the file, KERMIT.BAT, which indicates at the MS-DOS prompt that you are connected to a remote system.  When you want to start Kermit, type Kermit at the DOS prompt.</P>
+<UL>
+<LI>       ECHO OFF</LI>
+<LI>       CLS</LI>
+<LI>       PROMPT Enter 'EXIT' to return to Kermit$_$P$G</LI>
+<LI>       KERMIT.EXE</LI>
+<LI>       PROMPT $P$G</LI>
+<LI>       CLS</LI></UL>
+<P>
+<FONT SIZE=+1><I>Temporary Switch to the Microcomputer</I></FONT></P>
+<P>When you are on the VAX and want to check a file on the microcomputer, you can switch to the microcomputer temporarily by pressing  A P.  The prompt will be </P>
+<P> Enter 'EXIT' to return to KERMIT</P>
+<P> C:\&gt;</P>
+<P>This serves as a reminder to you that you are still using Kermit and that you are still connected to the larger system.</P>
+<H2><A ID="I8" NAME="I8">
+<BR>To Display Graphics on the Microcomputer Using Kermit</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Kermit Terminal Setting</I></FONT></P>
+<P>On the microcomputer and at the KERMIT-MS&gt; prompt type</P>
+<P>MS-KERMIT&gt;  SET TERM TEK4010  R</P>
+<P>
+<FONT SIZE=+1><I>RS/1 Terminal setting</I></FONT></P>
+<P>Connect to the VAX and after starting RS/1 at the # prompt type</P>
+<P>#  SET TERMINAL TO 'T4010'  R</P>
+<P>You will be able to see RS/1 graphs in graphics mode.</P>
+<P><B><I>Note: </I></B><B><I>Do not use WordPerfect when you are in graphics </I></B><B><I>mode.</I></B></P>
+<H2><A ID="I9" NAME="I9">
+<BR>How Kermit Works with the VAX</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>VAX WordPerfect</I></FONT></P>
+<P>In order to facilitate the use of microcomputers with the Kenyon VAX systems, the following key sequences provide most of the microcomputerWordPerfect key definitions so that they may be used with VAXWordPerfect.  <B>Please note:</B> When you are using WordPerfect, the Numlock key <B>must</B> be off if you are using the keypad keys. </P>
+<P>When you are running this version of Kermit on your microcomputer, you are connected to the VAX (running VAX-WordPerfect), and you press a microcomputerWordPerfect key (for instance   3  HELP), Kermit will send the correct signal to VAX WordPerfect. </P>
+<P>
+<FONT SIZE=+1><I>KEDT, Mail, and other VAX Applications</I></FONT></P>
+<P>In addition, VT terminal  PF keys (PF1PF4) and keypad (KP) definitions enhance the use of microcomputers with VAX software applications. For instance, Mail, KEDT, and TPU use these keys in a manner similar to WordPerfect. <B>Please note:</B> When you are using EDT or KEDT, the Numlock key <B>must</B> be turned <B>ON</B>.</P>
+<HR ALIGN=CENTER>
+<P><A HREF="kermit1p.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="vaxnotes.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

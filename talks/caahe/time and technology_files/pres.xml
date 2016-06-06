@@ -1,0 +1,58 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint">
+ <p:presentation>
+  <p:master id="4" type="main" href="master04.htm" xmlhref="master04.xml"
+   template="Construction" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#5F5F5F,#EAE8E2,#000000,#FDBC03,#A7C1CB,#A38D77,#FFFFCC,#FFCC66"/>
+    <p:colorscheme
+     colors="#FFFFFF,#333333,#463828,#B75E31,#E09F98,#E4D8CA,#663300,#CC9900"/>
+    <p:colorscheme
+     colors="#FFFFFF,#333333,#000000,#4D4D4D,#C0C0C0,#DDDDDD,#808080,#B2B2B2"/>
+    <p:colorscheme
+     colors="#783A34,#EAE8E2,#000000,#FFCC99,#83AAAD,#A06766,#FFFFCC,#CC9900"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="5" type="title" href="master05.htm" xmlhref="master05.xml"
+   layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:master id="2" type="handout" href="master02.htm" layout="handout"
+   slots="header,dateTime,footer,slideNumber"/>
+  <p:slide id="1" href="slide0001.htm" masterhref="master05.htm"
+   layout="title_subtitle" slots="centerTitle,subTitle"/>
+  <p:slide id="26" href="slide0026.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="5" href="slide0005.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="27" href="slide0027.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="10" href="slide0010.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="28" href="slide0028.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="31" href="slide0031.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="32" href="slide0032.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="30" href="slide0030.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="24" href="slide0024.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="2" href="slide0002.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="11" href="slide0011.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="12" href="slide0012.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="13" href="slide0013.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="9" href="slide0009.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="29" href="slide0029.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="8" href="slide0008.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="14" href="slide0014.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="33" href="slide0033.htm" layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView" slidehref="slide0032.htm" restoredleft="415"
+   manualadjustleft="t"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:font name="Impact" charset="0" type="6" family="34"/>
+  <p:font name="Arial Narrow" charset="0" type="6" family="34"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:font name="Arial" charset="0" type="6" family="34"/>
+  <p:headersfooters noheader="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"/>
+  <p:htmlpublishsettings browsersupport="v4"
+   href="C:\temp\time and technology.htm" hidespeakernote="t"
+   noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="73730" style='mso-wrap-style:none'/>
+</xml>

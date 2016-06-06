@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Gopher Commands</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ejourn.htm">
+<LINK REL="Previous" HREF="gopher.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="gopher.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ejourn.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I4">LOOK</A></LI>
+<LI>
+<A HREF="#I6">To Capture Gopher Data</A></LI>
+<LI>
+<A HREF="#I9">To Get Gopher Help</A></LI>
+<LI>
+<A HREF="#I13">Bookmarks:  To Make A Customized Menu</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Gopher <A ID="I2" NAME="I2"></A>Commands</A></H1>
+<HR ALIGN=CENTER>
+<P ALIGN="CENTER">
+<CENTER><A ID="I3" NAME="I3"></A></CENTER></P>
+<H2><A ID="I4" NAME="I4">
+<BR>LOOK</A></H2>
+<HR ALIGN=CENTER>
+<P>Documents in Gopher are displayed using a special program called LOOK.  At the top of the LOOK screen display is a highlighted bar which displays the name of the current file being viewed, the current cursor location (row and column), and the approximate % of the file length where the cursor is located.</P>
+<P>At the bottom of the LOOK screen display is a highlighted bar listing the LOOK commands that can be used while viewing a document. Only the capitalized letter of the command must be typed in order to execute the command; the letter can be in either uppercase or lowercase.  A description of those LOOK commands is given below:</P>
+<P><A ID="I5" NAME="I5"></A></P>
+<P>eXit Exits document and allows to save displayed file before returning to current menu</P>
+<P>helP Help screen displays list of LOOK commands</P>
+<P>Home Moves cursor to beginning of document</P>
+<P>End. Moves cursor to end of document</P>
+<P>scrRight Moves cursor to right end of screen</P>
+<P>scrLeft Moves cursor to left end of screen</P>
+<P>Find Searches for specified word/phrase (searches forward, case insensitive 20character limit on search)</P>
+<P>findNext Searches for next occurrence of word/phrase</P>
+<P>eDit Enables document to be edited by user (C Z to exit and save; C  Y to abort)</P>
+<P>QuitExits document </P>
+<P>Go (#,%)Move to specified line or % of document (type: 25 to move cursor to line 25 of doc.)  (type: 50% to move to midpoint of displayed file.)</P>
+<P>SpawnExits KCINFO temporarily to &quot;$&quot; prompt; (type: LO to return)</P>
+<P>chWid Changes screen width to 132 or 80 characters per line</P>
+<P>Txt/hex Changes document display: &quot;text&quot; mode or &quot;hexidecimal&quot;</P>
+<P>C  W Refreshes screen</P>
+<P>The following cursor movement keys also work in LOOK, although they are not listed on the menu:</P>
+<P>Page Up   moves cursor back one screen</P>
+<P>Page Down  moves cursor forward one screen</P>
+<P>     </P>
+<P>After a document is exited, there are three options for making a copy of that document:</P>
+<P>m  Mails document to the username specified     </P>
+<P>sSaves document to user's current directory under default filename</P>
+<P>                              OR</P>
+<P>        User can delete default filename and specify [DIRECTORY]FILENAME where document is to be saved</P>
+<P>pPrints document to System's default printer queue, at CHA3HP in the  Data Center in Chalmers  Library (see instructions below for setting user's default printer queue). Please remember that the P must be lower case.</P>
+<H2><A ID="I6" NAME="I6">
+<BR>To <A ID="I7" NAME="I7"></A>Capture Gopher Data</A></H2>
+<HR ALIGN=CENTER>
+<P><A ID="I8" NAME="I8"></A></P>
+<P>Exit the document in the LOOK program by typing  x .   Gopher will ask if you wish to print the information, save the information in a file, mail the information to someone (such as yourself), or just continue back to the current menu. </P>
+<P> Press  R  to continue back to the current menu</P>
+<P> Type  m  to send this file as a mail message to yourself or to someone else's username that you can specify.</P>
+<P> Type  s  to save a copy of this file to a  filename that you can specify.  Delete the default filename that appears and put in your own.  The file can also be saved to a directory other than the one you are in by specifying its name, along with the filename.</P>
+<P> Type  p  to print a copy of the file to your default printer that you can specify in your LOGIN.COM file.  The p must be lower case.  If no printer is specified, the copy will not print; so don't use the print option until you have entered the default printer command in your LOGIN.COM file! To do so edit your </P>
+<P>LOGIN.COM (use a VAX system editor, not Word Perfect) and add the following. (Substitute the name of the print queue you prefer for the phrase Default_Printqueue_Name.)</P>
+<UL>
+<LI>  $ DEFINE GOPHERQUE <I>DEFAULT_PRINTQUEUE_NAME</I></LI></UL>
+<P>     </P>
+<P>     for example ...</P>
+<UL>
+<LI>  $  DEFINE GOPHERQUE CHA1HP</LI></UL>
+<P> After you exit the KEDT editor (  C   Z ), this command will not take effect until you log off and back on OR until you type </P>
+<P>@LOGIN  R   at the $ prompt.</P>
+<P>After trying out these options, you can press  R  to get back to the menu where you were browsing when you accessed the document. To quit Gopher, type  q     . </P>
+<H2><A ID="I9" NAME="I9">
+<BR>To Get Gopher <A ID="I10" NAME="I10"></A>Help</A></H2>
+<HR ALIGN=CENTER>
+<P>There are several types of help available in Gopher.</P>
+<P> All Gopher menus contain a &quot;?&quot; Help option, where you can get help in learning to use Gopher.</P>
+<P> The LOOK program's Help is reached by entering  P  (from the <I>helP</I> listed among the choices at the bottom of the screen).</P>
+<P><A ID="I11" NAME="I11"></A><A ID="I12" NAME="I12"></A></P>
+<H2><A ID="I13" NAME="I13">
+<BR>Bookmarks:  To Make A Customized Menu</A></H2>
+<HR ALIGN=CENTER>
+<P>A customized Gopher main menu of other selected Gopher</P>
+<P>menus/documents can be set up using the Bookmark feature.  The</P>
+<P>following commands can be executed while any Gopher menu is</P>
+<P>displayed:</P>
+<P>     a  Add selected topic to Bookmark menu</P>
+<P>A  Add selected directory/search to Bookmark menu</P>
+<P>  v  View Bookmark menu</P>
+<P>    d  Delete Bookmark entry </P>
+<HR ALIGN=CENTER>
+<P><A HREF="gopher.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ejourn.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

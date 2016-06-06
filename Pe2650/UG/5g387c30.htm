@@ -1,0 +1,422 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/19/01 10:20:26">
+<title>Using the System Setup Program : Dell PowerEdge 2650 Systems
+ User's Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1039152"> Using the System 
+Setup Program
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ User's Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040856">Entering the System Setup Program</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040927">System Setup Options</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1041041">Using the System Password Feature</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1041132">Using the Setup Password Feature</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1041171">Disabling a Forgotten Password</A></P>
+
+
+<br>
+<p>Each time you turn on your system, the system compares the configuration of the hardware installed in the system to the hardware listed in the system configuration information stored in NVRAM on the system board. If the system detects a discrepancy, it generates error messages that identify the incorrect configuration settings. The system then prompts you to enter the System Setup program to correct the settings.</p><p>You can use the System Setup program as follows:</p><ul><li>To change the system configuration information after you add, change, or remove any hardware in your system<br><br></li>
+<li>To set or change user-selectable options&#151;for example, the time or date on your system&nbsp;<br><br></li>
+<li>To enable or disable any integrated device in your system<br><br></li>
+</ul><p>After you set up your system, run the System Setup program to familiarize yourself with your system configuration information and optional settings. Print the System Setup screens (by pressing &lt;Print Screen&gt;) or record the information for future reference.</p><hr noshade size="1">
+<h2><a name="1040856">Entering the System Setup Program</a></h2>
+
+
+<ol type="1">
+
+<li value="1"><a name="1040858"></a>Turn on your system. 
+<br><br>
+</ol>
+<p class="indent">If your system is already on, shut it down, and then turn it on again.</p>
+<ol type="1">
+
+<li value="2"><a name="1040860"></a>Press &lt;F2&gt; immediately after you see the following message in the upper-right corner 
+of the screen:
+<br><br>
+</ol>
+<p class="screenindent"><span class="screen">&lt;F2&gt; = System Setup
+</span></p>
+<p class="indent">You can also press &lt;F10&gt; to enter Utility Mode or &lt;F12&gt; for PXE Boot. PXE Boot forces a system boot from the network. </p>
+<p class="indent">If you wait too long and your operating system begins to load into memory, let the system complete the load operation, and then shut down the system and try again.</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> To ensure an orderly system shutdown, consult the documentation that 
+accompanied your operating system.
+</td>
+  </tr>
+</table>
+<p class="indent">You can also enter the System Setup program by responding to certain error messages. See "<a href="5g387c30.htm#1040880">Responding to Error Messages</a>."</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> For help using the System Setup program, press &lt;F1&gt; while in the program.
+</td>
+  </tr>
+</table>
+<h3><a name="1040880"> Responding to Error Messages
+</a></h3>
+<p>If an error message appears on your monitor screen while the system is starting up, make a note of the message. Before entering the System Setup program, see "System Beep Codes" and "System Messages" in your <i>Installation and Troubleshooting Guide </i>for an explanation of the message and suggestions for correcting any errors. </p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>After installing a memory upgrade, it is normal for your system to send a message the 
+first time you start your system. In that situation, do not refer to "System Beep Codes" and 
+"System Messages." Instead, see "Adding Memory" in your <i>Installation and Troubleshooting 
+Guide </i>for instructions.
+</td>
+  </tr>
+</table><p>If you are given an option of pressing either &lt;F1&gt; to continue or &lt;F2&gt; to run the System Setup program, press &lt;F2&gt;.</p><h3><a name="1040888"> Using the System Setup Program
+</a></h3>
+<p><a href="5g387c30.htm#1040900">Table&nbsp;3-1</a> lists the keys that you use to view or change information on the System Setup screens and to exit the program.</p><a name="1040923"></a><p><b>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040900">Table 3-1.&#32; System Setup Navigation Keys&nbsp;</a></p></p>
+<tr><th valign="top" align="left"><a name="1040904"> </a>
+<p><b>Keys</b></p>
+
+
+</th><th valign="top" align="left"><a name="1040906"> </a>
+<p><b>Action</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>Down arrow or &lt;Tab&gt;</p></td><td valign="top" align="left"><p>Moves to the next field.</p></td></tr>
+<tr><td valign="top" align="left"><p>Up arrow or &lt;Shift&gt;&lt;Tab&gt;</p></td><td valign="top" align="left"><p>Moves to the previous field.</p></td></tr>
+<tr><td valign="top" align="left"><p>Left and right arrows or Spacebar</p></td><td valign="top" align="left"><p>Cycles through the settings in a field. In many fields, you can also type the appropriate value.</p></td></tr>
+<tr><td valign="top" align="left"><p>&lt;Esc&gt;</p></td><td valign="top" align="left"><p>Exits the System Setup program and restarts the system if any changes were made. </p></td></tr>
+
+</table>
+
+
+
+
+</b></p><p>For most of the options, any changes you make are recorded but do not take effect until the next time you start the system. For a few options (as noted in the help area), the changes take effect immediately.</p><hr noshade size="1">
+<h2><a name="1040927">System Setup Options</a></h2>
+
+
+<p>The following subsections outline the options on the System Setup screens.</p><h3><a name="1040929"> Main Screen	 
+</a></h3>
+<p>When the System Setup program runs, the main program screen appears (see <a href="5g387c30.htm#1040935">Figure&nbsp;3-1</a>).</p><p class="FigureTableTitle"><a name="1040935"> </a>
+Figure 3-1.&#32; Main System Setup Screen
+
+</p>
+
+<a name="1040939"></a><p><img src="5g387c32.jpg" height="536" width="719">
+</p><p>The following options and information fields appear on the main <b>System Setup</b> screen:</p><ul><li><b>System Time</b> &#151; Resets the time on the system's internal clock.<br><br></li>
+<li><b>System Date</b> &#151; Resets the date on the system's internal calendar.<br><br></li>
+<li><b>Diskette Drive A:</b><b> </b>&#151; Displays the type of diskette drive for your system.<br><br></li>
+<li><b>System Memory </b>&#151; Displays the amount of system memory. This option has no user-selectable settings.<br><br></li>
+<li><b>Memory Interleaving </b>&#151; Displays memory interleaving information for the system. This option has no user-selectable settings.<br><br></li>
+<li><b>Video Memory</b> &#151; Displays the amount of video memory. This option has no user-selectable settings.<br><br></li>
+<li><b>Redundant Memory </b>&#151; Displays an option that allows you to enable or disable the redundant memory feature. All banks should have memory modules of the same type and size for this feature to function properly.<br><br></li>
+<li><b>OS Install Mode</b> &#151; Determines the maximum amount of memory available to the operating system. <b>On</b> sets the maximum memory available to the operating system to 256 MB. <b>Off </b>(default) makes all of the system memory available to the operating system. Some operating systems will not install with more than 2 GB of system memory. Turn this option <b>On </b>during operating system installation and <b>Off</b> after installation.<br><br></li>
+<li><b>CPU Information </b>&#151; Displays information related to the microprocessor bus and microprocessors. This screen has no user-selectable settings.<br><br></li>
+<li><b>Boot Sequence </b>&#151; Displays the <b>Boot Sequence</b> screen, discussed later in this section. <br><br></li>
+<li><b>Hard-Disk Drive Sequence </b>&#151; Displays the <b>Hard-Disk Drive Sequence</b> screen.<br><br></li>
+<li><b>Integrated Devices </b>&#151; Displays the <b>Integrated Devices</b> screen.<br><br></li>
+<li><b>PCI IRQ Assignment</b> &#151; Displays a screen that allows you to change the IRQ allocated to each of the integrated devices on the PCI bus, and any installed expansion cards that require an IRQ. <br><br></li>
+<li><b>PCIX Slot Information </b>&#151; Displays a menu that contains information about each of the system's PCI-X slots. <br><br></li>
+<li><b>Console Redirection</b> &#151; Displays a<b> </b>screen that allows you to configure console redirection. The sub-menu allows you to turn the feature on or off, select the remote terminal type, and enable or disable redirection after booting. For more information on using console redirection, see Appendix D, "<a href="5g387ad0.htm#1040841">Using Console Redirection</a>."<br><br></li>
+<li><b>Embedded Remote Access </b>&#151; Displays a menu of three selectable fields: <b>Front-Bezel</b> <b>Chassis Intrusion</b>, <b>Front-Panel LCD Options</b>, and <b>User-Defined LCD String </b>fields.<br><br></li>
+<ul>
+<li type="circle"><b>Front-Bezel Chassis Intrusion</b> &#151; Selecting this field allows you to enable or disable the chassis-intrusion detection feature.<br><br></li>
+<li type="circle"><b>Front-Panel LCD Options</b> &#151; Selecting this field allows you to select whether you display the service tag, asset tag, or a user-defined string in the front-panel display.<br><br></li>
+<li type="circle"><b>User-defined String</b> &#151; Selecting this field allows you to enter the user-defined string to be displayed in the front panel. Line 1 is five characters long, and Line 2 is 16 characters long.<br><br></li>
+</ul>
+<li><b>System Security </b>&#151; Displays a screen that allows you to configure the system password and setup password features. See "<a href="5g387c30.htm#1041041">Using the System Password Feature</a>" and "<a href="5g387c30.htm#1041132">Using the Setup Password Feature</a>" for more information.<br><br></li>
+<li><b>Keyboard NumLock </b>&#151; Determines whether your system starts up with the NumLock mode activated on 101- or 102-key keyboards (does not apply to 84-key keyboards).<br><br></li>
+<li><b>Report Keyboard Errors </b>&#151; Enables or disables reporting of keyboard errors during the POST. This option is useful when applied to self-starting or host systems that have no permanently attached keyboard. In these situations, selecting <b>Do Not Report</b> suppresses all error messages relating to the keyboard or keyboard controller during POST. This setting does not affect the operation of the keyboard itself if a keyboard is attached to the system.<br><br></li>
+<li><b>Asset Tag </b>&#151; Displays the customer-programmable asset tag number for the system if an asset tag number has been assigned. To enter an asset tag number of up to 10&nbsp;characters into NVRAM, see "<a href="5g387c20.htm#1040876">Using the Asset Tag Utility</a>" in "<a href="5g387c20.htm#1039152">Using the Dell OpenManage Server Assistant CD</a>."<br><br></li>
+</ul><h3><a name="1041548"> Boot Sequence Screen
+</a></h3>
+<p>The <b>Boot Sequence</b> screen options determine the order in which the system looks for boot devices that it needs to load during system startup. Available options include the diskette drive, CD drive, network, and hard drives. You can enable or disable a device by selecting it and pressing the spacebar. To change the order in which devices are searched, use the &lt;+&gt; and &lt;&#150;&gt; keys.</p><h3><a name="1040973"> Hard-Disk Drive Sequence Screen
+</a></h3>
+<p><b>The</b><b> Hard-Disk Drive Sequence</b> screen options determine the order in which the system searches the hard drives for the files that it needs to load during system startup. The choices depend on the particular hard drives installed in your system. To change the order in which devices are searched, use the &lt;+&gt; and &lt;&#150;&gt; keys. Press &lt;Enter&gt; to confirm your selection.</p><h3><a name="1040975"> Integrated Devices Screen
+</a></h3>
+<p>This screen is used to configure the following devices:</p><ul><li>Embedded RAID Controller &#151; Both channels A and B have the same settings. The configurable options will vary, depending on whether the optional ROMB card is installed.<br><br></li>
+<ul>
+<li type="circle">With optional ROMB card installed &#151; To turn on the RAID functionality of the optional ROMB card, select <b>RAID Enabled</b>. Select <b>Off</b> to turn off RAID functionality.<br><br></li>
+<li type="circle">Without optional ROMB card installed &#151; To turn on the SCSI controller, select <b>SCSI</b>. To turn off the SCSI controller and mask the presence of the device, select <b>Off</b>. <br><br></li>
+</ul>
+<li><b>Diskette Controller </b>&#151; Enables or disables the system's diskette drive controller. When <b>Auto</b> (default) is selected, the system turns off the controller when necessary to accommodate a controller card installed in an expansion slot. You can also set up the drive to be read-only. Using the read-only setting, the drive cannot be used to write to a disk.<br><br></li>
+<li><b>USB Controller </b>&#151; Enables or disables the system's USB ports. Disabling the USB ports makes system resources available for other devices.<br><br></li>
+<li><b>Embedded 10/100/1000 NIC </b>&#151; Enables or disables the system's two integrated NICs. Options are <b>Enabled without PXE</b>, <b>Enabled with PXE</b>, and <b>Disabled</b>. PXE support allows the system to boot from the network. Changes take effect after the system reboots.<br><br></li>
+<li><b>MAC Address </b>&#151; Displays the address of the MAC address for the 10/100/1000 NIC that is used by the corresponding integrated NIC. This field has no user-selectable settings. <br><br></li>
+<li><b>Mouse Controller </b>&#151; Enables or disables the system's mouse controller. Disabling the mouse controller allows an expansion card to use IRQ12.<br><br></li>
+<li><b>Serial Port </b>(1 and 2)<b> </b>&#151; Configures the system's integrated serial ports. The options can be set to <b>Auto</b> (default) to automatically configure the port, to a particular designation, or to <b>Off</b> to disable the port. <br><br></li>
+</ul><p class="indent">If you set the serial port to <b>Auto</b> and add an expansion card with a port configured to the same designation, the system automatically remaps the integrated port to the next available port designation that shares the same IRQ setting.</p>
+<ul><li><b>Speaker </b>&#151; Toggles the integrated speaker <b>On</b> (default) or <b>Off</b>. A change to this option takes effect immediately (rebooting the system is not required).<br><br></li>
+</ul><h3><a name="1040998"> <b>System Security Screen
+</b></a></h3>
+<p>You can set the following security features through the <b>System Security</b> screen:</p><ul><li><b>Password Status </b>&#151; When <b>Setup Password</b> is set to <b>Enabled</b>, this feature allows you to prevent the system password from being changed or disabled at system start-up.<br><br></li>
+</ul><p class="indent">To lock the system password, you must first assign a setup password in the <b>Setup Password</b> option and then change the <b>Password Status</b> option to <b>Locked</b>. In this state, the system password cannot be changed through the <b>System Password</b> option and cannot be disabled at system start-up by pressing &lt;Ctrl&gt;&lt;Enter&gt;.</p>
+<p>To unlock the system password, you must enter the setup password in the <b>Setup Password</b> option and then change the <b>Password Status</b> option to <b>Unlocked</b>. In this state, the system password can be disabled at system start-up by pressing &lt;Ctrl&gt;&lt;Enter&gt; and then changed through the <b>System Password</b> option.</p><ul><li><b>Setup Password </b>&#151; Allows you to restrict access to the System Setup program in the same way that you restrict access to your system with the system password feature.<br><br></li>
+</ul>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> See "<a href="5g387c30.htm#1041132">Using the Setup Password Feature</a>" for instructions on assigning a setup 
+password and using or changing an existing setup password. See "<a href="5g387c30.htm#1041171">Disabling a Forgotten 
+Password</a>" for instructions on disabling a forgotten setup password.
+</td>
+  </tr>
+</table>
+<ul><li><b>System Password </b>&#151; Displays the current status of your system's password security feature and allows you to assign and verify a new system password.<br><br></li>
+</ul>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> See "<a href="5g387c30.htm#1041041">Using the System Password Feature</a>" for instructions on assigning a system 
+password and using or changing an existing system password. See "<a href="5g387c30.htm#1041171">Disabling a Forgotten 
+Password</a>" for instructions on disabling a forgotten system password.
+</td>
+  </tr>
+</table>
+<ul><li><b>Power Button </b>&#151; When this option is set to <b>Enabled</b>, you can use the power button to&nbsp;turn the system off or shut down the system if you are running Microsoft&#174; Windows&#174;&nbsp;2000 or another operating system that is compliant with the ACPI specification. If the system is not running an ACPI-compliant operating system, power is turned off immediately after the power button is pressed. When this option is set to Disabled, you cannot use the power button to turn off the system or perform other system events.<br><br></li>
+</ul>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> You can still turn a system on using the power button, even if the <b>Power Button</b><b> 
+</b>option is set to <b>Disabled</b>.
+</td>
+  </tr>
+</table>
+<ul><li><b>NMI Button</b> &#151; When this option is set to <b>Enabled</b> and the button is pressed, an NMI alerts the system. Use this button only if directed to do so by qualified support personnel or by the operating system's documentation.<br><br></li>
+</ul><h3><a name="1042883"> Console Redirection Screen
+</a></h3>
+<p>This screen is used to configure the console redirection feature:</p><ul><li><b>Console Redirection </b>&#151; Toggles the console redirection feature <b>On</b> (default) or <b>Off</b>.<br><br></li>
+<li><b>Remote Terminal Type</b> &#151; Allows you to select either <b>VT 100/VT 220 </b>(default) or <b>ANSI</b>.<br><br></li>
+<li><b>Redirection after Boot </b>&#151; Enables (default) or disables console redirection after your system restarts.<br><br></li>
+</ul><h3><a name="1042407"> Exit Screen
+</a></h3>
+<p>After you press &lt;Esc&gt; to exit the System Setup program, the <b>Exit</b> screen displays the following options:</p><ul><li><b>Save Changes and Exit</b><br><br></li>
+<li><b>Discard Changes and Exit</b><br><br></li>
+<li><b>Return to Setup</b> <br><br></li>
+</ul><hr noshade size="1">
+<h2><a name="1041041">Using the System Password Feature</a></h2>
+
+
+
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  The password features provide a basic level of security for the data on your system. If 
+your data requires more security, it is your responsibility to obtain and use additional forms of 
+protection, such as data encryption programs. 
+</td>
+  </tr>
+</table>
+<p>Your system is shipped to you without the system password feature enabled. If system security is a concern, you should operate your system only with system password protection.</p><p>You can assign a system password whenever you use the System Setup program. After a system password is assigned, only those who know the password have full use of the system.</p><p>When the <b>System Password</b> option is set to <b>Enabled</b>, the system prompts you for the system password just after the system starts.</p><p>To change an existing system password, you must know the password (see "<a href="5g387c30.htm#1041326">Deleting or Changing an Existing System Password</a>"). If you assign and later forget a system password, a trained service technician must remove the system cover to change a jumper setting that disables the system password feature (see "<a href="5g387c30.htm#1041171">Disabling a Forgotten Password</a>"). Note that this erases the setup password at the same time.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  If you leave your system running and unattended without having a system password 
+assigned or if you leave your system unlocked so that someone can disable the password by 
+changing a jumper setting, anyone can access the data stored on your hard drive.
+</td>
+  </tr>
+</table>
+<h3><a name="1041064"> Assigning a System Password
+</a></h3>
+<p>Before you can assign a system password, you must enter the System Setup program and check the <b>System Password</b> option.</p><p>When a system password is assigned, the setting shown for the <b>System Password</b> option is <b>Enabled</b>. If the P<b>assword Status </b>option<b> </b>is<b> Unlocked</b>, you can change the system password. If the <b>Password Status</b> option is <b>Locked</b>, you cannot change the system password. When the system password feature is disabled by a jumper setting on the system board, the setting shown is <b>Disabled</b>, and you cannot change or enter a new system password.</p><p>When no system password is assigned and the password jumper on the system board is in the enabled (default) position, the setting shown for the <b>System Password</b> option is <b>Not Enabled </b>and the <b>Password Status </b>field is <b>Unlocked</b>. To assign a system password, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1041068"></a>Verify that the <b>Password Status</b> option is set to <b>Unlocked</b>.
+<br><br>
+
+<li value="2"><a name="1041069"></a>Highlight the <b>System Password</b> option and then press &lt;Enter&gt;. 
+<br><br>
+
+<li value="3"><a name="1041070"></a>Type your new system password. 
+<br><br>
+</ol>
+<p class="indent">You can use up to 32 characters in your password.</p>
+<p class="indent">As you press each character key (or the spacebar for a blank space), a placeholder appears in the field.</p>
+<p class="indent">The password assignment operation recognizes keys by their location on the keyboard without distinguishing between lowercase and uppercase characters. For example, if you have an <i>M</i> in your password, the system recognizes either <i>M</i> or <i>m</i> as correct. Certain key combinations are not valid. If you enter one of these combinations, the speaker emits a beep. To erase a character when entering your password, press the &lt;Backspace&gt; key or the left-arrow key.</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> To escape from the field without assigning a system password, press &lt;Enter&gt; to 
+move to another field, or press &lt;Esc&gt; at any time prior to completing step 5.
+</td>
+  </tr>
+</table>
+<ol type="1">
+
+<li value="4"><a name="1041079"></a>Press &lt;Enter&gt;. 
+<br><br>
+
+<li value="5"><a name="1041080"></a>To confirm your password, type it a second time and press &lt;Enter&gt;. 
+<br><br>
+</ol>
+<p class="indent">The <b>System Password</b> option changes to <b>Enabled</b>. Your system password is now set. You can exit the System Setup program and begin using your system.</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> Password protection does not take effect until you restart the system by turning the 
+system off and then on again.
+</td>
+  </tr>
+</table>
+<h3><a name="1041088"> Using Your System Password to Secure Your System
+</a></h3>
+<p>Whenever you turn on or reboot your system by pressing the &lt;Ctrl&gt;&lt;Alt&gt;&lt;Del&gt; key combination, the following prompt appears on the screen when the <b>Password Status</b> option is set to <b>Unlocked</b>:</p><p class="screen"><span class="screen">Type in the password and... -- press &lt;ENTER&gt; to leave password security 
+enabled. -- press &lt;CTRL&gt;&lt;ENTER&gt; to disable password security. Enter 
+password:
+</span></p><p>If the <b>Password Status</b> option is set to <b>Locked</b>, the following prompt appears:</p><p class="screen"><span class="screen">Type the password and press &lt;Enter&gt;.
+</span></p><p>After you type the correct system password and press &lt;Enter&gt;, your system completes the startup sequence and you can use the keyboard or mouse to operate your system as usual.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>If you have assigned a setup password (see "<a href="5g387c30.htm#1041132">Using the Setup Password Feature</a>"), the 
+system accepts your setup password as an alternate system password.
+</td>
+  </tr>
+</table><p>If a wrong or incomplete system password is entered, the following message appears:</p><p class="screen">** Incorrect password. **
+</p><p class="screen"><span class="screen">Enter password:
+</span></p><p>If an incorrect or incomplete system password is entered again, the same message appears.</p><p>The third and subsequent times an incorrect or incomplete system password is entered, the system displays the following message:</p><p class="screen"><span class="screen">** Incorrect password. ** <br>
+Number of unsuccessful password attempts: 3 <br>
+System halted! Must power down.
+</span></p><p>The number of unsuccessful attempts made to enter the correct system password can alert you to an unauthorized person attempting to use your system.</p><p>Even after your system is turned off and on, the previous message is displayed each time an incorrect or incomplete system password is entered.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>You can use the <b>Password Status</b> option in conjunction with the <b>System Password</b> and 
+<b>Setup Password</b> options to further protect your system from unauthorized changes.
+</td>
+  </tr>
+</table><h3><a name="1041326"> Deleting or Changing an Existing System Password
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1041119"></a>When prompted, press &lt;Ctrl&gt;&lt;Enter&gt; to disable the existing system password, 
+instead of pressing &lt;Enter&gt; to continue with the normal operation of your system. 
+<br><br>
+</ol>
+<p class="indent">If you are asked to enter your setup password, you may need to contact your network administrator who has the setup password.</p>
+<ol type="1">
+
+<li value="2"><a name="1041121"></a>Enter the System Setup program by pressing &lt;F2&gt; during POST.
+<br><br>
+
+<li value="3"><a name="1041122"></a>Select the <b>System Security</b> screen field to verify that the <b>Password Status</b> option is set 
+to <b>Unlocked</b>.
+<br><br>
+
+<li value="4"><a name="1041123"></a>When prompted, type the system password.
+<br><br>
+
+<li value="5"><a name="1041124"></a>Confirm that <b>Not Enabled</b> is displayed for the <b>System Password</b> option. 
+<br><br>
+</ol>
+<p class="indent">If <b>Not Enabled</b> is displayed for the <b>System Password</b> option, the system password has been deleted. If you want to assign a new password, continue to step&nbsp;6. If <b>Not Enabled</b> is not displayed for the <b>System Password</b> option, press the &lt;Alt&gt;&lt;b&gt; key combination to restart the system, and then repeat steps 2 through 5.</p>
+<ol type="1">
+
+<li value="6"><a name="1041129"></a>To assign a new password, follow the procedure in "<a href="5g387c30.htm#1041064">Assigning a System Password</a>."
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1041132">Using the Setup Password Feature</a></h2>
+
+
+<p>Your system is shipped to you without the setup password feature enabled. If system security is a concern, you should operate your system with the setup password feature enabled.</p><p>You can assign a setup password whenever you use the System Setup program. After a setup password is assigned, only those who know the password have full use of the System Setup program.</p><p>To change an existing setup password, you must know the setup password (see "<a href="5g387c30.htm#1041160">Deleting or Changing an Existing Setup Password</a>"). If you assign and later forget a setup password, you cannot operate your system or change settings in the System Setup program until a trained service technician opens the system chassis, changes the password jumper setting to disable the passwords, and erases the existing passwords.&nbsp;This procedure is described in the <i>Installation and Troubleshooting Guide</i>.</p><h3><a name="1041141"> Assigning a Setup Password
+</a></h3>
+<p>A setup password can be assigned (or changed) only when the <b>Setup Password</b> option is set to <b>Not Enabled</b>. To assign a setup password, highlight the <b>Setup Password</b> option and press the <b>+</b> or<b> -</b> key. The system prompts you to enter and verify the password. If a character is illegal for password use, the system emits a beep.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>The setup password can be the same as the system password. If the two passwords are 
+different, the setup password can be used as an alternate system password. However, the system 
+password cannot be used in place of the setup password.
+</td>
+  </tr>
+</table><p>After you verify the password, the <b>Setup Password</b> setting changes to <b>Enabled</b>. The next time you enter the System Setup program, the system prompts you for the setup password.</p><p>A change to the <b>Setup Password</b> option becomes effective immediately (restarting the system is not required).</p><h3><a name="1041150"> Operating With a Setup Password Enabled
+</a></h3>
+<p>If <b>Setup Password</b> is set to <b>Enabled</b>, you must enter the correct setup password before you can modify the majority of the System Setup options. When you start the System Setup program, the program prompts you to type the password.</p><p>If you do not enter the correct password in three tries, the system lets you view, but not modify, the System Setup screens&#151;with the following exception. If <b>System Password</b> is not set to <b>Enabled</b> and is not locked via the<b> Password Status</b> option, you can assign a system password (however, you cannot disable or change an existing system password).</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>You can use the <b>Password Status</b> option in conjunction with the <b>Setup Password</b> option 
+to protect the system password from unauthorized changes.<i> 
+</i></td>
+  </tr>
+</table><h3><a name="1041160"> Deleting or Changing an Existing Setup Password
+</a></h3>
+<ol type="1">
+
+<li value="1"><a name="1041162"></a>Enter the System Setup program and select the <b>System Security</b> option.
+<br><br>
+
+<li value="2"><a name="1041163"></a>Highlight the <b>Setup Password</b> option, press &lt;Enter&gt; to access the setup password 
+window, and press &lt;Enter&gt; twice to clear the existing setup password. 
+<br><br>
+</ol>
+<p class="indent">The setting changes to <b>Not Enabled</b>. </p>
+<ol type="1">
+
+<li value="3"><a name="1041167"></a>If you want to assign a new setup password, perform the steps in "<a href="5g387c30.htm#1041141">Assigning a Setup 
+Password</a>."
+<br><br>
+</ol>
+<hr noshade size="1">
+<h2><a name="1041171">Disabling a Forgotten Password</a></h2>
+
+
+<p>If you forget your system or setup password, you cannot operate your system or change settings in the System Setup program until a trained service technician opens the system chassis, changes the password jumper setting to disable the passwords, and erases the existing passwords. This procedure is described in the <i>Installation and Troubleshooting Guide.</i></p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

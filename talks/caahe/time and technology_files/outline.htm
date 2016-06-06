@@ -1,0 +1,1144 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 9">
+<link id=Main-File rel=Main-File href="../time%20and%20technology.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = document.all.item("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#FFFFFF",gOtlNormalClr="#000000",gOtlActiveClr="#FFFF00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+	if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+}
+function LoadOtl()
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	OtlObj.style.display="block"
+	OtlObj.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	for(ii=0; ii<document.all.tags("DIV").length; ii++) {
+		obj=document.all.tags("DIV").item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 ) {   
+			gChildEntryTable[count++]=obj
+			obj.children.tags("TABLE").item(0).style.borderColor=gOtlNormalClr
+		}
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=document.all.item("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=document.all.item("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+
+	obj=document.all.item("PPTB"+idx)
+	if( obj )
+		obj.style.borderLeftColor=obj.style.borderBottomColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( obj ){ ChgClr(obj,gOtlActiveClr) }
+function Out( obj ){ ChgClr(obj,gOtlHiliteClr) }
+function ObjExists( ii ) { obj=document.all("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+//-->
+</script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:5px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	padding-left:10px;}
+.CBorder
+	{position:relative;
+	width:100%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	padding-bottom:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()">
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:absolute;width:70px;visibility:hidden' align=left
+ cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span style="mso-spacerun:
+ yes">  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=right cellpadding=0 cellspacing=0>
+ <td>
+ <div id="nb_sldshwBorder" style='position:absolute;left:-20px;width:20px;
+ height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_sldshw" title="Full Screen Slide Show"
+ style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src=buttons.gif id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src=buttons.gif id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'>Outline</div>
+ <div title="Show/Hide Outline" id="nb_otl" style='position:absolute;
+ top:0%;left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden'>
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr>
+  <td>
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" onmouseover="Over(this)"
+  id=PPTL1 onmouseout="Out(this)">Time and Technology: Is there room for
+  innovation?</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB1 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Scott E. Siddall</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Denison University</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Granville, Ohio</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>http://siddall.info</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.htm');" onmouseover="Over(this)"
+  id=PPTL2 onmouseout="Out(this)">Technology gives, technology takes away</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB2 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Productivity paradox</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Erik Brynjolfsson at Sloan School of Management,
+    MIT</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Learning new methods takes time; technology is
+    often brittle</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Eventually, some tasks done better, some more
+    quickly</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Have we rationally reallocated any saved time?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.htm');" onmouseover="Over(this)"
+  id=PPTL3 onmouseout="Out(this)">Why innovate?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB3 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Because we always have</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>American academic tradition is richly innovative</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Scholarship, creativity, intellectual and social
+    growth</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Discovery, creation and distribution of<span
+    style="mso-spacerun: yes">  </span>information</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Tradition and constancy of process</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Learning from differences</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.htm');" onmouseover="Over(this)"
+  id=PPTL4 onmouseout="Out(this)">Why innovate?</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB4 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Since 1993, more than a ten-fold increase in
+    investment in online education</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>In 1999, 1 million US students taking online
+    courses</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Mark Taylor, co-founder of the Global Education
+    Network</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>“….the commercialization of higher education
+    will accelerate in coming years.<span style="mso-spacerun: yes"> 
+    </span>Too many educators live with the illusion that they have a choice
+    about whether or not these changes will occur…”</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Far more of our content is distributable</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Networks break down barriers</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Challenges to placed-based instruction</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Adult learners seek convenience,
+    cost-effectiveness</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.htm');" onmouseover="Over(this)"
+  id=PPTL5 onmouseout="Out(this)">Innovation (i.e., change)</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB5 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>All change is not innovative</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>All innovation is not manifested as change</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>We need an institutional vision as well as
+    “digital agenda”</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Change affects individuals differently</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Change from within can be positive (motivation)</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Change from without can be resisted (pressure)</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Challenges our identity, comfort, beliefs</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Can represent the will of others</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>(James O’Toole – Leading Change)</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.htm');" onmouseover="Over(this)"
+  id=PPTL6 onmouseout="Out(this)">Steady change has given way to <br>
+  accelerating change</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB6 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Changes in technology</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Positive feedback loop in technological
+    development</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>New patterns of information distribution and use</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>“Not done yet” -<span style="mso-spacerun:
+    yes">  </span>like Incunabula</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Beginning to work better than five years ago</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Victims of success</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.htm');" onmouseover="Over(this)"
+  id=PPTL7 onmouseout="Out(this)">Steady change has given way to <br>
+  accelerating change</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB7 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Changes in the context of higher education</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Changes in student demographics</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Increasing competition for students, faculty</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Increased competition from alternative providers</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Meeting needs with limited (declining) budgets</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Growing expectations - students, parents, others</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Consumerism, vocationalism</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>High costs of information and expertise</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.htm');" onmouseover="Over(this)"
+  id=PPTL8 onmouseout="Out(this)">Steady change has given way to <br>
+  accelerating change</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB8 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Changes in expectations for learning</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Learning takes place many places and times</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Learning is not an isolated process</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Students teach, faculty learn</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>One-approach-fits-all assumptions are out</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Basis of classroom authority is changing</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Lectures will endure but not dominate</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" onmouseover="Over(this)"
+  id=PPTL9 onmouseout="Out(this)">Do we have the resources even to keep up?</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB9 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>As institutions</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>As individuals</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Do we have a choice?</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.htm');" onmouseover="Over(this)"
+  id=PPTL10 onmouseout="Out(this)">So should <span style="mso-spacerun:
+  yes"> </span>we innovate with technology?</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB10 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Enhances information access – convenience and
+    cost</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Can increase student motivation, engagement</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Accommodates different ways of learning, knowing</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Creates partnerships, opportunities to
+    collaborate</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Changes content through visualization,
+    simulation</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Promotes a new “balance of power” in classroom</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Encourages new methods of assessment</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Improves communication skills</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Greater opportunities for complex,
+    interdisciplinary study</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" onmouseover="Over(this)"
+  id=PPTL11 onmouseout="Out(this)">State of the residential liberal arts
+  colleges</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB11 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Consortium of Liberal Arts Colleges (CLAC)</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Fifty-nine colleges in the US</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>http://liberalarts.org</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>Preliminary data from annual self-study</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" onmouseover="Over(this)"
+  id=PPTL12 onmouseout="Out(this)">1999-2000 averages for CLAC schools</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB12 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>1,795 students:<span style="mso-spacerun: yes"> 
+    </span>99%+ live on campus</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>62 part-time students</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>187 faculty members</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>$60 million total institutional budget</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" onmouseover="Over(this)"
+  id=PPTL13 onmouseout="Out(this)">1999-2000 averages for CLAC schools</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB13 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>1,013 college-owned computers, 300 of which are
+    student-accessible</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>73% of students own their own computer;
+    ownership is not required</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>$3.1 million annual technology budget (operating
+    and capital)</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>5.2% of total institutional budget</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>$171,000 per year in student technology
+    employees</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>$702,000 annual hardware purchases, including
+    replacements</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>$47,000 on technology staff professional
+    development</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>4.8% of salaries</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" onmouseover="Over(this)"
+  id=PPTL14 onmouseout="Out(this)">1999-2000 averages for CLAC schools</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB14 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>25.2 full-time staff members in central
+    technology division</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>5.4 in administrative systems</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>2.2 staff and 3.6 students in helpdesk functions</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>1.0 in training support</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>2.4 in curricular support</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>3.5 in network support</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>3.4 staff members supporting technology in other
+    departments</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>16 full-time equivalents in student employees</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.htm');" onmouseover="Over(this)"
+  id=PPTL15 onmouseout="Out(this)">Costs of change</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB15 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Not just capital and human resources</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Of doing nothing</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>lost opportunities, lower competitive advantage</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Of doing too little</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>technology as veneer doesn’t work</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Of doing too much</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>costly, difficult to assimilate quickly, altered
+    mission</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Consumers’ Guide to Technology on Campus</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Eight critical success factors for online
+    education</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.htm');" onmouseover="Over(this)"
+  id=PPTL16 onmouseout="Out(this)">The “Digital agenda”</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB16 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Institutional commitments for open dialogues and
+    planning</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Constantly evolving strategic plan that outlines
+    what we want to do with technology</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>An annual “digital agenda” that commits
+    resources to achieving the vision</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>No more budget dust models; no more inadvertent
+    consumption of newfound time</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.htm');" onmouseover="Over(this)"
+  id=PPTL17 onmouseout="Out(this)">Case studies: making room</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB17 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Faculty development: Summer Institutes</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>Tools that work will be used; we use what we
+    understand; we understand what we’re taught</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>1980-90s: few enthusiastic faculty asked “HOW”</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=2><font size=2>2001: many pressured faculty asking “WHY”</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Faculty incentives: Course release, stipends</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Bai’s Advanced Chinese course as exemplar</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Liaisons to academic departments – students and
+    staff</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Collaborative course webs – emphasizing student
+    responsibilities</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=3><font size=2>Permission to experiment, to fail</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Endorsement of Blackboard</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1><font size=2>Course web sites for everyone</font></td>
+   </tr>
+   <tr>
+    <td colspan=3></td>
+    <td colspan=1></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" onmouseover="Over(this)"
+  id=PPTL18 onmouseout="Out(this)">We will continue to make room for innovation</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB18 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width=20 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>As institutions through policies, planning and
+    commitment</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>As individuals who see themselves as agents for
+    positive change, who change rather than increase their workloads</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=2><font size=2>Technology offers far more than delivery of
+    content</font></td>
+   </tr>
+   <tr>
+    <td colspan=2></td>
+    <td colspan=1><font size=2>It is an environment that must be designed and
+    used thoughtfully by faculty who make room for innovation</font></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.htm');" onmouseover="Over(this)"
+  id=PPTL19 onmouseout="Out(this)">Home</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'>
+  <table style='color:white' id=PPTB19 class=CBorder>
+   <tr>
+    <td width=5 nowrap></td>
+    <td width="100%"></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1><font size=2>Return to homepage</font></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+   <tr>
+    <td colspan=1></td>
+    <td colspan=1></td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='display:none'><a href=master04.htm></a><a href=master04.xml></a><a
+href=preview.wmf></a><a href="master04_image001.png"></a><a href=master05.htm></a><a
+href=master05.xml></a><a href=master02.htm></a><a href=pres.xml></a><a
+href=slide0001.htm></a><a href="master05_image002.gif"></a><a
+href=slide0026.htm></a><a href="master04_image003.gif"></a><a
+href=image004.gif></a><a href=slide0005.htm></a><a href=slide0027.htm></a><a
+href=slide0010.htm></a><a href=slide0028.htm></a><a href=slide0031.htm></a><a
+href=slide0032.htm></a><a href=slide0030.htm></a><a href=slide0024.htm></a><a
+href=slide0002.htm></a><a href=slide0011.htm></a><a href=slide0012.htm></a><a
+href=slide0013.htm></a><a href=slide0009.htm></a><a href=slide0029.htm></a><a
+href=slide0008.htm></a><a href=slide0014.htm></a><a href=slide0033.htm></a><a
+href="master04_stylesheet.css"></a><a href=script.js></a><a
+href="../time%20and%20technology.htm"></a><a href=error.htm></a><a
+href=fullscreen.htm></a><a href=buttons.gif></a><a href=frame.htm></a><a
+href=outline.htm></a></div>
+
+</body>
+
+</html>

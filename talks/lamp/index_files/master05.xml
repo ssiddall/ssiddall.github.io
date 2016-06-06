@@ -1,0 +1,1153 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="82"/>
+ </o:shapelayout><p:colorscheme
+  colors="#666699,#ffffff,#5b5b89,#dfdef6,#6666ff,#52527c,#9999ff,#ccccff"/>
+ <v:background id="_x0000_s83969" o:bwmode="white" fillcolor="#669 [0]"
+  o:targetscreensize="800,600">
+  <v:fill color2="fill darken(124)" angle="-135" method="linear sigma" focus="100%"
+   type="gradient"/>
+ </v:background><p:shaperange id="_x0000_s83970">
+  <v:group id="_x0000_s83970" style='position:absolute;left:-39.25pt;top:103.25pt;
+   width:821.25pt;height:465.25pt' coordorigin="-313,824" coordsize="6570,3722">
+   <v:rect id="_x0000_s83971" style='position:absolute;left:-14;top:1033;
+    width:1744;height:6;rotation:875841fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83972" style='position:absolute;left:-24;top:1127;
+    width:2033;height:6;rotation:901812fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83973" style='position:absolute;left:-27;top:1198;
+    width:2246;height:6;rotation:920321fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83974" style='position:absolute;left:-43;top:1283;
+    width:2476;height:6;rotation:1000291fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83975" style='position:absolute;left:-51;top:1397;
+    width:2770;height:6;rotation:1058160fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83976" style='position:absolute;left:-65;top:1523;
+    width:3058;height:6;rotation:1142254fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83977" style='position:absolute;left:-93;top:1694;
+    width:3403;height:6;rotation:1237983fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83978" style='position:absolute;left:-99;top:1863;
+    width:3749;height:6;rotation:1372740fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83979" style='position:absolute;left:-165;
+    top:2053;width:4209;height:6;rotation:1517087fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83980" style='position:absolute;left:-214;
+    top:2289;width:4612;height:6;rotation:1635219fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83981" style='position:absolute;left:-313;
+    top:2617;width:5200;height:6;rotation:1831289fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83982" style='position:absolute;left:9;top:2881;
+    width:5401;height:6;rotation:2090288fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83983" style='position:absolute;left:1319;
+    top:2928;width:4612;height:6;rotation:-21171989fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(77)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83984" style='position:absolute;left:2681;
+    top:3071;width:3576;height:6;rotation:-44339672fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(8)" angle="-135" method="linear sigma" focus="100%"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83985" style='position:absolute;left:4052;
+    top:3504;width:2079;height:6;rotation:-43912666fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(0)" angle="-135" method="linear sigma" focus="100%"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:270'/>
+   </v:rect><v:rect id="_x0000_s83986" style='position:absolute;left:5368;
+    top:4167;width:501;height:6;rotation:43681463fd;flip:x y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(0)" angle="-135" method="linear sigma" focus="100%"
+     type="gradient"/>
+    <v:textbox style='mso-rotate:270'/>
+   </v:rect><v:rect id="_x0000_s83987" style='position:absolute;left:-146;
+    top:2360;width:6046;height:6;rotation:-22436643fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83988" style='position:absolute;left:-198;
+    top:3396;width:4142;height:6;rotation:-21884880fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f" strokecolor="#66f [4]">
+    <v:fill color2="fill darken(162)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83989" style='position:absolute;left:-165;
+    top:3624;width:2804;height:6;rotation:1892877fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f" strokecolor="#66f [4]">
+    <v:fill color2="fill darken(162)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83990" style='position:absolute;left:-110;
+    top:3922;width:1400;height:6;rotation:2150764fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83991" style='position:absolute;left:-216;
+    top:3221;width:5477;height:6;rotation:-22078887fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(124)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83992" style='position:absolute;left:-115;
+    top:2129;width:6016;height:6;rotation:24667717fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(147)" angle="-90" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83993" style='position:absolute;left:80;top:1946;
+    width:5756;height:6;rotation:-1015927fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83994" style='position:absolute;left:374;top:1802;
+    width:5475;height:6;rotation:-22644858fd' o:bwmode="undrawn" o:userdrawn="t"
+    fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83995" style='position:absolute;left:848;top:1582;
+    width:4976;height:6;rotation:-69931717fd' o:bwmode="undrawn" o:userdrawn="t"
+    fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83996" style='position:absolute;left:1053;
+    top:1476;width:4759;height:6;rotation:-46382682fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83997" style='position:absolute;left:1244;
+    top:1377;width:4557;height:6;rotation:-22836386fd' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:rect><v:rect id="_x0000_s83998" style='position:absolute;left:1487;
+    top:1305;width:4314;height:6;rotation:22876773fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s83999" style='position:absolute;left:1650;
+    top:1218;width:4154;height:6;rotation:-24288649fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s84000" style='position:absolute;left:611;top:1684;
+    width:5204;height:6;rotation:22714791fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s84001" style='position:absolute;left:-204;
+    top:2976;width:6150;height:6;rotation:22202267fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:rect id="_x0000_s84002" style='position:absolute;left:-174;
+    top:2663;width:6104;height:6;rotation:22315304fd;flip:y' o:bwmode="undrawn"
+    o:userdrawn="t" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(131)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+    <v:textbox style='mso-rotate:180'/>
+   </v:rect><v:oval id="_x0000_s84003" style='position:absolute;left:740;top:3359;
+    width:168;height:96' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84004" style='position:absolute;left:236;top:3074;
+    width:168;height:95' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84005" style='position:absolute;left:159;top:3652;
+    width:196;height:106' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84006" style='position:absolute;left:2077;
+    top:2661;width:156;height:84' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84007" style='position:absolute;left:1223;
+    top:3076;width:168;height:95' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84008" style='position:absolute;left:1686;
+    top:2857;width:156;height:90' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84009" style='position:absolute;left:750;top:2839;
+    width:151;height:89' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84010" style='position:absolute;left:367;top:2656;
+    width:150;height:84' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84011" style='position:absolute;left:1172;
+    top:2642;width:156;height:83' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84012" style='position:absolute;left:2401;
+    top:2485;width:156;height:83' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84013" style='position:absolute;left:1910;
+    top:2314;width:134;height:73' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84014" style='position:absolute;left:2254;
+    top:2154;width:134;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84015" style='position:absolute;left:2742;
+    top:2305;width:140;height:72' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84016" style='position:absolute;left:2812;
+    top:1898;width:129;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84017" style='position:absolute;left:3721;
+    top:1792;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84018" style='position:absolute;left:3528;
+    top:1896;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84019" style='position:absolute;left:3064;
+    top:1778;width:128;height:62' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84020" style='position:absolute;left:3277;
+    top:2024;width:134;height:73' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84021" style='position:absolute;left:3027;
+    top:2160;width:133;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84022" style='position:absolute;left:1569;
+    top:2453;width:150;height:90' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84023" style='position:absolute;left:1863;
+    top:2028;width:139;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84024" style='position:absolute;left:1513;
+    top:2175;width:139;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84025" style='position:absolute;left:1191;
+    top:2311;width:134;height:72' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84026" style='position:absolute;left:1154;
+    top:2047;width:134;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84027" style='position:absolute;left:1142;
+    top:1803;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84028" style='position:absolute;left:1500;
+    top:1912;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84029" style='position:absolute;left:1804;
+    top:1801;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84030" style='position:absolute;left:2159;
+    top:1905;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84031" style='position:absolute;left:2432;
+    top:1787;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84032" style='position:absolute;left:470;top:2032;
+    width:134;height:73' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84033" style='position:absolute;left:68;top:2166;
+    width:134;height:73' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84034" style='position:absolute;left:798;top:1916;
+    width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84035" style='position:absolute;left:455;top:1797;
+    width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84036" style='position:absolute;left:113;top:1901;
+    width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84037" style='position:absolute;left:432;top:2323;
+    width:139;height:61' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84038" style='position:absolute;left:814;top:2178;
+    width:134;height:61' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84039" style='position:absolute;left:789;top:2472;
+    width:156;height:89' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84040" style='position:absolute;left:2544;
+    top:2015;width:140;height:72' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84041" style='position:absolute;left:1457;
+    top:1700;width:123;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84042" style='position:absolute;left:1747;
+    top:1599;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84043" style='position:absolute;left:1385;
+    top:1506;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84044" style='position:absolute;left:1093;
+    top:1595;width:123;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84045" style='position:absolute;left:792;top:1690;
+    width:124;height:51' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84046" style='position:absolute;left:2011;
+    top:1512;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84047" style='position:absolute;left:2087;
+    top:1696;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84048" style='position:absolute;left:2345;
+    top:1601;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84049" style='position:absolute;left:2684;
+    top:1686;width:123;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84050" style='position:absolute;left:806;top:1512;
+    width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84051" style='position:absolute;left:495;top:1597;
+    width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84052" style='position:absolute;left:228;top:1508;
+    width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84053" style='position:absolute;left:157;top:1698;
+    width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84054" style='position:absolute;left:2887;
+    top:1595;width:124;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84055" style='position:absolute;left:3079;
+    top:1511;width:124;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84056" style='position:absolute;left:3270;
+    top:1688;width:124;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84057" style='position:absolute;left:3453;
+    top:1599;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84058" style='position:absolute;left:3651;
+    top:1506;width:123;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84059" style='position:absolute;left:4251;
+    top:1513;width:124;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84060" style='position:absolute;left:3901;
+    top:1701;width:128;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84061" style='position:absolute;left:4086;
+    top:1608;width:128;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84062" style='position:absolute;left:1282;
+    top:3653;width:196;height:111' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84063" style='position:absolute;left:707;top:4014;
+    width:191;height:112' o:bwmode="undrawn" fillcolor="#5b5b89 [2]" stroked="f"
+    strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84064" style='position:absolute;left:2229;
+    top:3090;width:168;height:95' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84065" style='position:absolute;left:2604;
+    top:2867;width:156;height:89' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84066" style='position:absolute;left:2907;
+    top:2668;width:156;height:84' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84067" style='position:absolute;left:3248;
+    top:2454;width:150;height:90' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84068" style='position:absolute;left:1801;
+    top:3360;width:168;height:95' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84069" style='position:absolute;left:3512;
+    top:2302;width:134;height:73' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84070" style='position:absolute;left:3980;
+    top:2014;width:134;height:72' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84071" style='position:absolute;left:3753;
+    top:2158;width:134;height:61' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84072" style='position:absolute;left:4176;
+    top:1898;width:128;height:61' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84073" style='position:absolute;left:4338;
+    top:1797;width:129;height:61' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84074" style='position:absolute;left:4505;
+    top:1700;width:124;height:51' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84075" style='position:absolute;left:4661;
+    top:1603;width:123;height:50' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84076" style='position:absolute;left:4803;
+    top:1512;width:128;height:51' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#52527c [5]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84077" style='position:absolute;left:4930;
+    top:1431;width:111;height:50' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(155)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84078" style='position:absolute;left:3835;
+    top:1430;width:112;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84079" style='position:absolute;left:3286;
+    top:1430;width:112;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84080" style='position:absolute;left:2972;
+    top:1366;width:111;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84081" style='position:absolute;left:3152;
+    top:1292;width:112;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84082" style='position:absolute;left:3020;
+    top:1170;width:112;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84083" style='position:absolute;left:2443;
+    top:1368;width:112;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84084" style='position:absolute;left:2301;
+    top:1220;width:112;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84085" style='position:absolute;left:2095;
+    top:1284;width:112;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84086" style='position:absolute;left:2228;
+    top:1442;width:111;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84087" style='position:absolute;left:1109;
+    top:1424;width:112;height:50' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84088" style='position:absolute;left:611;top:1284;
+    width:111;height:51' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84089" style='position:absolute;left:305;top:1358;
+    width:111;height:51' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84090" style='position:absolute;left:156;top:1154;
+    width:112;height:50' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84091" style='position:absolute;left:4538;
+    top:1365;width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84092" style='position:absolute;left:4407;
+    top:1440;width:105;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84093" style='position:absolute;left:3992;
+    top:1356;width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(170)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84094" style='position:absolute;left:3466;
+    top:1356;width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84095" style='position:absolute;left:2852;
+    top:1228;width:106;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84096" style='position:absolute;left:2678;
+    top:1109;width:106;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84097" style='position:absolute;left:2859;
+    top:1045;width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84098" style='position:absolute;left:1942;
+    top:1040;width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84099" style='position:absolute;left:1088;
+    top:1277;width:106;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84100" style='position:absolute;left:827;top:1350;
+    width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84101" style='position:absolute;left:537;top:1428;
+    width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84102" style='position:absolute;left:635;top:1060;
+    width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84103" style='position:absolute;left:1540;
+    top:1050;width:106;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84104" style='position:absolute;left:1120;
+    top:1063;width:105;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84105" style='position:absolute;left:4131;
+    top:1284;width:111;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84106" style='position:absolute;left:3477;
+    top:1163;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84107" style='position:absolute;left:3315;
+    top:1229;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84108" style='position:absolute;left:3174;
+    top:1112;width:112;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84109" style='position:absolute;left:2396;
+    top:1051;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84110" style='position:absolute;left:2769;
+    top:1446;width:111;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84111" style='position:absolute;left:2656;
+    top:1294;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84112" style='position:absolute;left:2501;
+    top:1159;width:111;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84113" style='position:absolute;left:2222;
+    top:1101;width:112;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84114" style='position:absolute;left:2029;
+    top:1162;width:111;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84115" style='position:absolute;left:1875;
+    top:1356;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84116" style='position:absolute;left:1809;
+    top:1223;width:111;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84117" style='position:absolute;left:1738;
+    top:1098;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84118" style='position:absolute;left:1583;
+    top:1289;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84119" style='position:absolute;left:1379;
+    top:1343;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(224)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84120" style='position:absolute;left:1529;
+    top:1156;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84121" style='position:absolute;left:1294;
+    top:1222;width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84122" style='position:absolute;left:1314;
+    top:1112;width:112;height:44' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84123" style='position:absolute;left:1082;
+    top:1166;width:111;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84124" style='position:absolute;left:877;top:1121;
+    width:112;height:45' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84125" style='position:absolute;left:875;top:1216;
+    width:111;height:45' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84126" style='position:absolute;left:680;top:1170;
+    width:112;height:44' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84127" style='position:absolute;left:411;top:1232;
+    width:111;height:44' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84128" style='position:absolute;left:434;top:1100;
+    width:112;height:44' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84129" style='position:absolute;left:119;top:1312;
+    width:111;height:44' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84130" style='position:absolute;left:858;top:1001;
+    width:101;height:38' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84131" style='position:absolute;left:1341;
+    top:1013;width:101;height:39' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84132" style='position:absolute;left:1739;
+    top:1008;width:101;height:38' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84133" style='position:absolute;left:2116;
+    top:1001;width:100;height:39' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84134" style='position:absolute;left:2320;
+    top:941;width:101;height:39' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84135" style='position:absolute;left:2601;
+    top:995;width:101;height:39' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84136" style='position:absolute;left:1667;
+    top:1420;width:106;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(216)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84137" style='position:absolute;left:2557;
+    top:1516;width:123;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(201)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84138" style='position:absolute;left:3619;
+    top:1287;width:112;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84139" style='position:absolute;left:3791;
+    top:1212;width:111;height:51' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84140" style='position:absolute;left:2134;
+    top:908;width:79;height:34' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84141" style='position:absolute;left:1264;
+    top:908;width:79;height:34' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84142" style='position:absolute;left:1471;
+    top:869;width:79;height:34' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84143" style='position:absolute;left:1650;
+    top:824;width:83;height:34' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84144" style='position:absolute;left:1918;
+    top:869;width:84;height:34' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84145" style='position:absolute;left:1720;
+    top:923;width:83;height:34' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84146" style='position:absolute;left:1913;
+    top:957;width:95;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84147" style='position:absolute;left:1541;
+    top:962;width:89;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84148" style='position:absolute;left:1076;
+    top:953;width:101;height:45' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84149" style='position:absolute;left:1983;
+    top:4027;width:195;height:105' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84150" style='position:absolute;left:2460;
+    top:3671;width:196;height:112' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84151" style='position:absolute;left:3238;
+    top:3121;width:168;height:95' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84152" style='position:absolute;left:3550;
+    top:2880;width:157;height:89' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84153" style='position:absolute;left:2892;
+    top:3377;width:168;height:95' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84154" style='position:absolute;left:3869;
+    top:2657;width:151;height:84' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84155" style='position:absolute;left:4090;
+    top:2475;width:156;height:89' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84156" style='position:absolute;left:4327;
+    top:2314;width:134;height:72' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84157" style='position:absolute;left:4712;
+    top:2022;width:134;height:73' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84158" style='position:absolute;left:4533;
+    top:2162;width:139;height:61' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84159" style='position:absolute;left:4863;
+    top:1920;width:128;height:61' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84160" style='position:absolute;left:5009;
+    top:1807;width:128;height:61' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84161" style='position:absolute;left:5161;
+    top:1702;width:123;height:50' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84162" style='position:absolute;left:5277;
+    top:1614;width:124;height:51' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84163" style='position:absolute;left:5398;
+    top:1521;width:123;height:51' o:bwmode="undrawn" fillcolor="#5b5b89 [2]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(209)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84164" style='position:absolute;left:3255;
+    top:4071;width:196;height:106' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84165" style='position:absolute;left:3651;
+    top:3693;width:196;height:111' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84166" style='position:absolute;left:4773;
+    top:3705;width:201;height:106' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(100)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84167" style='position:absolute;left:4491;
+    top:4049;width:196;height:105' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(100)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84168" style='position:absolute;left:3989;
+    top:3396;width:168;height:96' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84169" style='position:absolute;left:4263;
+    top:3141;width:167;height:95' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84170" style='position:absolute;left:5044;
+    top:3418;width:167;height:95' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(100)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84171" style='position:absolute;left:4553;
+    top:2873;width:156;height:83' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84172" style='position:absolute;left:5293;
+    top:3116;width:168;height:95' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84173" style='position:absolute;left:5497;
+    top:2879;width:156;height:89' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(100)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84174" style='position:absolute;left:4772;
+    top:2673;width:156;height:83' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84175" style='position:absolute;left:4966;
+    top:2488;width:156;height:84' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84176" style='position:absolute;left:5444;
+    top:2052;width:134;height:73' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84177" style='position:absolute;left:5161;
+    top:2314;width:140;height:73' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84178" style='position:absolute;left:5318;
+    top:2176;width:134;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84179" style='position:absolute;left:5581;
+    top:1933;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84180" style='position:absolute;left:5689;
+    top:1811;width:128;height:61' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(147)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84181" style='position:absolute;left:5663;
+    top:2680;width:156;height:83' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(139)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84182" style='position:absolute;left:-65;top:2865;
+    width:150;height:89' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(178)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84183" style='position:absolute;left:2;top:2477;
+    width:156;height:89' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f"
+    strokecolor="#99f [6]">
+    <v:fill color2="fill darken(193)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84184" style='position:absolute;left:-9;top:1436;
+    width:106;height:44' o:bwmode="undrawn" fillcolor="#669 [0]" stroked="f">
+    <v:fill color2="fill darken(232)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval><v:oval id="_x0000_s84185" style='position:absolute;left:5624;
+    top:4010;width:201;height:106' o:bwmode="undrawn" fillcolor="#669 [0]"
+    stroked="f" strokecolor="#99f [6]">
+    <v:fill color2="fill darken(100)" angle="-135" method="linear sigma"
+     focus="100%" type="gradient"/>
+   </v:oval></v:group></p:shaperange>
+ <p:shaperange id="_x0000_s84186">
+  <v:shapetype id="_x0000_s84186" style='position:absolute;left:54pt;top:145.25pt;
+   width:612pt;height:136.75pt;v-text-anchor:bottom-center' coordsize="21600,21600"
+   o:master="" o:spt="1" path="m,l,21600r21600,l21600,xe" filled="f"
+   fillcolor="#66f [4]" stroked="f" strokecolor="white [1]">
+   <v:fill color2="#669 [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="#5b5b89 [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="centerTitle" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s84187">
+  <v:shapetype id="_x0000_s84187" style='position:absolute;left:108pt;top:306pt;
+   width:7in;height:138pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#66f [4]" stroked="f"
+   strokecolor="white [1]">
+   <v:fill color2="#669 [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="#5b5b89 [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="subTitle" position="1" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s84188">
+  <v:shapetype id="_x0000_s84188" style='position:absolute;left:36pt;top:491.625pt;
+   width:168pt;height:36pt;v-text-anchor:bottom' coordsize="21600,21600"
+   o:master="" o:spt="1" path="m,l,21600r21600,l21600,xe" filled="f"
+   fillcolor="#66f [4]" stroked="f" strokecolor="white [1]">
+   <v:fill color2="#669 [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="#5b5b89 [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="dateTime" position="2" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s84189">
+  <v:shapetype id="_x0000_s84189" style='position:absolute;left:246pt;top:492pt;
+   width:228pt;height:36pt;v-text-anchor:bottom' coordsize="21600,21600"
+   o:master="" o:spt="1" path="m,l,21600r21600,l21600,xe" filled="f"
+   fillcolor="#66f [4]" stroked="f" strokecolor="white [1]">
+   <v:fill color2="#669 [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="#5b5b89 [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="footer" position="3" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s84190">
+  <v:shapetype id="_x0000_s84190" style='position:absolute;left:516pt;top:491.625pt;
+   width:168pt;height:36pt;v-text-anchor:bottom' coordsize="21600,21600"
+   o:master="" o:spt="1" path="m,l,21600r21600,l21600,xe" filled="f"
+   fillcolor="#66f [4]" stroked="f" strokecolor="white [1]">
+   <v:fill color2="#669 [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="#5b5b89 [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="slideNumber" position="4" size="quarter"/>
+  </v:shapetype></p:shaperange>
+</xml>

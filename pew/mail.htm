@@ -1,0 +1,314 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies User's Guide to Mail</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="kedt.htm">
+<LINK REL="Previous" HREF="collab.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="collab.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="kedt.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I3">What is Mail?</A></LI>
+<LI>
+<A HREF="#I22"></A></LI>
+<LI>
+<A HREF="#I23">To Use The Mail Directory Command</A></LI>
+<LI>
+<A HREF="#I39">To Send and Receive Mail</A></LI>
+<LI>
+<A HREF="#I70">To Manage Mail Messages</A></LI>
+<LI>
+<A HREF="#I104">To Use Folders To Organize Mail Messages</A></LI>
+<LI>
+<A HREF="#I117">Additional Information</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">User's Guide to Mail</A></H1>
+<HR ALIGN=CENTER>
+<P>The purpose of this document is to provide a campuswide guide for using the <A ID="I2" NAME="I2"></A>VAX Mail system.  This manual covers the essential Mail commands with which you should be familiar to use the Mail Utility. </P>
+<H2><A ID="I3" NAME="I3">
+<BR>What is Mail?</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Description of Mail</I></FONT></P>
+<P>The VAX/VMS Personal Mail Utility (Mail) is an electronic mail system that allows you to send<A ID="I4" NAME="I4"></A> messages to other users on the VAX system.  You can also read, file, forward, delete, print, and reply to messages that other users send to you.   </P>
+<P>Messages that you receive are stored in files called mail files, which have an extension of &quot;.MAI&quot;.  Your default mail file, called <A ID="I5" NAME="I5"></A>MAIL.MAI, is created in your root directory the first time you receive<A ID="I6" NAME="I6"></A> a mail message.  Mail files (MAIL.MAI, for example) are protected so that only the owner can read them, and they may not be deleted accidentally.</P>
+<P>
+<FONT SIZE=+1><I>Mail </I><A ID="I7" NAME="I7"></A><I>Folder</I><A ID="I8" NAME="I8"></A><I>s</I></FONT></P>
+<P>Mail allows you to organize your messages by storing them in &quot;folders&quot;.  By default, Mail provides three folders in your MAIL.MAI file in which messages are stored: MAIL, NEWMAIL, and WASTEBASKET.  The MAIL folder always exists.  It is created when you receive your first mail message.  The<A ID="I9" NAME="I9"></A> NEWMAIL folder holds only the new mail messages before you read them.  After you read a message, it is automatically moved from the NEWMAIL folder to the MAIL folder, and after you read the last new mail message, the NEWMAIL folder disappears.  The <A ID="I10" NAME="I10"></A>WASTEBASKET folder is used to hold messages that you have deleted<A ID="I11" NAME="I11"></A>.  The deleted messages remain in WASTEBASKET until you EXIT from Mail, at which time they are emptied from WASTEBASKET, and the WASTEBASKET folder disappears.  The WASTEBASKET folder gives you a second chance to retrieve a message after it has been deleted from your MAIL folder, but once you EXIT<A ID="I12" NAME="I12"></A> Mail, any deleted messages are gone forever.</P>
+<P>Mail also allows you to create your own folders to organize your mail messages.  For more detailed information on using usercreated folders to organize mail messages, please refer to DEC's Mail Utility Reference Manual at the Olin ICS office.  Following is a description of each Mail command. </P>
+<P><A ID="I13" NAME="I13"></A></P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I14" NAME="I14"></A><I>Start Mail</I></FONT></P>
+<P>To access Mail, type   MAIL  after the &quot;$&quot; prompt.  Once you are in Mail, you will see displayed the MAIL&gt; prompt which means the system is ready to receive<A ID="I15" NAME="I15"></A> a Mail command.  The MAIL&gt; prompt will reappear after each Mail command is executed, reminding you that you are still in Mail and that it is ready for the next Mail command. The MAIL&gt; prompt disappears after you EXIT<A ID="I16" NAME="I16"></A> the Mail Utility.  You may use the various Mail commands to move<A ID="I17" NAME="I17"></A> around within Mail.</P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I18" NAME="I18"></A><I>Stop Mail</I></FONT></P>
+<P>When you are ready to exit the Mail utility, at the MAIL&gt; prompt type the word  EXIT  and press  R    . When you EXIT Mail, any messages which are marked for deletion will disappear, and any messages to be printed<A ID="I19" NAME="I19"></A> will enter the print queue.  The<A ID="I20" NAME="I20"></A> EXIT command returns your process to the DCL level (the $ prompt).</P>
+<P>
+<FONT SIZE=+1><I>To Get </I><A ID="I21" NAME="I21"></A><I>Help</I></FONT></P>
+<P>To receive detailed information about Mail, type the word  HELP  at the MAIL&gt; prompt.  A list of Mail commands will be displayed.  You can use this list to select a command about which you would like more information.  To obtain information about all of the Mail commands, type  HELP  after the MAIL&gt; prompt.  If you already know the command name about which you want information, simply type  HELP <I>command_name</I> after the MAIL&gt; prompt, as in:</P>
+<P>Mail&gt; HELP REPLY   R</P>
+<P>This will give you a short description of the command and will offer an example to show how it is used.  When you are ready to leave the HELP facility and return to the MAIL&gt; prompt, just press R</P>
+<H2><A ID="I22" NAME="I22">
+<BR></A></H2>
+<HR ALIGN=CENTER>
+<H2><A ID="I23" NAME="I23">
+<BR>To Use The Mail <A ID="I24" NAME="I24"></A>Directory Command<A ID="I25" NAME="I25"></A></A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Select</I><A ID="I26" NAME="I26"></A></FONT></P>
+<P>If you wish to see a list of all new and old Mail messages in your MAIL folder<A ID="I27" NAME="I27"></A> in order to see a message on the screen again, first SELECT  the MAIL folder and then get a  DIRECTORY  listing of the messages in the MAIL folder.  Each message is given a number when it is received by MAIL; the messages are numbered in chronological order in the MAIL folder directory.  Following is an example of how to access the MAIL folder directory and recall onto the screen an old mail message in that folder.</P>
+<P>Mail&gt; SELECT MAIL  R (selects the MAIL folder)</P>
+<P>Mail&gt; DIRECTORY  R(asks for a directory listing of MAIL folder)   </P>
+<P>        # From   Date   Subject                           </P>
+<P> 1 STUDENT  1JUN1986 How to Write a Memo      </P>
+<P> 2 STAFF   2JUL1986 Using the Printer      </P>
+<P> 3 TEACHER  3JUL1986 Math Class Instructions</P>
+<P>Mail&gt; <A ID="I28" NAME="I28"></A>READ<A ID="I29" NAME="I29"></A> 2  R   (displays message #2 on the screen)</P>
+<P>Just as you can select the MAIL folder<A ID="I30" NAME="I30"></A><A ID="I31" NAME="I31"></A> and get a directory listing of the messages in that folder (see above example), you can also select the NEWMAIL and WASTEBASKET folders by first using  SELECT NEWMAIL<A ID="I32" NAME="I32"></A>  or SELECT WASTEBASKET<A ID="I33" NAME="I33"></A>  and then getting a listing of their directories ( DIRECTORY  command).  If the NEWMAIL or WASTEBASKET folders have recently been emptied automatically, (after reading new mail messages or after exiting MAIL), these folders disappear.  If you try to get a directory of messages in those folders at that time, a message will appear on your screen, telling you that they do not exist.</P>
+<P>
+<FONT SIZE=+1><I>Directory</I></FONT></P>
+<P>To get a directory<A ID="I34" NAME="I34"></A> listing of all the folders in your MAIL.MAI file, use the  <A ID="I35" NAME="I35"></A>DIR/FOLDER<A ID="I36" NAME="I36"></A><A ID="I37" NAME="I37"></A>  command.  This will list the <A ID="I38" NAME="I38"></A>default folders (MAIL and possibly NEWMAIL and WASTEBASKET) in your MAIL.MAI file, as well as any you have created yourself.  If the NEWMAIL and/or WASTEBASKET folders are not listed when you use the DIR/FOLDER command, it means that they are empty and do not exist.</P>
+<H2><A ID="I39" NAME="I39">
+<BR>To <A ID="I40" NAME="I40"></A>Send<A ID="I41" NAME="I41"></A> and <A ID="I42" NAME="I42"></A>Receive<A ID="I43" NAME="I43"></A><A ID="I44" NAME="I44"></A> Mail</A></H2>
+<HR ALIGN=CENTER>
+<P>The first part of this manual explained how to start and stop MAIL and how to get help in MAIL.  It also discussed the organization of the default folders in the MAIL.MAI file and how to access messages in those folders.  You are now ready to learn how to send mail messages and how to read messages that you receive from other users.</P>
+<P>
+<FONT SIZE=+1><I>To Send Mail</I></FONT></P>
+<P>The  SEND  command allows you to send a message to anyone on the system by typing their username at the &quot;To:&quot; prompt.  The following example shows how to send a message to a user named SMITHC.</P>
+<P>MAIL&gt; SEND  R</P>
+<P>To:   SMITHC  R</P>
+<P>Subj: Class instructions  R</P>
+<P>After you respond to the header prompts above, you will see  [End Of File] at the top of the screen and you may type in your message.  <A ID="I45" NAME="I45"></A>When you finish typing your message, press  &lt;PF1&gt; E  to send it. On a microcomputer, press   C Z  .  Your  message will be sent immediately to the person whose username you entered.  If that person is logged into the system, a message will appear on his/her screen that he/she has received new mail.  If that person is not logged in, a similar message will appear at his/her next login. If you change your mind about sending the message, you can type  &lt;PF1&gt; Q   which will <A ID="I46" NAME="I46"></A>abort it.  On a microcomputer, press  C Y  . The message will not be sent and you will be returned to the MAIL&gt; prompt.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I47" NAME="I47"></A><I>Send</I><A ID="I48" NAME="I48"></A><I> a Text File</I></FONT></P>
+<P>There may be an occasion when you will want to send a complete file located in your main directory to another user.  The command for this is just a bit different; adding the file name at the end of the command, as in the following example:</P>
+<P>Mail&gt; SEND CLASSNOTES.TXT  R</P>
+<P>You can edit this file or add on a note to the receiver at the beginning of it before you send it.  Again,  &lt;PF1&gt; E  will send it, while  &lt;PF1&gt; Q  will abort it.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I49" NAME="I49"></A><I>Send a </I><A ID="I50" NAME="I50"></A><I>WordPerfect File</I></FONT></P>
+<P>Mail messages are transferred in &quot;text&quot; format.  If you want to send a file which has a &quot;non-text&quot; format such as WordPerfect format, use a different command.  For instance, to send a WordPerfect file to another person, use the following command:</P>
+<P>Mail&gt; SEND/FOREIGN/NOEDIT<A ID="I51" NAME="I51"></A> <I>filename</I>  R</P>
+<P>The person who receives this message will have to use the <A ID="I52" NAME="I52"></A>EXTRACT<A ID="I53" NAME="I53"></A>  command to extract the file for editing or viewing in WordPerfect.  This command works only on the Kenyon computers; it is not intended for Internet use.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I54" NAME="I54"></A><I>Read</I><A ID="I55" NAME="I55"></A><I> Mail</I></FONT></P>
+<P>If another user on the system sends you a Mail message, a message will appear on your screen if you are logged into the system at the time.  If you are not logged in, a message notifying you that you have new mail will appear at your next login.  To be able to read<A ID="I56" NAME="I56"></A> that message, start Mail and at the MAIL&gt; prompt, type READ  .  If you are in the Mail utility when you are notified about a message, use the READ/NEW<A ID="I57" NAME="I57"></A>  command to read the new Mail message.</P>
+<P>After a message is read the first time, it is transferred out of the NEWMAIL<A ID="I58" NAME="I58"></A> folder and stored in the MAIL folder.  To display it on the screen so that you can read it again, use the  READ  command followed by its message number.  If you don't know the number of your message, remember that you can get a listing of all your messages and their numbers in the MAIL folder directory DIRECTORY .  The messages are numbered in chronological order (See Mail Directory section above).</P>
+<P>Mail&gt; READ 3  R(This brings mail message #3 back onto the screen for reading.)</P>
+<P>In addition to using message numbers to display particular messages, you can use the following forms of the READ command to read the first, last, previous, next, or current message over again:</P>
+<P>MAIL&gt; <A ID="I59" NAME="I59"></A>FIRST  R(reads the first message in current folder)</P>
+<P>MAIL&gt; <A ID="I60" NAME="I60"></A>LAST  R   (reads the last message in current folder)</P>
+<P>MAIL&gt; <A ID="I61" NAME="I61"></A>NEXT  R(reads the message after the one that is currently on the screen)</P>
+<P>MAIL&gt; <A ID="I62" NAME="I62"></A>BACK  R(reads the message before the one that is currently on the screen)</P>
+<P>MAIL&gt; <A ID="I63" NAME="I63"></A>CURRENT  R(brings you back to beginning of a long mail message in order to read it again)</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I64" NAME="I64"></A><I>Reply to Sender</I></FONT></P>
+<P>When you receive a message and want to reply to the original sender, use the   REPLY  command.  REPLY allows you to send a message to the sender of the message you are currently reading (the one displayed on the screen).  You may REPLY to a message only if the message is currently displayed on the screen with the READ command.  Mail will display the header of your REPLY message as follows:</P>
+<P>Mail&gt; REPLY  R</P>
+<P>To:    JONES     (username of the original sender)</P>
+<P>Subj.  Re: Class instructions  </P>
+<P>(This reflects the subject in the header of the original sender's message)</P>
+<P>After the header appears, type in your message.  When you are finished, press &lt;PF1&gt; E or  C Z  to send the message.  If you change your mind about replying to the message after you have already entered the REPLY command, type   &lt;PF1&gt; Q or C Y  to abort the message.  The MAIL&gt; prompt will reappear on the screen.</P>
+<P>If you would like to include a copy of the original message in your reply, use the command:  REPLY/EXTRACT<A ID="I65" NAME="I65"></A></P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I66" NAME="I66"></A><I>Forward a Message</I></FONT></P>
+<P>You may send a copy of the message you are currently reading or have just read to a user or a group of users.  Again, you canFORWARD a message only if that message is currently displayed on the screen with the READ command.  Mail will prompt you (1) for the name of the user(s) to whom you want to FORWARD the message and (2) for a subject.  For example:</P>
+<P>Mail&gt; Read 3  R  (Displays message #3 on screen)</P>
+<P>Mail&gt; FORWARD/NOHEADER  R</P>
+<P>To:  SMITHC  R</P>
+<P>Subj:  &lt;<I>Subject of message</I>&gt;  R</P>
+<P>You can use the  /NOHEADER  qualifier after FORWARD to eliminate the header information from the forwarded message.  If you change your mind about forwarding a message after you have already typed the FORWARD command, press   &lt;PF1&gt; Q  or  C Y  to abort the message.  The MAIL&gt; prompt will be displayed again.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I67" NAME="I67"></A><I>Send</I><A ID="I68" NAME="I68"></A><A ID="I69" NAME="I69"></A><I> Messages to A Group Of People</I></FONT></P>
+<P>If you frequently send mail to the same group of people, you will find it helpful to use a &quot;distribution list&quot;.  A distribution list is a file containing the names of users to whom you want to send messages.</P>
+<P>To set up a distribution list, use the Kenyon text editor  KEDT  to create a distribution list file with the file type &quot;.DIS&quot;.  Please note that the filename MUST have a .DIS extension.  KEDT is the same text editor that you use when writing a MAIL message.  Type one username per line in this file.  A distribution list can also include the names of other distribution lists.  You can include comments by entering lines whose first character is an exclamation point (!).  The following example shows how to create a distribution list:</P>
+<P>$ KEDT STUDENT.DIS  R  (Then type into your newly created file, one username per line)</P>
+<P>Jones</P>
+<P>Smith</P>
+<P>French</P>
+<P>Cory</P>
+<P>! NESTED DISTRIBUTION LIST:</P>
+<P>@MATH21.DIS</P>
+<P>Separate usernames can be combined with another distribution list (MATH21.DIS).  MATH21.DIS could contain <B>another</B> distribution list.</P>
+<P>When you are finished, press &lt;PF1&gt; E or  C Z </P>
+<P>Now that you have a distribution list file created, you can send your message to all the users in that list by first issuing the  SEND command.  In response to the &quot;To:&quot; prompt, type in the name of the distribution list file you have just created (STUDENT.DIS), preceded by the @  symbol.</P>
+<P> </P>
+<P>Mail&gt; SEND  R</P>
+<P>To:    @STUDENT  R</P>
+<P>Mail will deliver one copy of your mail message to each user in your distribution list.  Typing in the .DIS is not necessary.  The computer assumes you used the .DIS extension in your filename.</P>
+<H2><A ID="I70" NAME="I70">
+<BR>To <A ID="I71" NAME="I71"></A>Manage Mail Messages</A></H2>
+<HR ALIGN=CENTER>
+<P>Now that you have learned about various ways to send and receive mail messages, you are ready to learn other ways in which those messages can be managed.  Some of the things that will be discussed are extracting a message (moving it to a file in your VAX directory) and printing it in order to have a hard copy of it.  A section is also included on &quot;cleaning up&quot; your Mail files by deleting messages no longer useful and then compressing the file.</P>
+<P>You will also learn how to search through your messages for a specific topic and how to include your personal name in any mail messages that you send to others.  The last section discusses the COPY and MOVE commands that allow you to create folders and mail files other than the default ones, so that you may move messages into them to organize your mail messages.</P>
+<P>
+<FONT SIZE=+1><I>To Move Messages</I><A ID="I72" NAME="I72"></A><I> To Another Directory</I></FONT></P>
+<P>If you want to move a mail message from MAIL to a file in another directory, use the  EXTRACT  command.  After the MAIL&gt; prompt, while the message you wish to EXTRACT is displayed on the screen, use the  EXTRACT  command.  When you exit from MAIL, that file will be listed in the directory you chose when you named the file. An example:</P>
+<P>Mail&gt; READ 4  R(Displays message #4 on the screen)</P>
+<P>Mail&gt; EXTRACT/NOHEADER<A ID="I73" NAME="I73"></A> BIODATA.TXT  R</P>
+<P>%MAILICREATED, B:[SMITH]BIODATA.TXT;1 created</P>
+<P>(Saves message #4 as BIODATA.TXT)</P>
+<P>Mail&gt; EXIT  R</P>
+<P>$ DIRECTORY  R</P>
+<P>Directory B:[SMITH]</P>
+<P>BIODATA.TXT;1  26  4NOV1992  14:40 [SMITH] (RWED,RWED,,)</P>
+<P>The EXTRACT<A ID="I74" NAME="I74"></A> command can be used only when the message you wish to EXTRACT is currently displayed on the screen.  You can use the  /NOHEADER  qualifier after the EXTRACT command to eliminate the address<A ID="I75" NAME="I75"></A> header information from the extracted message.  TheEXTRACT command allows you to store the message in your chosen directory so that it can be manipulated (copied, print<A ID="I76" NAME="I76"></A>ed, renamed, deleted, or edited) like any other file. </P>
+<P>To print a file that was extracted from Mail and placed in your current directory, you can use the  <A ID="I77" NAME="I77"></A>PRINT  command, as in:</P>
+<P>$ PRINT/QUEUE=ASC2HP BIODATA.TXT  R</P>
+<P>where ASC2HP  is the queuename and BIODATA.TXT is the filename.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I78" NAME="I78"></A><I>Extract</I><A ID="I79" NAME="I79"></A><I> WordPerfect and other Non-text Files</I></FONT></P>
+<P>If you try to read a mail message and see a message which says you cannot read this foreign format message, use the EXTRACT <I>filename</I><I> </I>command to copy the file to a directory.  You may use any filename you wish.  For example,</P>
+<P>Mail&gt; EXTRACT <I>ANYFILENAME</I>  R</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I80" NAME="I80"></A><I>Print</I><A ID="I81" NAME="I81"></A><I> Mail</I></FONT></P>
+<P>While you are using Mail, you can make a hardcopy of a mail message you are currently reading or have just read by using the  PRINT/QUEUE=<I>queuename</I> command.  You can PRINT a message in Mail only if it is currently displayed on the screen.  At the $ prompt, before starting Mail, type  SHOW QUEUE  to find out the name of the queue nearest your location.  The file(s) created by the PRINT command are not actually released to the print queue until you exit Mail.  If you issue multiple PRINT commands while in Mail, the messages you want to print will be combined into one print job and will be printed as one file.  The example below illustrates how the PRINT command takes effect only <B>after</B> you exit Mail.  Notice that there is only one &quot;job&quot; or file being printed, the two messages having been combined into one print request.  Each message uses at least one full sheet of paper; print only what is absolutely necessary.</P>
+<P>MAIL&gt; READ 5  R   (Mail message #5 is displayed on screen)</P>
+<P>MAIL&gt; PRINT/QUEUE=<I>queuename</I>  R</P>
+<P>MAIL&gt; READ 6  R</P>
+<P>MAIL&gt; PRINT/QUEUE=<I>queuename</I>  R</P>
+<P>MAIL&gt; EXIT  R</P>
+<P>Job MAIL (queue ASC2HP, entry 210) started on ASC2HP</P>
+<P>$</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I82" NAME="I82"></A><I>Delete</I><A ID="I83" NAME="I83"></A><I> Mail Messages</I></FONT></P>
+<P>You may remove any message that is no longer useful to you by using the DELETE command while in MAIL.  If the message you want todelete is currently displayed on the screen, use the DELETE command alone, as in:  </P>
+<P>MAIL&gt; DELETE  R</P>
+<P>To delete a message that is not displayed on the screen, find out its message number (use the SELECT and DIRECTORY commands), and then type the DELETE command followed by the message number. For example, to remove message #2 in the MAIL folder<A ID="I84" NAME="I84"></A>, type:</P>
+<P>MAIL&gt; SELECT MAIL  R</P>
+<P>MAIL&gt; DELETE 2  R</P>
+<P>MAIL&gt; DELETE 3-8,11  R(deletes messages 3 through 8, and 11)</P>
+<P>If you enter the DIRECTORY command immediately after you have deleted a message (or messages), you will see the message(s) marked as deleted, as the following example shows:  </P>
+<P>MAIL&gt; DIRECTORY  R</P>
+<P>     # From      Date   Subject</P>
+<P>  1 JONES     1JUN1986     How to Write a Memo</P>
+<P> 2 (Deleted)</P>
+<P> 3 SMITH     4JUN1986     Class Instructions</P>
+<P> 4 (Deleted)</P>
+<P>As messages are deleted from your<A ID="I85" NAME="I85"></A> MAIL folder, they are automatically moved to your <A ID="I86" NAME="I86"></A>WASTEBASKET folder, as mentioned earlier.  This gives you another chance to retrieve a message if you delete it by mistake. However, as soon as you EXIT from Mail, those messages in your WASTEBASKET folder will disappear forever!  If for some reason you do not wish to have the deleted messages in WASTEBASKET disappear when you leave Mail, you can type  <A ID="I87" NAME="I87"></A>QUIT  instead of EXIT at the MAIL&gt; prompt.  This will allow you to leave Mail but will keep the WASTEBASKET messages intact.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I88" NAME="I88"></A><I>Retrieve a Message from the Wastebasket</I></FONT></P>
+<P>You may retrieve a message from WASTEBASKET and move<A ID="I89" NAME="I89"></A> it back to your MAIL folder by doing the following.  First, find out its message number in the WASTEBASKET folder and call up that message onto the screen.  For example,</P>
+<P>MAIL&gt; SELECT WASTEBASKET<A ID="I90" NAME="I90"></A>  R</P>
+<P>MAIL&gt; DIRECTORY  R(displays message list so that you can look for the message number)</P>
+<P>MAIL&gt; READ 3  R(displays message #3 on screen)</P>
+<P>Then:</P>
+<P>MAIL&gt; MOVE MAIL<A ID="I91" NAME="I91"></A>  R(Moves the message to your MAIL folder)</P>
+<P>You may use the SELECT and DIRECTORY commands to check that the message now resides in the MAIL folder.</P>
+<P>Your mail file (with the .MAI file extension in your directory) is protected so that only you can read it, and you may not delete<A ID="I92" NAME="I92"></A> it even if you try. You may only delete mail MESSAGES from your MAIL folder while you are in Mail.</P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I93" NAME="I93"></A><I>Compress the MAIL file</I></FONT></P>
+<P>The COMPRESS command is used to make the MAIL file smaller. Even though you may periodically &quot;clean out&quot; your MAIL folder(s) by deleting messages that are no longer useful to you, the size of your MAIL file is not decreased simply by deleting those messages.  This is because the area where they were stored is left intact, although you cannot access those deleted messages anymore.  The VAX System Manager compresses your mail files once a week; however, you may want to compress your file during the week.</P>
+<P>You may keep track of how large the MAIL file is becoming by watching the block size of the MAIL.MAI file in your directory.  When the block size of the MAIL.MAI file approaches 50, it is time to delete unneeded messages and compress the file.  If you do not, you will run into problems exceeding your disk quota because of it.  If that should happen, call the ICS HelpLine at 5700 for assistance.</P>
+<P>When you compress a file, the following four steps occur: </P>
+<UL>
+<LI>  1.A temporary file named MAIL<I>nnnn</I>COMPRESS.TMP is created (where <I>nnnn</I> is the number of the temporary file).</LI></UL>
+<UL>
+<LI>  2. The contents (of the MAIL.MAI file to be compressed) are copied to the temporary file and compressed.</LI></UL>
+<UL>
+<LI>  3. The original MAIL.MAI (uncompressed) file is renamed with a file type of .OLD.</LI></UL>
+<UL>
+<LI>  4.The newly compressed file is renamed from MAIL<I>nnnn</I>COMPRESS.TMP back to its original name (MAIL.MAI).</LI></UL>
+<P>The following example shows what appears on the screen when your MAIL file is compressed:</P>
+<P>$ MAIL  R    </P>
+<P>Mail&gt; COMPRESS  R      </P>
+<P>%MAILSCREATED,B:[SMITH]MAIL_08C8_COMPRESS.TMP;1 created</P>
+<P>%MAILSCOPIED, B:[25_777]MAIL.MAI;1 copied to B:[25_777]MAIL_08C8_COMPRESS.TMP;1 (2 records)</P>
+<P>%MAILSRENAMED, B:[25_777]MAIL.MAI;1 renamed to B:[25_777] MAIL.OLD;2</P>
+<P>%MAILSRENAMED, B:[25_777]MAIL_08C8_COMPRESS.TMP;1 renamed to B:[25_777]MAIL.MAI;1</P>
+<P> <I>To </I><A ID="I94" NAME="I94"></A><I>Delete the MAIL.OLD File</I></P>
+<P>This leaves you with a new MAIL.MAI file that contains all your remaining messages that have not been deleted; the useless storage spaces have been removed from this file.  After you have compressed your MAIL file, make sure you are working in your main directory.  Type DIRECTORY to make sure your <A ID="I95" NAME="I95"></A>MAIL.OLD file is there. It contains the original uncompressed Mail message file.  Since the MAIL.MAI file is the newly compressed version that will receive any new MAIL messages sent to you, MAIL.OLD should not be kept.  To delete the MAIL.OLD file, use the  DELETE  command at the &quot;$&quot; prompt.  For example,</P>
+<P>$ DELETE MAIL.OLD;1  R</P>
+<P>The MAIL.OLD file will be removed from your main directory.  The COMPRESS command can be used on ANY mail files that you may create in addition to the default MAIL.MAI file.</P>
+<P>If your Mail files are kept in a subdirectory of your main directory, type:</P>
+<P>$ DELETE [.MAIL]MAIL.OLD;*  R</P>
+<P>
+<FONT SIZE=+1></FONT></P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I96" NAME="I96"></A><I>Search Your Mail Messages</I></FONT></P>
+<P>To find the message(s) in your MAIL folder which contain(s) a specific word or phrase, use the  SEARCH  command to find it.  Type SEARCH  after the MAIL&gt; prompt, followed by the word or phrase (text string) you want to find.  The SEARCH <I>text string</I> command starts to search at the beginning of the messages in your current folder. It will stop at the message containing the FIRST occurrence of that text string.  If there is another message in that folder that contains that same text string, find it by typing SEARCH (no text string after it) after the MAIL&gt; prompt.  This is essentially a &quot;search again&quot; command, since it searches for the previously specified text string, starting with the message FOLLOWING the one currently on the screen.  It is possible to continue with the SEARCH command until the last of your messages is reached.  For example,</P>
+<P>Mail&gt; SELECT MAIL<A ID="I97" NAME="I97"></A>  R  (selects the MAIL folder)</P>
+<P>Mail&gt; SEARCH budget expenditures  R</P>
+<P>(The first message containing the phrase &quot;budget expenditures&quot; appears on the screen).            </P>
+<P>Mail&gt; SEARCH  R (searches for the next message containing the specified text string. This SEARCH begins with the message following the current one.)</P>
+<P>(The second message containing the phrase &quot;budget expenditures&quot; appears on the screen).</P>
+<P>The SEARCH command enables you to find certain topics discussed in your mail messages without having to read through each message.</P>
+<P>
+<FONT SIZE=+1><I>Long mail messages</I></FONT></P>
+<P>When you receive<A ID="I98" NAME="I98"></A> a mail message that is larger than 3 blocks, it is written to a new Mail (.MAI) file, different from the MAIL.MAI file previously discussed.  This Mail file will be listed in your mail directory as follows:</P>
+<P>     MAIL$nnnnnnnnnnnnnnnnnnn.MAI<A ID="I99" NAME="I99"></A><A ID="I100" NAME="I100"></A></P>
+<P>where nnnnnnnnnnnnn is a number the computer gives the filename.</P>
+<P>MAIL deletes these large .MAI files from your mail directory when you delete these messages from within MAIL.  You cannot delete these files outside of Mail without changing the protection code; however, if you do delete these files outside of MAIL (with the  DELETE  command), and then try to read the associated messages inside of Mail, you will get an error message followed by a display of the From:, To:, and Subject: fields.  Therefore, delete these large messages only from within Mail, not the MAIL$nnnnnnnnnnn.MAI files themselves.</P>
+<P>
+<FONT SIZE=+1><I>To Get Personal</I></FONT></P>
+<P>The  SET <A ID="I101" NAME="I101"></A>PERSONAL_NAME  command enables you to append personal information to the end of the &quot;From:&quot; field of mail messages you send.  You can fill this field with your full name or other information. Thus, the receiver of your messages can more easily identify you, instead of having to remember your username (JONES, for example).</P>
+<P>MAIL&gt; SET PERSONAL_NAME  &quot;Buddy Jones&quot; R</P>
+<P>or      </P>
+<P>MAIL&gt; SET PERSONAL_NAME  &quot;Jim Stephens, pbx 5317&quot;  R</P>
+<P>The text string must begin with either a letter or digit; the length of the text string cannot exceed 127 characters.  If you do not enclose the text string in quotation marks, it prints out in all uppercase letters.</P>
+<P>
+<FONT SIZE=+1><I>To &quot;</I><A ID="I102" NAME="I102"></A><I>Carbon Copy&quot; a message to another User</I></FONT></P>
+<P>You can send a carbon copy of a message to another user by setting your mail system to prompt you for the username of the person to whom you wish to send the copy.</P>
+<P>MAIL&gt; SET <A ID="I103" NAME="I103"></A>CC_PROMPT  R</P>
+<P>When you send a message, the following will be displayed:</P>
+<P>MAIL&gt; SEND  R</P>
+<P>To:  SMITH  R</P>
+<P>CC:  JONES  R</P>
+<P>Subj:  SEMINAR ON FRIDAY  R</P>
+<P>To disable the CC_PROMPT, at the MAIL&gt; prompt, type  SET NOCC_PROMPT  R</P>
+<P> </P>
+<H2><A ID="I104" NAME="I104">
+<BR>To Use <A ID="I105" NAME="I105"></A>Folder<A ID="I106" NAME="I106"></A>s To Organize Mail Messages</A></H2>
+<HR ALIGN=CENTER>
+<P>You can create folders in mail in which to store your messages.  Your default MAIL.MAI file already contains the NEWMAIL, MAIL, and WASTEBASKET folders.  You can create new folders in your MAIL.MAI file or you can create other mail files besides MAIL.MAI, as well as other folders in those Mail files.</P>
+<P><A ID="I107" NAME="I107"></A></P>
+<P>
+<FONT SIZE=+1><I>COPY and </I><A ID="I108" NAME="I108"></A><I>MOVE</I><A ID="I109" NAME="I109"></A></FONT></P>
+<P>The commands COPY and MOVE<A ID="I110" NAME="I110"></A> will transfer Mail messages to another folder<A ID="I111" NAME="I111"></A> in your current file or to another folder in another Mail file.  If the folder or Mail file to which you specify to transfer the message does not yet exist, you will be asked whether you want to create it; if you respond with    Y   , the specified folder is created by the COPY or MOVE command as it transfers the message  (The difference between the COPY command and the MOVE command is that the MOVE command deletes the message from the original folder, while the COPY command leaves a copy there.).  To COPY or MOVE a message to another folder in your CURRENT mail file, do the following:</P>
+<P>Mail&gt; READ 2  R  (displays message from current folder on the screen)</P>
+<P>Mail&gt; COPY (or MOVE)  R</P>
+<P>_Folder: class_instructions R</P>
+<P>(this transfers a message to the specified folder; if it does not exist, you will be asked if you want to create it; answer  Y  )</P>
+<P>_File: R(If you omit a filename and simply press R  ,  the message will be  copied to a folder in your current mail file)</P>
+<P>Once the message has been copied or moved,  you should check the folder to which it has been transferred to make sure it is there:</P>
+<P>Mail&gt; <A ID="I112" NAME="I112"></A>SELECT <I>foldername</I><A ID="I113" NAME="I113"></A>  R(folder to which you transferred your message)</P>
+<P>Mail&gt; DIRECTORY  R(message you just transferred should be listed in this folder directory)</P>
+<P>To COPY or MOVE a message to another folder in a mail file <U>other </U><U>than</U> your current one, do the following:</P>
+<P>Mail&gt; READ 3  R  (displays message you want to transfer)</P>
+<P>Mail&gt; COPY (or MOVE)  R</P>
+<P>_Folder: SOCCER  R</P>
+<P> (specify the folder to which you want your message will be transferred; if it does not exist, you will be asked if you wish to create it, as above answer  Y  )</P>
+<P>_File:   SPORTS   R</P>
+<P> (specify the Mail file, other than the current one, to which you want your message transferred; if it does not exist, you will be asked if you wish to create one; answer  Y , as above)</P>
+<P>
+<FONT SIZE=+1><I>To Access A Mail File other than MAIL.MAI</I></FONT></P>
+<P>Once the message has been COPYed or MOVEd, check the file and folder to which it has been transferred to make sure it is actually there. To do this, use the  SET FILE  command, which transfers you to a Mail file other than your current one.  Once you are in the Mail file, SELECT  the folder<A ID="I114" NAME="I114"></A> in that file to which the message was copied or moved, and then get a DIRECTORY listing of the folder's contents to check that the message is listed there.  For example,</P>
+<P>MAIL&gt; SET FILE SPORTS  R  (Transfers you to the</P>
+<P> specified Mail file (SPORTS.MAI) where your message was sent)</P>
+<P>MAIL&gt; DIR/FOLDER<A ID="I115" NAME="I115"></A>  R(Lists the folders in the</P>
+<P>SPORTS.MAI file, where you now are; the SOCCER folder should be there.)</P>
+<P>MAIL&gt; SELECT SOCCER  R </P>
+<P> (Selects the SOCCER folder in the SPORTS.MAI file)</P>
+<P>MAIL&gt; DIR  R(Lists messages in the SOCCER folder; your newly transferred message should be there)</P>
+<P>Mail&gt; SET FILE MAIL  R  </P>
+<P> (transfers you back to your default MAIL.MAI file)</P>
+<P>Folder<A ID="I116" NAME="I116"></A> names or Mail file names can be from 1 to 39 characters in length.  Valid characters for folder names are all alphanumeric characters, the dollar sign ($), and the underscore (__).  If you enter the COPY or MOVE command, supply a foldername at the prompt, and then decide (before pressing   R  again) that you do not want to copy the message, press the   C C   key combination.   C C    will abort the operation and maintain the MAIL&gt; prompt. </P>
+<H2><A ID="I117" NAME="I117">
+<BR>Additional Information</A></H2>
+<HR ALIGN=CENTER>
+<P>After reading through this manual, you should be familiar enough with the various Mail commands so that you can now send, receive, organize, and maintain your mail messages efficiently.  For more information on any of the topics included in this manual, please refer to the chapter in this workbook titled &quot;E-Mail as an Office Automation Tool,&quot; to DEC's Mail Utility section in the DEC <I>VMS General User </I><I>Manual</I>, located in ICS main computing sites, or call the ICS HelpLine (5700) and ask for other documentation on Mail. </P>
+<HR ALIGN=CENTER>
+<P><A HREF="collab.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="kedt.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

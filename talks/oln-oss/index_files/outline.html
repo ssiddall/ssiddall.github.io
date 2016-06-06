@@ -1,0 +1,951 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 11">
+<link id=Main-File rel=Main-File href="../index.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 )  
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Bringing open source
+  <br>
+    to Ohio campuses: <br>
+    Meeting common goals through shared solutions</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scott E. Siddall</li>
+   <li>Denison University</li>
+   <br>
+   <br>
+   <li>This presentation at http://siddall.info/talks/</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>Roadmap</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What is open source software?</li>
+   <li>The culture of open source</li>
+   <li>Leadership of open source projects</li>
+   <li>The common needs of education</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL3>Build-Buy-Borrow</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Build your own?</li>
+   <ul>
+    <li>Bear all the development costs</li>
+    <li>Provide all your own support</li>
+   </ul>
+   <li>Buy?</li>
+   <ul>
+    <li>Share development costs with others, plus a vendor profit</li>
+    <li>Pay for support from vendor</li>
+   </ul>
+   <li>Borrow (open source)?</li>
+   <ul>
+    <li>No licensing costs, or share the costs</li>
+    <li>Provide your own support, buy it, get it from the community</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.html');" id=PPTL4>Open source is a
+  licensing model</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Open Source Initiative</li>
+   <li>55 licensing models</li>
+   <li>GNU Public License (GPL) applies to 40,000 projects at Sourceforge</li>
+   <li>GPL, BSD, Mozilla, MIT are all popular</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.html');" id=PPTL5><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL6>Open source is more
+  than a licensing model</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>   </span>“When programmers can read,
+       redistribute, and modify the source code for a piece of software, the
+       software evolves. People improve it, people adapt it, people fix bugs.
+       And this can happen at a speed that, if one is used to the slow pace of
+       conventional software development, seems astonishing.”</li>
+   <br>
+   <br>
+   <ul>
+    <li>The Open Source Initiative	http://opensource.org</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL7>Types of open source
+  software</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Central services and infrastructure</li>
+   <ul>
+    <li>Email systems, servers, network management tools</li>
+   </ul>
+   <li>Desktop operating systems</li>
+   <ul>
+    <li>Linux, Sun Java Desktop</li>
+   </ul>
+   <li>Web applications</li>
+   <ul>
+    <li>ePortfolios, portals, course management, digital asset management,
+        collaboration and communication tools</li>
+   </ul>
+   <li>“Open source is moving up the stack”</li>
+   <li>			- Brad Wheeler, Indiana University</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL8>Contentions</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>OSS costs less than proprietary software</li>
+   <li>OSS licensing is easy</li>
+   <li>OSS is more reliable, fewer bugs</li>
+   <li>OSS can be customized</li>
+   <li>OSS is more secure</li>
+   <li>OSS is better because it uses open standards</li>
+   <li>OSS is by and for a community</li>
+   <li>Proprietary software has better support</li>
+   <li>OSS is difficult to install, distribute, migrate to</li>
+   <li>OSS avoids vendor lock-in</li>
+   <li>OSS reuses software elements efficiently</li>
+   <li>Proprietary software developers have better resources</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL9>“The Cathedral and the
+  Bazaar”</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Every good work of software starts by scratching a developer's personal
+       itch.</li>
+   <li>Good programmers know what to write. Great ones know what to rewrite
+       (and reuse).</li>
+   <li>When you lose interest in a program, your last duty to it is to hand it
+       off to a competent successor.</li>
+   <li>Treating your users as co-developers is your least-hassle route to rapid
+       code improvement and effective debugging.</li>
+   <li>Release early. Release often. And listen to your customers.</li>
+   <li>Given a large enough beta-tester and co-developer base, almost every
+       problem will be characterized quickly and the fix obvious to someone.</li>
+   <li>The next best thing to having good ideas is recognizing good ideas from
+       your users. Sometimes the latter is better.</li>
+   <br>
+   <br>
+   <li>					- Eric S. Raymond, 1997</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL10>The Culture of Open
+  Source</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Complex software development</li>
+   <li>By loosely coordinated developers and contributors</li>
+   <li>In an informal meritocracy</li>
+   <ul>
+    <li>software specifications are rarely written</li>
+    <li>continuous design instead</li>
+    <li>virtual project management</li>
+    <li>a gentle hierarchy</li>
+   </ul>
+   <br>
+   <ul>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL11>Need for leadership</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>   </span>“People think just because it
+       is open-source, the result is going to be automatically better. Not
+       true. You have to lead it in the right directions to succeed.”</li>
+   <li>					- Linus Torvalds</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.html');" id=PPTL12>Community Source</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Purposeful coordination of work within a community</li>
+   <li>Based on the principles of open source development</li>
+   <li>A greater reliance on</li>
+   <ul>
+    <li>Defined roles</li>
+    <li>Responsibilities</li>
+    <li>Funded commitments</li>
+    <br>
+    <br>
+   </ul>
+   <li>In between the cathedral and the bazaar</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+   <li>Caveat:</li>
+   <ul>
+    <li>production of software versus catalyzing a community</li>
+    <br>
+    <br>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.html');" id=PPTL13>POLL</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If your institution confronts obstacles to greater technical innovation,
+       what are they?</li>
+   <br>
+   <br>
+   <ul>
+    <li>A - Resource limitations</li>
+    <li>B - Culture rooted in traditional processes</li>
+    <li>C - Aversion to risk</li>
+    <li>D - Discomfort with change</li>
+    <li>E - Leadership</li>
+    <li>F - Other issues….</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL14>Is the open source
+  model successful?</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>   </span>“Free and open-source software
+       development is faster, better and cheaper in building a community and at
+       reinforcing and institutionalizing a culture for how to develop
+       software”</li>
+   <li></li>
+   <li>			Walt Scacchi (2004)</li>
+   <li>			Institute for Software Research</li>
+   <li>			UC Irvine</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL15>Our business officers
+  are being encouraged…</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL16>Where do our
+  institutions stand?</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Most are tracking OSS developments</li>
+   <li>Most agree: higher education should create software to meet our unique
+       needs</li>
+   <li>Most see interoperability as important as OSS licensing</li>
+   <li>Few have any official strategy on OSS</li>
+   <li>A few don’t use OSS now</li>
+   <ul>
+    <li>Why?<span style='mso-spacerun:yes'>  </span>Costs, lack of support, no
+        accountability, too busy, immature OSS, no resources to shift to OSS</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.html');" id=PPTL17>Where do our
+  institutions stand?</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Of 118 respondents that do use open source software:</li>
+   <li>&nbsp;&nbsp;&nbsp; 73 use open source software for mission critical
+       applications</li>
+   <li>&nbsp;&nbsp;&nbsp; 66 use open source software in the academic
+       enterprise</li>
+   <li>&nbsp;&nbsp;&nbsp; 63 have experimental uses of open source outside of</li>
+   <li>		CS/engineering departments</li>
+   <li>&nbsp;&nbsp;&nbsp; 56 use open source apps and provide feedback to
+       developers</li>
+   <li>&nbsp;&nbsp;&nbsp; 39 contribute resources toward open source
+       development</li>
+   <li>&nbsp;&nbsp;&nbsp; 33 have employees that contribute to open source</li>
+   <li><span style='mso-spacerun:yes'>            </span>development on their
+       own time</li>
+   <li>&nbsp;&nbsp;&nbsp; 26 have distributed their own homegrown applications</li>
+   <br>
+   <br>
+   <li>How are they using OSS?</li>
+   <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 106
+       in servers, databases and infrastructure</li>
+   <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;82 in desktop operating systems</li>
+   <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;61 in curricular or collaborative applications</li>
+   <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;26 in desktop and administrative applications</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.html');" id=PPTL18>Practical
+  recommendations</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Examine the entire cost</li>
+   <ul>
+    <li>Licensing, hardware, support, training, documentation, migration from
+        legacy tools</li>
+   </ul>
+   <li>Ask why you are considering any application</li>
+   <ul>
+    <li>Are learning outcomes the driver?</li>
+   </ul>
+   <li>Pilot the software</li>
+   <ul>
+    <li>Directly involve all stakeholders; consider outsourcing the pilot</li>
+   </ul>
+   <li>Start with “low hanging fruit” – not mission critical applications</li>
+   <li>Understand and plan for support needs</li>
+   <li>Spend avoided licensing costs on local staff development</li>
+   <li>Keep looking – new opportunities arise each week</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.html');" id=PPTL19>POLL</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Do you feel your institution is ready to undertake a project that relies
+       on open source software?</li>
+   <br>
+   <br>
+   <ul>
+    <li>A – Yes</li>
+    <li>B – No</li>
+    <li>C – Don’t know</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL20>Future of the software
+  market</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>We share unique software requirements</li>
+   <li>Education is a tiny piece of the global software market place</li>
+   <br>
+   <br>
+   <li>Who will create our software, at what cost?</li>
+   <li>Will we have to craft our own software?</li>
+   <li>What will be the impact of software development by for-profit education?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.html');" id=PPTL21>Common needs of
+  education</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>                    </span>…..but we have
+       the resources</li>
+   <br>
+   <br>
+   <ul>
+    <li>Learning and research are our core competencies, our products – this is
+        strategic!</li>
+    <li>IHE are centers of research in software development</li>
+    <li>A diverse, capable and open community: doctoral/research, masters,
+        baccalaureate, associates, K-12</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.html');" id=PPTL22>Consortial piloting in
+  Ohio</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.html');" id=PPTL23>Limited scale pilot
+  programs</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Fully engage faculty and students as well as technical staff in
+       evaluations</li>
+   <li>Co-source (partner with a support entity) then focus on learning and
+       teaching</li>
+   <li>Collaborate: minimize the reinvention of wheels</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.html');" id=PPTL24>POLL</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>How important is it to our institutions that we design and create our
+       own software to support learning?</li>
+   <br>
+   <br>
+   <ul>
+    <li>A – Crucial</li>
+    <li>B – Important</li>
+    <li>C – Neutral</li>
+    <li>D – Unimportant</li>
+    <li>E – Bad idea</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.html');" id=PPTL25>Resources - Articles</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>&quot;The Cathedral and the Bazaar&quot; by Eric S. Raymond, 1997.</li>
+   <li>“A Second Look at the Cathedral and Bazaar” by Nikolai Bezroukov,
+       1999.<span style='mso-spacerun:yes'>  </span>In First Monday.</li>
+   <li>Altruistic individuals, selfish firms? The structure of motivation in
+       Open Source software in First Monday by Andrea Bonaccorsi and Cristina
+       Rossi</li>
+   <li>“Open Source 2007: How did this happen?” by Brad Wheeler</li>
+   <li>“Open Source CMS Pilots” by Scott Siddall.<span
+       style='mso-spacerun:yes'>  </span>March, 2004.</li>
+   <li>“Socio-technical interaction networks” by Walt Scacchi, 2004.</li>
+   <li>“Using Open Source for Strategic Advantage” by Alfred Essa (EDUCAUSE
+       Live! Session, April 2004)</li>
+   <li>“Update on Westwood and Chandler for Higher Ed” by Scott Siddall.</li>
+   <li><span style='mso-spacerun:yes'> </span>An Open Mind on Open Source by
+       Karla Hignite.<span style='mso-spacerun:yes'>  </span>In NACUBO’s
+       Business Officer magazine, August 2004.</li>
+   <li>Open Source under the microscope by Paul Festa, 2004.<span
+       style='mso-spacerun:yes'>  </span>C/NET News.</li>
+   <li>Universities Offer Homegrown Course Software by Jeffrey Young, July 23,
+       2004.<span style='mso-spacerun:yes'>  </span>The Chronicle of Higher
+       Education.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.html');" id=PPTL26>Resources – Web sites</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Technical glossary related to open source</li>
+   <li>Sourceforge - “the&quot; open source software development site listing
+       more than 85,000 open source projects</li>
+   <li>The Open Source Initiative – promotes the definition of open source</li>
+   <li>Open source research at the Institute for Software Research, UC Irvine</li>
+   <li>EDUCAUSE Center for Applied Research research bulletin, “Aligning IT
+       Strategy to Open Source, Partnering and Web Services.”<span
+       style='mso-spacerun:yes'>  </span>Nov. 2003.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.html');" id=PPTL27>Return to home</a></font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+</body>
+
+</html>

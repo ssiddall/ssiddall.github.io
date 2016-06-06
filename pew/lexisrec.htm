@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Recording Lexis/Nexis</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="mediatsc.htm">
+<LINK REL="Previous" HREF="lexissea.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="lexissea.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="mediatsc.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I3">Session Recording</A></LI>
+<LI>
+<A HREF="#I4">To Print Lexis/Nexis Documents</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Recording from the Lexis/Nexis Information Services</A></H1>
+<HR ALIGN=CENTER>
+<P>Lexis/Nexis users must download documents to a 3.5&quot; formatted, IBM compatible floppy disk.  The information may then be transferred to a VAX account for viewing, printing, or incorporating into documents.</P>
+<P><A ID="I2" NAME="I2"></A></P>
+<H2><A ID="I3" NAME="I3">
+<BR>Session Recording</A></H2>
+<HR ALIGN=CENTER>
+<P>The Lexis/Nexis system allows users to copy articles or documents with &quot;Session Recording.&quot;  Session Recording downloads the text that is seen on each screen to a floppy disk.</P>
+<P> Type P   R  , when viewing a document, to determine the number of screens of the document.  (Note whether the number displayed is full screens or KWIC screens).</P>
+<P> To begin session recording press  A  2  (Sess Rec).</P>
+<P> Insert the disk into the drive, then backspace to erase the default filename.  Type  A:  and enter the filename to be recorded, [Name:  A:SESSION.REC],    R  .  The characters <I>RC</I>, in the lower right-hand corner of the screen, indicate that the session is recording.</P>
+<P> Press   6   (Full) to begin full-text recording.</P>
+<P> Press   1  (Next Page) to page through the document. (You must page through the entire document to record its contents.)  </P>
+<P> To stop recording press  A  2  .  (Note:  &quot;Session Record&quot; records all text displayed on the screen.  Many users prefer to stop recording when viewing citations or beginning a new search.)</P>
+<P> Press  7   (Cite) to view other citations found with the previous search (or)</P>
+<UL>
+<LI> Press  8   (New Search) to begin a new search (or)</LI>
+<LI> Press  9   (Change File) to change the file to search (or)</LI>
+<LI> Press   0  (Change Library) to change the library.</LI></UL>
+<P>          </P>
+<P>The search terms are automatically carried when changing files or libraries.</P>
+<P> When beginning to record another document, you will be prompted with the following message:  &quot;THE ABOVE FILE EXISTS&quot;</P>
+<P>Press  A  to append the document to the previous filename (or)</P>
+<P>Press C to change the filename and enter new filename.</P>
+<H2><A ID="I4" NAME="I4">
+<BR>To <A ID="I5" NAME="I5"></A><A ID="I6" NAME="I6"></A>Print Lexis/Nexis Documents</A></H2>
+<HR ALIGN=CENTER>
+<P>Before printing Lexis/Nexis documents you must strip the page breaks (also called &quot;form feeds&quot;) that the Lexis/Nexis system inserts every 1/3 page.  The STRIPFF command will remove these unnecessary form feeds, making your file more readable, and saving paper.   STRIPFF need only be added to the LOGIN.COM file once. Run the STRIPFF command to remove the page breaks from every document recorded. </P>
+<P>
+<FONT SIZE=+1><I>To </I><A ID="I7" NAME="I7"></A><I>Strip Form Feeds form Lexis/Nexis Files</I></FONT></P>
+<P><B>Create or edit the login.Com file</B></P>
+<UL>
+<LI> Login to your VAX account</LI>
+<LI> Type HOME at the VAX prompt</LI>
+<LI> Type KEDT LOGIN.COM to open or create a LOGIN.COM at the dollar sign prompt.</LI></UL>
+<P> If a file with text appears, your LOGIN.COM is now open.</P>
+<P>If a file did not previously exist, kedt will create a new blank LOGIN.COM file.  The words <I>[End of File]</I> will appear at the top of the screen.</P>
+<P><B>Add STRIPFF to the login.Com file</B></P>
+<UL>
+<LI> Type the following, exactly as shown:</LI></UL>
+<P> </P>
+<P>STRIPFF :==&quot;$DRA$DISK:[DRASYSTEM]STRIPFF.EXE&quot;</P>
+<UL>
+<LI> Press  C  Z  .  The LOGIN.COM file will be saved.</LI>
+<LI> Type @LOGIN at the VAX dollar sign prompt</LI></UL>
+<P><B>Run STRIPFF</B></P>
+<P>To strip form feeds from a VAX file downloaded from Lexis/Nexis, type the following command at the VAX dollar sign prompt:</P>
+<P> STRIPFF OLDFILENAME NEWFILENAME</P>
+<P>Replace <I>OLDFILENAME</I> with the name of the file to be stripped. Replace <I>NEWFILENAME</I> with the name for the new, stripped file.</P>
+<P>RECLAIM VAX ACCOUNT SPACE</P>
+<UL>
+<LI> Type DEL OLDFILENAME at the VAX dollar sign prompt.</LI></UL>
+<P>When finished printing NEWFILENAME, delete this file or download it to a floppy disk to reclaim space in the VAX account.</P>
+<P>
+<FONT SIZE=+1><I>To Print Files from the VAX $ Prompt to a </I><I>Specified Printer</I></FONT></P>
+<UL>
+<LI> Type  PRINT/QUEUE=<I>queuename filename</I> R</LI></UL>
+<P> Ex.PRINT/QUEUE=CHA3HP NEWSESSION.REC  R </P>
+<P>CHA3HP is the printer in the Information Center of Chalmers Library. Any networked printer on campus may be substituted for CHA3HP.</P>
+<HR ALIGN=CENTER>
+<P><A HREF="lexissea.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="mediatsc.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

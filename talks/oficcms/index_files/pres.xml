@@ -1,0 +1,113 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152"
+  omittitleplace="t">
+  <p:master id="60" slidesn="1C00D62,9BB06A40" type="main" href="master60.html"
+   xmlhref="master60.xml" template="Slit" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#720000,#FFFFFF,#8C0000,#FFFFCC,#FF3300,#BE7960,#FFCC66,#FF9900"/>
+    <p:colorscheme
+     colors="#533F27,#FFFFFF,#674E2F,#D8B274,#CC9900,#8F5F2F,#FFCC00,#FFFFCC"/>
+    <p:colorscheme
+     colors="#545454,#FFFFFF,#646464,#D4D4CE,#49747D,#8F9699,#8DC4D7,#7FB97F"/>
+    <p:colorscheme
+     colors="#2E5C00,#FFFFFF,#3A7400,#FFFFFF,#79CA02,#008080,#A8DE0E,#00CC66"/>
+    <p:colorscheme
+     colors="#007572,#FFFFFF,#008885,#FFFF99,#33CCCC,#6D6FC7,#FFFFCC,#00FF00"/>
+    <p:colorscheme
+     colors="#000086,#FFFFFF,#0000AC,#CCFFFF,#0099FF,#00B000,#FFE701,#FF9900"/>
+    <p:colorscheme
+     colors="#5E5E8E,#FFFFFF,#7474A2,#D1D1DF,#CC66FF,#6666FF,#FFCC99,#CCCCFF"/>
+    <p:colorscheme
+     colors="#D0DAE2,#000000,#E7EDF1,#000000,#33CCCC,#0099CC,#3333CC,#008080"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#E6E6E6,#000000,#66CCFF,#9999FF,#3333CC,#008080"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="61" slidesn="1C00D62,9BB06A40" type="title" href="master61.html"
+   xmlhref="master61.xml" layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:master id="1" slidesn="1C1EC99,D0EBA4A0" type="notes" href="master01.html"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="1" slidesn="1C1EC91,EA2A5360" href="slide0001.html"
+   masterhref="master61.html" layout="title_subtitle"
+   slots="centerTitle,subTitle"/>
+  <p:slide id="2" slidesn="1C1EC92,26491A70" href="slide0002.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="3" slidesn="1C1EC93,609AA620" href="slide0003.html"
+   layout="title_body" slots="title,body" overridemasteranimations="t"/>
+  <p:slide id="22" slidesn="1C1ED95,7EF85B00" href="slide0022.html"
+   layout="title_body" slots="title,body" overridemasteranimations="t"/>
+  <p:slide id="21" slidesn="1C1ED94,88951960" href="slide0021.html"
+   layout="title_body" slots="title,body" overridemasteranimations="t"/>
+  <p:slide id="5" slidesn="1C1EC95,495E17B0" href="slide0005.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="7" slidesn="1C1EC97,EC6392D0" href="slide0007.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="6" slidesn="1C1EC96,D0FDAD60" href="slide0006.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="9" slidesn="1C1EC98,D7BE1F70" href="slide0009.html"
+   layout="2_columns" slots="title,body,object"/>
+  <p:slide id="28" slidesn="1C1EE06,8B7E28C0" href="slide0028.html"
+   layout="2_columns" slots="title,body,body"/>
+  <p:slide id="19" slidesn="1C1ECC7,EAD15940" href="slide0019.html"
+   layout="2_columns" slots="title,body,object"/>
+  <p:slide id="18" slidesn="1C1ECC7,7CCBE9B0" href="slide0018.html"
+   layout="title_body" slots="title,body" overridemasteranimations="t"/>
+  <p:slide id="33" slidesn="1C1F099,488F54E0" href="slide0033.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="34" slidesn="1C1F09A,3E218AE0" href="slide0034.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="17" slidesn="1C1ECC7,12ADC670" href="slide0017.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="10" slidesn="1C1EC98,DF4B1B30" href="slide0010.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="15" slidesn="1C1ECC4,DD3E0920" href="slide0015.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="35" slidesn="1C2DDD6,FF1EE5B0" href="slide0035.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="29" slidesn="1C1EE08,9E77F80" href="slide0029.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="11" slidesn="1C1EC98,E96F63A0" href="slide0011.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="43" slidesn="1C2DDE0,B4003340" href="slide0043.html"/>
+  <p:slide id="24" slidesn="1C1ED9E,7F9A0320" href="slide0024.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="36" slidesn="1C2DDD9,A30E72B0" href="slide0036.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="37" slidesn="1C2DDDB,E8F6F430" href="slide0037.html"/>
+  <p:slide id="38" slidesn="1C2DDDC,10658EF0" href="slide0038.html"/>
+  <p:slide id="40" slidesn="1C2DDDC,30823B20" href="slide0040.html"/>
+  <p:slide id="39" slidesn="1C2DDDC,22C33FC0" href="slide0039.html"/>
+  <p:slide id="41" slidesn="1C2DDDC,754E3B00" href="slide0041.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="42" slidesn="1C2DDDC,8798D900" href="slide0042.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="25" slidesn="1C1ED9F,570DF500" href="slide0025.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="26" slidesn="1C1EDA0,959980E0" href="slide0026.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="30" slidesn="1C1F092,94091840" href="slide0030.html"
+   layout="title_only" slots="title"/>
+  <p:viewstate type="slideView" slidehref="slide0030.html" restoredleft="156"
+   restoredtop="946" manualadjustleft="t" manualadjusttop="t"
+   hideoutlineicons="t"/>
+  <p:font name="Arial" charset="0" type="4"/>
+  <p:font name="Tahoma" charset="0" type="4" family="34"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:headersfooters slidenumber="t" userdatestr="February 27, 2003"
+   footerstr="Ohio Foundation of Independent Colleges" formatid="0" noheader="t"/>
+  <p:headersfooters notes="t" slidenumber="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+  <p:htmlpublishsettings browsersupport="v4"
+   href="C:\Documents and Settings\Siddall\My Documents\temp\index.html"
+   hidespeakernote="t" noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="204804"/>
+</xml>

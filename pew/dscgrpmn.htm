@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Creating and Managing Discussion Groups</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="kermit1p.htm">
+<LINK REL="Previous" HREF="disclist.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="disclist.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="kermit1p.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I2">Creating a New Discussion List</A></LI>
+<LI>
+<A HREF="#I3">Managing a Discussion List</A></LI>
+<LI>
+<A HREF="#I4">Archives</A></LI>
+<LI>
+<A HREF="#I5">Example  </A></LI></UL></UL></UL></UL>
+
+
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Creating and Managing Internet Discussion Lists at Kenyon</A></H1>
+<HR ALIGN=CENTER>
+<P>Kenyon College has the software to support discussion lists managed by Kenyon faculty and staff on behalf of all Internet users.  This document explains the basic commands used to manage Internet discussion lists, and assumes familiarity with the introductory document, &quot;Internet Discussion Lists&quot;.  You may also refer to the <a href="http://star.ucc.nau.edu/~mauri/moderators.html">Moderator's HomePage</a> for guidance and examples from other institutions.</P>
+<H2><A ID="I2" NAME="I2">
+<BR>Creating a New Discussion List</A></H2>
+<HR ALIGN=CENTER>
+<P>Follow the steps below to create a discussion list with a minimum of effort.</P>
+<P>
+<FONT SIZE=+1><I>Develop A Name and Title</I></FONT></P>
+<P>Develop a name and short title for your discussion list.  For example, for the fictitious discussion list named &quot;POLIART&quot;, the descriptive title might be &quot;Political expressions in the fine arts.&quot;</P>
+<P>
+<FONT SIZE=+1><I>Write A Welcoming Statement</I></FONT></P>
+<P>Using the example provided below, develop a welcoming statement which will be sent to each new subscriber automatically  by the mailing list server.</P>
+<P>
+<FONT SIZE=+1><I>Set Up The Kenyon Mailing List Server</I></FONT></P>
+<P>Contact ICS at PBX 5700 and request that the staff set up the Kenyon mailing list server to run your discussion list.  You will be asked to provide a name, title, and the text of the welcoming message (preferably in electronic form as a plain text document).</P>
+<P>
+<FONT SIZE=+1><I>Configuration Options</I></FONT></P>
+<P>You will be asked to select from several options for configuring the discussion list, including:  </P>
+<P> Subscribers can be added to the list automatically, or you can intercept the subscriptions and decide if they are qualified.</P>
+<P> The list can be set up so that only those who have subscribed can send messages to the list subscribers.</P>
+<P>  Archiving can be turned on or off.  If turned on, news subcribers to this list will be able to retrieve prior messages on the list.</P>
+<H2><A ID="I3" NAME="I3">
+<BR>Managing a Discussion List</A></H2>
+<HR ALIGN=CENTER>
+<P>
+<FONT SIZE=+1><I>Responsibilities</I></FONT></P>
+<P>The manager of a discussion can have several responsibilities, largely depending on how much control s/he wishes to have over the discussion.  The discussion manager can require that all postings go through him or her before they are sent out to the subscribers. Clearly this level of control can require a great deal of effort on the manager's part. Normally, the manager simply announces the existence of the list to colleagues then freely allows subscriptions and postings. If the discussion moves beyond the boundaries of the manager's intentions, the manager can post messages to facilitate redirection of the discussion.</P>
+<P>In addition to the usual set of commands for participation in a discussion list, the manager has two other commands for adding and removing subscribers from the list.  Only list managers have access to these two commands.</P>
+<P>
+<FONT SIZE=+1><I>To Add Members to the List</I></FONT></P>
+<P>To add members to the list, the manager sends a one-line message to the administrative address (the &quot;listname-request&quot; address) with the following syntax:</P>
+<P>ADD/option address [,another address, another address,...] </P>
+<P>There are several options for adding members to the list, the most important of which is the /NOCASE option.  The /NOCASE option signifies that that mailing list is to ignore the case of the subscriber's address.  Many systems on the Internet are case sensitive.  If the manager adds an address in ignorance of the specific case requirements of the subscriber's home system, the subscriber may not receive mail nor will the subscriber be able to signoff from the list.  Ordinarily, any subscriptions that the manager adds to the list should be added with the /NOCASE option.</P>
+<P> For example,</P>
+<P> ADD/NOCASE  smith@college.edu</P>
+<P>
+<FONT SIZE=+1><I>To Remove Members</I></FONT></P>
+<P>To remove members from the list, the manager should send a one-line message to the administrative address (the &quot;listname-request&quot; address) with the following syntax:</P>
+<P>REMOVE  <I>address</I> [,another address,another address,...]</P>
+<H2><A ID="I4" NAME="I4">
+<BR>Archives</A></H2>
+<HR ALIGN=CENTER>
+<P>Discussion lists can be configured by the VAX system manager so that all messages posted to the list are archived, normally by month, so they can be retrieved at a later date by any subscriber. Subscribers send messages via e-mail to the archive to retrieve archived materials.  For example, for a discussion whose materials are archived by month, the archive files are named:</P>
+<P><I> </I><I>listname.yyyy-mm</I></P>
+<P>For example,  POLIART.1993-05  for all discussion materials sent out in May, 1993.</P>
+<P>
+<FONT SIZE=+1><I>To Retrieve Archives</I></FONT></P>
+<P>To retrieve archives for a particular month, send a message to  LISTNAME-ARCHIVES@ADDRESS with the command</P>
+<P> SENDME  LISTNAME.yyyy-mm</P>
+<P>To retrieve all months, send a message to  LISTNAME-ARCHIVES@ADDRESS with the command</P>
+<P> SENDME LISTNAME</P>
+<H2><A ID="I5" NAME="I5">
+<BR>Example  </A></H2>
+<HR ALIGN=CENTER>
+<P>An example of a detailed welcoming message, taken from a discussion list named SHELLFISH.  Electronic copies of this message are available for editing; contact ICS for more information.</P>
+<P>Your subscription to the Internet discussion list &quot;SHELLFISH&quot; has been accepted.</P>
+<P> This is a forum for the discussion of:</P>
+<P>  shellfish research in all scientific disciplines,</P>
+<P>  shellfish industry worldwide,</P>
+<P>  funding opportunities related to shellfish,</P>
+<P>  employment in shellfish research and industry,</P>
+<P>  meetings and conferences at all levels,</P>
+<P>as well as any other topics that you, the participants in this discussion,   deem suitable.  The discussion will be as good as you make it!  There are only two restrictions: the basic theme of the discussion is shellfish, and only active members of the National Shellfisheries Association can read or contribute to the discussion (all subscription requests are checked against the roster of active members).</P>
+<P>You can participate in the discussion by sending electronic mail to the list itself.  The Internet address for the discussion is</P>
+<UL>
+<LI>  SHELLFISH@KENYON.EDU</LI></UL>
+<P>When you send mail to this address, your mail is automatically sent out to all participants (subscribers) of the SHELLFISH list.  If you see something in the discussion of interest, and you simply REPLY<A ID="I6" NAME="I6"></A> to the sender (rather than SEND mail to the list itself), your reply will go only to the sender of the original message.   Some exceptions noted, but generally the discussions are far more interesting and selfsustaining if </P>
+<P>the participants send their contributions to the discussion list rather than to individuals.  In this manner, all subscribers can follow the many threads of the discussion.</P>
+<P>You can manage your own subscription to this discussion list by sending oneline electronic mail messages to the &quot;listserver.&quot;  The Internet address for the listserver is</P>
+<P> SHELLFISHREQUEST@KENYON.EDU</P>
+<P>The body of the text in each request message should consist of one or more of the following commands, one per line.  Send your requests to the SHELLFISHREQUEST address, not to the discussion itself (SHELLFISH).  I strongly recommend that you retain a copy of this information so you are able to signoff (unsubscribe) from the list should you want to do so.</P>
+<P>The following commands can be handled automatically by SHELLFISHREQUEST:</P>
+<P>    SIGNOFF   to remove yourself from the list</P>
+<P>    REVIEW     to get a list of subscribers</P>
+<P>    QUERY    to get the status of your entry on the list</P>
+<P>    SET NOMAIL    to remain on the list but not receive mail</P>
+<P>    SET MAIL     to reverse the NOMAIL setting</P>
+<P>    SET CONCEAL    to conceal yourself from REVIEW listings</P>
+<P>    SET NOCONCEAL  to reverse the CONCEAL setting</P>
+<P>    SET NOREPRO  to prevent the list from sending you your own     postings</P>
+<P>    SET REPRO    to reverse the NOREPRO setting</P>
+<P>    LIST      to get a list of mailing lists available on this      host</P>
+<P>    HELP     to receive a help file</P>
+<P>Please send complaints, questions and comments about the list to the list moderator .......(name and address here)</P>
+<HR ALIGN=CENTER>
+<P><A HREF="disclist.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="kermit1p.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

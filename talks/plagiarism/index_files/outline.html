@@ -1,0 +1,848 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 11">
+<link id=Main-File rel=Main-File href="../index.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 )  
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Detecting and Handling
+  Plagiarism</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Scott E. Siddall</li>
+   <li>Denison University</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>Roadmap</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Definition and forms of plagiarism</li>
+   <li>What fosters plagiarism</li>
+   <li>What discourages plagiarism</li>
+   <li>Methods for detection</li>
+   <li>Discussion on handling plagiarism</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL3>“The” Book on
+  Plagiarism</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>   </span>Authored by Jim Davis,
+       Department of English, Denison University</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL4>Plagiarism may seem
+  simple…</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>   </span>“the practice of taking someone
+       else's work or ideas and passing them off as one's own”</li>
+   <li>					[from the OED]</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL5>Plagiarism is complex…</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Ideas drawn from many resources – research</li>
+   <li>Ideas drawn from one - plagiarism</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL6>Plagiarism is complex…</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Directly plagiarized work</li>
+   <ul>
+    <li>Verbatim or nearly so without citation</li>
+   </ul>
+   <li>Self-plagiarism</li>
+   <ul>
+    <li>resubmit previous work without permission</li>
+   </ul>
+   <li>Mosaic plagiarism</li>
+   <ul>
+    <li>“patch writing”</li>
+    <li>short quotations and phrases lacking attribution</li>
+   </ul>
+   <li>Accidental plagiarism</li>
+   <ul>
+    <li>forgotten citation</li>
+   </ul>
+   <li>Oral plagiarism</li>
+   <ul>
+    <li>less likely to cite</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL7>Example<sup>2</sup></a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>     </span>“Contrast the condition into
+       which all these friendly Indians are suddenly plunged now, with their
+       condition only two years previous: martial law now in force on all their
+       reservations; themselves in danger of starvation, and constantly exposed
+       to the influence of emissaries from their friends and relations, urging
+       them to join in fighting this treacherous government that had kept faith
+       with nobody--neither with friend nor with foe.”<sup>1</sup></li>
+   <li><span style='mso-spacerun:yes'>     </span><sup>1</sup>Helen Hunt
+       Jackson, A Century of Dishonor: A Sketch of the United States
+       Government’s Dealings with Some of the Indian Tribes (New York: Harper
+       &amp; Bros., 1881):178</li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>     </span>Only two years later, all
+       friendly Sioux were suddenly plunged into new conditions, including
+       starvation, martial law on all their reservations, and constant urging
+       by their friends and relations to join in warfare against a treacherous
+       government that had kept faith with neither friend nor foe.</li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>     </span>[This is direct plagiarism]</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>        </span><sup>2</sup> Examples
+       taken from the College of Wooster’s Political Science Independent Study
+       Handbook, http://www.wooster.edu/polisci/IS_handbook.pdf</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL8>Example</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>     </span>“Contrast the condition into
+       which all these friendly Indians are suddenly plunged now, with their
+       condition only two years previous: martial law now in force on all their
+       reservations; themselves in danger of starvation, and constantly exposed
+       to the influence of emissaries from their friends and relations, urging
+       them to join in fighting this treacherous government that had kept faith
+       with nobody--neither with friend nor with foe.”<sup>1</sup></li>
+   <li><span style='mso-spacerun:yes'>     </span><sup>1</sup>Helen Hunt
+       Jackson, A Century of Dishonor: A Sketch of the United States
+       Government’s Dealings with Some of the Indian Tribes (New York: Harper
+       &amp; Bros., 1881):178</li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>    </span>According to Jackson, the
+       Sioux were now on the verge of starvation. Martial law was now in force
+       on all their reservations. Friends and relatives urged them to join in
+       the fighting against the Federal Government--a &quot;treacherous
+       government that had kept faith with neither friend nor foe.”<sup>1</sup></li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>    </span>[Better but not<span
+       style='mso-spacerun:yes'>  </span>adequately reconceptualized; Jackson
+       not attributed for all the paragraph]</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL9>Example</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>     </span>“Contrast the condition into
+       which all these friendly Indians are suddenly plunged now, with their
+       condition only two years previous: martial law now in force on all their
+       reservations; themselves in danger of starvation, and constantly exposed
+       to the influence of emissaries from their friends and relations, urging
+       them to join in fighting this treacherous government that had kept faith
+       with nobody--neither with friend nor with foe.”<sup>1</sup></li>
+   <li><span style='mso-spacerun:yes'>     </span><sup>1</sup>Helen Hunt
+       Jackson, A Century of Dishonor: A Sketch of the United States
+       Government’s Dealings with Some of the Indian Tribes (New York: Harper
+       &amp; Bros., 1881):178</li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>     </span>According to Jackson, the
+       Sioux were now suffering starvation, martial law and gratuitous advice.
+       Hunger and military oppression made more provocative and strident advice
+       of their historical allies that the Sioux add their might to war against
+       the Federal<span style='mso-spacerun:yes'>  </span>government--a
+       &quot;treacherous government that had kept faith with nobody--neither
+       with<span style='mso-spacerun:yes'>  </span>friend nor with foe.”<sup>1</sup></li>
+   <br>
+   <br>
+   <li><span style='mso-spacerun:yes'>    </span>[Properly cited because of
+       opening phrase, footnote and quotes for verbatim passage]</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL10>What fosters
+  plagiarism?</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Digital “cut &amp; paste” mentality</li>
+   <li>Procrastination – take a short cut</li>
+   <li>Paper mills on the web – so many!</li>
+   <li>Local black market for papers</li>
+   <li>Simple citation errors and omissions</li>
+   <li>No information on attribution, especially with media content</li>
+   <li>Sloppy note-taking</li>
+   <li>The peer-to-peer software experience (e.g., music sharing)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL11>What discourages
+  plagiarism?</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Discussion of the issues, education</li>
+   <li>Close student-faculty work</li>
+   <li>Honor codes, signed policy statement</li>
+   <li>Modeling appropriate behavior</li>
+   <li>Meaningful assignments</li>
+   <li>Writing for a wider (web) audience</li>
+   <ul>
+    <li>Ex: Can the Earth Afford to Feed You?</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL12>Methods of detection</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>For-fee services</li>
+   <br>
+   <br>
+   <ul>
+    <li>Turnitin.com and</li>
+    <li>iThenticate.com</li>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.html');" id=PPTL13>Methods of detection</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Web-based requiring digital submission</li>
+   <li>Can plug into course management systems</li>
+   <li>Submissions are stored leading to some intellectual property questions</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL14><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.html');" id=PPTL15>Methods of detection</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Free services</li>
+   <ul>
+    <li>Google</li>
+    <li>Some are gathering points for paper mills</li>
+    <li>Selection of content to submit</li>
+    <ul>
+     <li>Statistically improbable phrases</li>
+     <li>Novel semantic/similarity searches</li>
+    </ul>
+    <li>Watch the impact of the Google Library Project</li>
+    <br>
+    <br>
+   </ul>
+   <li>Most importantly: faculty awareness of students’ writing skills and the
+       discipline</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL16>Resources</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Self-test on plagiarism</li>
+   <ul>
+    <li>http://leeds.bates.edu/cbb/quiz/index.html</li>
+   </ul>
+   <li>List of paper mills online</li>
+   <ul>
+    <li>http://www.coastal.edu/library/presentations/mills2.html</li>
+   </ul>
+   <li>Colby-Bates-Bowdoin plagiarism site</li>
+   <ul>
+    <li>http://leeds.bates.edu/cbb/</li>
+   </ul>
+   <li>The Center for Academic Integrity</li>
+   <ul>
+    <li>http://www.academicintegrity.org/</li>
+   </ul>
+   <li>Avoiding Plagiarism – from the Purdue Online Writing Lab</li>
+   <ul>
+    <li>http://owl.english.purdue.edu/handouts/research/r_plagiar.html</li>
+   </ul>
+   <li>Teaching about Plagiarism in a Digital Age</li>
+   <ul>
+    <li>http://www.ncte.org/pubs/chron/highlights/122871.htm</li>
+    <br>
+    <br>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL17>Notes from our open
+  discussion</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The 2 AM desperation + Internet ease of access is tempting!</li>
+   <br>
+   <br>
+   <li>Don’t give open ended assignments</li>
+   <li>Always related to material in course</li>
+   <li>If the assignment is “open,” students should follow defined steps</li>
+   <li>Reduces late night desperation</li>
+   <li>Gives instructor more sense of know what is appropriate</li>
+   <br>
+   <br>
+   <li>Avoid assigning papers on classic topics</li>
+   <li>Compare three texts, or compare specific parts of a text</li>
+   <li>Save classic text questions for an exam</li>
+   <br>
+   <br>
+   <li>Do I have to come up with good questions each year?<span
+       style='mso-spacerun:yes'>  </span>Discipline-based question pools may
+       help, but all will eventually be exposed</li>
+   <br>
+   <br>
+   <li>Require drafts and teach students how to revise their writing</li>
+   <br>
+   <br>
+   <li>An example: unwriting a digital text into handwritten draft since a
+       draft was required</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL18>Notes from our open
+  discussion</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Connect assignments to current media and publications</li>
+   <br>
+   <br>
+   <li>Tie paper topics to class sessions</li>
+   <br>
+   <br>
+   <li>Often the plagiarized paper is poorly done anyway…but the question
+       remains: is there academic dishonesty involved?<span
+       style='mso-spacerun:yes'>  </span>If judicial process follows, we must
+       be clear.</li>
+   <br>
+   <br>
+   <li>A frequent case: student reads the paper but paraphrases/borrows without
+       doing the hard work to reconceptualize the work themselves.<span
+       style='mso-spacerun:yes'>  </span>Changing a word or two isn’t
+       sufficient</li>
+   <br>
+   <br>
+   <li>Faculty are skillful at detecting professional phrases that often appear
+       in plagiarized work</li>
+   <br>
+   <br>
+   <li>Survey from Center for Academic Integrity: 70% of students reported they
+       cheated</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL19>Notes from our open
+  discussion</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Do students understand intellectual theft?</li>
+   <br>
+   <br>
+   <li>All papers (1st year and beyond) should be based on “real
+       research.”<span style='mso-spacerun:yes'>  </span>We should avoid
+       lumping this complex experience into a single capstone research paper</li>
+   <br>
+   <br>
+   <li>Need to repeat these lessons; not just in First Year Studies classes.</li>
+   <br>
+   <br>
+   <li>Standardize the expectations for students throughout their undergraduate
+       life</li>
+   <br>
+   <br>
+   <li>Assign work based on print-only materials (journal back issues that are
+       not online)</li>
+   <br>
+   <br>
+   <li>Need definitions of common knowledge and what can be referenced without
+       attribution</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL20>Return to home</a></font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+</body>
+
+</html>

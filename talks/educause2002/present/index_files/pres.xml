@@ -1,0 +1,80 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152"
+  omittitleplace="t">
+  <p:master id="8" slidesn="0,0" type="main" href="master08.html"
+   xmlhref="master08.xml" template="Construction" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#5F5F5F,#EAE8E2,#000000,#FDBC03,#A7C1CB,#A38D77,#FFFFCC,#FFCC66"/>
+    <p:colorscheme
+     colors="#FFFFFF,#333333,#463828,#B75E31,#E09F98,#E4D8CA,#663300,#CC9900"/>
+    <p:colorscheme
+     colors="#FFFFFF,#333333,#000000,#4D4D4D,#C0C0C0,#DDDDDD,#808080,#B2B2B2"/>
+    <p:colorscheme
+     colors="#783A34,#EAE8E2,#000000,#FFCC99,#83AAAD,#A06766,#FFFFCC,#CC9900"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="9" slidesn="0,0" type="title" href="master09.html"
+   xmlhref="master09.xml" layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:master id="1" slidesn="1C268F0,AF876140" type="notes" href="master01.html"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="1" slidesn="0,0" href="slide0001.html" masterhref="master09.html"
+   layout="title_subtitle" slots="centerTitle,subTitle"/>
+  <p:slide id="29" slidesn="1C268F8,7BECCD90" href="slide0029.html"
+   layout="title_body" slots="title,body" overridemasteranimations="t"/>
+  <p:slide id="6" slidesn="0,0" href="slide0006.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="21" slidesn="0,0" href="slide0021.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="13" slidesn="0,0" href="slide0013.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="35" slidesn="1C269B7,931E8DE0" href="slide0035.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="34" slidesn="1C269B7,25F833B0" href="slide0034.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="24" slidesn="0,0" href="slide0024.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="22" slidesn="0,0" href="slide0022.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="15" slidesn="0,0" href="slide0015.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="25" slidesn="0,0" href="slide0025.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="7" slidesn="0,0" href="slide0007.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="14" slidesn="0,0" href="slide0014.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="30" slidesn="1C268F8,99C221D0" href="slide0030.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="19" slidesn="0,0" href="slide0019.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="23" slidesn="0,0" href="slide0023.html" layout="title_body"
+   slots="title,body"/>
+  <p:slide id="33" slidesn="1C268F8,FFCF9ED0" href="slide0033.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="36" slidesn="1C26C87,58D5B320" href="slide0036.html"
+   layout="title_body" slots="title,body"/>
+  <p:viewstate type="outline" slidehref="slide0036.html" restoredleft="345"
+   restoredtop="863" manualadjustleft="t" manualadjusttop="t"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:font name="Impact" charset="0" type="6" family="34"/>
+  <p:font name="Arial Narrow" charset="0" type="6" family="34"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:headersfooters slidenumber="t" footerstr="EDUCAUSE 2002" formatid="0"
+   noheader="t"/>
+  <p:headersfooters notes="t" slidenumber="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+  <p:htmlpublishsettings browsersupport="v4"
+   href="C:\Documents and Settings\Scott Siddall\My Documents\temp\talk\index.html"
+   hidespeakernote="t" noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="80900" style='mso-wrap-style:none'
+  o:allowincell="f">
+  <o:colormru v:ext="edit" colors="silver,#b2b2b2"/>
+ </o:shapedefaults></xml>

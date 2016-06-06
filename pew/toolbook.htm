@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>Kenyon College - Learning Technologies Multimedia Toolbox</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="authcomp.htm">
+<LINK REL="Previous" HREF="guide.htm"></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><A HREF="guide.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="authcomp.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P><HR WIDTH=80% SIZE=4 ALIGN=CENTER><UL>
+<UL>
+<UL>
+<UL>
+<LI>
+<A HREF="#I3">Overview</A></LI>
+<LI>
+<A HREF="#I4">Authoring a book</A></LI>
+<LI>
+<A HREF="#I5">To Save the book</A></LI>
+<LI>
+<A HREF="#I6">To Exit ToolBook</A></LI></UL></UL></UL></UL>
+
+<HR ALIGN=CENTER>
+<H1><A ID="I1" NAME="I1">Multimedia ToolBook</A></H1>
+<HR ALIGN=CENTER>
+<P>This document explains some of the essential steps in creating ToolBook books.  It should serve as a brief introduction for new ToolBook authors.  Toolbook is a multimedia<A ID="I2" NAME="I2"></A> authoring program that makes it relatively easy to create complex documents that integrate text, graphics, sound, and video.  Note that Toolbook requires a microcomputer running Windows; a sound card, and other multimedia options may be required for full multimedia functionality. Multimedia Toolbook is accessible in the public computing classrooms (Roth, Crawford, and Ascension) and at other microcomputers connected to the local area network.</P>
+<H2><A ID="I3" NAME="I3">
+<BR>Overview</A></H2>
+<HR ALIGN=CENTER>
+<P>ToolBook is a program which allows the creation of hypertextual &quot;books&quot; on any topic the author wishes.  These books may contain text, graphics, video, sounds, and animation.  Areas of the screen (text or graphics) can be made into buttons or other &quot;objects&quot; through which the &quot;reader&quot; can interact with the book.  Toolbook uses a powerful scripting language, called OpenScript, to allow an author to give significance to &quot;events&quot; like the click of a mouse button or the turning of a book's &quot;pages&quot;.  Using this simple programming language, an author can control many aspects of a book's behavior.</P>
+<H2><A ID="I4" NAME="I4">
+<BR>Authoring a book</A></H2>
+<HR ALIGN=CENTER>
+<P>You may either create a new book or open an existing one.  Select File | New  or  File | Open...  accordingly.  You want to be sure that Toolbook is in the Author level by selecting   Edit and, if  Author  appears as an option, select  Author  to change to Author level.  If  Reader  appears, you are already in the Author level. While in the Author level, you may change the contents of any part of a ToolBook book.  All elements of a book are added as objects and each object has properties.</P>
+<P>
+<FONT SIZE=+1><I>To Add text</I></FONT></P>
+<P>The most basic element of any book is text.  Text is usually added to ToolBook books inside of a field or button (types of objects).  To add text to one page, the author might use a label button or a field.  To display different text at the same place on different pages, a record field can be used.</P>
+<P>To add a field, the tool palette must be visible (select  View | Palettes &gt; | Tool Palette  if it is not).  Next, select the borderless field tool from the tool palate.  Finally, add text by double-clicking in the field and typing or pasting whatever text you like. You can control the behavior and appearance of this field (and what type of field it is) by using the field properties dialog box (select Object | Field Properties...  ).</P>
+<P> To control the appearance of text, select an object containing text or text within an object and then  Text | Character...  to change the appearance of characters, or  Text | Paragraph...  to format a paragraph.</P>
+<P>
+<FONT SIZE=+1><I>To Add graphics</I></FONT></P>
+<P>There are a number of ways to add graphics to a ToolBook book. Graphics may be imported from other programs or files (a variety of clipart images are available in ToolBook) or you may create your own graphics using the editing features of ToolBook.  Images which you import from other programs may only be edited if they are bitmapped (.BMP) files.  All images created using ToolBook's tools may be edited easily within ToolBook.</P>
+<P>For example, you may wish to place a rectangle in the corner of a page.  To do this, the tool palate must be visible (select  View | Palettes &gt; | Tool Palette  if it is not).  Select the rectangle tool from the tool palate.  Click and hold down the left mouse button when the mouse pointer is at one corner of the rectangle and drag the mouse pointer to the opposite corner.</P>
+<P>You may treat graphics as you do any object.  You may also resize graphics by clicking one and then clicking and dragging one of the &quot;handles&quot; (small black squares) which appear along the graphic's length or borders.</P>
+<P>
+<FONT SIZE=+1><I>To Add pages</I></FONT></P>
+<P>To add complexity to a book, you may want to add pages.  New pages are added after the current page (the one currently on the screen).  Select  Object | New Page  .  Pages created this way will use the same background as the page you are currently viewing.  To create a new background (and a new page), select Object | New Background  .</P>
+<P>
+<FONT SIZE=+1><I>To Add OpenScript scripts</I></FONT></P>
+<P>Objects can be made to respond to the reader's actions.  For example, clicking on the front door of a picture of a house may cause the door to open, or a picture of the living room to appear.  Or perhaps when the reader clicks on a certain word, the author may choose to have another page in the book appear.  There are thousands of possibilities, but they are all facilitated through the use of OpenScript.  This is a simple programming language which processes reader input.</P>
+<P>A simple OpenScript script looks like this.</P>
+<P>  to handle bottonClick</P>
+<P>    beep</P>
+<P>    end</P>
+<P>In this case, whenever the reader clicks a mouse button, the computer will beep.  This is only a very simple &quot;handler&quot;.  Other &quot;handlers&quot; may change the appearance of the screen, change the reader's position in the book, or play a video clip.  It is also possible to animate objects and play sounds by using OpenScript.</P>
+<P>For more information on the OpenScript statements best suited to your application, please refer to ToolBook's online help, sample files, or printed manuals.</P>
+<H2><A ID="I5" NAME="I5">
+<BR>To Save the book</A></H2>
+<HR ALIGN=CENTER>
+<P>You will want to save changes you have made to a book occasionally and after you are finished working.  To do this, select  File | Save  .  If you have not named the file into which this book will be saved, you will be prompted to do so.</P>
+<H2><A ID="I6" NAME="I6">
+<BR>To Exit ToolBook</A></H2>
+<HR ALIGN=CENTER>
+<P>When you have finished using ToolBook, select  File | Exit  . You will be prompted to save the file if you have made changes to the current book.</P>
+<HR ALIGN=CENTER>
+<P><A HREF="guide.htm"><IMG SRC="bluppage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm"><IMG SRC="blutoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm"><IMG SRC="bluindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="authcomp.htm"><IMG SRC="blunpage.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</P></BODY></HTML>

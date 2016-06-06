@@ -1,0 +1,411 @@
+<h3>Meeting notes from the OKI Summit, August 8-9, 2002 Snowmass, Colorado</h3>
+
+Scott E. Siddall (siddall@denison.edu)
+<hr>
+<p>
+There will be a developer’s workshop held as a pre-conference workshop at EDUCAUSE in October, plus some presentations at the meeting itself.
+<p>
+Mellon money ends June 2003 for this phase.  There may be more phases.  Mellon has indicated they are willing to fund the development of educational applications for OKI.
+<p>
+Definition of OKI
+<ul>
+<li>A platform for pedagogical experimentation, lots of flexibility<br>
+<li>A means to allow application developers to focus on their specific goals, not infrastructure, common services<br>
+<li>OKI service based infrastructure<br>
+<li>Driven by higher ed, pedagogy needs<br>
+<li>Open, collaborative, enables sharing of apps<br>
+<li>Implementation is independent of service definitions<br>
+<li>Apps and common services can be either open source or proprietary
+</ul>
+
+Scott Thorn is lead architect at MIT (spoke at this session)
+<p>
+OKI planned to adapt to change
+<blockquote>
+	New services will come up<br>
+	Methods of accessing services will change<br>
+	More services will be centralized – authentication, calendar, etc.
+</blockquote>
+
+Vendors like QuestionMark liked Bb Building Blocks but wanted standards so they didn’t have to develop a building block for each LMS
+<p>
+Three dimensional graphic:
+<blockquote>
+	Learning activity design axis<br>
+	Interoperability axis (IMS, ADL, OKI, SCORM)<br>
+	Technical specs axis (W3C, IETF, Java, I2, XML, web services)<br>
+</blockquote>
+
+OKI project management needs more input on design of learning activities<br>
+&nbsp;&nbsp;&nbsp;&nbsp;How to string together the apps to create a learning outcome<br>
+Too much of the design research is in a stove-piped LMS, i.e., unique, not generalizable<br>
+Infrastructure dependencies constrain these experiments in design<br>
+How can we decompose learning activities to generalize them?<br>
+Coursework, Stellar, CHEF – all are learning activities (comprehensive)<br>
+Iterative process – create these on OKI, then determine what other services needs there are<br>
+Example:  portfolios are based on annotating objects….annotation then becomes an OKI service<p>
+
+OKI is not an LMS!
+<p>
+OKI needs to hear from communities…what do you need?
+<p>
+Deliverables of OKI 1.x
+<blockquote>
+	Framework APIs<br>
+	Collection of exemplar tools…similar to an LMS, but OKI is not an LMS<br>
+	Developer community strategies
+</blockquote>
+APIs
+<blockquote>
+	Definition<br>
+	Anyone can write an implementation of it<br>
+	Anyone can write an app that calls it<br>
+	One object’s API calls another, etc
+</blockquote>
+Layers:
+<blockquote>
+Institutional infrastructure<br>
+Common services (authentication, file management, logging, messaging)<br>
+Educational service implementations (content management, course management, assessment, etc)<br>
+ Educational software (apps) and collection of apps (“LMS”)
+</blockquote>
+
+App areas under development<br>
+&nbsp;&nbsp;	Simulation, assessment, real time instrument connection, etc<br>
+OKI services to support both LMS with consistent look and feel as well<br>
+&nbsp;&nbsp;	As stand alone apps, web and client apps<br>
+Enrollment app talks to class admin service, that talks to SIS and HR systems<br>
+&nbsp;&nbsp;	Is it the responsibility of the institution to develop the class admin service that talks to their SIS, HR?<p>
+
+A service could be written to communicate with a remote object in Java, XML, etc. (SRMI, SOAP).  App developer doesn’t have to get involved in this….who does?
+<p>
+Status of common services (8/8/02)
+<ul>
+<li>Authentication, authorization, dbc, logging, local IS, shared….all at 0.9 on web site<br>
+<li>Filing, hierarchy, at 0.9 but not released<br>
+<li>User messaging, scheduling, workflow at 0.5 not released
+</ul>
+<blockquote>
+Example: filing API deals with access to all types of file stores, any system.  Called cabinets
+</blockquote>
+OKI demos to be presented at EDUCAUSE Atlanta<br>
+Demo’ed a filing app that synchs local and remote stores – cabinet synchronizer<br>
+&nbsp;&nbsp;	Works on Mac, Windows, Linux; supports disconnected use
+<blockquote>
+	Uses: group collab, add auth/auth for security, logging, workflow, etc<br>
+	Possible snag: different file systems lock files, or don’t, but collaboration might call for sharing/locking parts of a file…then move to the DBC api instead….get access to richer dB semantics..so how services are used depends on needs…
+</blockquote>
+
+What is the app need, then spec the proper boundary for the services needed for that app.
+<p>
+Initial bindings will be java, but this isn’t a requirement long term….just easier, more consistent now.  C#, etc later….C++ used in DOD simulations…as example.
+<p>
+Perl community doing lots….there are several institutions working on this…a subgroup is spinning off, will meet at EDUCAUSE, NC State is one of them.   Paul Bergen @ Harvard and Tom Lewis @ U Washington are leaders.
+<p>
+OKI funding
+<ul>
+<li>Spending less than anticipated…no cost extension?<br>
+<li>Ira Fuchs is the OKI contact person<br>
+<li>$ supposed to end Dec. 2002
+</ul>
+
+Who will sustain, version controls, clearinghouse…?<br>
+&nbsp;&nbsp;Possibly IMSproject<br>
+&nbsp;&nbsp;	There are costs in open source…pay now, or pay later
+<p>
+OKI talking with OCLC - director of research is contact person<br>
+&nbsp;&nbsp;Can CONTENTdm be made OKI compliant??
+<p>
+DSpace at MIT goes into production this fall<p>
+<hr>
+
+
+Suggestions for OKI apps (the file synch app)
+<ul>
+<li>P2P application like Napster
+<li>Word-based student notes system
+<li>Multiple workspaces for each user…overlapping, separate, etc (subscribe and publish model) <br>
+<li>Linking digital content with courses, e-reserves, involving librarians, too<br>
+<li>Dynamic learning objects<br>
+<li>Develop courses directly from the desktop – create a learning object, with metadata, share with others (students in class, faculty, searched) <br>
+<li>Synch with PDAs<br>
+<li>Push content to students’ review basket<br>
+<li>Generate a set of base resources for a course when it’s first set up…keywords, etc…involve reference librarians<br>
+ </ul>
+<hr>
+Two educational services that they’re working on now:
+<blockquote>
+	Class admin<br>
+	Content management (digital repository)
+</blockquote>
+Class admin
+<blockquote>
+	Allows for multiple SIS in backend<br>
+	Not cast as API yet…basic design approved by developers
+</blockquote>
+Content management (will be renamed)
+<blockquote>
+	Many players in this field, incl our own libraries<br>
+	What is content..diversity of types, but what?  And how used?
+</blockquote>
+
+Assets will have many properties, hugely diverse
+<p>
+Hierarchies may offer good framework to manage diverse assets<br>
+&nbsp;&nbsp;Makes it easy to manage properties – inheritance of properties by hierarchy
+<hr>
+Educational apps suggested in small groups:
+<p>
+<ul>
+<li>Portfolios<br>
+<li>For assessment; review/preview year’s work<br>
+<li>With annotations<br>
+<li>Faculty centric or student centric view<br>
+&nbsp;&nbsp;(for students - capstone course, senior seminar)<br>
+&nbsp;&nbsp;(for faculty - publish parts of it)<br>
+<li>Workflow involved with assessment<br>
+&nbsp;&nbsp; Feedback<br>
+<li>Grounded conversations<br>
+&nbsp;&nbsp;	Point to subject of discussion while discussing it<br>
+<li>Calendaring<br>
+&nbsp;&nbsp;	Timed expectations<br>
+&nbsp;&nbsp;	Triggers in case of lateness, etc<br>
+<li>Advising<br>
+&nbsp;&nbsp;	Student notebooks, portfolios, records<br>
+<li>Web enabled laboratories<br>
+&nbsp;&nbsp;	Remote access to equipment, experiments<br>
+<li>Student agent<br>
+&nbsp;&nbsp;	Draws on records to see what’s being studied<br>
+&nbsp;&nbsp;	Notifies of scheduled events, reminders<br>
+&nbsp;&nbsp;	Gathers info to support courses<br>	
+&nbsp;&nbsp;	Harvest the student portfolio, issue reminders, inquiries that spark reflection<br>
+<li>Working with pieces of content – how finely resolved is our content<br>
+<li>Automate the creation of metadata (are metadata = annotations?)<br>
+<li>Collaborative tools/APIs
+<blockquote>
+Managing group membership, goals, permissions, calendars, best practices (brainstorming, outlining, “PGP” = pretty good pedagogy, or falling into good ruts) management of group learning assets, files, evaluations of group work, logging of group work, control of identities, ownership, collaborative filtering…
+</blockquote>
+</ul>
+
+Build educational apps that inherently have a pedagogical model built into them…i.e., constructivist teaching, etc.  On the other hand, an LMS probably shouldn’t favor a particular pedagogical position.
+<p>
+
+“Social interaction tools”
+<ul>
+<li>Student web publishing to public<br>
+<li>Synchronous editing of one doc<br>
+<li>Assessment of student progress, tracking, visualization of pathways<br>
+<li>Ad hoc learning groups – students form them<br>
+<li>Synchronous web surfing, who’s on this page, interact using many technologies<br>
+<li>Intellectual property data for all content<br>
+<li>Multiple roles for system users, role playing<br>
+<li>Empower faculty and students to share their content…IP issues notwithstanding<br>
+<li>Enable fully mobile interactions with OKI…content is centrally stored<br>
+<li>Course lockers for content, auto synch for offline use, too<br>
+</ul>
+See cxn.rice.edu (connections project)
+<p>
+
+Concept mapping – faculty created, student perspective of course as well
+<p>
+MathML and other symbol rendering schemes<br>
+Comparing student notes to instructor’s notes<br>
+Connect content to cataloging information<p>
+
+Personal metadata versus more formally prepared metadata
+<hr>
+Assignment:
+<ul>
+<li>Pick one educational app/tool<br>
+<li>Write paragraph on what that tool is, what it requires<br>
+<li>Detailed analysis of what is needed and what it does<br>
+<li>List the assets that this tool requires<br>
+<li>What is needed to make this happen (resources and tools needed) <br>
+</ul>
+
+e-mail it to Phil Long , longpd@mit.edu
+
+<p>
+Example educational application:
+<p>
+Collaborative course webs involve students actively engaged in writing for an audience beyond the instructor, writing to inform and convince a potentially global audience.  Course webs are not individual papers linked into a web site.  They are completely collaborative demanding a very high level of communication, planning, coordination among the students.  Collaborative course webs have dramatically improved the quality of writing in my experience. Examples of this approach include: http://www.denison.edu/enviro/shellfish/ and http://www2.kenyon.edu/projects/dams/
+<p>
+
+OKI services needed to make collaborative course webs possible include:
+<ol>
+<li>File services that allow students to work jointly, even simultaneously, on the development of text files, including version control to eliminate problems of overwriting files.  The most difficult technical work for student unfamiliar with web development involves uploading text and graphics in preparation for assembly into a web publication, so this is a key element. <br>
+<li>Publishing services that permit course webs to be made accessible through a standard URL to the public (this would be useful for faculty as well in other contexts…resembling DSpace functionality?)<br>
+<li>Ad hoc group management so the students and instructor can form smaller units within the course’s enrollment to focus on specialized tasks (teams that handle graphics, for example; others that ensure editorial consistency or look and feel issues)<br>
+<li>A tool similar to Tuft’s VUE tool for concept mapping, only for mapping out a web site, first for storyboarding in the design phase, and secondly to allow the students to forge HTML links visually (the focus of the course is on the content, not learning to edit web pages).  A problem in collaborative web site development has been the creation of web page orphans, created but unlinked to the main document.<br>
+<li>Discussion services to facilitate threaded discussions within the course, but also linkable as a URL for use in gathering public feedback about the web publication.<br>
+<li>EReserve services, or other means for the instructor to make available selected content for use by the students in creating their interpretation of the issues.<br>
+<li>A simple web analysis service that looks for broken links and counts links to create a matrix that the instructor can use to determine how often a page has been linked to, and how many links out to other pages are in any given document.  Links are reasonable reflections of peer assessment.<br>
+<li>A logging service that provides information on how much effort each student put into the collaboration (time, amount of text written, links created, etc).  Students are fearful of grades in collaborative projects.</ol><p>
+
+<hr>
+<strong>Other presentations</strong><p>
+<hr>
+
+Tufts “Visual Understanding Environment”  or VUE by David Kahle<p>
+
+Tool for faculty to use to map out content, data, relationships, etc<br>
+Tool for students to deconstruct, reconstruct these mappings<br>
+Tool to facilitate construction of knowledge and meaning<p>
+
+CMSes provide access to resources, communications tools, content management, but are inflexible. Too generic.  Many web forms required to upload info, and once there, it’s frozen in place.   Also must leave the view of the resources to do anything else, like discuss it.
+<p>
+VUE is more like a concept map.  Visuals of data and relationships.  Mapped like nodes on a map.  Each is a container or a resource itself, a URL, etc.  Relationships can be annotated.
+<p>
+Create map layers to reveal different understandings.
+<p>
+See also the software product Inspiration
+<hr>
+
+Charles Kerns, Stanford, on Assignment and Assessment Tools
+<p>
+
+Online tests, quizzes, problem sets, formative assessments<br>
+Extensible – not specific<br>
+OKI compliant<p>
+
+Supports discipline specific extensions<br>
+Chunkable…not locked into tests, like a question pool<br>
+Results immediately available – formative<p>
+
+Example of discipline specific extension: record sound for language instruction<br>
+Virtual conversations – hear, reply, assessed<p>
+
+Large class example: multiple choice scored automatically; written rationale sorted for easy review.  Randomized questions…answer n out of m questions, etc.  Annotated question pools (what was goal of question, etc).<p>
+
+Link tests to discussions, post date of test on syllabus automatically, etc.
+<p>
+The work to create and extend these concepts has been proposed to Mellon, and has been funded.
+<p>
+<hr>
+What is an OKI tool? Friday AM session<p>
+
+ 
+Self-contained entity, such as a module or standalone application, that provides certain functionality.  For a tool to qualify as an OKI tool, it should use one or more OKI services.<p>
+<ul>
+<li>Defined functionality<br>
+<li>Controls the interaction between system and user<br>
+<li>Exists in application layer of the OKI architecture<br>
+<li>Calls at least one OKI API<br>
+<li>May call any combination of OKI educational or common services<br>
+<li>May conform to other APIs as well<br>
+<li>May invoke other toolsv
+<li>There will be interoperability between tools<br>
+<li>May be part of a desktop app<br>
+<li>May exist in a web environment<br>
+<li>May be a module or component of a larger system<br>
+<li>May have complete control over the UI<br>
+<li>May be placed in another container, portal and have it’s UI or lifecycle managed for it<br>
+<li>May expose it own API<br>
+<li>May need to be aware of its session context<br>
+<li>May add to the session context but may not  be able to alter it<br>
+<li>May be constrained in terms of the context information it may have access to<br>
+<li>May manipulate OKI learning assets, perform operations on them, creation, modification, organization, deletion<br>
+<li>May be stateful or stateless<br>
+<li>Stateful tool may save its sate, for example for user-preferences<br>
+</ul>
+
+As said earlier, more comprehensive tools will have pedagogical approaches embedded in them.
+<p>
+Analysis of one particular app:
+<blockquote>
+MIT-TEAL, electromagnetism course, 600 students, 6 sections<br>
+Tool designed to provide rapid feedback on how well course is going, to establish heterogeneous student teams by second class meeting (2 days after pre-test). <br> Formative assessment continues so instructors can make rapid changes.<p>
+
+Pre-test assessment: look at student w/too many errors, look at question w/too many errors; analyze explanations to correct responses.<p>
+
+Use pre-test info for longer term assessments as well<p>
+
+We detailed the need for a tool to assign roles, to establish hierarchies of classes, sections, etc. <br>
+Users have roles and these can be assigned, reassigned, randomized, assigned for particular purpose or task<p>
+
+“Trail maps” at UMich (CHEF) keeps track of what students do in the course…what roles each filled, their assignments, their data, etc.  Tracks their course work in detail.
+<p>
+Need means to export this data for detailed analysis in instructor’s preferred stat package.
+</blockquote>
+
+Concept of wrappers to encompass many tools, many pedagogical methods, pick and choose<p>
+
+See Randy Bass’ http://crossroads.georgetown.edu/vkp/  Virtual Knowledge Project<p>
+
+Resource of note: <em>Education Research: The Elusive Science</em>, by Langman<p>
+
+Get pictures of each student associated with every assessment….know their names!<p>
+
+<hr>
+
+U Mich CourseTools by Carl Berger<p>
+
+Features – person centric, personalized, portal model<br>
+Instruction and research<br>
+Customizable by person, group, unit – supports teams as well as individuals<br>
+User friendly<p>
+
+This is CHEF version 1.0 beta 2.2<br>
+Comprehensive Collaborative Framework<br>
+Completely open source, OKI compliant<p>
+
+Tools are called teamlets; pick and choose then drag them into place you want<p>
+
+Why shut down U Mich Portal?  Took too much work to maintain<br>
+Concluded that they would no longer develop tools on their own<br>
+Common platform (OKI) then we can share them instead of developing it all<p>
+
+
+How do you build out the OKI work….bring in things like CHEF…?<br>
+Conformance to guidelines…?<br>
+There probably won’t be a monolithic OKI.org that acts as clearinghouse<br>
+Might be IMS Project, or others that already have structures in place for this<p>
+
+Carl Berger imagines a Merlot-like site with tools and reviews of tools that can be selected and dragged into your local instance of OKI<p>
+
+<hr>
+
+Victoria Szabo from Stanford on Writing Tools<p>
+
+Writing and rhetoric support toolset – not implemented yet, but planned<br>
+F2F and virtual collaborative work, lots of brainstorming followed by weeding/discussion/distillation<br>
+All content accessible online<br>
+Break into groups – edit and elaborate their own version<br>
+Use concept mapping tool throughout<br>
+Simultaneous writing/editing app<p>
+
+Auto generate a concept map from texts<br>
+Text analysis tool as well – can this be used to assess “best”?<p>
+
+Finally, assemble one paragraph collaboratively<p>
+
+Need transparent document sharing<br>
+Multiple user editing<br>
+Collaborative whiteboards<br>
+Concept mapping, text analysis tools<br>
+Access management to docs for dynamic groups<br>
+Tool that records the entire process<p>
+
+<hr>
+
+What would be a package that would help us inform the campus about OKI? <br>
+Feedback on draft document handed out in packet at this Summit<p>
+
+Sell before it’s ready…?  Promote after it’s exceeded some threshold of utility
+What is that?<p>
+
+IMS and Merlot were in similar situations.<p>
+
+OKI is organic…hard to plan because it is evolving, pioneering. <br>
+Bass suggests that OKI management structures a conversation from the field to help determine what is needed.  AKA MITC poll, CLAC poll. Etc.<p>
+
+Give us five to seven slides that help our audiences “get it”<p>
+
+We can’t build it then talk to the faculty….we need their input on pedagogical needs at first.<p>
+
+Merlot is getting into learning objects.  National repository for learning objects.  U of Waterloo is leading this as a provincial repository at first.  Also working on a project management view of learning tasks, to advance the culture of teaching and learning.  <p>
+
+Hard to move from innovative SW to robust application.<p>
+
+Open source efforts have been strong on enthusiasm, weak on planning and clean up<p>
+

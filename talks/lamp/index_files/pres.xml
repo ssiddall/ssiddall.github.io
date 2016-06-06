@@ -1,0 +1,74 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152">
+  <p:master id="4" slidesn="1C00D94,B7812930" type="main" href="master04.html"
+   xmlhref="master04.xml" template="Digital Dots" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#000099,#ffffff,#00008a,#ffffff,#0099ff,#00007a,#eaeaea,#ffcc00"/>
+    <p:colorscheme
+     colors="#666699,#ffffff,#5b5b89,#dfdef6,#6666ff,#52527c,#9999ff,#ccccff"/>
+    <p:colorscheme
+     colors="#800000,#ffffff,#700000,#ffffcc,#be7960,#600000,#ffff99,#d3a219"/>
+    <p:colorscheme
+     colors="#fdeb9d,#000000,#e0ce82,#000000,#eaeaea,#c2b476,#a47900,#8c8900"/>
+    <p:colorscheme
+     colors="#686b5d,#ffffff,#5b5e52,#ccd5c7,#809ea8,#4f5147,#aaa854,#e1d09f"/>
+    <p:colorscheme
+     colors="#4e5d31,#ffffff,#46532b,#ffffcc,#8f8c00,#424f29,#33cc33,#00a1b2"/>
+    <p:colorscheme
+     colors="#008080,#ffffff,#007673,#ffff99,#33cccc,#006462,#ffcc00,#cc3300"/>
+    <p:colorscheme
+     colors="#e6f8f4,#000000,#c5dbd6,#000000,#ccff99,#acbab7,#008080,#0066cc"/>
+    <p:colorscheme
+     colors="#eaeaea,#000000,#d1d1d1,#000000,#ccecff,#b2b2b2,#7200e4,#003399"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="5" slidesn="1C00D94,B7812930" type="title" href="master05.html"
+   xmlhref="master05.xml" layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:slide id="44" slidesn="1C6E8EA,D5686DE0" href="slide0044.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="50" slidesn="1C6E8F0,5E42270" href="slide0050.html"/>
+  <p:slide id="3" slidesn="1C685B8,C081B340" href="slide0003.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="47" slidesn="1C6E8EC,23466660" href="slide0047.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="46" slidesn="1C6E8EB,E034E7C0" href="slide0046.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="45" slidesn="1C6E8EB,7E708620" href="slide0045.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="27" slidesn="1C685B8,C081B340" href="slide0027.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="48" slidesn="1C6E8ED,A2FD24B0" href="slide0048.html"
+   layout="title_body" slots="title,body"/>
+  <p:slide id="36" slidesn="1C685D1,7BBFE330" href="slide0036.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="35" slidesn="1C685D0,9BC15BB0" href="slide0035.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="25" slidesn="1C685C3,D6699B40" href="slide0025.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="29" slidesn="1C685CD,258F8370" href="slide0029.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="49" slidesn="1C6E8EF,6DA9A520" href="slide0049.html"/>
+  <p:slide id="43" slidesn="1C68601,F93EDC0" href="slide0043.html"
+   layout="title_body" slots="title,body" omitmastershapes="t"/>
+  <p:slide id="51" slidesn="1C6E8F2,C3D3B8C0" href="slide0051.html"
+   layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView" restoredleft="344" restoredtop="862"
+   manualadjustleft="t" manualadjusttop="t"/>
+  <p:font name="Arial" charset="0" type="4"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:headersfooters noheader="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+  <p:htmlpublishsettings browsersupport="dual"
+   href="C:\Documents and Settings\Siddall\My Documents\temp\index.html"
+   hidespeakernote="t" noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="102404"/>
+</xml>

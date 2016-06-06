@@ -1,0 +1,203 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/19/01 10:20:18">
+<title>Using the Dell OpenManage Server Assistant CD : Dell PowerEdge 2650 Systems
+ User's Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1039152"> Using the Dell 
+OpenManage Server 
+Assistant CD
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ User's Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1041529">Starting the Dell OpenManage Server Assistant&nbsp;CD</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1041350">Navigating the CD</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040811">Setting Up Your System</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040825">Utility Partition</A></P>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040867">Asset Tag Utility</A></P>
+
+
+<br>
+<p>The <i>Dell OpenManage Server Assistant</i> CD contains utilities, diagnostics, and drivers that can help you configure your system to meet your needs. Some of the functions available on the <i>Dell OpenManage Server Assistant</i> CD are also available on a bootable utility partition that is installed on your hard drive. This section describes how to use the <i>Dell OpenManage Server Assistant</i> CD. It also describes the utility partition and its options and provides instructions for reinstalling the partition (if necessary). </p><hr noshade size="1">
+<h2><a name="1041529">Starting the Dell OpenManage Server Assistant&nbsp;CD</a></h2>
+
+
+<p>The Dell OpenManage&#153; Server Assistant<i> </i>application program<i> </i>has two modes of operation: a <i>setup mode</i> for setting up your system and installing your operating system and a <i>service mode</i> for updating drivers and utilities. Product documentation is available on the documentation<i> </i>CD.</p><h3><a name="1040798"> Setup Mode
+</a></h3>
+<p>To set up your system and install your operating system, insert the <i>Dell OpenManage Server Assistant</i> CD into your CD drive, and turn on or reboot the system. The <b>Dell OpenManage Server Assistant</b> main page appears.</p><p>If the CD does not boot, verify that the CD drive is specified first in the <b>Boot Sequence</b> option in the System Setup program (see "<a href="5g387c30.htm#1039152">Using the System Setup Program</a>").</p><h3><a name="1040805"> Service Mode
+</a></h3>
+<p>You can create update drivers and utilities on any system that has Microsoft&#174; Internet Explorer 4.0 (or later). When you insert the CD in a system that uses the Microsoft Windows NT&#174; or Windows&#174; 2000 Server operating system, the system automatically starts the browser software and displays the <b>Dell OpenManage Server Assistant</b> main page.</p><hr noshade size="1">
+<h2><a name="1041350">Navigating the CD</a></h2>
+
+
+<p>The <i>Server Assistant</i> CD utilizes a standard Web browser interface. Navigating the CD is accomplished by clicking the mouse on the various icons and text hyperlinks.</p><p>Click the <b>Exit</b> icon to exit the program. Exiting the program causes the system to reboot to the standard operating-system boot partition.</p><hr noshade size="1">
+<h2><a name="1040811">Setting Up Your System</a></h2>
+
+
+<p>If you purchase a system that does not have an operating system preinstalled or if you install an operating system at a later date, use the<b> Server Setup</b> feature to configure your system or install your operating system.</p><h3><a name="1041427"> Server Setup 
+</a></h3>
+<p>Use the Server Setup program for most situations, including installing and reinstalling an operating system. The <i>Dell OpenManage Server Assistant</i> CD guides you through the operating system setup and configuration process. The program prompts you to select the operating system used on the drive and leads you through a step-by-step process to install the operating system.</p><p>To start the Server Setup program, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1040817"></a>Click <b>Server Setup </b>on the Server Assistant main screen.
+<br><br>
+
+<li value="2"><a name="1041385"></a>Follow the directions on the screen to complete the installation and configuration 
+process.
+<br><br>
+</ol>
+<p class="indent">The Server Setup program takes you through the following tasks:</p>
+<ul><ul>
+<li type="disc">Setting the system date and time
+<br><br></li>
+<li type="disc">Configuring your RAID controller (if applicable)
+<br><br></li>
+<li type="disc">Selecting your operating system
+<br><br></li>
+<li type="disc">Configuring hard drives
+<br><br></li>
+<li type="disc">Entering operating system information
+<br><br></li>
+<li type="disc">Viewing an installation summary
+<br><br></li>
+<li type="disc">Installing an operating system
+<br><br></li>
+</ul>
+</ul><hr noshade size="1">
+<h2><a name="1040825">Utility Partition</a></h2>
+
+
+<p>The utility partition is a bootable partition on the hard drive that contains system configuration and diagnostic utilities. When implemented, the partition boots and provides an executable environment for the&nbsp;partition's utilities. When the utility partition is not booted, it is designated as a non&#150;MS-DOS&#174; partition.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>The utility partition provides only limited MS-DOS functionality and cannot be used as a 
+general-purpose MS-DOS partition. 
+</td>
+  </tr>
+</table><p>To start the utility partition, turn on or reboot the system. During POST, the following message appears:</p><p class="indent"><span class="screen">&lt;F10&gt; = Utility Mode</span></p>
+<p>The utility partition provides a text-based interface from which you can run the partition's utilities. To select a menu option, you can either use the arrow keys to highlight the option and press &lt;Enter&gt; or type the number of the menu option. To exit the utility partition, press &lt;Esc&gt; from the <b>Utility Partition</b> main menu.</p><p><a href="5g387c20.htm#1040842">Table&nbsp;2-1</a> provides a sample list and explanation of the options that appear on the utility partition menu even when the <i>Dell OpenManage Server Assistant </i>CD is not in the CD drive. The options displayed on your system may vary depending on the configuration.</p><a name="1040861"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040842">Table 2-1.&#32; Utility Partition Main Menu Options</a></p></p>
+<tr><th valign="top" align="left"><a name="1040846"> </a>
+<p><b>Option</b></p>
+
+
+</th><th valign="top" align="left"><a name="1040848"> </a>
+<p><b>Description</b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left"><p>Run system diagnostics</p></td><td valign="top" align="left"><p>Runs the system hardware diagnostics</p></td></tr>
+<tr><td valign="top" align="left"><p>Run RAID configuration utility</p></td><td valign="top" align="left"><p>Runs the RAID configuration utility if the optional ROMB card or RAID controller card is installed</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><span class="notes">NOTE: </span>The options displayed on your system depend on your system configuration and 
+may not include all of those listed here. For the full name of an abbreviation or acronym 
+used in this table, see the "<a href="5g387gl0.htm#1037828">Glossary</a>."
+</p>
+</td></tr>
+
+</table>
+
+
+
+
+</p><h3><a name="1040862"> Running the System Diagnostics
+</a></h3>
+<p>From the <b>Utility Partition</b> main menu, select <b>Run System Diagnostics</b>. </p><p>The system hardware diagnostics are described in "Running the System Diagnostics" in your <i>Installation and Troubleshooting Guide</i>.</p><h3><a name="1041466"> Running the RAID Configuration Utility
+</a></h3>
+<p>From the <b>Utility Partition</b> main menu, select <b>Run RAID Configuration Utility</b>. </p><p>The system hardware diagnostics are described in "Running the RAID Configuration Utility" in your <i>Installation and Troubleshooting Guide</i>.</p><hr noshade size="1">
+<h2><a name="1040867">Asset Tag Utility</a></h2>
+
+
+<p>The Asset Tag utility allows you to enter an asset tag number for your system.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>The Asset Tag utility works only on systems running MS-DOS.
+</td>
+  </tr>
+</table><h3><a name="1040876"> Using the Asset Tag Utility
+</a></h3>
+<p>To create the Asset Tag utility diskette and boot the system, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1040878"></a>If you have not already done so, create a bootable <i>Asset Tag Utility</i> diskette from the 
+<i>Dell OpenManage Server Assistant</i> CD by going to <b>System Tools</b><b>&#151;&gt; Create CD Boot 
+Diskette</b>.
+<br><br>
+
+<li value="2"><a name="1040879"></a>Insert the diskette into the diskette drive and reboot the system.
+<br><br>
+</ol>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>The Asset Tag utility diskette contains CD drivers that provide access to the CD drive 
+when you boot from the diskette. 
+</td>
+  </tr>
+</table><h3><a name="1040887"> Assigning and Deleting an Asset Tag Number
+</a></h3>
+<p>An asset tag number can have up to 10 characters. Any combination of characters, excluding spaces, is valid.</p><p>To assign or change an asset tag number, perform the following steps:</p><ol type="1">
+
+<li value="1"><a name="1040894"></a>Perform the steps in "Using the Asset Tag Utility."
+<br><br>
+
+<li value="2"><a name="1041494"></a>Type <span class="screen">asset</span> and a space followed by the new string.
+<br><br>
+</ol>
+<p class="indent">For example, type the following command:</p>
+<p class="indent"><span class="screen">asset 12345abcde</span></p>
+<ol type="1">
+
+<li value="3"><a name="1040897"></a>Press &lt;Enter&gt;.
+<br><br>
+
+<li value="4"><a name="1040898"></a>When you are prompted to verify the asset tag number, type <span class="screen">y</span> and press &lt;Enter&gt;. 
+<br><br>
+</ol>
+<p class="indent">The system then displays the new or modified asset tag number and the service tag number.</p>
+<p>To delete the asset tag number without assigning a new one, type<span class="screen"> asset /d </span>and press &lt;Enter&gt;.</p><p><a href="5g387c20.htm#1040908">Table&nbsp;2-2</a> lists the command-line options that you can use with the Asset Tag utility. To use one of these options, type <span class="screen">asset</span> and a space followed by the option.</p><a name="1040923"></a><p><b>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040908">Table 2-2.&#32; Asset Tag Command-Line Options</a></p></p>
+<tr><td valign="top" align="left"><a name="1040912"> </a>
+<p><b><b>Asset Tag Option</b></b></p>
+
+
+</td><td valign="top" align="left"><a name="1040914"> </a>
+<p><b><b>Description</b></b></p>
+
+
+</td></tr>
+<tr><td valign="top" align="left"><p>/d</p></td><td valign="top" align="left"><p>Deletes the asset tag number.</p></td></tr>
+<tr><td valign="top" align="left"><p>/?</p></td><td valign="top" align="left"><p>Displays the Asset Tag utility help screen.</p></td></tr>
+
+</table>
+
+
+
+
+</b></p><a name="1039689"></a><p></p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

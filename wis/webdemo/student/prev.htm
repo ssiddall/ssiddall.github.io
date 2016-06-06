@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Admission Application</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>SCT WWW Information System<br>
+Admission Application</h2>
+
+<hr>
+
+<h2><img src="teacher.gif" width="40" height="40"> Previous
+College</h2>
+
+<p><img src="info.gif" alt="INFO" width="50" height="30"> <i>Please
+select the college which you attended from the list provided. If
+you can not find your college, enter the college information in
+the fields provided. When this section is complete press the
+Update button to return to the application.</i></p>
+
+<form action="apindex1.htm" method="post">
+    <table border="0">
+        <tr>
+            <th align="left"><font size="2">College Name:</font></th>
+            <td><font size="2"><select name="col_code" size="1">
+                <option value>Not Reported </option>
+                <option value>Not Found </option>
+                <option value="007500">Anthony Wayne University </option>
+                <option value="000121">Ashland College </option>
+                <option value="001036">Auburn University </option>
+                <option value="000003">Bryn Mawr College </option>
+                <option value="001000">California Inst. of Technology </option>
+                <option value="000110">Chestnut Hill College </option>
+                <option value="003705">College of William and Mary </option>
+                <option value="000120">Columbia University </option>
+                <option value="000000">Default Grading Table </option>
+                <option value="000090">Drexel University </option>
+                <option value="000080">Eastern Baptist College </option>
+                <option value="001572">Georgia Southern College </option>
+                <option value="000010">Harvard University </option>
+                <option value="000130">LaSalle University </option>
+                <option value="003719">Longwood College </option>
+                <option value="000050">Los Angeles Community College </option>
+                <option value="000100">Miami University </option>
+                <option value="000030">Morris Brown College </option>
+                <option value="000200">North Carolina State </option>
+                <option value="000060">Oregon State College </option>
+                <option value="000070">Rosemont College </option>
+                <option value="000067">SCT Institute of Technology </option>
+                <option value="000040">San Mateo Community College </option>
+                <option value="000140">Stanford University </option>
+                <option value="003624">Stephen F Austin State Univ </option>
+                <option value="100000">Temple University </option>
+                <option value="T00001">Transfer Inst 1 (Ed Center) </option>
+                <option value="T00010">Transfer Inst 10 (Ed Center) </option>
+                <option value="T00011">Transfer Inst 11 (Ed Center) </option>
+                <option value="T00012">Transfer Inst 12 (Ed Center) </option>
+                <option value="T00013">Transfer Inst 13 (Ed Center) </option>
+                <option value="T00014">Transfer Inst 14 (Ed Center) </option>
+                <option value="T00015">Transfer Inst 15 (Ed Center) </option>
+                <option value="T00016">Transfer Inst 16 (Ed Center) </option>
+                <option value="T00017">Transfer Inst 17 (Ed Center) </option>
+                <option value="T00018">Transfer Inst 18 (Ed Center) </option>
+                <option value="T00019">Transfer Inst 19 (Ed Center) </option>
+                <option value="T00002">Transfer Inst 2 (Ed Center) </option>
+                <option value="T00020">Transfer Inst 20 (Ed Center) </option>
+                <option value="T00003">Transfer Inst 3 (Ed Center) </option>
+                <option value="T00004">Transfer Inst 4 (Ed Center) </option>
+                <option value="T00005">Transfer Inst 5 (Ed Center) </option>
+                <option value="T00006">Transfer Inst 6 (Ed Center) </option>
+                <option value="T00007">Transfer Inst 7 (Ed Center) </option>
+                <option value="T00008">Transfer Inst 8 (Ed Center) </option>
+                <option value="T00009">Transfer Inst 9 (Ed Center) </option>
+                <option value="120000">University of Pennsylvania </option>
+                <option value="003744">University of Richmond </option>
+                <option value="120001">University of Southern Calif. </option>
+                <option value="003658">University of Texas at Austin </option>
+                <option value="006968">University of Virginia </option>
+                <option value="003754">Virginia Polytechnic I &amp; SU </option>
+                <option value="000004">West Chester University </option>
+                <option value="000021">Whittier College, California </option>
+                <option value="000020">Yale University </option>
+                <option value>Not Found </option>
+            </select> </font></td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr>
+            </td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">If College not found:</font></th>
+            <td><table border="0">
+                <tr>
+                    <th align="left"><font size="2">College Name:</font></th>
+                    <td colspan="2"><font size="2"><input
+                    type="text" size="30" maxlength="30"
+                    name="col_name"></font></td>
+                </tr>
+                <tr>
+                    <th align="left"><font size="2">City:</font></th>
+                    <td><font size="2"><input type="text"
+                    size="20" maxlength="20" name="city"></font></td>
+                    <th align="left"><font size="2">State/Province:</font></th>
+                    <td><font size="2"><select name="stat"
+                    size="1">
+                        <option value>Not Reported </option>
+                        <option value>Not Applicable </option>
+                        <option value="AK">Alaska </option>
+                        <option value="AZ">Arizona </option>
+                        <option value="CO">Colorado </option>
+                        <option value="CT">Connecticut </option>
+                        <option value="DE">Delaware </option>
+                        <option value="GA">Georgia </option>
+                        <option value="IL">Illinois </option>
+                        <option value="LA">Louisiana </option>
+                        <option value="PA">Pennsylvania </option>
+                        <option value="WI">Wisconsin </option>
+                    </select> </font></td>
+                </tr>
+                <tr>
+                    <th align="left"><font size="2">Zip/Postal
+                    Code:</font></th>
+                    <td><font size="2"><input type="text"
+                    size="10" maxlength="10" name="zip"></font></td>
+                    <th align="left"><font size="2">Country:</font></th>
+                    <td><font size="2"><select name="natn"
+                    size="1">
+                        <option value>Not Reported </option>
+                        <option value="AF">Afghanistan </option>
+                        <option value="AL">Albania </option>
+                        <option value="AO">Angola </option>
+                        <option value="AR">Argentina </option>
+                        <option value="AU">Australia </option>
+                        <option value="AT">Austria </option>
+                        <option value="BD">Bangladesh </option>
+                        <option value="BB">Barbados </option>
+                        <option value="BE">Belgium </option>
+                        <option value="BZ">Belize </option>
+                        <option value="BJ">Benin </option>
+                        <option value="BT">Bhutan </option>
+                        <option value="BO">Bolivia </option>
+                        <option value="BW">Botswana </option>
+                        <option value="BR">Brazil </option>
+                        <option value="BG">Bulgaria </option>
+                        <option value="CM">Cameroon </option>
+                        <option value="CA">Canada </option>
+                        <option value="CL">Chile </option>
+                        <option value="CN">China </option>
+                        <option value="CY">Cyprus </option>
+                        <option value="EG">Egypt </option>
+                        <option value="FR">France </option>
+                        <option value="GR">Greece </option>
+                        <option value="IE">Ireland </option>
+                        <option value="JP">Jordan </option>
+                        <option value="MX">Mexico </option>
+                        <option value="NZ">New Zealand </option>
+                        <option value="US">United States of America </option>
+                    </select> </font></td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr>
+            </td>
+        </tr>
+    </table>
+    <table border="0">
+        <tr>
+            <th align="left"><font size="2">Attended From:</font></th>
+            <td colspan="3"><font size="2"><input type="text"
+            size="8" maxlength="8" name="beg_date"> <b>To:</b> <input
+            type="text" size="8" maxlength="8" name="end_date"> <i>(MM/DD/YY
+            format)</i> </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Degree:</font></th>
+            <td><font size="2"><select name="deg_cde" size="1">
+                <option value>Not Reported </option>
+                <option value>Not Found </option>
+                <option value="AAS">Associate in Applied Science </option>
+                <option value="AA">Associate in Arts </option>
+                <option value="AS">Associate in Science </option>
+                <option value="AT">Associate in Technology </option>
+                <option value="BSME">Bach of Science &amp; Mech Eng </option>
+                <option value="BAR">Bachelor of Architecture </option>
+                <option value="BA">Bachelor of Arts </option>
+                <option value="BBA">Bachelor of Business Admin. </option>
+                <option value="BED">Bachelor of Education </option>
+                <option value="BFA">Bachelor of Fine Arts </option>
+                <option value="BM">Bachelor of Music </option>
+                <option value="BS">Bachelor of Science </option>
+                <option value="BSW">Bachelor of Social Work </option>
+                <option value="CERT">Certificate Program </option>
+                <option value="DMD">Doctor of Dental Medicine </option>
+                <option value="DDS">Doctor of Dental Surgery </option>
+                <option value="EDD">Doctor of Education </option>
+                <option value="MD">Doctor of Medicine </option>
+                <option value="PHD">Doctor of Philosophy </option>
+                <option value="JD">Juris Doctor </option>
+                <option value="MA">Master of Arts </option>
+                <option value="MBA">Master of Business Admin. </option>
+                <option value="MED">Master of Education </option>
+                <option value="MFA">Master of Fine Arts </option>
+                <option value="MS">Master of Science </option>
+                <option value="MSW">Master of Social Work </option>
+                <option value="000000">Undeclared </option>
+            </select> </font></td>
+            <th align="left"><font size="2">If not found, enter
+            degree:</font></th>
+            <td><font size="2"><input type="text" size="20"
+            maxlength="30" name="deg"></font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Degree Date:</font></th>
+            <td><font size="2"><input type="text" size="8"
+            maxlength="8" name="deg_date"> <i>(MM/DD/YY format)</i>
+            </font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Major:</font></th>
+            <td><font size="2"><select name="mjr_cde" size="1">
+                <option value>Not Reported </option>
+                <option value>Not Found </option>
+                <option value="ACCT">Accounting </option>
+                <option value="211">Anthropology </option>
+                <option value="020">Architecture </option>
+                <option value="160">Art </option>
+                <option value="161">Art History </option>
+                <option value="210">Behavioral Sciences </option>
+                <option value="BIOL">Biology </option>
+                <option value="991">Biology Minor </option>
+                <option value="215">Biology Primary </option>
+                <option value="310">Business Admin. Primary </option>
+                <option value="BUSI">Business Administration </option>
+                <option value="CHEM">Chemistry </option>
+                <option value="217">Chemistry Primary </option>
+                <option value="040">Communications </option>
+                <option value="COMP">Computer Science </option>
+                <option value="501">Computer Science Physics </option>
+                <option value="500">Computer Science Primary </option>
+                <option value="900">Continuing Education </option>
+                <option value="ECON">Economics </option>
+                <option value="300">Economics Primary </option>
+                <option value="145">Education </option>
+                <option value="146">Elementary Education </option>
+                <option value="400">Engineering </option>
+                <option value="ENGL">English </option>
+                <option value="ECOM">English Composition </option>
+                <option value="EHIS">English History </option>
+                <option value="ELIT">English Literature </option>
+                <option value="100">English Primary </option>
+                <option value="105">Foreign Languages </option>
+                <option value="332">Geography and Urban Studies </option>
+                <option value="218">Geology </option>
+                <option value="700">Guidance &amp; Counseling </option>
+                <option value="331">History </option>
+                <option value="101">Journalism </option>
+                <option value="660">Law </option>
+                <option value="110">Linguistics </option>
+                <option value="200">Math </option>
+                <option value="MATH">Mathematics </option>
+                <option value="150">Music </option>
+                <option value="120">Nursing </option>
+                <option value="216">Physics </option>
+                <option value="POLS">Political Science </option>
+                <option value="330">Political Science Primary </option>
+                <option value="PSYC">Psychology </option>
+                <option value="102">Radio &amp; Television </option>
+                <option value="148">Reading </option>
+                <option value="RELG">Religion </option>
+                <option value="147">Secondary Education </option>
+                <option value="SOC">Sociology </option>
+                <option value="SPEK">Speech Therapy </option>
+                <option value="STAT">Statistics </option>
+                <option value="0000">Undeclared </option>
+            </select> </font></td>
+            <th align="left"><font size="2">If not found, enter
+            major:</font></th>
+            <td><font size="2"><input type="text" size="20"
+            maxlength="30" name="mjr"></font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">Minor:</font></th>
+            <td><font size="2"><select name="mnr_cde" size="1">
+                <option value>Not Reported </option>
+                <option value>Not Found </option>
+                <option value="ACCT">Accounting </option>
+                <option value="211">Anthropology </option>
+                <option value="020">Architecture </option>
+                <option value="160">Art </option>
+                <option value="161">Art History </option>
+                <option value="210">Behavioral Sciences </option>
+                <option value="BIOL">Biology </option>
+                <option value="991">Biology Minor </option>
+                <option value="215">Biology Primary </option>
+                <option value="310">Business Admin. Primary </option>
+                <option value="BUSI">Business Administration </option>
+                <option value="CHEM">Chemistry </option>
+                <option value="217">Chemistry Primary </option>
+                <option value="040">Communications </option>
+                <option value="COMP">Computer Science </option>
+                <option value="501">Computer Science Physics </option>
+                <option value="500">Computer Science Primary </option>
+                <option value="900">Continuing Education </option>
+                <option value="ECON">Economics </option>
+                <option value="300">Economics Primary </option>
+                <option value="145">Education </option>
+                <option value="146">Elementary Education </option>
+                <option value="400">Engineering </option>
+                <option value="ENGL">English </option>
+                <option value="ECOM">English Composition </option>
+                <option value="EHIS">English History </option>
+                <option value="ELIT">English Literature </option>
+                <option value="100">English Primary </option>
+                <option value="105">Foreign Languages </option>
+                <option value="332">Geography and Urban Studies </option>
+                <option value="218">Geology </option>
+                <option value="700">Guidance &amp; Counseling </option>
+                <option value="331">History </option>
+                <option value="101">Journalism </option>
+                <option value="660">Law </option>
+                <option value="110">Linguistics </option>
+                <option value="200">Math </option>
+                <option value="MATH">Mathematics </option>
+                <option value="150">Music </option>
+                <option value="120">Nursing </option>
+                <option value="216">Physics </option>
+                <option value="POLS">Political Science </option>
+                <option value="330">Political Science Primary </option>
+                <option value="PSYC">Psychology </option>
+                <option value="102">Radio &amp; Television </option>
+                <option value="148">Reading </option>
+                <option value="RELG">Religion </option>
+                <option value="147">Secondary Education </option>
+                <option value="SOC">Sociology </option>
+                <option value="SPEK">Speech Therapy </option>
+                <option value="STAT">Statistics </option>
+                <option value="0000">Undeclared </option>
+            </select> </font></td>
+            <th align="left"><font size="2">If not found, enter
+            minor:</font></th>
+            <td><font size="2"><input type="text" size="20"
+            maxlength="30" name="mnr"></font></td>
+        </tr>
+        <tr>
+            <th align="left"><font size="2">GPA:</font></th>
+            <td><font size="2"><input type="text" size="5"
+            maxlength="5" name="gpa"> <i>(must be numeric)</i> </font></td>
+            <th align="left"><font size="2">Class Rank/Size:</font></th>
+            <td><font size="2"><input type="text" size="4"
+            maxlength="4" name="rank">/<input type="text"
+            size="4" maxlength="4" name="cl_size"><i>(must be
+            numeric)</i></font></td>
+        </tr>
+    </table>
+    <p><input type="submit" value="Update"> <input type="reset"
+    value="Reset"> </p>
+</form>
+
+<hr>
+
+<p><a href="apindex1.htm">Return to Application Index</a> <a
+href="help.htm"><img src="help.gif" width="85" height="24"></a> </p>
+</body>
+</html>

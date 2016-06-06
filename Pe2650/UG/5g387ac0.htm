@@ -1,0 +1,253 @@
+<!-- #include VIRTUAL="/includes/global_format.inc.asp" -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="WebWorks 2000">
+<meta name="TEMPLATEBASE" content="Dell ESG Template Version 10.25.01">
+<meta name="LASTUPDATED" content="12/19/01 10:21:42">
+<title>Installing and Configuring SCSI Drivers : Dell PowerEdge 2650 Systems
+ User's Guide
+</title>
+<link rel="stylesheet" type="text/css" href="dell.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- #include VIRTUAL="/includes/global_header.inc.asp" -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<p><a href="index.htm">Back to Contents Page</a> </p>
+<h1><a name="1039239"> Installing and 
+Configuring SCSI 
+Drivers
+ </a></h1>
+<p class="title">Dell&#153; PowerEdge&#153; 2650 Systems
+ User's Guide
+</p>
+<p class="minitoc"><img src="bullet.gif" border="0">&nbsp;&nbsp;<A HREF="#1040015">The SCSISelect Utility</A></P>
+
+
+<br>
+<p>This section describes how to install and configure the SCSI device drivers included with your system. These device drivers are designed to work with the AIC 7899W U160 SCSI controller on the system board. Both channels are connected to the backplane. Neither channel is available for external connection.</p><p>If you are using an optional RAID controller, see your RAID controller documentation for information on installing your SCSI device drivers.</p><p>For instructions on installing hardware devices such as diskette drives, CD drives, and tape drives, see "Installing Drives" in the <i>Installation and Troubleshooting Guide</i>. After the SCSI devices are installed, install and configure any SCSI device drivers to enable them to communicate with your operating system.</p><p>SCSI device drivers are provided for the following operating systems:</p><ul><li>Microsoft&#174; Windows&#174; 2000 Server and Advanced Server<br><br></li>
+<li>Windows NT&#174; 4.0 Server, Server Enterprise Edition<br><br></li>
+<li>Red Hat Linux 7.<i>x</i><br><br></li>
+</ul><p>See "<a href="5g387c20.htm#1039152">Using the Dell OpenManage Server Assistant CD</a>" for instructions on creating a diskette of drivers for your operating system. For instructions on configuring the SCSI device drivers, see the documentation that came with your operating system. You may also need to use the SCSI<i>Select</i> utility, discussed in this section.</p><hr noshade size="1">
+<h2><a name="1040015">The SCSI<i>Select</i> Utility</a></h2>
+
+
+<p>The BIOS for your system's integrated SCSI controller includes the menu-driven SCSI<i>Select</i> configuration utility, which allows you to change SCSI controller settings without opening the system. SCSI<i>Select</i> also contains SCSI disk utilities that let you perform a low-level format or verify the disk media of your SCSI hard drives.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>The SCSI<i>Select</i> utility cannot be used to install and configure SCSI drivers for 
+the optional ROMB card. For more information on installing and configuring SCSI 
+drivers with the optional ROMB card, see your RAID controller documentation.
+</td>
+  </tr>
+</table><h3><a name="1040018"> Starting the SCSI<i>Select</i> Utility<i>
+</i></a></h3>
+<p>You can start the SCSI<i>Select</i> utility by pressing &lt;Ctrl&gt;&lt;a&gt; when the following prompt appears briefly during start-up:</p><p class="screen"><span class="screen">Press &lt;CTRL&gt;&lt;A&gt; for SCSISelect&#153; Utility!
+</span></p><p>The first menu allows you to select channel A or channel B. The second menu contains <b>Configure/View Host Adapter Settings </b>and <b>SCSI Disk Utilities </b>options.</p><h3><a name="1040022"> Using SCSI<i>Select </i>Menus
+</a></h3>
+<p>SCSI<i>Select</i> uses menus to list options that you can select. To select an option, press the up- and down-arrow keys to move the cursor to the option; then press &lt;Enter&gt;.</p><p>In some cases, selecting an option displays another menu. You can return to the previous menu at any time by pressing &lt;Esc&gt;. To restore the original SCSI<i>Select</i> default values, press &lt;F6&gt;.</p><h3><a name="1040026"> SCSI<i>Select</i> Default Settings
+</a></h3>
+<p>Default settings for the integrated SCSI controller are shown in <a href="5g387ac0.htm#1040049">Table&nbsp;C-1</a>. These default settings are appropriate for most PCI systems. Run SCSI<i>Select</i> only if you need to change any of the default settings.</p><table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left" width="20"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left"><span class="notes">NOTE: </span>To change the configuration settings, you must run the SCSI<i>Select </i>utility.
+</td>
+  </tr>
+</table><p>For situations in which you might want or need to change the settings, see the description of each setting in the following subsections. To change any of the default settings or to format or verify a disk, see "<a href="5g387ac0.htm#1041029">Using the SCSI Disk Utilities</a>." </p><p></p><a name="1040171"></a><p>
+<table border="1" cellspacing="0" cellpadding="4">
+<p class="FigureTableTitle"><p class="FigureTableTitle"><a name="1040049">Table C-1.&#32; AIC-7899 SCSI Controller Settings</a></p></p>
+<tr><th valign="top" align="left"><a name="1040053"> </a>
+<p><b><b>Setting</b></b></p>
+
+
+</th><th valign="top" align="left"><a name="1040055"> </a>
+<p><b><b>Default</b></b></p>
+
+
+</th></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><b>SCSI Bus Interface Definitions:&nbsp;</b></p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Host Adapter SCSI ID</p></td><td valign="top" align="left"><p>7</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">SCSI Parity Checking</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Host Adapter SCSI Termination</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><b>Boot Device Options:&nbsp;</b></p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Boot Channel</p></td><td valign="top" align="left"><p>A First</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Boot SCSI ID</p></td><td valign="top" align="left"><p>0</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Boot LUN Number</p></td><td valign="top" align="left"><p>0</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><b>SCSI Device Configuration:&nbsp;</b></p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Sync Transfer Rate MB/Sec</p></td><td valign="top" align="left"><p>160</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Initiate Wide Negotiation</p></td><td valign="top" align="left"><p>Yes (Enabled)</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Enable Disconnection</p></td><td valign="top" align="left"><p>Yes (Enabled)</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Send Start Unit Command</p></td><td valign="top" align="left"><p>Yes (Enabled)</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Enable Write Back Cache</p></td><td valign="top" align="left"><p>Yes, No, or N/C</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">BIOS Multiple LUN Support</p></td><td valign="top" align="left"><p>No (Enabled)</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Include in BIOS Scan</p></td><td valign="top" align="left"><p>Yes (Enabled)&nbsp;</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><b>Advanced Configuration:&nbsp;</b></p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Reset SCSI Bus at IC Initialization</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Display &lt;Ctrl&gt;&lt;a&gt; Message During BIOS Initialization</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Extended BIOS Translation for MS-DOS&#174; Drivers &gt; 1 GB</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Silent/Verbose Mode</p></td><td valign="top" align="left"><p>Verbose</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Host Adapter BIOS</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Domain Validation</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">Support Removable Disks Under BIOS as Fixed Disks&nbsp;</p></td><td valign="top" align="left"><p>Boot Only, Enabled, Disabled (default)</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">BIOS Support for Bootable CD</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left"><p class="tableindent">BIOS Support for Int 13 Extensions</p></td><td valign="top" align="left"><p>Enabled</p></td></tr>
+<tr><td valign="top" align="left" colspan=2 rowspan=1><p><span class="notes">NOTE: </span>For the full name of an abbreviation or acronym used in this table, see the "<a href="5g387gl0.htm#1037828">Glossary</a>."
+</p>
+</td></tr>
+
+</table>
+
+
+
+
+</p><h3><a name="1040173"> SCSI Bus Interface Definitions
+</a></h3>
+<p>The basic host adapter settings are the SCSI<i>Select</i> settings most likely to require modification:</p><ul><li><b>Host Adapter SCSI ID</b> &#151; Sets the host adapter's SCSI ID. The default setting is <b>SCSI ID 7</b>, which allows the host adapter to support narrow SCSI devices in addition to wide SCSI devices. Dell recommends that you leave the host adapter set to <b>SCSI ID 7</b>.<br><br></li>
+<li><b>SCSI Parity Checking</b> &#151; Determines whether the host adapter verifies the accuracy of data transfer on the SCSI bus. The default setting is <b>Enabled</b>. You should disable <b>SCSI Parity Checking</b> if any SCSI device connected to the host adapter does not support SCSI parity; otherwise, leave it enabled. Most SCSI devices support SCSI parity. If you are unsure whether a device supports SCSI parity, consult the documentation for the device.<br><br></li>
+<li><b>Host Adapter SCSI Termination</b> &#151; Sets termination on the host adapter. The default setting for the AIC-7899 host adapter is <b>Enabled or Automatic</b>. Dell recommends that you leave this option set to the default.<br><br></li>
+</ul><h3><a name="1040178"> Boot Device Options
+</a></h3>
+<p>The boot device options allow you to specify the device from which to boot your system:</p><ul><li><b>Boot Channel </b>&#151;<b> </b>Specifies the boot channel (A or B) for the dual-channel Adaptec 7899 host adapter. The default is <b>A First</b>.<br><br></li>
+<li><b>Boot SCSI ID</b> &#151; Specifies the SCSI ID of the boot device on the selected Boot Channel.<br><br></li>
+<li><b>Boot LUN Number</b> &#151; Allows you to specify a particular logical unit number (LUN) from which to boot your boot device if your boot device has multiple LUNs and <b>BIOS</b> <b>Multiple LUN Support</b> is enabled (see "<a href="5g387ac0.htm#1040187">SCSI Device Configuration Settings</a>"). The default setting is <b>LUN 0</b>.<br><br></li>
+</ul><h3><a name="1040187"> SCSI Device Configuration Settings
+</a></h3>
+<p>The SCSI device Configuration settings allow you to configure certain parameters for each device on the SCSI bus. To configure a specific device, you must know the SCSI ID assigned to that device. If you are not sure of the SCSI ID, see "<a href="5g387ac0.htm#1041029">Using the SCSI Disk Utilities</a>."</p><ul><li><b>Sync Transfer Rate MB/sec </b>&#151; Sets the maximum synchronous data transfer rate that the host adapter supports. <br><br></li>
+</ul><p class="indent">The AIC-7899 host adapter supports rates up to 160 MB/sec. The default for the AIC-7899 host adapter is <b>160 MB/sec</b>. </p>
+<p class="indent">If the host adapter is set to not negotiate for synchronous data transfer, the maximum synchronous transfer rate is the maximum rate that the host adapter accepts from the device during negotiation. (This setting is standard SCSI protocol.)</p>
+<ul><li><b>Initiate Wide Negotiation</b> &#151; Determines whether the host adapter attempts 16-bit data transfer instead of 8-bit data transfer. The default is <b>Yes</b>.<br><br></li>
+</ul>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> Some 8-bit SCSI devices may have trouble handling wide negotiation, which may 
+result in erratic behavior or a hang condition. For these devices, set <b>Initiate Wide 
+Negotiation</b> to <b>No</b>.
+</td>
+  </tr>
+</table>
+<p class="indent">When this option is set to <b>Yes</b>, the host adapter attempts 16-bit data transfer. When this option is set to <b>No</b>, 8-bit data transfer is used unless the SCSI device itself requests wide negotiation. The effective transfer rate is doubled when 16-bit data transfer is used because the data path for wide SCSI is twice the size of normal 8-bit SCSI.</p>
+<ul><li><b>Enable Disconnection</b> (sometimes called disconnect/reconnect) &#151; Determines whether the host adapter allows the SCSI device to disconnect from the SCSI bus. Enabling disconnection allows the host adapter to perform other operations on the SCSI bus while the SCSI device is temporarily disconnected. The default setting is <b>Yes</b>.<br><br></li>
+</ul><p class="indent">Leave <b>Enable Disconnection</b> set to <b>Yes</b> if two or more SCSI devices are connected to the host adapter. This optimizes SCSI bus performance. If only one SCSI device is connected to the host adapter, set <b>Enable Disconnection</b> to <b>No</b> to achieve slightly better performance.</p>
+<ul><li><b>Send Start Unit Command</b> &#151; Determines whether the start unit command is sent to the SCSI device during the boot routine. The default is <b>Yes</b>.<br><br></li>
+</ul><p class="indent">Setting this option to <b>Yes</b> reduces the load on your system's power supply by allowing the host adapter to start SCSI devices one at a time when you boot your system. When this option is set to <b>No</b>, the devices are allowed to start at the same time. Most devices require you to set a jumper before they can respond to this command.</p>
+
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> For many devices, if <b>Send Start Unit Command</b> is set to <b>Yes</b>, the boot routine time 
+will vary depending on how long it takes each drive to start.
+</td>
+  </tr>
+</table>
+<ul><li><b>Enable Write Back Cache</b> &#151; Signals the completion of a write request as soon as the data is in cache. Actual writing to the disk occurs at a later time. The default setting is <b>N/C or Yes</b>.<br><br></li>
+<li><b>BIOS Multiple LUN Support</b> &#151; Provides support for peripherals that contain multiple SCSI devices, such as autoloading tape drives and CD-ROM changers.<br><br></li>
+</ul>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> The setting for <b>BIOS Multiple LUN Support</b> must be <b>No </b>or <b>Enabled </b>(default) if a 
+tape autoloader is connected.
+</td>
+  </tr>
+</table>
+<ul><li><b>Include in BIOS Scan</b> &#151; Enables you to set whether the system BIOS scans this device during system start-up. The default is <b>Yes</b>.<br><br></li>
+</ul><h3><a name="1040221"> Advanced Configuration Settings
+</a></h3>
+<p>The advanced host adapter settings should not be changed unless absolutely necessary. Values are set by Dell, and changing them may cause conflicts with the SCSI devices.</p><ul><li><b>Reset SCSI Bus at IC Initialization</b> &#151; Enables the SCSI bus to be reset when the controller is initialized. The default is <b>Enabled</b>.<br><br></li>
+<li><b>Display &lt;Ctrl&gt;&lt;a&gt; Message During BIOS Initialization</b> &#151; Determines whether the <span class="screen">Press &lt;CTRL&gt;&lt;A&gt; for SCSISelect (TM) Utility!</span> message appears on your screen during system start-up. The default setting is <b>Enabled</b>. If this setting is disabled, you can still run the SCSI<i>Select</i> utility by pressing &lt;Ctrl&gt;&lt;a&gt; after the host adapter BIOS banner appears.<br><br></li>
+<li><b>Extended BIOS Translation For DOS Drives &gt; 1 GB</b> &#151; Determines whether extended translation is available for SCSI hard drives with capacities greater than 1&nbsp;GB. The default setting is <b>Enabled</b>.<br><br></li>
+</ul>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  Back up your hard drive before you change the translation scheme. All data is erased 
+when you change from one translation scheme to another.
+</td>
+  </tr>
+</table>
+<p class="indent">The standard translation scheme for SCSI host adapters provides a maximum accessible capacity of 1 GB. To support hard drives larger than 1 GB, the 78<i>xx</i> series host adapters include an extended translation scheme that supports hard drives as large as 8 GB, with a maximum partition size of 2 GB under the DOS operating system.</p>
+<p class="indent">It is not necessary to enable the <b>Extended BIOS Translation</b> setting if you are using another operating system, such as Novell NetWare.</p>
+<p class="indent">When you partition a hard drive larger than 1 GB, use the MS-DOS&#174; <b>fdisk</b> utility as you normally would. Because the cylinder size increases to 8 MB under extended translation, the partition size you choose must be a multiple of 8 MB. If you request a size that is not a multiple of 8 MB, <b>fdisk</b> rounds up to the nearest whole multiple of 8&nbsp;MB.</p>
+<ul><li><b>Silent/Verbose Mode</b> &#151; Displays the host adapter information during system start-up. The default is <b>Verbose</b>.<br><br></li>
+<li><b>Host Adapter BIOS</b> &#151; Enables or disables the host adapter BIOS. The default setting is <b>Enabled</b>.<br><br></li>
+</ul>
+<table class="indent" border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="note.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+<span class="notes">    
+NOTE: </span> Several SCSI<i>Select</i> options are not valid unless the host adapter BIOS is enabled.
+</td>
+  </tr>
+</table>
+<p class="indent">If you are booting from a SCSI hard drive connected to the host adapter, the BIOS must be enabled. You should disable the host adapter BIOS if the peripherals on the SCSI bus (for example, CD drives) are all controlled by device drivers and do not need the BIOS.</p>
+<ul><li><b>Domain Validation</b> &#151; Instructs the host adapter not to accept a negotiated speed until a validation test is successfully performed. After determining the speed that a target device is capable of, the host adapter sends a <b>Write Buffer</b> command to the target device. The data transfer occurs at the full speed initially. The initiator reads and tests the data&nbsp; and identifies any parity or cyclic redundancy check (CRC) errors. If the test fails, the initiator lowers its speed and repeats the test. In this manner, a compatible speed will be found and locked in before user data transfers begin. The default is <b>Enabled</b>.<br><br></li>
+<li><b>Support Removable Disks Under BIOS As Fixed Disks</b> &#151; Controls which removable-media drives are supported by the host adapter BIOS. The default setting is <b>Boot Only</b>. The following choices are available.<br><br></li>
+</ul>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  If a removable-media SCSI device is controlled by the host adapter BIOS, do not 
+remove the media while the drive is on or you may lose data. If you want to be able to remove 
+media while the drive is on, install your removable-media device driver and set this option to 
+<b>Disabled.
+</b></td>
+  </tr>
+</table>
+<ul><ul>
+<li type="circle"><b>Boot Only</b> &#151; Only the removable-media drive designated as the boot device is treated as a hard drive.<br><br></li>
+<li type="circle"><b>All Disks</b> &#151; All removable-media drives supported by the BIOS are treated as hard drives.<br><br></li>
+<li type="circle"><b>Disabled</b> &#151; No removable-media drives are treated as hard drives. In this situation, software drivers are needed because the drives are not controlled by the BIOS.<br><br></li>
+</ul>
+</ul><ul><li><b>BIOS Support For Bootable CD-ROM</b> &#151; Determines whether the host adapter BIOS provides support for booting from a CD drive. The default setting is <b>Enabled</b>.<br><br></li>
+<li><b>BIOS Support For Int 13 Extensions</b> &#151; Determines whether the host adapter BIOS supports disks with more than 1024 cylinders. The default setting is <b>Enabled</b>.<br><br></li>
+</ul><h3><a name="1041029"> Using the SCSI Disk Utilities
+</a></h3>
+<p>To access the SCSI disk utilities, select <b>SCSI Disk Utilities</b> from the menu that appears when you start SCSI<i>Select</i>. When the option is selected, SCSI<i>Select</i> immediately scans the SCSI bus (to determine the devices installed) and displays a list of all SCSI IDs and the device assigned to each ID.</p><p>When you select a specific ID and device, a menu appears, displaying the <b>Format Disk</b> and <b>Verify Disk Media</b> options.</p>
+<table border="0" cellpadding="4">
+  <tr>
+    <td valign="top" align="left"><img src="notice.gif" 
+    align="top"></td>
+    <td valign="top" align="left">
+   <span class="notes">
+    NOTICE: </span>  The <b>Format Disk</b> option destroys all data on the hard drive.
+</td>
+  </tr>
+</table>
+<ul><li><b>Format Disk</b> &#151; Runs a utility that allows you to perform a low-level format on a hard drive. Most SCSI disk drives are formatted at the factory and do not need to be formatted again. The Adaptec Format Disk utility is compatible with the majority of SCSI disk drives.<br><br></li>
+<li><b>Verify Disk Media</b> &#151; Runs a utility that allows you to scan the media of a hard drive for defects. If the utility finds bad blocks on the media, it prompts you to reassign them; if you select <b>Yes</b>,<b> </b>those blocks are no longer used. You can press &lt;Esc&gt; at any time to exit the utility.<br><br></li>
+</ul><h3><a name="1040267"> Exiting SCSI<i>Select
+</i></a></h3>
+<p>To exit SCSI<i>Select</i>, press &lt;Esc&gt; until a message prompts you to exit. (If you changed any 78<i>xx</i> series host adapter settings, you are prompted to save the changes before you exit.) At the prompt, select <b>Yes</b> to exit, and then press any key to reboot the system. Any changes that you made in SCSI<i>Select</i> take effect after the system boots. (You can select <b>No</b> at the prompt if you are not ready to exit SCSI<i>Select</i>.)</p>
+<hr noshade size="1">
+<p><a href="index.htm">Back to Contents Page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- #include VIRTUAL="/includes/global_footer.inc.asp" -->
+</body>
+</html>

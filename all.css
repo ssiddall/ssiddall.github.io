@@ -1,0 +1,119 @@
+/* AlwaysWork style sheet copyright RichInStyle.com 2000. You can download this from http://richinstyle.com/free/alwayswork.html. You must not remove or alter this message from this file. */
+
+@import url(okbrowsers.css);
+.dummy {color: red}
+/* Fonts */
+ADDRESS, BLOCKQUOTE, BODY, CAPTION, CENTER, DD, DIR, DIV, DL, DT, FORM, LI, MENU, OL, P, PRE, TD, TH, TR, UL {font-family: sans-serif;
+font-size: 16px}
+
+A {cursor: pointer;
+background: transparent}
+
+ADDRESS {font-style: italic}
+
+BIG {font-size: 19px}
+
+BLOCKQUOTE {font-style: italic}
+
+BODY {margin-left: 10%;
+margin-right: 8%;
+padding: 0;
+cursor: default}
+
+BUTTON {cursor: auto}
+
+CITE {font-style: italic}
+
+CODE, KBD, SAMP, TT {font-size: 14px}
+
+DT {font-weight: bold}
+
+H1, H2, H3, H4, H5, H6 {font-weight: bold;
+font-family: sans-serif}
+
+H1 {font-size: 28px}
+
+H2 {font-size: 28px}
+
+H3 {font-size: 24px}
+
+H4 {font-size: 21px}
+
+H5 {font-size: 18px}
+
+H6 {font-size: 16px}
+
+HTML {margin: 0; 
+padding: 0}
+
+INPUT {cursor: auto}
+
+OL {list-style: decimal}
+
+UL UL OL OL, UL OL UL OL, OL UL OL OL, OL OL UL OL, OL UL OL, OL OL {list-style: lower-alpha}
+
+OL UL OL OL, OL OL UL OL, UL OL OL OL, OL OL OL {list-style: lower-roman}
+
+OL OL OL OL {list-style: decimal}
+
+PRE {margin-left/* */ : 0;
+white-space: pre}
+
+SMALL, SUB, SUP {font-size: 13px}
+
+TEXTAREA {cursor: text}
+
+TD {margin-left: 0}
+
+TH {font-weight: bold;
+text-align: center;
+margin-left: 0}
+
+UL, MENU, DIR {list-style: disc} 
+
+UL UL, OL OL UL UL, OL UL OL UL, UL OL OL UL, OL UL UL, UL OL UL {list-style: circle}
+
+OL UL UL UL, UL OL UL UL, UL UL OL UL, UL UL UL {list-style: square}
+
+UL UL UL UL {list-style: disc}
+
+/* Here are the things you might want to change or remove */
+
+/* This controls the color and font of standard text */
+
+ADDRESS, BLOCKQUOTE, BODY, CAPTION, CENTER, DD, DIR, DIV, DL, DT, FORM, LI, MENU, OL, P, PRE, TD, TH, TR, UL {font-family: Geneva, Helvetica, Arial, sans-serif;
+color: black}
+
+A:link {color: 0000cc;
+text-decoration: none}
+
+A:visited {color: 9999ff;
+text-decoration: none}
+
+A:active {color: 0000cc;
+text-decoration: none}
+
+A:hover {color: red;
+text-decoration: none}
+
+BODY {background: #ffffff;
+margin-left: 10%;
+margin-right: 8%}
+
+H1, H2, H3, H4, H5, H6 {color: #990000;
+font-family: Geneva, Helvetica, Arial, sans-serif}
+
+H1 {margin-left/* */ : -4%}
+
+H2 {margin-left/* */ : -4%}
+
+H3 {margin-left/* */ : -3%}
+
+H4 {margin-left/* */ : -3%}
+
+H5 {margin-left/* */ : -2%}
+
+H6 {margin-left/* */ : -1%}
+
+PRE {border: solid thin;
+padding: 1em 3%}

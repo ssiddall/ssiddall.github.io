@@ -1,0 +1,51 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:slidetransition advancetime="0" speed="0" effect="alphafade" flag="1"/>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout><p:colorscheme
+  colors="#ffffff,#000000,#808080,#000000,#bbe0e3,#333399,#009999,#99cc00"/>
+ <v:background id="_x0000_s1025" o:bwmode="white" fillcolor="#292929"/>
+ <p:shaperange id="_x0000_m1038">
+  <v:shapetype id="_x0000_m1038" style='position:absolute;left:15pt;top:95pt;
+   width:9in;height:396.25pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#bbe0e3 [4]"
+   stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <v:textbox inset="0"/>
+   <p:placeholder type="body" position="1"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s1042">
+  <v:line id="_x0000_s1042" style='position:absolute' from="522pt,517.25pt"
+   to="10in,517.25pt" o:userdrawn="t" strokecolor="#ddd">
+   <v:shadow color="gray [2]"/>
+  </v:line></p:shaperange>
+ <p:shaperange id="_x0000_s1043">
+  <v:shapetype id="_x0000_s1043" style='position:absolute;left:516pt;top:489pt;
+   width:202.5pt;height:32pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#bbe0e3 [4]"
+   stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="footer" position="3" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s1044">
+  <v:line id="_x0000_s1044" style='position:absolute' from="1.125pt,40.625pt"
+   to="672pt,40.625pt" o:userdrawn="t" strokecolor="#ddd" strokeweight="1.5pt">
+   <v:shadow color="gray [2]"/>
+  </v:line><v:rect id="_x0000_s1045" style='position:absolute;left:16.75pt;
+   top:2pt;width:665.5pt;height:46.75pt;v-text-anchor:middle' o:userdrawn="t"
+   filled="f" fillcolor="#bbe0e3 [4]" stroked="f" strokecolor="black [1]">
+   <v:shadow color="gray [2]"/>
+   <v:textbox inset="0"/>
+  </v:rect></p:shaperange>
+</xml>
